@@ -1,0 +1,14 @@
+{
+  "_note": "配信先リスト。段階的に追加できるよう phase 単位で管理。active:true のグループが現在の配信先。email_generatorはactiveなグループ名を文面に表示する（実アドレスはグループ別名/MLで管理）。",
+  "product_name": "ししまるベトナム新聞",
+  "positioning": "前営業日のベトナム相場をお届けする朝刊（ベトナム経済紙の要約）",
+  "urls": {
+    "daily": "https://yumiba924-a11y.github.io/shishimaru-vn-news/",
+    "weekly": "https://yumiba924-a11y.github.io/shishimaru-vn-news/weekly.html"
+  },
+  "phases": [
+    { "name": "初期", "active": true,  "groups": [ { "label": "CAMフル", "alias": "" }, { "label": "CPVN", "alias": "" } ] },
+    { "name": "拡大1", "active": false, "groups": [ { "label": "CPS", "alias": "" }, { "label": "CFA", "alias": "" } ] }
+  ],
+  "disclaimer": "本紙はVNDirect等の無料データと現地報道（CafeF・VnExpress・The Investor・Vietstock 等）の要約に基づく社内・グループ内向け資料です。数値は非公式・概算、市況コメントは要約であり、投資判断はご自身の責任でお願いします。"
+}

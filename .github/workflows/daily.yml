@@ -1,9 +1,13 @@
 name: daily-shishimaru
 
-# 毎営業日 18:00 JST（=09:00 UTC）に自動生成。手動トリガーも可。
+# 朝刊配信(9:00 JST手動送信)からの逆算:
+#   夕方便 18:00 JST(=09:00 UTC) … 前営業日の市況＋夜の市況報道で新聞を生成
+#   朝便   07:30 JST(=22:30 UTC前日) … 早朝の報道を取り込み再要約＋メール文面を用意
+#                                       → 8:30出社で目視→9:00手動送信に間に合わせる
 on:
   schedule:
-    - cron: '0 9 * * 1-5'
+    - cron: '0 9 * * 1-5'     # 夕方便 18:00 JST
+    - cron: '30 22 * * 0-4'   # 朝便   07:30 JST（UTC日曜〜木曜）
   workflow_dispatch: {}
 
 permissions:
@@ -47,6 +51,10 @@ jobs:
           if (-not $chrome) { $chrome = "google-chrome" }
           & $chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=2 --window-size=1100,1750 --screenshot="$png" "--virtual-time-budget=4000" ("file://" + $html)
           if (Test-Path $png) { Write-Host "PNG OK: $png" } else { Write-Host "PNG skip" }
+
+      - name: 朝刊メール文面を生成（新聞PNGをインライン埋め込み）
+        shell: pwsh
+        run: ./scripts/build_email.ps1
 
       - name: コミット＆プッシュ（生成物を日付別に蓄積）
         shell: bash
