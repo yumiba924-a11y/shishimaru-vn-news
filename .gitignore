@@ -20,6 +20,5 @@ Thumbs.db
 .DS_Store
 logs/
 
-outputs/*.news_raw.txt
 outputs/email_*.html
 outputs/email_*.subject.txt

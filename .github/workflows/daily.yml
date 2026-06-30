@@ -23,16 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: 取得→解釈→ニュース収集→自動要約→図解
+      - name: 取得→解釈→ニュース収集(無料翻訳・日本語要点リスト)→図解
         shell: pwsh
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # 未設定なら要約スキップ（雛形のまま新聞は出る）
-          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}                 # 任意。既定 claude-sonnet-4-6
         run: |
           ./scripts/fetch_vn30.ps1
           ./scripts/interpret.ps1
-          ./scripts/collect_news.ps1
-          ./scripts/summarize_news.ps1
+          ./scripts/collect_news.ps1   # 無料翻訳でJP要点リスト(news_raw)を用意。カード化は人が後で
           ./scripts/render_zukai.ps1
 
       - name: Chrome 準備（PNG用）
