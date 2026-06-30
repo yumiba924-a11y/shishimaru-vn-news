@@ -55,8 +55,8 @@ function TileBg([double]$pct) {
 function NewsHtml([string]$t) {
   if ([string]::IsNullOrWhiteSpace($t)) { return '<span style="color:#a8a294;font-style:italic;">（CafeF等の要約を1–2行で：記入待ち）</span>' }
   $s = Esc $t
-  $s = [regex]::Replace($s, '\*\*(.+?)\*\*', '<b style="color:#8B1A1A;font-weight:900;font-size:21px;">$1</b>')
-  $s = [regex]::Replace($s, '\[\[(.+?)\]\]', '<em style="color:#00492C;font-style:normal;font-weight:900;font-size:21px;">$1</em>')
+  $s = [regex]::Replace($s, '\*\*(.+?)\*\*', '<b style="color:#8B1A1A;font-weight:900;font-size:24px;">$1</b>')
+  $s = [regex]::Replace($s, '\[\[(.+?)\]\]', '<em style="color:#00492C;font-style:normal;font-weight:900;font-size:24px;">$1</em>')
   return $s
 }
 $accent = @{ green = '#00492C'; red = '#8B1A1A'; gold = '#B8922A'; teal = '#013820' }
@@ -118,7 +118,7 @@ $cardsHtml = ($cards | ForEach-Object {
         <div style="flex-shrink:0;width:74px;height:74px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:42px;background:#F0EADE;color:$ac;border:1px solid #E8E4DC;"><i class="bi bi-$ic" aria-hidden="true"></i></div>
         <div style="flex:1;">
           <span style="position:absolute;top:-16px;left:14px;display:inline-flex;align-items:center;font-size:18px;font-weight:800;color:#fff;border-radius:2px;padding:7px 15px;letter-spacing:.04em;background:$ac;box-shadow:0 3px 8px rgba(0,73,44,.22);">$(Esc $_.tag)</span>
-          <div style="margin-top:0;"><div style="font-size:17px;line-height:1.7;color:#2A2A2A;font-weight:500;">$(NewsHtml ([string]$_.text))</div></div>
+          <div style="margin-top:0;"><div style="font-size:20px;line-height:1.7;color:#2A2A2A;font-weight:500;">$(NewsHtml ([string]$_.text))</div></div>
         </div>
       </div>
 "@
