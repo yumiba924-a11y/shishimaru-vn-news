@@ -68,7 +68,15 @@ $wTone = if ($wIdxPct -gt 0) { 'up' } elseif ($wIdxPct -lt 0) { 'down' } else { 
 # --- 言葉で分解（見出し・深掘り）--------------------------------------------
 $moverDir = if ($mover.contrib -lt 0) { '押し下げ' } else { '押し上げ' }
 $resWord = if ($wIdxPct -gt 0) { if ($wIdxPct -ge 1.5) { '大幅高' } else { '上昇' } } elseif ($wIdxPct -lt 0) { if ($wIdxPct -le -1.5) { '大幅安' } else { '下落' } } else { '横ばい' }
-$headline = "今週は$($mover.code)が指数を最も動かした"
+# 見出しはデータ駆動で変化させる（毎週同じ「○○が動かした」を避ける＝反復ヘッジ）
+$totAbs = (($rows | ForEach-Object { [math]::Abs($_.contrib) }) | Measure-Object -Sum).Sum; if ($totAbs -le 0) { $totAbs = 1 }
+$dom = [math]::Abs($mover.contrib) / $totAbs
+$secSpread = [double]$secLead.contrib - [double]$secLag.contrib
+$headline = if ($dom -ge 0.45) { "今週は$($mover.code)が指数を独りで動かした" }
+            elseif ($secSpread -ge 1.0) { "今週は$($secLead.sector)高・$($secLag.sector)安に二極化" }
+            elseif ([math]::Abs($wIdxPct) -lt 0.3) { "今週は綱引き拮抗、方向感に乏しい" }
+            elseif ($wTone -eq 'up') { "今週は$($secLead.sector)主導で買い優勢" }
+            else { "今週は$($secLag.sector)が重し、売り優勢" }
 $leadLines = @(
   "${weekStart}〜${weekEnd}、VN-Indexは週間 $(('{0:+0.0;-0.0;0.0}' -f $wIdxPct))%。",
   "$($mover.sector)の$($mover.code)が概算で約$([math]::Abs($mover.contrib).ToString('0.0'))pt、指数を$moverDir。",

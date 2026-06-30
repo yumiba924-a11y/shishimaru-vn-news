@@ -19,3 +19,5 @@ _handoff/
 Thumbs.db
 .DS_Store
 logs/
+
+outputs/*.news_raw.txt

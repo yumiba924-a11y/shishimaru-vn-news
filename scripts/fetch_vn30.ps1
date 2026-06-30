@@ -44,6 +44,21 @@ function Get-FourthMonday([int]$year, [int]$month) {
   return $mons[3]
 }
 
+# HOSE全体の騰落数（市場全体）。全HOSE銘柄の指定日pctChangeを集計。失敗時は$null。
+function Get-HoseBreadth([string]$date) {
+  try {
+    $list = (Invoke-Json "https://api-finfo.vndirect.com.vn/v4/stocks?q=type:STOCK~floor:HOSE&size=600").data.code
+    if (-not $list) { return $null }
+    $codes = ($list | Select-Object -Unique) -join ","
+    $r = Invoke-Json "https://api-finfo.vndirect.com.vn/v4/stock_prices?sort=date:desc&q=code:${codes}~date:${date}&size=700"
+    if (-not $r.data) { return $null }
+    $up = ($r.data | Where-Object { [double]$_.pctChange -gt 0 }).Count
+    $dn = ($r.data | Where-Object { [double]$_.pctChange -lt 0 }).Count
+    $fl = ($r.data | Where-Object { [double]$_.pctChange -eq 0 }).Count
+    [ordered]@{ up = $up; down = $dn; flat = $fl; total = ($up + $dn + $fl) }
+  } catch { return $null }
+}
+
 # --- 設定読み込み ------------------------------------------------------------
 if (-not (Test-Path $ConfigPath)) { throw "設定ファイルが見つかりません: $ConfigPath" }
 $cfg      = Get-Content $ConfigPath -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -177,6 +192,11 @@ foreach ($s in $stocks) {
   }
 }
 
+# --- HOSE全体の騰落（市場全体・指数バー用。失敗時はnull→renderがVN30で代用）---
+$hoseBreadth = Get-HoseBreadth $asof
+if ($hoseBreadth) { Write-Host ("  HOSE騰落: 上昇 {0} / 下落 {1} / 変わらず {2}" -f $hoseBreadth.up, $hoseBreadth.down, $hoseBreadth.flat) -ForegroundColor DarkGray }
+else { Write-Warning "HOSE全体騰落の取得に失敗（指数バーはVN30で代用）" }
+
 # --- 出力オブジェクト --------------------------------------------------------
 $payload = [ordered]@{
   as_of        = $asof
@@ -188,6 +208,7 @@ $payload = [ordered]@{
   indices      = $indices
   trend        = $trend
   breadth      = [ordered]@{ up = $up; down = $down; flat = $flat; total = $stocks.Count }
+  hose_breadth = $hoseBreadth
   by_sector    = $bySector
   stocks       = $stocks | Sort-Object pct -Descending
   macro        = $macro

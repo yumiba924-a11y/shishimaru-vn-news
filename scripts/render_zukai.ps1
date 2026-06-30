@@ -72,8 +72,10 @@ $viPct = [double]$vi.pct
 $viArrow = if ($viPct -gt 0) { '▲' } elseif ($viPct -lt 0) { '▼' } else { '―' }
 $viBg = if ($viPct -gt 0) { '#1F7A4D' } elseif ($viPct -lt 0) { '#8B1A1A' } else { '#6b7670' }
 
-# --- 騰落（VN30。HOSE全体breadthは無料源が無いためVN30で代用・ラベル明記）-----
-$bUp = [int]$p.breadth.up; $bFl = [int]$p.breadth.flat; $bDn = [int]$p.breadth.down; $bT = [double]($bUp + $bFl + $bDn)
+# --- 騰落（HOSE全体。取得失敗時はVN30で代用・ラベル切替）---------------------
+$br = if ($p.hose_breadth) { $p.hose_breadth } else { $p.breadth }
+$brLabel = if ($p.hose_breadth) { 'HOSE 騰落（上昇 / 変わらず / 下落）' } else { 'VN30 騰落（上昇 / 変わらず / 下落）' }
+$bUp = [int]$br.up; $bFl = [int]$br.flat; $bDn = [int]$br.down; $bT = [double]($bUp + $bFl + $bDn); if ($bT -le 0) { $bT = 1 }
 $wUp = [math]::Round($bUp / $bT * 100, 1); $wFl = [math]::Round($bFl / $bT * 100, 1); $wDn = [math]::Round($bDn / $bT * 100, 1)
 
 # --- 今日のひとこと（news優先→interpret）------------------------------------
@@ -162,7 +164,7 @@ $html = @"
         <div style="font-size:20px;font-weight:700;opacity:.95;white-space:nowrap;"><span>$viArrow</span> $(Pct2 ([double]$vi.change)) ／ $(Pct2 $viPct)%</div>
       </div>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;">
-      <div style="font-size:18px;color:#555;font-weight:600;">VN30 騰落（上昇 / 変わらず / 下落）</div>
+      <div style="font-size:18px;color:#555;font-weight:600;">$brLabel</div>
       <div style="display:flex;width:100%;height:11px;border-radius:2px;overflow:hidden;background:#E6E1D5;">
         <span style="width:$wUp%;background:#1F7A4D;height:100%;"></span><span style="width:$wFl%;background:#CFC9BB;height:100%;"></span><span style="width:$wDn%;background:#8B1A1A;height:100%;"></span>
       </div>
