@@ -1,0 +1,52 @@
+name: weekly-shishimaru
+
+# 月曜 09:00 JST（=月曜 00:00 UTC）に、蓄積した日次データから週次を生成。手動可。
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 週次生成（直近5営業日の寄与度を集計）
+        shell: pwsh
+        run: ./scripts/weekly.ps1 -Days 5
+
+      - name: Chrome 準備（PNG用）
+        id: chrome
+        continue-on-error: true
+        uses: browser-actions/setup-chrome@v1
+
+      - name: 週次PNG書き出し（失敗しても続行）
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $html = (Get-ChildItem outputs/weekly_*.html | Sort-Object Name -Descending | Select-Object -First 1).FullName
+          $png  = [IO.Path]::ChangeExtension($html, '.png')
+          $chrome = "${{ steps.chrome.outputs.chrome-path }}"; if (-not $chrome) { $chrome = "google-chrome" }
+          & $chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=2 --window-size=1100,1850 --screenshot="$png" "--virtual-time-budget=4000" ("file://" + $html)
+          if (Test-Path $png) { Write-Host "PNG OK" } else { Write-Host "PNG skip" }
+
+      - name: コミット＆プッシュ
+        shell: bash
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add outputs docs
+          if git diff --cached --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "weekly: $(date -u +%Y-%m-%d) ししまるVN30分解新聞 自動生成"
+            git push
+          fi
