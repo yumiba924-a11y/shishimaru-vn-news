@@ -164,14 +164,16 @@ $newsFile = Join-Path $OutDir ("vn30_{0}.news.json" -f $p.as_of)
 if (-not (Test-Path $newsFile)) {
   $seed = @()
   foreach ($c in $cards) {
-    $arrow = if ($c.dir -eq 'up') { '🔺' } else { '🔻' }
-    $seed += [ordered]@{ tag = "$($c.code) $(Pct $c.pct)"; icon = $arrow; dir = $c.dir; text = "" }
+    $col = if ($c.dir -eq 'up') { 'green' } else { 'red' }
+    $ic  = if ($c.dir -eq 'up') { 'graph-up-arrow' } else { 'graph-down-arrow' }
+    $seed += [ordered]@{ tag = "$($c.code) $(Pct $c.pct)"; color = $col; icon = $ic; text = "" }
   }
-  while ($seed.Count -lt 3) { $seed += [ordered]@{ tag = ""; icon = "📰"; dir = ""; text = "" } }
+  while ($seed.Count -lt 3) { $seed += [ordered]@{ tag = ""; color = "green"; icon = "newspaper"; text = "" } }
   $starter = [ordered]@{
-    _note = "ニュースカードは人が編集（CafeF等の事実を自分の言葉で1-2行・転載不可）。text内は **赤太字** と [[緑]] で強調可。±3%急変は雛形を自動生成済み。macro_labels は上昇/低下/横ばい等を手で（空なら前日比から自動判定）。"
+    _note = "日次の半自動・人編集枠。headline=今日のひとこと大見出し / lead=本文(配列=各行) / cards=きょうのポイント。cards: tag, color(green|red|gold|teal), icon(Bootstrap Icon名), text。text内は **赤太字** と [[緑強調]] が使える。空欄は render が interpret の自動生成で補完する。±3%急変は雛形を自動生成済み。"
+    headline = ""
+    lead = @()
     cards = @($seed)
-    macro_labels = [ordered]@{ vnd_jpy = ""; usd_vnd = ""; gold = ""; oil = "" }
   }
   $starter | ConvertTo-Json -Depth 6 | Set-Content -Path $newsFile -Encoding UTF8
   Write-Host ("  news.json 雛形を生成（要記入）: {0}" -f $newsFile) -ForegroundColor DarkYellow
