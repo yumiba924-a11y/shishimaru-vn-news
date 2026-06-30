@@ -178,7 +178,7 @@ $html = @"
       <div style="width:48px;height:2px;background:#B8922A;margin-bottom:11px;"></div>
       <div style="font-size:18px;font-weight:700;letter-spacing:.18em;color:#555;">今日のひとこと</div>
       <div style="font-size:39px;font-weight:900;color:#8B1A1A;line-height:1.22;margin:7px 0 11px;letter-spacing:-.01em;">$(Esc $headline)</div>
-      <div style="font-size:23px;line-height:1.95;color:#2A2A2A;font-weight:500;text-align:justify;text-align-last:justify;">
+      <div style="font-size:18px;line-height:1.9;color:#2A2A2A;font-weight:500;text-align:justify;text-align-last:justify;white-space:nowrap;">
         $leadHtml
       </div>
       <div style="position:absolute;right:-10px;top:52px;width:18px;height:18px;background:#fff;border-right:2px solid #00492C;border-top:2px solid #00492C;transform:rotate(45deg);"></div>
