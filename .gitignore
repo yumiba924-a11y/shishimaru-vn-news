@@ -5,6 +5,16 @@ outputs/*.pdf
 # base の参考スクショ・巨大な素HTML（docs/ に軽量版あり）
 base/*.png
 
+# 戦略・引き継ぎドキュメント（ローカルのみ・公開リポジトリに入れない）
+_handoff/
+
+# Claude Design へ渡す自己完結HTML（重い・一時生成物）
+ししまるベトナム新聞_最新.html
+ししまる*_最新.html
+
+# Word ファイル
+*.docx
+
 # 一時ファイル
 *.edge_profile/
 Thumbs.db
