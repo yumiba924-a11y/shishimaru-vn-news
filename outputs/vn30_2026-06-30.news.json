@@ -1,10 +1,10 @@
 {
-  "_note": "カード化（半自動）。news_raw の日本語要点 ＋ interpreted.json の正値から人/Claudeが作成。color=green|red|gold|teal、icon=Bootstrap名、text内 **赤太字** [[緑]]。",
-  "generated_by": "card-ization: Claude（news_raw＋dataから）",
-  "headline": "Vin反発も、内需安で小動き",
+  "_note": "候補から選定して確定（select_cards.ps1 で pick=1,2,6,3,4）。現データに合わせ微調整。",
+  "generated_by": "selected+aligned: pick=1,2,6,3,4",
+  "headline": "Vin反発、内需は重く小幅高",
   "lead": [
-    "VN-Indexは-0.1%とほぼ横ばい、前日急落のVICは反発し+1.2%",
-    "ただHOSEは値下がり164＞値上がり140と中身は重く、VNMなど内需が軟調",
+    "VN-Indexは+0.3%と小幅高、前日急落のVIC・VREが反発し牽引",
+    "ただ値上がり146・値下がり148とほぼ拮抗、VNMなど内需は重い",
     "7月のVN30入替・マージン規制が意識される一日"
   ],
   "cards": [
@@ -12,13 +12,19 @@
       "tag": "Vinが反発",
       "color": "green",
       "icon": "graph-up-arrow",
-      "text": "前日急落のVICが [[+1.2%]] と反発し不動産が持ち直す　Vingroupはビンホームズ株1,520万株を譲渡し出資比率を71%に整理、グループ再編が進む"
+      "text": "前日急落のVICが [[+1.3%]] と反発しVREも戻す　Vingroupはビンホームズ株1,520万株を譲渡し出資比率を71%に整理、再編が進む"
     },
     {
       "tag": "内需株に売り",
       "color": "red",
       "icon": "graph-down-arrow",
-      "text": "VNM **-2.3%**、DGC・HPG・STBも下落し消費・素材が軟調　指数は横ばいでもHOSEは値下がり164＞値上がり140と中身は重い"
+      "text": "VNM **-2.3%**、DGC **-2.1%**、HPGなど消費・素材が下落　小幅高でもHOSEは値上がり146・値下がり148と拮抗、中身は重い"
+    },
+    {
+      "tag": "金融に資金回帰",
+      "color": "green",
+      "icon": "bank",
+      "text": "銀行のTPB [[+1.5%]] や証券のSSIが上昇　小型銀行も増資・上場計画を手掛かりに買われ、内需安の裏で金融が物色された"
     },
     {
       "tag": "margin規制強化",
@@ -31,12 +37,6 @@
       "color": "teal",
       "icon": "arrow-repeat",
       "text": "7月のVN30定期見直しで**石油・ガス系の一角が除外候補**　VN30連動ETFは4本・計約1兆ドンあり、入替は資金フローに波及し得る"
-    },
-    {
-      "tag": "高成長を掲げる",
-      "color": "gold",
-      "icon": "graph-up",
-      "text": "政府は下半期GDP成長率 **11.9%** を掲げ通年二桁を狙う　高成長期待は株価の追い風だが、為替・金利との両立が課題"
     }
   ]
 }
