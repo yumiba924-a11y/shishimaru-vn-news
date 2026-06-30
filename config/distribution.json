@@ -6,9 +6,10 @@
     "daily": "https://yumiba924-a11y.github.io/shishimaru-vn-news/",
     "weekly": "https://yumiba924-a11y.github.io/shishimaru-vn-news/weekly.html"
   },
+  "_groups_note": "実際の配信先グループ名・アドレスは公開リポジトリに載せない（プライバシー）。当面は手動配信のため弓場さんが把握。将来の自動送信時は GitHub Secret 等で管理する。phaseは段階拡大の枠だけ残す。",
   "phases": [
-    { "name": "初期", "active": true,  "groups": [ { "label": "CAMフル", "alias": "" }, { "label": "CPVN", "alias": "" } ] },
-    { "name": "拡大1", "active": false, "groups": [ { "label": "CPS", "alias": "" }, { "label": "CFA", "alias": "" } ] }
+    { "name": "初期",  "active": true,  "groups": [] },
+    { "name": "拡大1", "active": false, "groups": [] }
   ],
   "disclaimer": "本紙はVNDirect等の無料データと現地報道（CafeF・VnExpress・The Investor・Vietstock 等）の要約に基づく社内・グループ内向け資料です。数値は非公式・概算、市況コメントは要約であり、投資判断はご自身の責任でお願いします。"
 }
