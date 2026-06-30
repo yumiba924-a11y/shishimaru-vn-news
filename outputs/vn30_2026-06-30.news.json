@@ -1,42 +1,42 @@
 {
-  "_note": "自動要約のデモ（Claude Code が要約器の役を実演。本番は summarize_news.ps1 が Claude API で同等生成）。color=green|red|gold|teal、icon=Bootstrap名、text内 **赤太字** [[緑]]。",
-  "generated_by": "demo: Claude Code (本番はAuto/Claude API)",
+  "_note": "カード化（半自動）。news_raw の日本語要点 ＋ interpreted.json の正値から人/Claudeが作成。color=green|red|gold|teal、icon=Bootstrap名、text内 **赤太字** [[緑]]。",
+  "generated_by": "card-ization: Claude（news_raw＋dataから）",
   "headline": "Vin反発も、内需安で小動き",
   "lead": [
     "VN-Indexは-0.1%とほぼ横ばい、前日急落のVICは反発し+1.2%",
-    "値下がり164＞値上がり140と中身は重く、VNMなど内需が軟調",
-    "7月のVN30入替とマージン規制が意識される一日"
+    "ただHOSEは値下がり164＞値上がり140と中身は重く、VNMなど内需が軟調",
+    "7月のVN30入替・マージン規制が意識される一日"
   ],
   "cards": [
     {
       "tag": "Vinが反発",
       "color": "green",
       "icon": "graph-up-arrow",
-      "text": "前日**権利落ち**で急落したVICが [[+1.2%]] と切り返し、SAB・HDB・SSIも上昇　値がさ株の戻りが指数を下支えした"
+      "text": "前日急落のVICが [[+1.2%]] と反発し不動産が持ち直す　Vingroupはビンホームズ株1,520万株を譲渡し出資比率を71%に整理、グループ再編が進む"
     },
     {
       "tag": "内需株に売り",
       "color": "red",
       "icon": "graph-down-arrow",
-      "text": "VNM **-2.3%**、DGC **-1.6%**、HPG **-1.3%** と消費・素材が下落　指数は横ばいでもHOSEは値下がり164＞値上がり140と中身は弱い"
+      "text": "VNM **-2.3%**、DGC・HPG・STBも下落し消費・素材が軟調　指数は横ばいでもHOSEは値下がり164＞値上がり140と中身は重い"
     },
     {
       "tag": "margin規制強化",
       "color": "gold",
       "icon": "shield-exclamation",
-      "text": "HOSEが6月末で**65銘柄を信用取引(margin)の対象外**に指定　レバレッジが効かなくなり、対象銘柄は短期の需給が悪化しやすい"
+      "text": "HOSEが6月末で**65銘柄を信用取引(margin)対象外**に指定　レバレッジが制限され、対象銘柄は短期の需給が悪化しやすい"
     },
     {
       "tag": "VN30入替が接近",
       "color": "teal",
       "icon": "arrow-repeat",
-      "text": "7月の定期見直しで**石油・ガス系の一角が除外候補**　VN30連動ETFは4本・計約1兆ドンあり、入替は資金フローに波及し得る"
+      "text": "7月のVN30定期見直しで**石油・ガス系の一角が除外候補**　VN30連動ETFは4本・計約1兆ドンあり、入替は資金フローに波及し得る"
     },
     {
-      "tag": "金が最高値圏",
+      "tag": "高成長を掲げる",
       "color": "gold",
-      "icon": "coin",
-      "text": "金が **4,000ドル台** に上昇し最高値圏　ドン建て資産の妙味が相対的に問われ、為替・金利の感応度が高まる局面"
+      "icon": "graph-up",
+      "text": "政府は下半期GDP成長率 **11.9%** を掲げ通年二桁を狙う　高成長期待は株価の追い風だが、為替・金利との両立が課題"
     }
   ]
 }
