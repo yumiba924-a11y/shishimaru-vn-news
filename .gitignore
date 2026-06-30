@@ -1,5 +1,4 @@
 # 再生成される重い静止版（HTMLとJSONは残す）
-outputs/*.png
 outputs/*.pdf
 
 # base の参考スクショ・巨大な素HTML（docs/ に軽量版あり）
