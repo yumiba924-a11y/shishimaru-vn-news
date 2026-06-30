@@ -27,10 +27,13 @@ try {
   Write-Host "`n[1/4] 取得・整形 (fetch_vn30.ps1)" -ForegroundColor Yellow
   & (Join-Path $here 'fetch_vn30.ps1')
 
-  Write-Host "`n[2/4] 解釈・今日の一言 (interpret.ps1)" -ForegroundColor Yellow
+  Write-Host "`n[2/5] 解釈・今日の一言 (interpret.ps1)" -ForegroundColor Yellow
   & (Join-Path $here 'interpret.ps1')
 
-  Write-Host "`n[3/4] 図解HTML生成 (render_zukai.ps1)" -ForegroundColor Yellow
+  Write-Host "`n[3/5] ニュース収集・無料翻訳 (collect_news.ps1)" -ForegroundColor Yellow
+  & (Join-Path $here 'collect_news.ps1')   # JP要点リスト(news_raw)。カード化は人/Claudeが後で
+
+  Write-Host "`n[4/5] 図解HTML生成 (render_zukai.ps1)" -ForegroundColor Yellow
   $htmlPath = & (Join-Path $here 'render_zukai.ps1') | Select-Object -Last 1
 
   Write-Host "`n[4/4] 静止版 書き出し (PNG / PDF)" -ForegroundColor Yellow
@@ -54,10 +57,15 @@ try {
     Write-Warning "  Edgeが見つからずPNG/PDFはスキップ（HTMLは生成済み）。"
   }
 
+  Write-Host "`n[5/5] 朝刊メール文面 (build_email.ps1)" -ForegroundColor Yellow
+  & (Join-Path $here 'build_email.ps1') | Out-Null
+
   Write-Host "`n===== 完了 =====" -ForegroundColor Green
   Write-Host "図解HTML: $htmlPath"
   if (Test-Path $png) { Write-Host "  PNG : $png" }
   if (Test-Path $pdf) { Write-Host "  PDF : $pdf" }
+  Write-Host "ニュース下書き: outputs\vn30_<日>.news_raw.txt（日本語の要点。カード化はnews.jsonへ）" -ForegroundColor DarkGray
+  Write-Host "メール文面: docs\email.html" -ForegroundColor DarkGray
   Write-Host "目視チェック → OKなら完了（半自動／弓場さんの判断を1回通す）。" -ForegroundColor DarkGray
 
   if ($Open -and $htmlPath -and (Test-Path $htmlPath)) { Invoke-Item $htmlPath }
