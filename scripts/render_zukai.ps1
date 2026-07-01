@@ -173,12 +173,12 @@ $html = @"
   </div>
 
   <!-- 今日のひとこと -->
-  <div style="position:relative;display:grid;grid-template-columns:1fr 318px;gap:0;align-items:center;padding:24px 32px 16px;background:linear-gradient(180deg,#FFFFFF,#FBFAF5);">
+  <div style="position:relative;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0;align-items:center;padding:24px 32px 16px;background:linear-gradient(180deg,#FFFFFF,#FBFAF5);">
     <div style="position:relative;background:#FFFFFF;border:2px solid #00492C;border-radius:2px;padding:22px 28px;box-shadow:0 6px 24px rgba(0,73,44,.10);z-index:2;">
       <div style="width:48px;height:2px;background:#B8922A;margin-bottom:11px;"></div>
       <div style="font-size:18px;font-weight:700;letter-spacing:.18em;color:#555;">今日のひとこと</div>
       <div style="font-size:39px;font-weight:900;color:#8B1A1A;line-height:1.22;margin:7px 0 11px;letter-spacing:-.01em;">$(Esc $headline)</div>
-      <div style="font-size:18px;line-height:1.9;color:#2A2A2A;font-weight:500;text-align:justify;text-align-last:justify;white-space:nowrap;">
+      <div style="font-size:18px;line-height:1.9;color:#2A2A2A;font-weight:500;text-align:justify;">
         $leadHtml
       </div>
       <div style="position:absolute;right:-10px;top:52px;width:18px;height:18px;background:#fff;border-right:2px solid #00492C;border-top:2px solid #00492C;transform:rotate(45deg);"></div>
