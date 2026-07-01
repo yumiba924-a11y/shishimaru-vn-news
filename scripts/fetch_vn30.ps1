@@ -61,6 +61,29 @@ function Get-HoseBreadth([string]$date) {
   } catch { return $null }
 }
 
+# 外国人売買フロー＋保有枠（foreigns）。指定日以前で最新の1件。失敗時は$null。
+#   net_val: 外国人ネット売買代金（十億VND、＋買い越し/−売り越し）
+#   total_room: 外国人保有上限（株数）  current_room: 残枠（買える株数）
+#   room_used_pct: 枠消化率（(total-current)/total）＝100に近いほど満杯＝買えない
+function Get-Foreign([string]$code, [string]$asof) {
+  try {
+    $r = Invoke-Json "https://api-finfo.vndirect.com.vn/v4/foreigns?q=code:${code}&sort=tradingDate:desc&size=5"
+    if (-not $r.data) { return $null }
+    $d = ($r.data | Where-Object { $_.tradingDate -le $asof } | Select-Object -First 1)
+    if (-not $d) { $d = $r.data[0] }
+    $tr = [double]$d.totalRoom; $cr = [double]$d.currentRoom
+    [ordered]@{
+      date         = $d.tradingDate
+      net_val      = [math]::Round([double]$d.netVal / 1e9, 2)
+      buy_val      = [math]::Round([double]$d.buyVal / 1e9, 2)
+      sell_val     = [math]::Round([double]$d.sellVal / 1e9, 2)
+      total_room   = [long]$tr
+      current_room = [long]$cr
+      room_used_pct = if ($tr -gt 0) { [math]::Round(($tr - $cr) / $tr * 100, 1) } else { $null }
+    }
+  } catch { return $null }
+}
+
 # --- 設定読み込み ------------------------------------------------------------
 if (-not (Test-Path $ConfigPath)) { throw "設定ファイルが見つかりません: $ConfigPath" }
 $cfg      = Get-Content $ConfigPath -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -104,6 +127,7 @@ $stocks = foreach ($code in $tickers) {
     close = [math]::Round([double]$r.close, 2); change = [math]::Round([double]$r.change, 2)
     pct = [math]::Round([double]$r.pctChange, 2); ref = [math]::Round([double]$r.close - [double]$r.change, 2)
     volume = [long]$r.nmVolume; date = $r.date; prev_date = $prevDate
+    foreign = (Get-Foreign $code $asof)
   }
 }
 
