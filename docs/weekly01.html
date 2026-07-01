@@ -107,6 +107,13 @@
   .footer .disc{font-size:12.5px;color:rgba(255,255,255,.44);line-height:1.85;margin-top:16px;}
   .footer .brand{color:rgba(255,255,255,.5);font-family:var(--sans-en);letter-spacing:.12em;font-size:14px;margin-top:16px;}
 
+  /* 3つのPOINT（大和AM型） */
+  .points{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:12px;}
+  .pcard{padding:14px 0 4px;border-top:3px solid var(--gold);}
+  .pnum{font-family:var(--sans-en);font-weight:800;font-size:58px;line-height:1;color:var(--gold);letter-spacing:-.02em;}
+  .ph{font-family:var(--mincho);font-weight:700;font-size:23px;color:var(--green-dark);margin:12px 0 10px;line-height:1.4;}
+  .pt{font-size:16px;line-height:1.85;color:var(--mid);}
+
   /* 大きな数字（iFree寄せ・記念碑的） */
   .bigstat{display:flex;align-items:center;gap:38px;flex-wrap:wrap;margin:4px 0 28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.15);}
   .bigstat-num{font-family:var(--mincho);font-weight:800;font-size:112px;line-height:.86;color:var(--gold);}
@@ -129,6 +136,7 @@
     .barbell{grid-template-columns:1fr;} .bcard h4{font-size:21px;} .bcard p{font-size:16px;}
     .mtable{font-size:15px;} .callout .big{font-size:21px;} .callout p{font-size:16px;}
     .risk li{font-size:16px;}
+    .points{grid-template-columns:1fr;gap:20px;} .pnum{font-size:46px;} .ph{font-size:20px;} .pt{font-size:15px;}
     .bigstat-num{font-size:66px;} .bigstat-num span{font-size:28px;} .bigstat-cap{font-size:16px;}
     .exvin-num{font-size:60px;} .exvin-num span{font-size:24px;} .exvin-txt{font-size:16px;}
     .crow{grid-template-columns:1fr auto;grid-template-areas:"l v" "b b";row-gap:8px;}
@@ -157,6 +165,29 @@
     </div>
   </div></div>
 </div>
+
+<!-- ═════ 3つのPOINT ═════ -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">3 Points ｜ 要点</div>
+  <div class="s-title">この一社を、3つの視点で読む</div>
+  <div class="points">
+    <div class="pcard">
+      <div class="pnum">01</div>
+      <div class="ph">指数を背負う「帝国」</div>
+      <div class="pt jp">VN-Indexの約29%を占める最大の構成銘柄群。VIC一社で指数の約2割。ベトナム株＝Vinの動向、と言い切れる。</div>
+    </div>
+    <div class="pcard">
+      <div class="pnum">02</div>
+      <div class="ph">稼ぐ不動産、燃えるEV</div>
+      <div class="pt jp">利益本体のヴィンホームズ（黒字）と、going-concernのヴィンファスト（大赤字）。両端に振れたバーベル構造。</div>
+    </div>
+    <div class="pcard">
+      <div class="pnum">03</div>
+      <div class="ph">枠は空、外資が来る</div>
+      <div class="pt jp">外国人枠は消化6.6%とガラ空き。FTSE昇格（2026/9/21）でパッシブ資金の最大受益と目される。</div>
+    </div>
+  </div>
+</section>
 
 <!-- ═════ 企業クエスト本文 ═════ -->
 <section>
