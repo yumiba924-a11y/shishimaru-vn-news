@@ -63,6 +63,13 @@ $body = @"
   <p>前営業日（$asofLabel）のベトナム相場をお届けする朝刊、<b style="color:#00492C;">ししまるベトナム新聞</b>です。<br>
   本日の見出しは <b style="color:#8B1A1A;">「$headline」</b>。$lead1。</p>
 
+  <div style="background:#FFF7E6;border:1px solid #E0A800;border-left:5px solid #E0A800;border-radius:4px;padding:12px 14px;font-size:13px;color:#7A5C00;line-height:1.75;margin:16px 0;">
+    <b style="color:#B36B00;font-size:14px;">⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本紙は <b>Claude（生成AI）が自動作成している試みの段階の試作品</b>です。無料データと機械翻訳をもとにした気軽な試験運用のため、<b>数値・銘柄名・固有名詞などに誤り（誤情報）を含む可能性</b>があります。ご参考程度にご覧ください。<br>
+    また試験運用につき、<b>予告なく内容の変更・配信の停止・そのまま終了</b>となる場合があります。<br>
+    <b style="color:#B00020;">本紙は社内・グループ内限定です。顧客・社外の方への転送／配布は固くお断りします。</b> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+
   <p style="margin:18px 0;">$imgTag</p>
 
   <p style="font-size:14px;">
