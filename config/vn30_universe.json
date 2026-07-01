@@ -25,7 +25,7 @@
     { "code": "BCM", "sector": "不動産",     "name_ja": "ベカメックス",       "shares": 1035000000 },
     { "code": "BID", "sector": "銀行",       "name_ja": "ベトナム投資開発銀行", "shares": 7021361917 },
     { "code": "CTG", "sector": "銀行",       "name_ja": "ベトナム工商銀行",   "shares": 7766944637 },
-    { "code": "DGC", "sector": "素材",       "name_ja": "ドゥックザン化学",   "shares": 379778413 },
+    { "code": "LPB", "sector": "銀行",       "name_ja": "LPバンク",           "shares": 2987282100 },
     { "code": "FPT", "sector": "IT",         "name_ja": "FPT",                "shares": 1703507121 },
     { "code": "GAS", "sector": "エネルギー", "name_ja": "ペトロベトナムガス", "shares": 2412949756 },
     { "code": "GVR", "sector": "素材",       "name_ja": "ベトナムゴム",       "shares": 4000000000 },

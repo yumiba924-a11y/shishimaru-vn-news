@@ -9,7 +9,7 @@
   ],
   "candidates": [
     { "id": 1, "kind": "ミクロ", "tag": "Vinが反発",        "color": "green", "icon": "graph-up-arrow",   "text": "前日急落のVICが [[+1.2%]] と反発し不動産が持ち直す　Vingroupはビンホームズ株1,520万株を譲渡し出資比率を71%に整理、再編が進む" },
-    { "id": 2, "kind": "ミクロ", "tag": "内需株に売り",      "color": "red",   "icon": "graph-down-arrow", "text": "VNM **-2.3%**、DGC・HPG・STBも下落し消費・素材が軟調　指数は横ばいでもHOSEは値下がり164＞値上がり140と中身は重い" },
+    { "id": 2, "kind": "ミクロ", "tag": "内需株に売り",      "color": "red",   "icon": "graph-down-arrow", "text": "VNM **-2.3%**、HPG・MWG・STBも下落し消費・素材が軟調　小幅高でもHOSEは値上がり146・値下がり148と中身は重い" },
     { "id": 3, "kind": "マクロ", "tag": "margin規制強化",    "color": "gold",  "icon": "shield-exclamation","text": "HOSEが6月末で**65銘柄を信用取引(margin)対象外**に指定　レバレッジが制限され、対象銘柄は短期の需給が悪化しやすい" },
     { "id": 4, "kind": "マクロ", "tag": "VN30入替が接近",    "color": "teal",  "icon": "arrow-repeat",     "text": "7月のVN30定期見直しが近づく　現地報道では**一部銘柄の除外観測**もあり、構成変更はVN30連動ETFの資金フローを通じて需給に影響し得る" },
     { "id": 5, "kind": "マクロ", "tag": "高成長を掲げる",    "color": "gold",  "icon": "graph-up",         "text": "政府は下半期GDP成長率 **11.9%** を掲げ通年二桁を狙う　高成長期待は株価の追い風だが、為替・金利との両立が課題" },

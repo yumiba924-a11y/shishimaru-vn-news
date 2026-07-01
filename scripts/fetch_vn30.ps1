@@ -52,9 +52,11 @@ function Get-HoseBreadth([string]$date) {
     $codes = ($list | Select-Object -Unique) -join ","
     $r = Invoke-Json "https://api-finfo.vndirect.com.vn/v4/stock_prices?sort=date:desc&q=code:${codes}~date:${date}&size=700"
     if (-not $r.data) { return $null }
-    $up = ($r.data | Where-Object { [double]$_.pctChange -gt 0 }).Count
-    $dn = ($r.data | Where-Object { [double]$_.pctChange -lt 0 }).Count
-    $fl = ($r.data | Where-Object { [double]$_.pctChange -eq 0 }).Count
+    # 実際に売買が成立した銘柄のみ集計（出来高ゼロ＝未取引を「変わらず」に数え込まない）
+    $traded = $r.data | Where-Object { [double]$_.nmVolume -gt 0 }
+    $up = ($traded | Where-Object { [double]$_.pctChange -gt 0 }).Count
+    $dn = ($traded | Where-Object { [double]$_.pctChange -lt 0 }).Count
+    $fl = ($traded | Where-Object { [double]$_.pctChange -eq 0 }).Count
     [ordered]@{ up = $up; down = $dn; flat = $fl; total = ($up + $dn + $fl) }
   } catch { return $null }
 }

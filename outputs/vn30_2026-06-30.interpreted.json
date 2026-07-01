@@ -124,8 +124,8 @@
   "hose_breadth": {
     "up": 146,
     "down": 148,
-    "flat": 108,
-    "total": 402
+    "flat": 74,
+    "total": 368
   },
   "by_sector": [
     {
@@ -586,18 +586,18 @@
       "weight": 0.03213
     },
     {
-      "code": "DGC",
-      "sector": "素材",
-      "close": 47.8,
-      "change": -1.0,
-      "pct": -2.05,
-      "ref": 48.8,
-      "volume": 612800,
+      "code": "LPB",
+      "sector": "銀行",
+      "close": 53.5,
+      "change": -1.2,
+      "pct": -2.19,
+      "ref": 54.7,
+      "volume": 2026200,
       "date": "2026-06-30",
       "prev_date": "2026-06-29",
-      "shares": 379778413,
-      "mcap_t": 18.2,
-      "weight": 0.00296
+      "shares": 2987282100,
+      "mcap_t": 159.8,
+      "weight": 0.0254
     },
     {
       "code": "VNM",
