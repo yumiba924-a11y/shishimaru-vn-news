@@ -1,6 +1,6 @@
 {
   "_note": "候補から選定して確定（select_cards.ps1）。元: candidates.json。",
-  "generated_by": "selected: pick=1,2,3,4,5",
+  "generated_by": "selected: pick=1,2,3,4,6",
   "headline": "Vin反発、内需・銀行は重く小幅高",
   "lead": [
     "VN-Indexは+0.27%（1,860.01）と小幅高、前日急落のVIC・VREが反発し牽引",
@@ -33,10 +33,10 @@
       "text": "HOSEが6月末で**65銘柄を信用取引(margin)対象外**に指定　レバレッジが制限され、対象銘柄は短期の需給が悪化しやすい"
     },
     {
-      "tag": "VN30入替が接近",
-      "color": "teal",
-      "icon": "arrow-repeat",
-      "text": "7月のVN30定期見直しが近づく　現地報道では**一部銘柄の除外観測**もあり、構成変更はVN30連動ETFの資金フローを通じて需給に影響し得る"
+      "tag": "高成長を掲げる",
+      "color": "gold",
+      "icon": "graph-up",
+      "text": "政府は下半期GDP成長率 **11.9%** を掲げ通年二桁を狙う　高成長期待は株価の追い風だが、為替・金利との両立が課題"
     }
   ]
 }
