@@ -151,6 +151,21 @@
   .plan .eyebrow{color:var(--gold);}.plan .eyebrow::before{background:var(--gold);}
   .plan .s-title{color:#fff;}
 
+  /* 注目銘柄（VN30 週間寄与度） */
+  .contrib{margin-top:34px;border-top:1px solid var(--border);padding-top:26px;}
+  .contrib-h{font-family:var(--sans-en);font-size:14px;letter-spacing:.1em;color:var(--light);margin-bottom:14px;}
+  .contrib-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+  .cdir{font-size:15px;font-weight:700;margin-bottom:6px;}
+  .ci{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--border);font-size:18px;}
+  .ci .tk{font-weight:700;}
+  .ci .pt{font-family:var(--sans-en);font-weight:700;}
+  .ci .pt.pos{color:var(--up);} .ci .pt.neg{color:var(--down);}
+  .spotlight{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;}
+  .sp{background:var(--cream);border-left:3px solid var(--green);padding:18px 22px;}
+  .sp.dn{border-left-color:var(--vn-red);}
+  .sp h5{font-family:var(--mincho);font-size:20px;margin-bottom:6px;}
+  .sp p{font-size:16px;line-height:1.7;color:var(--mid);text-align:justify;}
+
   /* 免責 */
   .footer{background:var(--green-dark);padding:40px 64px;}
   .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:15px 18px;font-size:14px;color:rgba(255,255,255,.8);line-height:1.8;}
@@ -228,6 +243,7 @@
 <section>
   <div class="eyebrow">Market Recap ｜ 先週の相場（6/29–7/3）</div>
   <div class="s-title">続伸も、上げ幅は銀行頼み <span class="fake" style="font-size:16px">※数字は仮サンプル</span></div>
+  <div class="lead jp">先週のVN-Indexは週間<strong>+1.4%</strong>と続伸。だが上げ幅は<strong>大手銀行とVin御三家頼み</strong>で、内需・エネルギーは重い。指数は上げても「一部主導」の色が濃い一週間だった。</div>
   <div class="weekwrap">
     <div>
       <div class="wk-kpi"><div class="l">VN-Index 週間騰落</div><div class="v pos">+1.4%</div></div>
@@ -251,7 +267,28 @@
       <div class="secrow"><div class="secname">エネルギー</div><div class="secbar"><i class="neg" style="width:12%;right:50%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−1.2%</div></div>
     </div>
   </div>
-  <div class="src">※本番は6/29–7/3のVNDirect実測（VN-Index日次・HOSE騰落・VN30セクター集計）で自動生成。上記は仮サンプル。</div>
+  <div class="contrib">
+    <div class="contrib-h">注目銘柄 ― VN30 週間寄与度（指数を動かした主役）※仮サンプル</div>
+    <div class="contrib-grid">
+      <div>
+        <div class="cdir" style="color:var(--up)">▲ 押し上げ 上位</div>
+        <div class="ci"><span class="tk">VCB ｜ ベトコムバンク</span><span class="pt pos">+3.1pt</span></div>
+        <div class="ci"><span class="tk">TCB ｜ テクコムバンク</span><span class="pt pos">+1.8pt</span></div>
+        <div class="ci"><span class="tk">VIC ｜ ビングループ</span><span class="pt pos">+1.2pt</span></div>
+      </div>
+      <div>
+        <div class="cdir" style="color:var(--down)">▼ 押し下げ 下位</div>
+        <div class="ci"><span class="tk">VHM ｜ ヴィンホームズ</span><span class="pt neg">−2.4pt</span></div>
+        <div class="ci"><span class="tk">GAS ｜ ペトロベトナムガス</span><span class="pt neg">−0.9pt</span></div>
+        <div class="ci"><span class="tk">VNM ｜ ビナミルク</span><span class="pt neg">−0.7pt</span></div>
+      </div>
+    </div>
+    <div class="spotlight">
+      <div class="sp"><h5>VCB ― 今週いちばん指数を押し上げた</h5><p class="jp">格上げ観測と好決算期待で買われた銀行最大手。ウェイトが大きく、単独で週間寄与のトップに。銀行セクター上昇の牽引役。</p></div>
+      <div class="sp dn"><h5>VHM ― 今週いちばん指数を抑えた</h5><p class="jp">記録的配当の権利落ち後に反落。時価総額が大きいぶん、下げがそのまま指数最大の重しとなった。</p></div>
+    </div>
+  </div>
+  <div class="src">※本番は6/29–7/3のVNDirect実測（VN-Index日次・HOSE騰落・VN30セクター・週間寄与度＝Σ日次weight×pct）で自動生成。上記は仮サンプル。</div>
 </section>
 
 <!-- ④ 集中度モニター＋Ex-Vin（実測） -->
