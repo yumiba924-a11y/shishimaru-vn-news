@@ -1,6 +1,6 @@
 {
   "as_of": "2026-06-30",
-  "generated_at": "2026-07-01T08:27:02",
+  "generated_at": "2026-07-01T01:40:26",
   "data_age_days": 1,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
@@ -151,10 +151,10 @@
     },
     {
       "sector": "銀行",
-      "count": 13,
-      "avg_pct": -0.11,
+      "count": 14,
+      "avg_pct": -0.26,
       "up": 6,
-      "down": 6
+      "down": 7
     },
     {
       "sector": "IT",
@@ -171,18 +171,18 @@
       "down": 1
     },
     {
+      "sector": "素材",
+      "count": 2,
+      "avg_pct": -0.44,
+      "up": 1,
+      "down": 1
+    },
+    {
       "sector": "エネルギー",
       "count": 3,
       "avg_pct": -0.63,
       "up": 0,
       "down": 3
-    },
-    {
-      "sector": "素材",
-      "count": 3,
-      "avg_pct": -0.97,
-      "up": 1,
-      "down": 2
     },
     {
       "sector": "小売",
@@ -205,7 +205,7 @@
       "prev_date": "2026-06-29",
       "shares": 2774046873,
       "mcap_t": 46.0,
-      "weight": 0.00752
+      "weight": 0.00735
     },
     {
       "code": "VIC",
@@ -219,7 +219,7 @@
       "prev_date": "2026-06-29",
       "shares": 7706031024,
       "mcap_t": 1695.3,
-      "weight": 0.2769
+      "weight": 0.27063
     },
     {
       "code": "VRE",
@@ -233,7 +233,7 @@
       "prev_date": "2026-06-29",
       "shares": 2272318410,
       "mcap_t": 64.8,
-      "weight": 0.01058
+      "weight": 0.01034
     },
     {
       "code": "SAB",
@@ -247,7 +247,7 @@
       "prev_date": "2026-06-29",
       "shares": 1282562372,
       "mcap_t": 62.2,
-      "weight": 0.01016
+      "weight": 0.00993
     },
     {
       "code": "VHM",
@@ -261,7 +261,7 @@
       "prev_date": "2026-06-29",
       "shares": 4107412004,
       "mcap_t": 623.5,
-      "weight": 0.10184
+      "weight": 0.09953
     },
     {
       "code": "GVR",
@@ -275,7 +275,7 @@
       "prev_date": "2026-06-29",
       "shares": 4000000000,
       "mcap_t": 131.2,
-      "weight": 0.02143
+      "weight": 0.02094
     },
     {
       "code": "SSI",
@@ -289,7 +289,7 @@
       "prev_date": "2026-06-29",
       "shares": 2906280710,
       "mcap_t": 77.7,
-      "weight": 0.0127
+      "weight": 0.01241
     },
     {
       "code": "VJC",
@@ -303,7 +303,7 @@
       "prev_date": "2026-06-29",
       "shares": 769094734,
       "mcap_t": 107.3,
-      "weight": 0.01752
+      "weight": 0.01713
     },
     {
       "code": "MBB",
@@ -317,7 +317,7 @@
       "prev_date": "2026-06-29",
       "shares": 8054999909,
       "mcap_t": 203.0,
-      "weight": 0.03315
+      "weight": 0.0324
     },
     {
       "code": "VCB",
@@ -331,7 +331,7 @@
       "prev_date": "2026-06-29",
       "shares": 8355675094,
       "mcap_t": 519.7,
-      "weight": 0.08489
+      "weight": 0.08297
     },
     {
       "code": "SSB",
@@ -345,7 +345,7 @@
       "prev_date": "2026-06-29",
       "shares": 3428800000,
       "mcap_t": 55.5,
-      "weight": 0.00907
+      "weight": 0.00887
     },
     {
       "code": "HDB",
@@ -359,7 +359,7 @@
       "prev_date": "2026-06-29",
       "shares": 5005276323,
       "mcap_t": 129.4,
-      "weight": 0.02113
+      "weight": 0.02065
     },
     {
       "code": "BCM",
@@ -373,7 +373,7 @@
       "prev_date": "2026-06-29",
       "shares": 1035000000,
       "mcap_t": 54.2,
-      "weight": 0.00886
+      "weight": 0.00866
     },
     {
       "code": "CTG",
@@ -387,7 +387,7 @@
       "prev_date": "2026-06-29",
       "shares": 7766944637,
       "mcap_t": 263.7,
-      "weight": 0.04307
+      "weight": 0.04209
     },
     {
       "code": "BID",
@@ -401,7 +401,7 @@
       "prev_date": "2026-06-29",
       "shares": 7021361917,
       "mcap_t": 297.7,
-      "weight": 0.04862
+      "weight": 0.04752
     },
     {
       "code": "MSN",
@@ -415,7 +415,7 @@
       "prev_date": "2026-06-29",
       "shares": 1445915457,
       "mcap_t": 104.3,
-      "weight": 0.01703
+      "weight": 0.01664
     },
     {
       "code": "VPB",
@@ -429,7 +429,7 @@
       "prev_date": "2026-06-29",
       "shares": 7933923601,
       "mcap_t": 214.2,
-      "weight": 0.03499
+      "weight": 0.0342
     },
     {
       "code": "FPT",
@@ -443,7 +443,7 @@
       "prev_date": "2026-06-29",
       "shares": 1703507121,
       "mcap_t": 119.6,
-      "weight": 0.01953
+      "weight": 0.01909
     },
     {
       "code": "VIB",
@@ -457,7 +457,7 @@
       "prev_date": "2026-06-29",
       "shares": 3404005710,
       "mcap_t": 56.2,
-      "weight": 0.00917
+      "weight": 0.00897
     },
     {
       "code": "SHB",
@@ -471,7 +471,7 @@
       "prev_date": "2026-06-29",
       "shares": 4884333454,
       "mcap_t": 66.2,
-      "weight": 0.01081
+      "weight": 0.01057
     },
     {
       "code": "GAS",
@@ -485,7 +485,7 @@
       "prev_date": "2026-06-29",
       "shares": 2412949756,
       "mcap_t": 186.8,
-      "weight": 0.0305
+      "weight": 0.02981
     },
     {
       "code": "POW",
@@ -499,7 +499,7 @@
       "prev_date": "2026-06-29",
       "shares": 3067845688,
       "mcap_t": 45.1,
-      "weight": 0.00737
+      "weight": 0.0072
     },
     {
       "code": "PLX",
@@ -513,7 +513,7 @@
       "prev_date": "2026-06-29",
       "shares": 1270592235,
       "mcap_t": 46.9,
-      "weight": 0.00767
+      "weight": 0.00749
     },
     {
       "code": "TCB",
@@ -527,7 +527,7 @@
       "prev_date": "2026-06-29",
       "shares": 7086240414,
       "mcap_t": 237.4,
-      "weight": 0.03877
+      "weight": 0.0379
     },
     {
       "code": "ACB",
@@ -541,7 +541,7 @@
       "prev_date": "2026-06-29",
       "shares": 5804421957,
       "mcap_t": 131.5,
-      "weight": 0.02147
+      "weight": 0.02099
     },
     {
       "code": "MWG",
@@ -555,7 +555,7 @@
       "prev_date": "2026-06-29",
       "shares": 1468423529,
       "mcap_t": 114.7,
-      "weight": 0.01873
+      "weight": 0.01831
     },
     {
       "code": "STB",
@@ -569,7 +569,7 @@
       "prev_date": "2026-06-29",
       "shares": 1885215716,
       "mcap_t": 139.1,
-      "weight": 0.02272
+      "weight": 0.02221
     },
     {
       "code": "HPG",
@@ -583,7 +583,7 @@
       "prev_date": "2026-06-29",
       "shares": 8442964520,
       "mcap_t": 196.7,
-      "weight": 0.03213
+      "weight": 0.0314
     },
     {
       "code": "LPB",
@@ -597,7 +597,7 @@
       "prev_date": "2026-06-29",
       "shares": 2987282100,
       "mcap_t": 159.8,
-      "weight": 0.0254
+      "weight": 0.02551
     },
     {
       "code": "VNM",
@@ -611,22 +611,22 @@
       "prev_date": "2026-06-29",
       "shares": 2089955445,
       "mcap_t": 114.5,
-      "weight": 0.01871
+      "weight": 0.01828
     }
   ],
   "macro": {
     "usd_vnd": {
-      "value": 26201.0,
+      "value": 26256.0,
       "live": true,
       "src": "open.er-api.com"
     },
     "vnd_jpy": {
-      "value": 161.8,
+      "value": 161.6,
       "live": true,
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4011.0,
+      "value": 3977.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -635,31 +635,31 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-07-01T08:27:01"
+    "fetched": "2026-07-01T01:40:25"
   },
   "interpretation": {
     "headline": "VIC主導で指数下落",
-    "summary": "VICが指数を約0.4pt押し上げ、不動産主導で下落。押し下げは素材(0.0pt)どまり。",
+    "summary": "VICが指数を約0.3pt押し上げ、不動産主導で下落。押し下げは銀行(-0.1pt)どまり。",
     "tone": "down",
     "result": "下落",
     "contribution": {
       "index": "VN30",
       "note": "概算寄与度（単純時価総額ウェイト。正式VN30ウェイトとはズレる）",
-      "push_up": 0.58,
-      "push_down": -0.25,
-      "net": 0.33,
+      "push_up": 0.57,
+      "push_down": -0.3,
+      "net": 0.27,
       "top_up": [
         {
           "code": "VIC",
           "sector": "不動産",
           "pct": 1.29,
-          "contrib": 0.357
+          "contrib": 0.349
         },
         {
           "code": "VHM",
           "sector": "不動産",
           "pct": 1.0,
-          "contrib": 0.102
+          "contrib": 0.1
         },
         {
           "code": "VCB",
@@ -682,49 +682,49 @@
       ],
       "top_down": [
         {
+          "code": "LPB",
+          "sector": "銀行",
+          "pct": -2.19,
+          "contrib": -0.056
+        },
+        {
           "code": "HPG",
           "sector": "素材",
           "pct": -1.48,
-          "contrib": -0.048
+          "contrib": -0.046
         },
         {
           "code": "VNM",
           "sector": "消費財",
           "pct": -2.32,
-          "contrib": -0.043
+          "contrib": -0.042
         },
         {
           "code": "TCB",
           "sector": "銀行",
           "pct": -0.89,
-          "contrib": -0.035
+          "contrib": -0.034
         },
         {
           "code": "STB",
           "sector": "銀行",
           "pct": -1.47,
           "contrib": -0.033
-        },
-        {
-          "code": "ACB",
-          "sector": "銀行",
-          "pct": -1.09,
-          "contrib": -0.023
         }
       ],
       "by_sector": [
         {
           "sector": "不動産",
-          "contrib": 0.47,
+          "contrib": 0.46,
           "count": 4
         },
         {
-          "sector": "運輸",
+          "sector": "証券",
           "contrib": 0.01,
           "count": 1
         },
         {
-          "sector": "証券",
+          "sector": "運輸",
           "contrib": 0.01,
           "count": 1
         },
@@ -749,14 +749,14 @@
           "count": 3
         },
         {
-          "sector": "銀行",
-          "contrib": -0.04,
-          "count": 13
+          "sector": "素材",
+          "contrib": -0.03,
+          "count": 2
         },
         {
-          "sector": "素材",
-          "contrib": -0.04,
-          "count": 3
+          "sector": "銀行",
+          "contrib": -0.09,
+          "count": 14
         }
       ]
     },
