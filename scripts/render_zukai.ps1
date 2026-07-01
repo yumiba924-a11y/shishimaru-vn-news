@@ -131,7 +131,7 @@ $html = @"
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=1080">
 <title>ししまるベトナム新聞</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
@@ -139,7 +139,7 @@ $html = @"
 </style>
 </head>
 <body>
-<div style="background:#E9E5DA;padding:28px 16px;display:flex;justify-content:center;">
+<div style="background:#E9E5DA;padding:28px 0;display:flex;justify-content:center;">
 <div style="width:1080px;max-width:100%;background:#FFFFFF;border-radius:2px;overflow:hidden;box-shadow:0 18px 50px rgba(0,73,44,.14);">
 
   <!-- MASTHEAD -->
