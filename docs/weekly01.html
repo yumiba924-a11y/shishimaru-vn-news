@@ -12,7 +12,7 @@
     --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
     --cream:#FAF8F2; --cream-dark:#F0EBE0; --dark:#111; --mid:#333; --light:#5F5F5F;
     --up:#00A86B; --down:#DA251D; --border:rgba(0,73,44,.12);
-    --inner:1180px;
+    --inner:1300px; --pad:clamp(22px,4vw,64px);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{background:#fff;}
@@ -23,12 +23,12 @@
   .hero{position:relative;width:100%;height:clamp(600px,94vh,1080px);overflow:hidden;background:#0b2a1c;}
   .hero-img{position:absolute;inset:0;background:url('weekly_assets/cover_vingroup.jpg') center 40%/cover no-repeat;}
   .hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,30,20,.34) 0%,rgba(0,30,20,0) 24%,rgba(0,30,20,.10) 50%,rgba(0,25,16,.88) 100%);}
-  .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:clamp(20px,3vw,34px) clamp(22px,4vw,64px);max-width:1600px;margin:0 auto;}
+  .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:clamp(20px,3vw,34px) var(--pad);max-width:var(--inner);margin:0 auto;}
   .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:clamp(11px,1.2vw,15px);line-height:1.5;opacity:.92;}
   .hero-brand b{color:var(--gold);font-weight:700;}
   .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.1em;font-size:clamp(12px,1.2vw,16px);border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:7px 15px;border-radius:2px;white-space:nowrap;}
-  .hero-body{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 clamp(22px,4vw,64px) clamp(34px,5vw,64px);}
-  .hero-inner{max-width:1600px;margin:0 auto;}
+  .hero-body{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 0 clamp(34px,5vw,64px);}
+  .hero-inner{max-width:var(--inner);margin:0 auto;padding:0 var(--pad);}
   .hero-quest{font-family:var(--sans-en);letter-spacing:.32em;font-size:clamp(12px,1.5vw,19px);color:var(--gold);margin-bottom:clamp(12px,1.6vw,20px);display:flex;align-items:center;gap:14px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
   .hero-quest::before{content:"";width:clamp(28px,4vw,44px);height:2px;background:var(--gold);flex-shrink:0;}
   .hero-title{font-family:var(--mincho);font-weight:900;font-size:clamp(40px,8vw,108px);line-height:1.03;color:#fff;letter-spacing:.01em;text-shadow:0 3px 26px rgba(0,0,0,.6),0 1px 4px rgba(0,0,0,.5);}
@@ -41,8 +41,8 @@
   .hk-v .g{color:var(--gold);}
 
   /* ── SECTION 共通（背景フルブリード・中身は中央max-width） ── */
-  section{padding:clamp(46px,6vw,82px) clamp(22px,5vw,64px);}
-  section>*{max-width:var(--inner);margin-left:auto;margin-right:auto;}
+  section{padding:clamp(46px,6vw,82px) 0;}
+  section>*{max-width:var(--inner);margin-left:auto;margin-right:auto;padding-left:var(--pad);padding-right:var(--pad);}
   .eyebrow{font-family:var(--sans-en);letter-spacing:.26em;font-size:clamp(12px,1.3vw,16px);color:var(--green);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
   .eyebrow::before{content:"";width:30px;height:2px;background:var(--gold);flex-shrink:0;}
   .s-title{font-family:var(--mincho);font-weight:700;font-size:clamp(26px,3.6vw,44px);line-height:1.18;color:var(--green-dark);margin-bottom:clamp(20px,2.4vw,32px);}
@@ -96,8 +96,8 @@
   .risk li::before{content:"";position:absolute;left:0;top:22px;width:9px;height:9px;background:var(--vn-red);border-radius:50%;}
 
   /* 免責 */
-  .footer{background:var(--green-dark);padding:clamp(30px,4vw,44px) clamp(22px,5vw,64px);}
-  .footer>*{max-width:var(--inner);margin-left:auto;margin-right:auto;}
+  .footer{background:var(--green-dark);padding:clamp(30px,4vw,44px) 0;}
+  .footer>*{max-width:var(--inner);margin-left:auto;margin-right:auto;padding-left:var(--pad);padding-right:var(--pad);}
   .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:14px 18px;font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.78);line-height:1.75;}
   .footer .warn b{color:var(--gold);}
   .footer .warn .red{color:#ff8a8a;}
