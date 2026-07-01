@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Vietnam Weekly ― 企業クエスト① Vingroup</title>
+<style>
+  :root{
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","ＭＳ 明朝",serif;
+    --gothic:"Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+    --sans-en:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
+    --cream:#FAF8F2; --cream-dark:#F0EBE0; --dark:#111; --mid:#333; --light:#5F5F5F;
+    --up:#00A86B; --down:#DA251D; --border:rgba(0,73,44,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:var(--mincho);background:#fff;color:var(--dark);width:1080px;}
+  .num{font-family:var(--sans-en);letter-spacing:-.01em;}
+
+  /* HERO ― 表紙（写真ドカン＋下に見出し） */
+  .hero{position:relative;height:1180px;overflow:hidden;background:#0b2a1c;}
+  .hero-img{position:absolute;inset:0;background:url('file:///C:/Users/Shogo.Yumiba/Desktop/VN30新聞/weekly_covers/cover_vingroup.jpg') center 38%/cover no-repeat;}
+  .hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,30,20,.30) 0%,rgba(0,30,20,0) 26%,rgba(0,30,20,.10) 52%,rgba(0,25,16,.86) 100%);}
+  .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:30px 60px;}
+  .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:15px;line-height:1.5;opacity:.9;}
+  .hero-brand b{color:var(--gold);font-weight:700;}
+  .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.1em;font-size:16px;border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:7px 16px;border-radius:2px;}
+  .hero-body{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 64px 60px;}
+  .hero-quest{font-family:var(--sans-en);letter-spacing:.34em;font-size:19px;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:16px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hero-quest::before{content:"";width:44px;height:2px;background:var(--gold);}
+  .hero-title{font-family:var(--mincho);font-weight:900;font-size:104px;line-height:1.02;color:#fff;letter-spacing:.01em;text-shadow:0 3px 26px rgba(0,0,0,.6),0 1px 4px rgba(0,0,0,.5);}
+  .hero-title .sub{display:block;font-size:52px;font-weight:700;margin-top:10px;color:rgba(255,255,255,.92);}
+  .hero-lead{font-family:var(--mincho);font-size:27px;line-height:1.7;color:rgba(255,255,255,.92);margin-top:26px;max-width:900px;text-shadow:0 2px 14px rgba(0,0,0,.65);border-left:3px solid var(--vn-red);padding-left:20px;}
+  .hero-kpis{display:flex;gap:52px;margin-top:34px;}
+  .hk{color:#fff;}
+  .hk-l{font-family:var(--sans-en);letter-spacing:.14em;font-size:14px;color:rgba(255,255,255,.72);text-transform:uppercase;}
+  .hk-v{font-family:var(--mincho);font-weight:700;font-size:40px;margin-top:4px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hk-v .g{color:var(--gold);}
+
+  /* SECTION 共通 */
+  section{padding:74px 64px;}
+  .eyebrow{font-family:var(--sans-en);letter-spacing:.28em;font-size:16px;color:var(--green);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--gold);}
+  .s-title{font-family:var(--mincho);font-weight:700;font-size:42px;line-height:1.16;color:var(--green-dark);margin-bottom:30px;}
+  .lead{font-size:25px;font-weight:500;line-height:1.85;border-left:3px solid var(--vn-red);padding-left:20px;margin-bottom:26px;text-align:justify;}
+  .body{font-size:21px;line-height:2.0;color:var(--mid);text-align:justify;}
+  .body strong{color:var(--dark);font-weight:700;}
+  .src{font-size:14px;color:var(--light);margin-top:12px;font-family:var(--gothic);}
+
+  /* バーベル 2カラム */
+  .barbell{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+  .bcard{padding:30px 30px;border:1px solid var(--border);border-top:4px solid var(--up);background:var(--cream);}
+  .bcard.loss{border-top-color:var(--vn-red);}
+  .bcard h4{font-family:var(--mincho);font-size:27px;margin-bottom:6px;color:var(--dark);}
+  .bcard .tag{font-family:var(--sans-en);letter-spacing:.1em;font-size:14px;color:var(--up);font-weight:700;}
+  .bcard.loss .tag{color:var(--vn-red);}
+  .bcard p{font-size:19px;line-height:1.85;color:var(--mid);margin-top:12px;text-align:justify;}
+
+  /* 数字テーブル */
+  .mtable{width:100%;border-collapse:collapse;margin-top:6px;font-size:20px;}
+  .mtable th,.mtable td{padding:15px 18px;border-bottom:1px solid var(--border);text-align:left;}
+  .mtable th{font-family:var(--sans-en);letter-spacing:.08em;font-size:15px;color:var(--light);text-transform:uppercase;background:var(--cream);}
+  .mtable td.num{font-family:var(--sans-en);font-weight:600;}
+  .mtable tr td:first-child{color:var(--dark);}
+  .hl-vic{color:var(--vn-red);font-weight:700;}
+  .hl-vhm{color:var(--up);font-weight:700;}
+
+  /* 集中度モニター */
+  .conc{background:var(--green-dark);color:#fff;}
+  .conc .eyebrow{color:var(--gold);} .conc .eyebrow::before{background:var(--gold);}
+  .conc .s-title{color:#fff;}
+  .cc{margin-top:8px;}
+  .crow{display:grid;grid-template-columns:210px 1fr 150px;gap:18px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+  .crow .cl{font-size:20px;color:rgba(255,255,255,.9);}
+  .crow .cbar{height:14px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;}
+  .crow .cbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#e0a800);}
+  .crow .cv{font-family:var(--sans-en);font-weight:700;font-size:26px;color:var(--gold);text-align:right;}
+  .conc .note{font-size:14px;color:rgba(255,255,255,.5);margin-top:16px;line-height:1.7;}
+
+  /* Ex-Vin コールアウト */
+  .callout{background:var(--cream);border-left:5px solid var(--gold);padding:34px 38px;margin-top:8px;}
+  .callout .big{font-family:var(--mincho);font-size:34px;font-weight:700;color:var(--green-dark);line-height:1.4;}
+  .callout .big em{color:var(--vn-red);font-style:normal;}
+  .callout p{font-size:19px;line-height:1.85;color:var(--mid);margin-top:14px;text-align:justify;}
+
+  /* リスク */
+  .risk{background:var(--green);color:#fff;}
+  .risk .eyebrow{color:var(--gold);}.risk .eyebrow::before{background:var(--gold);}
+  .risk .s-title{color:#fff;}
+  .risk ul{list-style:none;margin-top:6px;}
+  .risk li{font-size:20px;line-height:1.7;padding:14px 0 14px 30px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;color:rgba(255,255,255,.9);text-align:justify;}
+  .risk li::before{content:"";position:absolute;left:0;top:23px;width:9px;height:9px;background:var(--vn-red);border-radius:50%;}
+
+  /* 免責 */
+  .footer{background:var(--green-dark);padding:40px 64px;}
+  .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:14px 18px;font-size:14px;color:rgba(255,255,255,.75);line-height:1.75;}
+  .footer .warn b{color:var(--gold);}
+  .footer .warn .red{color:#ff8a8a;}
+  .footer .disc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;margin-top:16px;}
+  .footer .brand{color:rgba(255,255,255,.5);font-family:var(--sans-en);letter-spacing:.12em;font-size:15px;margin-top:16px;}
+</style>
+</head>
+<body>
+
+<!-- ═════ 表紙 HERO ═════ -->
+<div class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-nav">
+    <div class="hero-brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+    <div class="hero-date num">VOL.01 ― 2026.6.30週</div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-quest">WEEKLY QUEST ① ― 今週の主役</div>
+    <div class="hero-title">指数を動かす帝国<span class="sub">― ビングループ（VIC）</span></div>
+    <div class="hero-lead">VN-Indexの約29%を占める一社群。見かけは不動産帝国、その実弾は―。ベトナム株を語ることは、まずこの一社を語ることに等しい。</div>
+    <div class="hero-kpis">
+      <div class="hk"><div class="hk-l">VN-Index比（Vin系4社）</div><div class="hk-v"><span class="g">28.9%</span></div></div>
+      <div class="hk"><div class="hk-l">PER：VIC ↔ VHM</div><div class="hk-v">160x <span style="opacity:.5">/</span> 10x</div></div>
+      <div class="hk"><div class="hk-l">VIC 外国人枠 消化</div><div class="hk-v">6.6%</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════ 企業クエスト本文 ═════ -->
+<section>
+  <div class="eyebrow">Weekly Quest ① ｜ Vingroup</div>
+  <div class="s-title">一社で指数の2割。ベトナム最大の私企業を解く</div>
+  <div class="lead">ビングループ（HOSE:VIC）は、2025年11月にベトナム初の時価総額100京VND（約400億ドル）超えを果たした最大の私企業であり、VN-Index最大の構成銘柄である。だが、その「帝国」の中身は、稼ぐ不動産と、燃える電気自動車という、鋭い二面性を抱える。</div>
+  <div class="body">
+    2025年の連結純収益は<strong>332.8兆VND（前年比+76%）</strong>、税引後利益<strong>11.1兆VND（+111%）</strong>と過去最高を更新した。牽引したのは不動産子会社ヴィンホームズ（VHM）で、EV部門ヴィンファスト（VinFast, Nasdaq:VFS）の巨額赤字を、創業者ファム・ニャット・ヴオン氏の資力が支える構図が続く。VIC株は2025年に約5倍化し、2026年6月24日に史上最高値24.2万VNDを付けた。
+  </div>
+  <div class="src">出所：Vingroup 2025年通期発表、The Investor（2026/2/10）、Bloomberg。数値は各社開示・概算。</div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="eyebrow">Barbell ｜ 二面性</div>
+  <div class="s-title">稼ぐ不動産と、燃えるEV</div>
+  <div class="barbell">
+    <div class="bcard">
+      <div class="tag">PROFIT ENGINE</div>
+      <h4>ヴィンホームズ（VHM）</h4>
+      <p>2025年の税引後利益<strong>4.2兆VND</strong>、契約販売額<strong>205.3兆VND（前年比ほぼ倍増）</strong>。ベトナム史上最大級の現金配当（約24.6兆VND、記録日6/30）を実施した、グループのキャッシュエンジン。利益率は約27%と高い。</p>
+    </div>
+    <div class="bcard loss">
+      <div class="tag">CASH BURN</div>
+      <h4>ヴィンファスト（VFS）</h4>
+      <p>2025年純損失<strong>99.6兆VND（約39.6億ドル）</strong>、監査法人はgoing-concern（継続企業）の重要な疑義を指摘。2026年5月に製造子会社を売却する「アセットライト」再編に着手。創業者が個人で最大50兆VNDの支援を表明。</p>
+    </div>
+  </div>
+  <div class="src">出所：VinFast Form 20-F、Vingroup開示。VFSの損失は報告主体・基準で異なる（Caveat）。</div>
+</section>
+
+<section>
+  <div class="eyebrow">By the Numbers ｜ 数字で見る</div>
+  <div class="s-title">指数プロキシはVIC、キャッシュはVHM</div>
+  <div class="body" style="margin-bottom:22px;">同じ「Vin」でも、投資キャラクターは正反対。VICの株価収益率（PER）はヴィンファスト連結の赤字で約160倍まで歪む一方、利益本体のVHMは約10倍と健全。指数連動の資金はVICへ、収益の裏付けはVHMへ、と読み分けたい。</div>
+  <table class="mtable">
+    <tr><th>指標</th><th>ビングループ（VIC）</th><th>ヴィンホームズ（VHM）</th></tr>
+    <tr><td>時価総額</td><td class="num">約1,710兆VND（約$60bn）</td><td class="num">約420–630兆VND（約$21bn）</td></tr>
+    <tr><td>PER（TTM）</td><td class="num hl-vic">約160x</td><td class="num hl-vhm">約10x</td></tr>
+    <tr><td>PBR</td><td class="num">約11.5x</td><td class="num">約1.8x</td></tr>
+    <tr><td>負債資本倍率（D/E）</td><td class="num hl-vic">約233%</td><td class="num hl-vhm">約59%</td></tr>
+    <tr><td>純利益率</td><td class="num">約3.3%</td><td class="num">約27%</td></tr>
+  </table>
+  <div class="src">出所：各社開示（mid-2026）。時価総額・PERは提供元により幅あり（概算・as-of注記）。</div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="eyebrow">Room × FTSE ｜ 需給の妙</div>
+  <div class="s-title">枠は空いている。そこに、外資が来る</div>
+  <div class="body">
+    VICの外国人保有枠は消化率わずか<strong>6.6%</strong>（2026/7/1・VNDirect実測）＝外国人はほとんど買っていない。ところが<strong>2026年9月21日のFTSE Russell新興国昇格</strong>で、VICは最大のパッシブ流入先と目される。SSI Researchの試算では<strong>VICへ約4.98億ドル、VHMへ約0.99億ドル</strong>の流入。<strong>「枠が空いている × これから外資が入る」</strong>——この需給の非対称こそ、Vinを指数プロキシたらしめる核心である。
+  </div>
+  <div class="src">出所：VNDirect（外国人枠、実測）、SSI Research（FTSE流入試算・予測値）、FTSE Russell。流入額は分析機関により幅が大きい。</div>
+</section>
+
+<!-- ═════ 集中度モニター ═════ -->
+<section class="conc">
+  <div class="eyebrow">Concentration Monitor ｜ 集中度モニター</div>
+  <div class="s-title">物差しはVN-Index。ここを見れば7割が分かる</div>
+  <div class="cc">
+    <div class="crow"><div class="cl">VN30</div><div class="cbar"><i style="width:71%"></i></div><div class="cv num">71.1%</div></div>
+    <div class="crow"><div class="cl">上位10社</div><div class="cbar"><i style="width:50%"></i></div><div class="cv num">50.4%</div></div>
+    <div class="crow"><div class="cl">Vin系4社</div><div class="cbar"><i style="width:29%"></i></div><div class="cv num">28.9%</div></div>
+    <div class="crow"><div class="cl">VIC 単体</div><div class="cbar"><i style="width:19%"></i></div><div class="cv num">19.2%</div></div>
+  </div>
+  <div class="note">各値はVN-Index比（HOSE上場440銘柄・時価総額の単純加重・概算、2026/6/30–7/1・VNDirect実測）。<br>浮動株（free-float）加重では、Vin系4社は15.3%・VICは9.7%に下がる一方、銀行は38%に上がる——実際に売買される株で測れば、指数の主役は銀行に替わる。</div>
+</section>
+
+<section>
+  <div class="eyebrow">Ex-Vin Index ｜ 実力指数</div>
+  <div class="s-title">Vinを除いた「地力」</div>
+  <div class="callout">
+    <div class="big">Vin系を除けば、2025年末のVN-Indexは約<em>1,400</em>だった。実際は約1,785——<em>一社群で、約400ポイント</em>。</div>
+    <p>指数の「見かけ」と「地力」の差は、そのままVin依存度である。当欄は毎週、Vin寄与を除いた実力指数を定点で並べ、反発が本物か、それともVin一本足かを検証する。</p>
+  </div>
+  <div class="src">出所：市場推計（ネタ①）。試算・概算。</div>
+</section>
+
+<!-- ═════ リスク ═════ -->
+<section class="risk">
+  <div class="eyebrow">Risk ｜ 死角</div>
+  <div class="s-title">帝国のリスクは、ベトナムのリスク</div>
+  <ul>
+    <li><strong>レバレッジ</strong>：VICの負債資本倍率は約233%。積極的な社債・私募増資が続く。</li>
+    <li><strong>継続企業の疑義</strong>：VinFastのgoing-concern警告。創業者・グループの支援表明への依存が強い。</li>
+    <li><strong>関連当事者取引</strong>：VinFast納車の一部が関連先向け。アセットライト売却価格は独立DCF中央値の約5倍との指摘。</li>
+    <li><strong>集中リスク</strong>：Vin系はVN-Indexの約3割。ガバナンス問題が起きれば指数全体に波及する。</li>
+  </ul>
+</section>
+
+<!-- ═════ 免責 ═════ -->
+<div class="footer">
+  <div class="warn">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本紙は<b>Claude（生成AI）が自動作成している試みの段階の試作品</b>です。無料データと機械翻訳・各種報道をもとにした試験運用のため、<b>数値・固有名詞に誤りを含む可能性</b>があります。予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本紙は社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+  <div class="disc">
+    表紙写真：Vingroup公式サイトより転載（報道・解説目的の引用）。本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>Vingroupおよび記載各社とは一切関係がありません</b>。財務数値はVAS等に基づく開示・概算で、出所・基準日により差があります。FTSE流入・2026年目標等の将来見通しは予測であり実績ではありません。市場ウェイトは単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。
+  </div>
+  <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly VOL.01</div>
+</div>
+
+</body>
+</html>
