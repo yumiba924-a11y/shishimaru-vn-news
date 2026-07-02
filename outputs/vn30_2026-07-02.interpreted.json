@@ -1,6 +1,6 @@
 {
   "as_of": "2026-07-02",
-  "generated_at": "2026-07-02T11:33:11",
+  "generated_at": "2026-07-02T23:02:06",
   "data_age_days": 0,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
@@ -903,7 +903,7 @@
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4066.0,
+      "value": 4126.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -912,7 +912,7 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-07-02T11:33:09"
+    "fetched": "2026-07-02T23:02:05"
   },
   "interpretation": {
     "headline": "VIC主導で指数小幅安",
