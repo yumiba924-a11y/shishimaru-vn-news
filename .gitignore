@@ -22,3 +22,8 @@ logs/
 
 outputs/email_*.html
 outputs/email_*.subject.txt
+ネタ/
+weekly_covers/
+outputs/weekly01_proto.html
+outputs/weekly01_proto.png
+outputs/weekly01_hero.png
