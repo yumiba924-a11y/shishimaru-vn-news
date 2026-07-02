@@ -22,7 +22,7 @@
   "card_threshold_pct": 3.0,
   "constituents": [
     { "code": "ACB", "sector": "銀行",       "name_ja": "アジア商業銀行",     "shares": 5804421957 },
-    { "code": "BCM", "sector": "不動産",     "name_ja": "ベカメックス",       "shares": 1035000000 },
+    { "code": "BSR", "sector": "エネルギー", "name_ja": "ビンソン石油精製",   "shares": 5007299686 },
     { "code": "BID", "sector": "銀行",       "name_ja": "ベトナム投資開発銀行", "shares": 7021361917 },
     { "code": "CTG", "sector": "銀行",       "name_ja": "ベトナム工商銀行",   "shares": 7766944637 },
     { "code": "LPB", "sector": "銀行",       "name_ja": "LPバンク",           "shares": 2987282100 },
@@ -35,7 +35,7 @@
     { "code": "MSN", "sector": "消費財",     "name_ja": "マサングループ",     "shares": 1445915457 },
     { "code": "MWG", "sector": "小売",       "name_ja": "モバイルワールド",   "shares": 1468423529 },
     { "code": "PLX", "sector": "エネルギー", "name_ja": "ペトロリメックス",   "shares": 1270592235 },
-    { "code": "POW", "sector": "エネルギー", "name_ja": "ペトロベトナム電力", "shares": 3067845688 },
+    { "code": "VPL", "sector": "観光",       "name_ja": "ビンパール",         "shares": 1793300377 },
     { "code": "SAB", "sector": "消費財",     "name_ja": "サベコ",             "shares": 1282562372 },
     { "code": "SHB", "sector": "銀行",       "name_ja": "サイゴンハノイ銀行", "shares": 4884333454 },
     { "code": "SSB", "sector": "銀行",       "name_ja": "SeAバンク",          "shares": 3428800000 },

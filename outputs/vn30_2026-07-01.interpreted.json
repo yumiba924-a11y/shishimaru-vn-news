@@ -1,7 +1,7 @@
 {
   "as_of": "2026-07-01",
-  "generated_at": "2026-07-01T12:06:58",
-  "data_age_days": 0,
+  "generated_at": "2026-07-02T09:30:21",
+  "data_age_days": 1,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
   "card_threshold_pct": 3.0,
@@ -136,6 +136,13 @@
       "down": 0
     },
     {
+      "sector": "エネルギー",
+      "count": 3,
+      "avg_pct": 2.5,
+      "up": 3,
+      "down": 0
+    },
+    {
       "sector": "小売",
       "count": 1,
       "avg_pct": 2.43,
@@ -164,13 +171,6 @@
       "down": 0
     },
     {
-      "sector": "エネルギー",
-      "count": 3,
-      "avg_pct": 0.48,
-      "up": 2,
-      "down": 1
-    },
-    {
       "sector": "消費財",
       "count": 3,
       "avg_pct": 0.32,
@@ -186,13 +186,43 @@
     },
     {
       "sector": "不動産",
-      "count": 4,
-      "avg_pct": -0.82,
-      "up": 1,
+      "count": 3,
+      "avg_pct": -1.35,
+      "up": 0,
       "down": 3
+    },
+    {
+      "sector": "観光",
+      "count": 1,
+      "avg_pct": -1.78,
+      "up": 0,
+      "down": 1
     }
   ],
   "stocks": [
+    {
+      "code": "BSR",
+      "sector": "エネルギー",
+      "close": 25.45,
+      "change": 1.3,
+      "pct": 5.38,
+      "ref": 24.15,
+      "volume": 11720300,
+      "date": "2026-07-01",
+      "prev_date": "2026-06-30",
+      "foreign": {
+        "date": "2026-07-01",
+        "net_val": 16.73,
+        "buy_val": 24.12,
+        "sell_val": 7.39,
+        "total_room": 2453576846,
+        "current_room": 2394955465,
+        "room_used_pct": 2.4
+      },
+      "shares": 5007299686,
+      "mcap_t": 127.4,
+      "weight": 0.01972
+    },
     {
       "code": "FPT",
       "sector": "IT",
@@ -214,7 +244,7 @@
       },
       "shares": 1703507121,
       "mcap_t": 124.2,
-      "weight": 0.01978
+      "weight": 0.01921
     },
     {
       "code": "HDB",
@@ -237,7 +267,7 @@
       },
       "shares": 5005276323,
       "mcap_t": 133.1,
-      "weight": 0.02121
+      "weight": 0.0206
     },
     {
       "code": "VPB",
@@ -260,7 +290,7 @@
       },
       "shares": 7933923601,
       "mcap_t": 219.8,
-      "weight": 0.03501
+      "weight": 0.034
     },
     {
       "code": "MWG",
@@ -283,7 +313,7 @@
       },
       "shares": 1468423529,
       "mcap_t": 117.5,
-      "weight": 0.01871
+      "weight": 0.01817
     },
     {
       "code": "TCB",
@@ -306,7 +336,7 @@
       },
       "shares": 7086240414,
       "mcap_t": 243.1,
-      "weight": 0.03872
+      "weight": 0.0376
     },
     {
       "code": "MBB",
@@ -329,7 +359,7 @@
       },
       "shares": 8054999909,
       "mcap_t": 207.4,
-      "weight": 0.03304
+      "weight": 0.03209
     },
     {
       "code": "SSB",
@@ -352,7 +382,7 @@
       },
       "shares": 3428800000,
       "mcap_t": 56.6,
-      "weight": 0.00901
+      "weight": 0.00875
     },
     {
       "code": "SSI",
@@ -375,7 +405,7 @@
       },
       "shares": 2906280710,
       "mcap_t": 79.1,
-      "weight": 0.01259
+      "weight": 0.01223
     },
     {
       "code": "BID",
@@ -398,7 +428,7 @@
       },
       "shares": 7021361917,
       "mcap_t": 302.3,
-      "weight": 0.04815
+      "weight": 0.04676
     },
     {
       "code": "PLX",
@@ -421,7 +451,7 @@
       },
       "shares": 1270592235,
       "mcap_t": 47.6,
-      "weight": 0.00758
+      "weight": 0.00736
     },
     {
       "code": "CTG",
@@ -444,7 +474,7 @@
       },
       "shares": 7766944637,
       "mcap_t": 267.2,
-      "weight": 0.04256
+      "weight": 0.04133
     },
     {
       "code": "VCB",
@@ -467,7 +497,7 @@
       },
       "shares": 8355675094,
       "mcap_t": 526.4,
-      "weight": 0.08385
+      "weight": 0.08144
     },
     {
       "code": "SHB",
@@ -490,7 +520,7 @@
       },
       "shares": 4884333454,
       "mcap_t": 66.9,
-      "weight": 0.01066
+      "weight": 0.01035
     },
     {
       "code": "GVR",
@@ -513,7 +543,7 @@
       },
       "shares": 4000000000,
       "mcap_t": 132.6,
-      "weight": 0.02112
+      "weight": 0.02051
     },
     {
       "code": "TPB",
@@ -536,7 +566,7 @@
       },
       "shares": 2774046873,
       "mcap_t": 46.5,
-      "weight": 0.0074
+      "weight": 0.00719
     },
     {
       "code": "GAS",
@@ -559,30 +589,7 @@
       },
       "shares": 2412949756,
       "mcap_t": 188.2,
-      "weight": 0.02998
-    },
-    {
-      "code": "BCM",
-      "sector": "不動産",
-      "close": 52.8,
-      "change": 0.4,
-      "pct": 0.76,
-      "ref": 52.4,
-      "volume": 261400,
-      "date": "2026-07-01",
-      "prev_date": "2026-06-30",
-      "foreign": {
-        "date": "2026-07-01",
-        "net_val": 0.2,
-        "buy_val": 0.27,
-        "sell_val": 0.08,
-        "total_room": 351900000,
-        "current_room": 343420865,
-        "room_used_pct": 2.4
-      },
-      "shares": 1035000000,
-      "mcap_t": 54.6,
-      "weight": 0.00871
+      "weight": 0.02912
     },
     {
       "code": "VNM",
@@ -605,7 +612,7 @@
       },
       "shares": 2089955445,
       "mcap_t": 115.4,
-      "weight": 0.01838
+      "weight": 0.01785
     },
     {
       "code": "HPG",
@@ -628,7 +635,7 @@
       },
       "shares": 8442964520,
       "mcap_t": 198.0,
-      "weight": 0.03154
+      "weight": 0.03063
     },
     {
       "code": "VIB",
@@ -651,7 +658,7 @@
       },
       "shares": 3404005710,
       "mcap_t": 56.5,
-      "weight": 0.009
+      "weight": 0.00874
     },
     {
       "code": "MSN",
@@ -674,7 +681,7 @@
       },
       "shares": 1445915457,
       "mcap_t": 104.8,
-      "weight": 0.0167
+      "weight": 0.01622
     },
     {
       "code": "ACB",
@@ -697,7 +704,7 @@
       },
       "shares": 5804421957,
       "mcap_t": 131.5,
-      "weight": 0.02094
+      "weight": 0.02034
     },
     {
       "code": "VJC",
@@ -720,7 +727,7 @@
       },
       "shares": 769094734,
       "mcap_t": 107.1,
-      "weight": 0.01707
+      "weight": 0.01657
     },
     {
       "code": "SAB",
@@ -743,30 +750,7 @@
       },
       "shares": 1282562372,
       "mcap_t": 62.0,
-      "weight": 0.00988
-    },
-    {
-      "code": "POW",
-      "sector": "エネルギー",
-      "close": 14.6,
-      "change": -0.1,
-      "pct": -0.68,
-      "ref": 14.7,
-      "volume": 14016400,
-      "date": "2026-07-01",
-      "prev_date": "2026-06-30",
-      "foreign": {
-        "date": "2026-07-01",
-        "net_val": -15.15,
-        "buy_val": 20.17,
-        "sell_val": 35.33,
-        "total_room": 1533922844,
-        "current_room": 1385292515,
-        "room_used_pct": 9.7
-      },
-      "shares": 3067845688,
-      "mcap_t": 44.8,
-      "weight": 0.00713
+      "weight": 0.00959
     },
     {
       "code": "VRE",
@@ -789,7 +773,7 @@
       },
       "shares": 2272318410,
       "mcap_t": 64.3,
-      "weight": 0.01024
+      "weight": 0.00995
     },
     {
       "code": "LPB",
@@ -812,7 +796,7 @@
       },
       "shares": 2987282100,
       "mcap_t": 158.6,
-      "weight": 0.02527
+      "weight": 0.02454
     },
     {
       "code": "STB",
@@ -835,7 +819,7 @@
       },
       "shares": 1885215716,
       "mcap_t": 138.0,
-      "weight": 0.02198
+      "weight": 0.02135
     },
     {
       "code": "VIC",
@@ -858,7 +842,30 @@
       },
       "shares": 7706031024,
       "mcap_t": 1673.0,
-      "weight": 0.26649
+      "weight": 0.25882
+    },
+    {
+      "code": "VPL",
+      "sector": "観光",
+      "close": 88.2,
+      "change": -1.6,
+      "pct": -1.78,
+      "ref": 89.8,
+      "volume": 672500,
+      "date": "2026-07-01",
+      "prev_date": "2026-06-30",
+      "foreign": {
+        "date": "2026-07-01",
+        "net_val": 1.41,
+        "buy_val": 4.99,
+        "sell_val": 3.58,
+        "total_room": 878717184,
+        "current_room": 845122195,
+        "room_used_pct": 3.8
+      },
+      "shares": 1793300377,
+      "mcap_t": 158.2,
+      "weight": 0.02447
     },
     {
       "code": "VHM",
@@ -881,7 +888,7 @@
       },
       "shares": 4107412004,
       "mcap_t": 610.8,
-      "weight": 0.09729
+      "weight": 0.09449
     }
   ],
   "macro": {
@@ -896,7 +903,7 @@
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4025.0,
+      "value": 4046.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -905,48 +912,48 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-07-01T12:06:56"
+    "fetched": "2026-07-02T09:30:20"
   },
   "interpretation": {
     "headline": "VIC急落、銀行も支えきれず",
-    "summary": "VICだけで指数を約0.4pt押し下げ。銀行14社の上昇(+0.6pt)も及ばず上昇。物色は不動産から銀行へ。",
+    "summary": "VICだけで指数を約0.3pt押し下げ。銀行14社の上昇(+0.5pt)も及ばず上昇。物色は不動産から銀行へ。",
     "tone": "up",
     "result": "上昇",
     "contribution": {
       "index": "VN30",
       "note": "概算寄与度（単純時価総額ウェイト。正式VN30ウェイトとはズレる）",
-      "push_up": 0.85,
-      "push_down": -0.6,
-      "net": 0.25,
+      "push_up": 0.92,
+      "push_down": -0.63,
+      "net": 0.29,
       "top_up": [
+        {
+          "code": "BSR",
+          "sector": "エネルギー",
+          "pct": 5.38,
+          "contrib": 0.106
+        },
         {
           "code": "VCB",
           "sector": "銀行",
           "pct": 1.29,
-          "contrib": 0.108
+          "contrib": 0.105
         },
         {
           "code": "TCB",
           "sector": "銀行",
           "pct": 2.39,
-          "contrib": 0.093
+          "contrib": 0.09
         },
         {
           "code": "VPB",
           "sector": "銀行",
           "pct": 2.59,
-          "contrib": 0.091
+          "contrib": 0.088
         },
         {
           "code": "FPT",
           "sector": "IT",
           "pct": 3.85,
-          "contrib": 0.076
-        },
-        {
-          "code": "BID",
-          "sector": "銀行",
-          "pct": 1.53,
           "contrib": 0.074
         }
       ],
@@ -955,42 +962,47 @@
           "code": "VIC",
           "sector": "不動産",
           "pct": -1.32,
-          "contrib": -0.352
+          "contrib": -0.342
         },
         {
           "code": "VHM",
           "sector": "不動産",
           "pct": -2.04,
-          "contrib": -0.198
+          "contrib": -0.193
+        },
+        {
+          "code": "VPL",
+          "sector": "観光",
+          "pct": -1.78,
+          "contrib": -0.044
         },
         {
           "code": "LPB",
           "sector": "銀行",
           "pct": -0.75,
-          "contrib": -0.019
+          "contrib": -0.018
         },
         {
           "code": "STB",
           "sector": "銀行",
           "pct": -0.81,
-          "contrib": -0.018
-        },
-        {
-          "code": "VRE",
-          "sector": "不動産",
-          "pct": -0.7,
-          "contrib": -0.007
+          "contrib": -0.017
         }
       ],
       "by_sector": [
         {
           "sector": "銀行",
-          "contrib": 0.56,
+          "contrib": 0.54,
           "count": 14
         },
         {
+          "sector": "エネルギー",
+          "contrib": 0.14,
+          "count": 3
+        },
+        {
           "sector": "IT",
-          "contrib": 0.08,
+          "contrib": 0.07,
           "count": 1
         },
         {
@@ -1002,11 +1014,6 @@
           "sector": "素材",
           "contrib": 0.04,
           "count": 2
-        },
-        {
-          "sector": "エネルギー",
-          "contrib": 0.03,
-          "count": 3
         },
         {
           "sector": "消費財",
@@ -1024,18 +1031,31 @@
           "count": 1
         },
         {
+          "sector": "観光",
+          "contrib": -0.04,
+          "count": 1
+        },
+        {
           "sector": "不動産",
-          "contrib": -0.55,
-          "count": 4
+          "contrib": -0.54,
+          "count": 3
         }
       ]
     },
     "cards": [
       {
+        "code": "BSR",
+        "sector": "エネルギー",
+        "pct": 5.38,
+        "contrib": 0.106,
+        "dir": "up",
+        "reason": ""
+      },
+      {
         "code": "FPT",
         "sector": "IT",
         "pct": 3.85,
-        "contrib": 0.076,
+        "contrib": 0.074,
         "dir": "up",
         "reason": ""
       }
@@ -1045,8 +1065,8 @@
       "上昇 21／下落 8／変わらず 1（30銘柄）。"
     ],
     "top_gainer": {
-      "code": "FPT",
-      "pct": 3.85
+      "code": "BSR",
+      "pct": 5.38
     },
     "top_loser": {
       "code": "VHM",
