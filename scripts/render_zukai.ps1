@@ -85,7 +85,7 @@ $headline = if ($news -and $news.headline) { [string]$news.headline } else { [st
 $leadLines = if ($news -and @($news.lead).Count -gt 0) { @($news.lead) }
              elseif (@($p.interpretation.lines).Count -gt 0) { @($p.interpretation.lines) }
              else { @([string]$p.interpretation.summary) }
-$leadHtml = ($leadLines | ForEach-Object { "<div>$(Esc $_)</div>" }) -join "`n        "
+$leadHtml = ($leadLines | ForEach-Object { "<div style='padding-left:1.3em;text-indent:-1.3em;margin-bottom:2px;'><span style='color:#00492C;font-size:12px;vertical-align:1px;'>&#9679;</span> $(Esc $_)</div>" }) -join "`n        "
 
 # --- ヒートマップ（pct降順・社名つき）---------------------------------------
 $tilesHtml = foreach ($s in $p.stocks) {
@@ -177,7 +177,7 @@ $html = @"
     <div style="position:relative;background:#FFFFFF;border:2px solid #00492C;border-radius:2px;padding:22px 22px;box-shadow:0 6px 24px rgba(0,73,44,.10);z-index:2;">
       <div style="width:48px;height:2px;background:#B8922A;margin-bottom:11px;"></div>
       <div style="font-size:18px;font-weight:700;letter-spacing:.18em;color:#555;">今日のひとこと</div>
-      <div style="font-size:39px;font-weight:900;color:#8B1A1A;line-height:1.22;margin:7px 0 11px;letter-spacing:-.01em;">$(Esc $headline)</div>
+      <div style="font-size:35px;font-weight:900;color:#8B1A1A;line-height:1.25;margin:7px 0 11px;letter-spacing:-.02em;">$(Esc $headline)</div>
       <div style="font-size:18px;line-height:1.9;color:#2A2A2A;font-weight:500;text-align:justify;">
         $leadHtml
       </div>
