@@ -1,14 +1,15 @@
-name: daily-shishimaru
+name: daily-collect-for-weekly
 
-# 朝刊配信(10:00 JST手動送信)からの逆算:
-#   夕方便 18:00 JST(=09:00 UTC)      … 前営業日の市況＋夜の市況報道で新聞を生成
-#   朝便   07:00 JST(=22:00 UTC前日)  … 前営業日の市況＋夜間報道で、日本語要点リスト＋新聞＋メール文面を用意
-#                                        (出社前に確実に完成させる。Actionsは数分〜15分遅延しうるため早めに設定)
-#   → 弓場さん 出社(〜8:20)で要点を見てカード化 → 目視 → 10:00手動送信に間に合わせる
+# ししまる日次新聞は休刊(2026-07)。この日次Actionsは「週次 Vietnam Weekly 用のデータ・ニュース工場」として稼働する。
+# 各営業日の確定市況(VN-Index・騰落・セクター・外国人フロー)＋現地ニュース要点(news_raw)を毎日蓄積し、
+# 月曜の週次制作を「良質な素材から組むだけ」にする。
+# → 月曜一括取得は時間がかかり・間違いが出て・粒度も落ちる。だから日次で漏れなく吸い上げておく(弓場さん方針2026-07)。
+#   夕方便 18:00 JST(=09:00 UTC)     … その日の確定市況＋日中ニュースを収集(市況データの主軸)
+#   朝便   07:00 JST(=22:00 UTC前日) … 前夜〜早朝ニュースを補足収集(ニュース網羅性のため。市況は前日分の再確認)
 on:
   schedule:
-    - cron: '0 9 * * 1-5'     # 夕方便 18:00 JST
-    - cron: '0 22 * * 0-4'    # 朝便   07:00 JST（=22:00 UTC前日/日曜〜木曜）
+    - cron: '0 9 * * 1-5'     # 夕方便 18:00 JST(確定市況＋ニュース)
+    - cron: '0 22 * * 0-4'    # 朝便   07:00 JST(ニュース補足)
   workflow_dispatch: {}
 
 permissions:
@@ -19,49 +20,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  collect:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: 取得→解釈→ニュース収集(無料翻訳・日本語要点リスト)→図解
+      - name: データ取得→解釈(寄与度・外国人フロー)→ニュース収集(無料翻訳・要点リスト)
         shell: pwsh
         run: |
-          ./scripts/fetch_vn30.ps1
-          ./scripts/interpret.ps1
-          ./scripts/collect_news.ps1   # 無料翻訳でJP要点リスト(news_raw)を用意。カード化は人が後で
-          ./scripts/render_zukai.ps1
+          ./scripts/fetch_vn30.ps1       # VN30/指数＋外国人フロー(foreigns: net_val/room)を取得
+          ./scripts/interpret.ps1        # 寄与度(weight×pct)・HOSE breadth・foreign素通し → interpreted.json
+          ./scripts/collect_news.ps1     # 現地4紙を無料翻訳 → news_raw(週次⑥トピックスの素材)
 
-      - name: Chrome 準備（PNG用）
-        id: chrome
-        continue-on-error: true
-        uses: browser-actions/setup-chrome@v1
-
-      - name: 静止版PNG書き出し（失敗しても続行）
-        continue-on-error: true
-        shell: pwsh
-        run: |
-          $asof = (Get-ChildItem outputs/vn30_*.interpreted.json | Sort-Object Name -Descending | Select-Object -First 1).Name -replace 'vn30_','' -replace '\.interpreted\.json',''
-          $html = (Resolve-Path "outputs/vn30_$asof.html").Path
-          $png  = "outputs/vn30_$asof.png"
-          $chrome = "${{ steps.chrome.outputs.chrome-path }}"
-          if (-not $chrome) { $chrome = "google-chrome" }
-          & $chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars --force-device-scale-factor=2 --window-size=1100,1750 --screenshot="$png" "--virtual-time-budget=4000" ("file://" + $html)
-          if (Test-Path $png) { Write-Host "PNG OK: $png" } else { Write-Host "PNG skip" }
-
-      - name: 朝刊メール文面を生成（新聞PNGをインライン埋め込み）
-        shell: pwsh
-        run: ./scripts/build_email.ps1
-
-      - name: コミット＆プッシュ（生成物を日付別に蓄積）
+      - name: コミット＆プッシュ(週次用データ・ニュースを日付別に蓄積)
         shell: bash
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add outputs docs
+          git add outputs            # データ・ニュースのみ蓄積。docs(旧日次新聞の最終号)は触らない
           if git diff --cached --quiet; then
-            echo "変更なし（休場/同日再実行）→ コミットしない"
+            echo "変更なし(休場/同日再実行)→ コミットしない"
           else
-            git commit -m "daily: $(date -u +%Y-%m-%d) ししまるベトナム新聞 自動生成"
+            git commit -m "collect: $(date -u +%Y-%m-%d) 週次用データ・ニュース蓄積"
             git push
           fi
