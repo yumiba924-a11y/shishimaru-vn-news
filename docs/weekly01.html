@@ -41,6 +41,12 @@
   .hk-l{font-family:var(--sans-en);letter-spacing:.14em;font-size:14px;color:rgba(255,255,255,.72);text-transform:uppercase;}
   .hk-v{font-family:var(--mincho);font-weight:700;font-size:40px;margin-top:4px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);}
   .hk-v .g{color:var(--gold);}
+  /* ヒーロー上のチャートパネル */
+  .hero-chart{position:absolute;z-index:3;top:118px;left:50%;transform:translateX(-50%);width:912px;
+    background:rgba(255,255,255,.92);border-radius:10px;padding:16px 22px 12px;
+    box-shadow:0 20px 54px rgba(0,0,0,.40);}
+  .hero-chart img{width:100%;display:block;}
+  .hero-chart .hc-note{font-family:var(--gothic);font-size:11px;color:#5a6b62;line-height:1.5;margin-top:4px;}
 
   /* SECTION 共通 */
   section{padding:70px 64px;}
@@ -188,6 +194,10 @@
   <div class="hero-nav">
     <div class="hero-brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
     <div class="hero-date num">VOL.01 ― 2026.6.29–7.2週（プレ）<br>7/6（月）発行予定</div>
+  </div>
+  <div class="hero-chart">
+    <img src="weekly_assets/hero_chart.png" alt="VN-Indexを持ち上げたのは誰か（2024年末=100）">
+    <div class="hc-note">ex-Vin＝VN-IndexからVin系4銘柄（VIC・VHM・VRE・VPL）を控除した当社試算指数。VICは右軸・別スケール。HOSE全体時価総額はアンカー復元による概算。出所：VNDirect（2024/12/31〜2026/7/3・調整後株価）。</div>
   </div>
   <div class="hero-body">
     <div class="hero-quest">WEEKLY QUEST ① ― 今週の主役</div>
