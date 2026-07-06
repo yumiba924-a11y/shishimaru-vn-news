@@ -78,6 +78,8 @@
 
   /* 先週の相場：週間KPI＋日次バー＋セクター */
   .weekwrap{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start;}
+  .sumstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 24px;}
+  .sumstrip .wk-kpi{margin-bottom:0;height:100%;}
   .wk-kpi{background:var(--cream);border-left:3px solid var(--green);padding:24px 26px;margin-bottom:18px;}
   .wk-kpi .l{font-family:var(--sans-en);font-size:14px;letter-spacing:.08em;color:var(--light);}
   .wk-kpi .v{font-family:var(--mincho);font-size:44px;font-weight:800;line-height:1;margin-top:6px;}
@@ -285,25 +287,21 @@
 <section>
   <div class="eyebrow">Market Summary ｜ 先週の相場概況（6/29–7/3）</div>
   <div class="s-title">調整週入り——重石はビン系、支えは銀行</div>
-  <div class="weekwrap">
-    <div>
-      <div class="lead jp">VN-Indexは週間<strong>−0.53%</strong>（−9.8pt）の<strong>1,862.08</strong>で引け、2週続伸のあと今年初の調整週入り。下落の主因は前週まで反発を主導した<strong>ビン系の反転——VIC単独で指数から約12pt剥落</strong>し、週間下落幅（9.8pt）を1銘柄で上回った。</div>
-      <div class="body jp" style="font-size:18px;line-height:1.9;">受け皿に回ったのが銀行だ。<strong>VPB+1.8pt・HDB+1.8pt・MBB+1.5pt・VCB+1.1pt</strong>と主要行が寄与上位を占め、セクター全体で<strong>+7.2pt</strong>を返した——不動産（ビン系）の<strong>−16.3pt</strong>を穴埋めしきれなかった、という構図である。外国人はVN30合計で<strong>約2.0兆ドン（約127億円）の売り越し</strong>。売り筆頭は<strong>VHM −617十億ドン</strong>で、VNMの売り（−268十億ドン）は平常ペースの約1.8倍と目立った。一方で<strong>VICは+206十億ドンと最大の買い越し</strong>——ビン系を売りながら親会社VICは拾う、選別の動きが出ている。商いは細く、HOSEの1日平均売買代金は約17.4兆ドンと前週比9%減・20週平均を約3割下回る。</div>
-    </div>
-    <div>
-      <div class="wk-kpi"><div class="l">VN-Index 週間騰落（6/26金→7/3金）</div><div class="v neg">−0.53%</div></div>
-      <div class="wk-kpi"><div class="l">週末（7/3金）終値</div><div class="v" style="color:var(--dark)">1,862.08</div></div>
-      <div class="wk-kpi"><div class="l">流動性（HOSE 日平均・対20週平均）</div><div class="v" style="color:var(--dark);font-size:30px">17.4兆ドン ／ 約−30%</div></div>
-      <div style="font-family:var(--sans-en);font-size:14px;letter-spacing:.1em;color:var(--light);margin:22px 0 6px">DAY-BY-DAY（6/29月→7/3金・5営業日）</div>
-      <div class="daybars">
-        <div class="daycol"><div class="dv neg" style="color:var(--down)">−0.90%</div><div class="db neg" style="height:100%"></div><div class="dl">月</div></div>
-        <div class="daycol"><div class="dv pos" style="color:var(--up)">+0.27%</div><div class="db pos" style="height:30%"></div><div class="dl">火</div></div>
-        <div class="daycol"><div class="dv pos" style="color:var(--up)">+0.39%</div><div class="db pos" style="height:43%"></div><div class="dl">水</div></div>
-        <div class="daycol"><div class="dv neg" style="color:var(--down)">−0.05%</div><div class="db neg" style="height:6%"></div><div class="dl">木</div></div>
-        <div class="daycol"><div class="dv neg" style="color:var(--down)">−0.23%</div><div class="db neg" style="height:26%"></div><div class="dl">金</div></div>
-      </div>
-    </div>
+  <div class="lead jp">VN-Indexは週間<strong>−0.53%</strong>（−9.8pt）の<strong>1,862.08</strong>で引け、2週続伸のあと今年初の調整週入り。下落の主因は前週まで反発を主導した<strong>ビン系の反転——VIC単独で指数から約12pt剥落</strong>し、週間下落幅（9.8pt）を1銘柄で上回った。</div>
+  <div class="sumstrip">
+    <div class="wk-kpi"><div class="l">VN-Index 週間騰落（6/26金→7/3金）</div><div class="v neg">−0.53%</div></div>
+    <div class="wk-kpi"><div class="l">週末（7/3金）終値</div><div class="v" style="color:var(--dark)">1,862.08</div></div>
+    <div class="wk-kpi"><div class="l">流動性（HOSE 日平均・対20週平均）</div><div class="v" style="color:var(--dark);font-size:28px">17.4兆ドン ／ 約−30%</div></div>
   </div>
+  <div style="font-family:var(--sans-en);font-size:14px;letter-spacing:.1em;color:var(--light);margin:6px 0 8px">DAY-BY-DAY（6/29月→7/3金・5営業日）</div>
+  <div class="daybars">
+    <div class="daycol"><div class="dv neg" style="color:var(--down)">−0.90%</div><div class="db neg" style="height:100%"></div><div class="dl">月</div></div>
+    <div class="daycol"><div class="dv pos" style="color:var(--up)">+0.27%</div><div class="db pos" style="height:30%"></div><div class="dl">火</div></div>
+    <div class="daycol"><div class="dv pos" style="color:var(--up)">+0.39%</div><div class="db pos" style="height:43%"></div><div class="dl">水</div></div>
+    <div class="daycol"><div class="dv neg" style="color:var(--down)">−0.05%</div><div class="db neg" style="height:6%"></div><div class="dl">木</div></div>
+    <div class="daycol"><div class="dv neg" style="color:var(--down)">−0.23%</div><div class="db neg" style="height:26%"></div><div class="dl">金</div></div>
+  </div>
+  <div class="body jp" style="font-size:18px;line-height:1.9;margin-top:26px;">受け皿に回ったのが銀行だ。<strong>VPB+1.8pt・HDB+1.8pt・MBB+1.5pt・VCB+1.1pt</strong>と主要行が寄与上位を占め、セクター全体で<strong>+7.2pt</strong>を返した——不動産（ビン系）の<strong>−16.3pt</strong>を穴埋めしきれなかった、という構図である。外国人はVN30合計で<strong>約2.0兆ドン（約127億円）の売り越し</strong>。売り筆頭は<strong>VHM −617十億ドン</strong>で、VNMの売り（−268十億ドン）は平常ペースの約1.8倍と目立った。一方で<strong>VICは+206十億ドンと最大の買い越し</strong>——ビン系を売りながら親会社VICは拾う、選別の動きが出ている。商いは細く、HOSEの1日平均売買代金は約17.4兆ドンと前週比9%減・20週平均を約3割下回る。</div>
   <div class="src">出所：指数・日次騰落・外国人フロー＝VNDirect実測（週間騰落は前金曜6/26終値→当金曜7/3終値）。寄与度pt＝週間騰落×VN-Index内ウェイト（単純時価総額・概算）の当社試算。流動性は当社リサーチ集（現地報道）。円換算は2026/7/2の為替（1USD≒162.5円・26,251VND）。</div>
 </section>
 
