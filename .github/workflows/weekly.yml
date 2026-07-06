@@ -1,9 +1,8 @@
 name: weekly-shishimaru
 
-# 月曜 09:00 JST（=月曜 00:00 UTC）に、蓄積した日次データから週次を生成。手動可。
+# 【休刊】ししまるVN30分解新聞は休刊。自動生成(月曜cron)は停止した。
+# 手動実行(workflow_dispatch)のみ残す。復刊時はここに schedule を戻す。
 on:
-  schedule:
-    - cron: '0 0 * * 1'
   workflow_dispatch: {}
 
 permissions:
