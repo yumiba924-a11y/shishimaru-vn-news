@@ -15,6 +15,8 @@
     /* タイプスケール（整理済み・8段階） */
     --fs-stat:96px; --fs-title:38px; --fs-numlg:40px; --fs-lead:22px;
     --fs-body:19px; --fs-bodysm:16px; --fs-label:14px; --fs-micro:12px;
+    /* 行間（役割別・4段階） */
+    --lh-head:1.35; --lh-body:1.9; --lh-card:1.8; --lh-note:1.65;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{background:#e9e5dd;}
@@ -47,30 +49,30 @@
   /* ヒーロー直下の分解チャート帯 */
   .chartband{padding:46px 64px 40px;background:#fff;border-bottom:1px solid var(--border);}
   .chartband img{width:100%;display:block;}
-  .chartband .hc-note{font-family:var(--gothic);font-size:12px;color:#5a6b62;line-height:1.6;margin-top:10px;}
+  .chartband .hc-note{font-family:var(--gothic);font-size:var(--fs-micro);color:#5a6b62;line-height:var(--lh-note);margin-top:10px;}
 
   /* SECTION 共通 */
   section{padding:70px 64px;}
   .eyebrow{font-family:var(--sans-en);letter-spacing:.26em;font-size:var(--fs-label);color:var(--green);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
   .eyebrow::before{content:"";width:30px;height:2px;background:var(--gold);}
-  .s-title{font-family:var(--mincho);font-weight:700;font-size:var(--fs-title);line-height:1.2;color:var(--green-dark);margin-bottom:28px;}
-  .lead{font-size:var(--fs-lead);font-weight:500;line-height:1.85;border-left:3px solid var(--vn-red);padding-left:20px;margin-bottom:24px;text-align:justify;}
-  .body{font-size:var(--fs-body);line-height:2.0;color:var(--mid);text-align:justify;}
+  .s-title{font-family:var(--mincho);font-weight:700;font-size:var(--fs-title);line-height:var(--lh-head);color:var(--green-dark);margin-bottom:28px;}
+  .lead{font-size:var(--fs-lead);font-weight:500;line-height:var(--lh-body);border-left:3px solid var(--vn-red);padding-left:20px;margin-bottom:24px;text-align:justify;}
+  .body{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--mid);text-align:justify;}
   .body strong{color:var(--dark);font-weight:700;}
-  .src{font-size:var(--fs-label);color:var(--light);margin-top:14px;font-family:var(--gothic);line-height:1.6;}
+  .src{font-size:var(--fs-label);color:var(--light);margin-top:14px;font-family:var(--gothic);line-height:var(--lh-note);}
   .fake{color:var(--vn-red);font-family:var(--gothic);font-weight:700;}
 
   /* バーベル */
   .barbell{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
   .compics{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;}
   .compic img{width:100%;height:320px;object-fit:cover;display:block;border:1px solid var(--border);border-radius:2px;}
-  .compic figcaption{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);margin-top:7px;line-height:1.5;}
+  .compic figcaption{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);margin-top:7px;line-height:var(--lh-note);}
   .bcard{padding:28px;border:1px solid var(--border);border-top:4px solid var(--up);background:#fff;}
   .bcard.loss{border-top-color:var(--vn-red);}
   .bcard h4{font-family:var(--mincho);font-size:var(--fs-lead);margin-bottom:6px;}
   .bcard .tag{font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-micro);color:var(--up);font-weight:700;}
   .bcard.loss .tag{color:var(--vn-red);}
-  .bcard p{font-size:var(--fs-bodysm);line-height:1.85;color:var(--mid);margin-top:12px;text-align:justify;}
+  .bcard p{font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);margin-top:12px;text-align:justify;}
 
   /* テーブル */
   .mtable{width:100%;border-collapse:collapse;margin-top:6px;font-size:var(--fs-bodysm);}
@@ -121,17 +123,17 @@
   .bigstat{display:flex;align-items:center;gap:36px;margin:4px 0 26px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.15);}
   .bigstat .n{font-family:var(--mincho);font-weight:800;font-size:var(--fs-stat);line-height:.86;color:var(--gold);}
   .bigstat .n span{font-size:var(--fs-numlg);}
-  .bigstat .c{font-size:var(--fs-body);line-height:1.7;color:rgba(255,255,255,.9);}
+  .bigstat .c{font-size:var(--fs-body);line-height:var(--lh-card);color:rgba(255,255,255,.9);}
   .crow{display:grid;grid-template-columns:200px 1fr 130px;gap:18px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);}
   .crow .cl{font-size:var(--fs-body);color:rgba(255,255,255,.9);}
   .crow .cbar{height:14px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;}
   .crow .cbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#e0a800);}
   .crow .cv{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-lead);color:var(--gold);text-align:right;}
-  .conc .note{font-size:var(--fs-label);color:rgba(255,255,255,.55);margin-top:16px;line-height:1.75;}
+  .conc .note{font-size:var(--fs-label);color:rgba(255,255,255,.55);margin-top:16px;line-height:var(--lh-note);}
 
   /* Ex-Vin */
   .callout{background:var(--cream);border-left:5px solid var(--gold);padding:32px 36px;margin-top:20px;}
-  .callout .big{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;color:var(--green-dark);line-height:1.6;}
+  .callout .big{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;color:var(--green-dark);line-height:var(--lh-card);}
   .callout .big em{color:var(--vn-red);font-style:normal;}
 
   /* 動いた株×フロー */
@@ -144,8 +146,8 @@
   .fitem .tk{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;}
   .fitem .fv{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);}
   .fitem .fv.pos{color:var(--up);} .fitem .fv.neg{color:var(--down);}
-  .fitem .nw{font-size:var(--fs-bodysm);color:var(--mid);line-height:1.6;margin-top:6px;}
-  .domestic{background:var(--cream);border-left:3px solid var(--green);padding:18px 22px;margin-top:16px;font-size:var(--fs-body);line-height:1.8;}
+  .fitem .nw{font-size:var(--fs-bodysm);color:var(--mid);line-height:var(--lh-note);margin-top:6px;}
+  .domestic{background:var(--cream);border-left:3px solid var(--green);padding:18px 22px;margin-top:16px;font-size:var(--fs-body);line-height:var(--lh-card);}
 
   /* トピックス */
   .topics{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px;}
@@ -154,8 +156,8 @@
   .ttag{display:inline-block;font-family:var(--sans-en);font-size:var(--fs-micro);letter-spacing:.08em;padding:3px 10px;border-radius:20px;margin-bottom:12px;}
   .ttag.macro{background:rgba(0,73,44,.08);color:var(--green);}
   .ttag.micro{background:rgba(218,37,29,.08);color:var(--vn-red);}
-  .tcard h4{font-family:var(--mincho);font-size:var(--fs-lead);line-height:1.4;margin-bottom:10px;}
-  .tcard p{font-size:var(--fs-bodysm);line-height:1.75;color:var(--mid);text-align:justify;}
+  .tcard h4{font-family:var(--mincho);font-size:var(--fs-lead);line-height:var(--lh-head);margin-bottom:10px;}
+  .tcard p{font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
 
   /* 今週/今後の予定 */
   .cal{margin-top:8px;}
@@ -170,7 +172,7 @@
   .risk .eyebrow{color:var(--gold);}.risk .eyebrow::before{background:var(--gold);}
   .risk .s-title{color:#fff;}
   .risk ul{list-style:none;margin-top:6px;}
-  .risk li{font-size:var(--fs-body);line-height:1.7;padding:14px 0 14px 30px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;color:rgba(255,255,255,.9);text-align:justify;}
+  .risk li{font-size:var(--fs-body);line-height:var(--lh-card);padding:14px 0 14px 30px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;color:rgba(255,255,255,.9);text-align:justify;}
   .risk li::before{content:"";position:absolute;left:0;top:23px;width:9px;height:9px;background:var(--vn-red);border-radius:50%;}
 
   /* 予定セクション（濃背景） */
@@ -191,13 +193,13 @@
   .sp{background:#fff;border:1px solid var(--border);border-left:4px solid var(--green);padding:24px 30px;}
   .sp.dn{border-left-color:var(--vn-red);}
   .sp h5{font-family:var(--mincho);font-size:var(--fs-lead);margin-bottom:6px;}
-  .sp p{font-size:var(--fs-bodysm);line-height:1.7;color:var(--mid);text-align:justify;}
+  .sp p{font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
 
   /* 免責 */
   .footer{background:var(--green-dark);padding:40px 64px;}
-  .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:15px 18px;font-size:var(--fs-label);color:rgba(255,255,255,.8);line-height:1.8;}
+  .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:15px 18px;font-size:var(--fs-label);color:rgba(255,255,255,.8);line-height:var(--lh-card);}
   .footer .warn b{color:var(--gold);} .footer .warn .red{color:#ff8a8a;}
-  .footer .disc{font-size:var(--fs-micro);color:rgba(255,255,255,.44);line-height:1.85;margin-top:16px;}
+  .footer .disc{font-size:var(--fs-micro);color:rgba(255,255,255,.44);line-height:var(--lh-card);margin-top:16px;}
   .footer .brand{color:rgba(255,255,255,.5);font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);margin-top:16px;}
 </style>
 </head>
@@ -235,7 +237,7 @@
 <section>
   <figure style="margin:-70px -64px 42px;">
     <img src="weekly_assets/founder_hero.jpg" alt="ファム・ニャット・ヴオン ビングループ会長" style="width:100%;display:block;">
-    <figcaption style="font-family:var(--gothic);font-size:12px;color:var(--light);margin:9px 64px 0;line-height:1.55;">ファム・ニャット・ヴオン ビングループ会長。写真：ベトナム通信社（VNA／TTXVN）より（報道・解説目的の引用）。当社はビングループと無関係。</figcaption>
+    <figcaption style="font-family:var(--gothic);font-size:12px;color:var(--light);margin:9px 64px 0;line-height:var(--lh-note);">ファム・ニャット・ヴオン ビングループ会長。写真：ベトナム通信社（VNA／TTXVN）より（報道・解説目的の引用）。当社はビングループと無関係。</figcaption>
   </figure>
   <div class="eyebrow">Growth Formula ｜ 成長の方程式</div>
   <div class="s-title">不動産が稼ぎ、EVが問う成長の方程式</div>
@@ -320,7 +322,7 @@
     <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:4%"></div><div class="dvb" style="color:var(--down)">−0.05%</div></div></div><div class="lab">木</div></div>
     <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:20%"></div><div class="dvb" style="color:var(--down)">−0.23%</div></div></div><div class="lab">金</div></div>
   </div>
-  <div class="body jp" style="font-size:var(--fs-body);line-height:1.9;margin-top:26px;">受け皿に回ったのが銀行だ。<strong>VPB+1.8pt・HDB+1.8pt・MBB+1.5pt・VCB+1.1pt</strong>と主要行が寄与上位を占め、セクター全体で<strong>+7.2pt</strong>を返した——不動産（ビン系）の<strong>−16.3pt</strong>を穴埋めしきれなかった、という構図である。外国人はVN30合計で<strong>約2.0兆ドン（約127億円）の売り越し</strong>。売り筆頭は<strong>VHM −617十億ドン</strong>で、VNMの売り（−268十億ドン）は平常ペースの約1.8倍と目立った。一方で<strong>VICは+206十億ドンと最大の買い越し</strong>——ビン系を売りながら親会社VICは拾う、選別の動きが出ている。商いは細く、HOSEの1日平均売買代金は約17.4兆ドンと前週比9%減・20週平均を約3割下回る。</div>
+  <div class="body jp" style="font-size:var(--fs-body);line-height:var(--lh-body);margin-top:26px;">受け皿に回ったのが銀行だ。<strong>VPB+1.8pt・HDB+1.8pt・MBB+1.5pt・VCB+1.1pt</strong>と主要行が寄与上位を占め、セクター全体で<strong>+7.2pt</strong>を返した——不動産（ビン系）の<strong>−16.3pt</strong>を穴埋めしきれなかった、という構図である。外国人はVN30合計で<strong>約2.0兆ドン（約127億円）の売り越し</strong>。売り筆頭は<strong>VHM −617十億ドン</strong>で、VNMの売り（−268十億ドン）は平常ペースの約1.8倍と目立った。一方で<strong>VICは+206十億ドンと最大の買い越し</strong>——ビン系を売りながら親会社VICは拾う、選別の動きが出ている。商いは細く、HOSEの1日平均売買代金は約17.4兆ドンと前週比9%減・20週平均を約3割下回る。</div>
   <div class="src">出所：指数・日次騰落・外国人フロー＝VNDirect実測（週間騰落は前金曜6/26終値→当金曜7/3終値）。寄与度pt＝週間騰落×VN-Index内ウェイト（単純時価総額・概算）の当社試算。流動性は当社リサーチ集（現地報道）。円換算は2026/7/2の為替（1USD≒162.5円・26,251VND）。</div>
 </section>
 
@@ -340,7 +342,7 @@
   <div class="secrow"><div class="secname">素材</div><div class="secbar"><i class="neg" style="width:7%;left:auto;right:50%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−0.8%</div></div>
   <div class="secrow"><div class="secname">公益</div><div class="secbar"><i class="neg" style="width:9%;left:auto;right:50%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−1.1%</div></div>
   <div class="secrow"><div class="secname">不動産</div><div class="secbar"><i class="neg" style="width:25%;left:auto;right:50%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−2.9%</div></div>
-  <div class="body jp" style="font-size:var(--fs-bodysm);line-height:1.85;margin-top:22px;">首位の<strong>観光・レジャー+5.1%</strong>は小型銘柄主体（HOSE時価総額比わずか2%）。指数を実際に決めたのは、時価総額の重い<strong>2大セクターの綱引き</strong>だ——<strong>不動産（HOSE比32%）が−2.9%で最弱</strong>、<strong>銀行（同31%）が+1.3%で支え</strong>、その差がそのまま指数（−0.53%）に表れた。上位の<strong>証券・金融+2.6%</strong>はFTSE格上げ期待の資金流入。<strong>飲食料品+2.4%</strong>は最大手マサン・コンシューマー（MCH<strong>+9.9%</strong>）の急伸によるもので、実はMCHが今週のVN-Index最大の押し上げ役（約+3.6pt）だった——VNM・SABはむしろ下げており、セクター内も一枚岩ではない。</div>
+  <div class="body jp" style="font-size:var(--fs-bodysm);line-height:var(--lh-card);margin-top:22px;">首位の<strong>観光・レジャー+5.1%</strong>は小型銘柄主体（HOSE時価総額比わずか2%）。指数を実際に決めたのは、時価総額の重い<strong>2大セクターの綱引き</strong>だ——<strong>不動産（HOSE比32%）が−2.9%で最弱</strong>、<strong>銀行（同31%）が+1.3%で支え</strong>、その差がそのまま指数（−0.53%）に表れた。上位の<strong>証券・金融+2.6%</strong>はFTSE格上げ期待の資金流入。<strong>飲食料品+2.4%</strong>は最大手マサン・コンシューマー（MCH<strong>+9.9%</strong>）の急伸によるもので、実はMCHが今週のVN-Index最大の押し上げ役（約+3.6pt）だった——VNM・SABはむしろ下げており、セクター内も一枚岩ではない。</div>
   <div class="src">出所：VNDirect実測。<strong>HOSE上場全銘柄（VN-Index・402銘柄を採用）</strong>を<strong>ICB分類（Level-2 supersector）</strong>でセクター集計、時価総額加重・調整後週次騰落（前金曜6/26終値→当金曜7/3終値）。図はHOSE時価総額比1.5%以上の主要12セクターを表示（通信・自動車・保険・ヘルスケア等の小型セクターは非表示）。概算。</div>
 </section>
 
@@ -371,7 +373,7 @@
   </div>
   <div style="margin-top:28px;padding:26px 32px;background:var(--cream);border-left:4px solid var(--gold);">
     <div style="font-family:var(--sans-en);font-size:14px;letter-spacing:.15em;color:var(--light);margin-bottom:10px">ANALYST NOTE</div>
-    <div class="body jp" style="font-size:var(--fs-bodysm);line-height:1.9;">値上がり上位5のうち<strong>4つが銀行</strong>、残る1つが証券（SSI）——買われたのは「FTSE格上げと増資ラッシュの金融」だ。値下がりは<strong>下位5のうち4つがビン系</strong>（VPL・VIC・VRE・VHM）で、前週の主役がそのまま重石に回った。最下位のLPBは上半期に+28%と買われた反動の利益確定とみられる。指数寄与ではVIC単独の−12.2ptが週間下落（−9.8pt）を上回り、銀行全体の+7.2ptでも吸収しきれなかった。</div>
+    <div class="body jp" style="font-size:var(--fs-bodysm);line-height:var(--lh-card);">値上がり上位5のうち<strong>4つが銀行</strong>、残る1つが証券（SSI）——買われたのは「FTSE格上げと増資ラッシュの金融」だ。値下がりは<strong>下位5のうち4つがビン系</strong>（VPL・VIC・VRE・VHM）で、前週の主役がそのまま重石に回った。最下位のLPBは上半期に+28%と買われた反動の利益確定とみられる。指数寄与ではVIC単独の−12.2ptが週間下落（−9.8pt）を上回り、銀行全体の+7.2ptでも吸収しきれなかった。</div>
   </div>
   <div class="src">出所：VNDirect実測。週次騰落率は前金曜（6/26）終値→当金曜（7/3）終値・調整後株価ベース（VHM・VREは6/29–30の配当・無償株の権利落ちを調整済み＝表面の株価下落率とは異なる）。LPBの上半期騰落は当社リサーチ集（現地報道）。</div>
 </section>
