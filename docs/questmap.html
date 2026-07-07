@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>クエスト攻略マップ ― Vietnam Weekly</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a class="on" href="questmap.html">攻略マップ</a>
+    <a href="zaibatsu.html">財閥図鑑</a>
+    <a href="scorecard.html">通信簿</a>
+  </nav>
+</div>
+
+<section>
+  <div class="eyebrow">Quest Map ｜ クエスト攻略マップ</div>
+  <div class="s-title">VN30、どこまで探索したか</div>
+  <div class="body jp" style="margin-bottom:30px;">週次の「企業クエスト」で深掘りしたVN30構成銘柄に✓を刻んでいく。VN-Indexの約7割はこの30銘柄に集中する——ここを踏破すれば、市場の骨格が読める。</div>
+
+  <div class="progress">
+    <div class="pv num" id="pv"></div>
+    <div class="bar"><i id="pbar"></i></div>
+  </div>
+
+  <div class="qgrid" id="qgrid"></div>
+
+  <div class="legend">
+    <span><i style="background:var(--green-dark)"></i>クエスト済み</span>
+    <span><i style="background:#fff;border:2px solid var(--up)"></i>次号で探索</span>
+    <span><i style="background:var(--cream);border:1px solid var(--border)"></i>探索予定（変更あり）</span>
+    <span><i style="background:var(--cream-dark)"></i>未踏</span>
+  </div>
+  <div class="src">VN30構成はHOSE定期見直し（毎年1月・7月）に追随。予定号・日付は編集都合で変更されることがあります。</div>
+</section>
+
+<div class="footer">
+  <div class="warn jp">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本サイトおよび各号は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本サイトは社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+  <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly</div>
+</div>
+
+<script src="data/site.js"></script>
+<script>
+(function(){
+  var S=window.SITE;
+  var done=S.vn30.filter(function(x){return x.st==="done"}).length;
+  document.getElementById("pv").textContent=done+" / 30 クエスト済み";
+  document.getElementById("pbar").style.width=(done/30*100)+"%";
+  var lab={done:function(x){return "VOL."+String(x.vol).padStart(2,"0")+" 収載"},
+           next:function(x){return "VOL."+String(x.vol).padStart(2,"0")+" で探索予定"},
+           planned:function(x){return "VOL."+String(x.vol).padStart(2,"0")+" 予定"},
+           open:function(){return "未踏"}};
+  document.getElementById("qgrid").innerHTML=S.vn30.map(function(x){
+    return '<div class="qt '+x.st+'"><div class="tk">'+x.t+'</div><div class="nm">'+x.n+'</div>'+
+      '<div class="sc">'+x.s+'</div><span class="bd">'+lab[x.st](x)+'</span></div>';
+  }).join("");
+})();
+</script>
+</body>
+</html>

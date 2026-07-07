@@ -1,260 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=1080">
-<title>ししまるベトナム新聞</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<style>
-  body{margin:0;background:#E9E5DA;font-family:'Hiragino Sans','Yu Gothic Medium',YuGothic,'Yu Gothic',Meiryo,'Noto Sans JP',system-ui,sans-serif;color:#1A1A1A;-webkit-font-smoothing:antialiased;}
-</style>
+<title>Vietnam Weekly ― CQC投資調査部</title>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div style="background:#E9E5DA;padding:28px 0;display:flex;justify-content:center;">
-<div style="width:1080px;max-width:100%;background:#FFFFFF;border-radius:2px;overflow:hidden;box-shadow:0 18px 50px rgba(0,73,44,.14);">
 
-  <!-- MASTHEAD -->
-  <div style="position:relative;background:linear-gradient(135deg,#00492C 0%,#013820 58%,#011D12 100%);color:#fff;padding:22px 32px 20px;display:flex;align-items:center;gap:18px;">
-    <img src="assets/shishi1.png" alt="ししまる" style="height:74px;width:auto;flex-shrink:0;filter:drop-shadow(0 3px 6px rgba(0,0,0,.25));">
-    <div style="flex:1;text-align:left;">
-      <div style="font-size:18px;font-weight:700;letter-spacing:.32em;color:#D8B95A;">DAILY QUEST</div>
-      <div style="font-size:39px;font-weight:900;letter-spacing:.01em;line-height:1.08;margin-top:3px;">ししまる<span style="color:#D8B95A;">ベトナム</span>新聞</div>
-      <div style="font-size:18px;opacity:.82;margin-top:5px;">ベトナム市場のいまを、ししまるがお届け</div>
-    </div>
-    <div style="text-align:right;flex-shrink:0;align-self:flex-start;">
-      <div style="font-size:23px;font-weight:800;font-variant-numeric:tabular-nums;">2026.7.3 （金）</div>
-    </div>
-  </div>
-
-  <!-- 指数バー -->
-  <div style="display:flex;align-items:stretch;gap:10px;padding:14px 32px;background:#FBFAF5;border-bottom:1px solid #E8E4DC;">
-    <span style="display:flex;align-items:center;font-size:18px;font-weight:800;letter-spacing:.16em;color:#00492C;padding-right:6px;border-right:1px solid #E8E4DC;">指数</span>
-      <div style="display:flex;flex-direction:row;align-items:center;gap:14px;flex:1;padding:12px 18px;border-radius:2px;color:#fff;background:#8B1A1A;">
-        <div style="font-size:18px;opacity:.85;font-weight:600;white-space:nowrap;">VN-Index</div>
-        <div style="font-size:31px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.05;white-space:nowrap;">1,866.35</div>
-        <div style="font-size:20px;font-weight:700;opacity:.95;white-space:nowrap;"><span>▼</span> -0.86 ／ -0.05%</div>
-      </div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;">
-      <div style="font-size:18px;color:#555;font-weight:600;">HOSE 騰落（上昇 / 変わらず / 下落）</div>
-      <div style="display:flex;width:100%;height:11px;border-radius:2px;overflow:hidden;background:#E6E1D5;">
-        <span style="width:33.8%;background:#1F7A4D;height:100%;"></span><span style="width:21.2%;background:#CFC9BB;height:100%;"></span><span style="width:45.1%;background:#8B1A1A;height:100%;"></span>
-      </div>
-      <div style="font-size:27px;font-weight:800;display:flex;gap:16px;font-variant-numeric:tabular-nums;"><span style="color:#1F7A4D;">▲ 123</span><span style="color:#CFC9BB;">|</span><span style="color:#888;">― 77</span><span style="color:#CFC9BB;">|</span><span style="color:#8B1A1A;">▼ 164</span></div>
-    </div>
-  </div>
-
-  <!-- 今日のひとこと -->
-  <div style="position:relative;display:grid;grid-template-columns:minmax(0,1fr) 264px;gap:0;align-items:center;padding:24px 32px 16px;background:linear-gradient(180deg,#FFFFFF,#FBFAF5);">
-    <div style="position:relative;background:#FFFFFF;border:2px solid #00492C;border-radius:2px;padding:22px 22px;box-shadow:0 6px 24px rgba(0,73,44,.10);z-index:2;">
-      <div style="width:48px;height:2px;background:#B8922A;margin-bottom:11px;"></div>
-      <div style="font-size:18px;font-weight:700;letter-spacing:.18em;color:#555;">今日のひとこと</div>
-      <div style="font-size:35px;font-weight:900;color:#8B1A1A;line-height:1.25;margin:7px 0 11px;letter-spacing:-.02em;">VIC主導で指数小幅安</div>
-      <div style="font-size:18px;line-height:1.9;color:#2A2A2A;font-weight:500;text-align:justify;">
-        <div style='padding-left:1.3em;text-indent:-1.3em;margin-bottom:2px;'><span style='color:#00492C;font-size:12px;vertical-align:1px;'>&#9679;</span> 上昇 5／下落 20／変わらず 5（30銘柄）。</div>
-      </div>
-      <div style="position:absolute;right:-10px;top:52px;width:18px;height:18px;background:#fff;border-right:2px solid #00492C;border-top:2px solid #00492C;transform:rotate(45deg);"></div>
-    </div>
-    <div style="justify-self:center;align-self:end;">
-      <img src="assets/shishi2.png" alt="ししまる" style="height:262px;width:auto;display:block;filter:drop-shadow(0 6px 12px rgba(0,73,44,.18));">
-    </div>
-  </div>
-
-  <!-- VN30 ヒートマップ -->
-  <div style="padding:6px 32px 20px;background:#FBFAF5;border-bottom:1px solid #E8E4DC;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;">
-      <span style="font-size:18px;font-weight:800;letter-spacing:.16em;color:#00492C;">VN30 ヒートマップ　<span style="font-weight:600;color:#777;letter-spacing:.04em;">騰落率順・緑=上昇／赤=下落</span></span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:5px;">
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(0,73,44,0.59);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VIC</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ビングループ</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">+1.5</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(0,73,44,0.51);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VHM</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ビンホームズ</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">+1.1</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(0,73,44,0.37);color:#00492C">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VNM</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ビナミルク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">+0.5</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(0,73,44,0.37);color:#00492C">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">SAB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">サベコ</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">+0.5</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(0,73,44,0.32);color:#00492C">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VIB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ベトナム国際銀行</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">+0.3</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:#E6E1D5;color:#6b7670">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">ACB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">アジア商業銀行</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">0.0</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:#E6E1D5;color:#6b7670">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VPB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">VPバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">0.0</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:#E6E1D5;color:#6b7670">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">SHB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">サイゴンハノイ銀行</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">0.0</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:#E6E1D5;color:#6b7670">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">HDB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">HDバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">0.0</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:#E6E1D5;color:#6b7670">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">SSB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">SeAバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">0.0</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.28);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">MSN</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">マサングループ</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.1</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.3);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">HPG</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ホアファット</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.2</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.3);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VJC</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ベトジェット</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.2</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.34);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">SSI</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">SSI証券</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.4</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.34);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">MWG</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">モバイルワールド</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.4</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.34);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">MBB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">MBバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.4</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.35);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">CTG</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ベトナム工商銀行</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.4</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.35);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">GVR</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ベトナムゴム</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.5</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.37);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VRE</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ビンコムリテール</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.5</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.38);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">FPT</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">FPT</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.6</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.4);color:#8B1A1A">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">PLX</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ペトロリメックス</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.7</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.44);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">STB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">サコムバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.8</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.46);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">GAS</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ペトロベトナムガス</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-0.9</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.52);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">BID</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ベトナム投資開発銀行</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-1.2</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.55);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">TCB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">テクコムバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-1.3</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.56);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VPL</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ビンパール</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-1.4</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.58);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">VCB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ベトコムバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-1.4</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.59);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">TPB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">TPバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-1.5</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.68);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">LPB</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">LPバンク</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-1.9</div>
-        </div>
-        <div style="border-radius:2px;padding:8px 2px;text-align:center;min-height:52px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:rgba(139,26,26,0.75);color:#fff">
-          <div style="font-weight:800;font-size:18px;letter-spacing:.02em;">BSR</div>
-          <div style="font-size:11px;font-weight:600;opacity:.85;line-height:1.15;white-space:nowrap;">ビンソン石油精製</div>
-          <div style="font-size:18px;font-weight:700;opacity:.92;">-2.2</div>
-        </div>
-    </div>
-  </div>
-
-  <!-- きょうのポイント -->
-  <div style="padding:20px 32px 10px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-      <span style="width:48px;height:2px;background:#B8922A;"></span>
-      <span style="font-size:18px;font-weight:800;letter-spacing:.14em;color:#00492C;">きょうのポイント</span>
-    </div>
-      <div style="position:relative;display:flex;gap:18px;align-items:center;background:#FBFAF5;border:1px solid #E8E4DC;border-top:3px solid #00492C;border-radius:2px;padding:30px 22px 20px;margin:24px 0 0;">
-        <div style="flex-shrink:0;width:74px;height:74px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:42px;background:#F0EADE;color:#00492C;border:1px solid #E8E4DC;"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
-        <div style="flex:1;">
-          <span style="position:absolute;top:-16px;left:14px;display:inline-flex;align-items:center;font-size:18px;font-weight:800;color:#fff;border-radius:2px;padding:7px 15px;letter-spacing:.04em;background:#00492C;box-shadow:0 3px 8px rgba(0,73,44,.22);"></span>
-          <div style="margin-top:0;"><div style="font-size:20px;line-height:1.7;color:#2A2A2A;font-weight:500;"><span style="color:#a8a294;font-style:italic;">（CafeF等の要約を1–2行で：記入待ち）</span></div></div>
-        </div>
-      </div>
-      <div style="position:relative;display:flex;gap:18px;align-items:center;background:#FBFAF5;border:1px solid #E8E4DC;border-top:3px solid #00492C;border-radius:2px;padding:30px 22px 20px;margin:24px 0 0;">
-        <div style="flex-shrink:0;width:74px;height:74px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:42px;background:#F0EADE;color:#00492C;border:1px solid #E8E4DC;"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
-        <div style="flex:1;">
-          <span style="position:absolute;top:-16px;left:14px;display:inline-flex;align-items:center;font-size:18px;font-weight:800;color:#fff;border-radius:2px;padding:7px 15px;letter-spacing:.04em;background:#00492C;box-shadow:0 3px 8px rgba(0,73,44,.22);"></span>
-          <div style="margin-top:0;"><div style="font-size:20px;line-height:1.7;color:#2A2A2A;font-weight:500;"><span style="color:#a8a294;font-style:italic;">（CafeF等の要約を1–2行で：記入待ち）</span></div></div>
-        </div>
-      </div>
-      <div style="position:relative;display:flex;gap:18px;align-items:center;background:#FBFAF5;border:1px solid #E8E4DC;border-top:3px solid #00492C;border-radius:2px;padding:30px 22px 20px;margin:24px 0 14px;">
-        <div style="flex-shrink:0;width:74px;height:74px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:42px;background:#F0EADE;color:#00492C;border:1px solid #E8E4DC;"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
-        <div style="flex:1;">
-          <span style="position:absolute;top:-16px;left:14px;display:inline-flex;align-items:center;font-size:18px;font-weight:800;color:#fff;border-radius:2px;padding:7px 15px;letter-spacing:.04em;background:#00492C;box-shadow:0 3px 8px rgba(0,73,44,.22);"></span>
-          <div style="margin-top:0;"><div style="font-size:20px;line-height:1.7;color:#2A2A2A;font-weight:500;"><span style="color:#a8a294;font-style:italic;">（CafeF等の要約を1–2行で：記入待ち）</span></div></div>
-        </div>
-      </div>
-  </div>
-
-  <!-- フッター -->
-  <div style="display:flex;align-items:center;padding:14px 32px 18px;background:#FBFAF5;">
-    <img src="assets/shishi3.png" alt="ししまる" style="height:90px;width:auto;flex-shrink:0;">
-    <p style="font-size:13px;line-height:1.7;color:#777;margin:0;flex:1;text-align:center;">出典: VNDirect／市況コメントはベトナム現地報道（CafeF・Thời báo Tài chính 等）を要約／基準日 2026-07-02　投資判断は自己責任で</p>
-    <div style="width:90px;flex-shrink:0;" aria-hidden="true"></div>
-  </div>
-
+<div class="topbar">
+  <div class="brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+  <nav>
+    <a class="on" href="index.html">トップ</a>
+    <a href="questmap.html">攻略マップ</a>
+    <a href="zaibatsu.html">財閥図鑑</a>
+    <a href="scorecard.html">通信簿</a>
+  </nav>
 </div>
+
+<!-- 最新号ヒーロー -->
+<a class="latest" id="latest" href="#">
+  <div class="bg" id="latest-bg"></div>
+  <div class="grad"></div>
+  <div class="inner">
+    <div class="tag" id="latest-tag">LATEST ISSUE</div>
+    <h2 id="latest-title"></h2>
+    <div class="meta num" id="latest-meta"></div>
+    <div class="sum jp" id="latest-sum"></div>
+  </div>
+</a>
+
+<!-- コーナー -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Corners ｜ 常設コーナー</div>
+  <div class="s-title">号を重ねるほど、育つページ</div>
+  <div class="cards" id="cards"></div>
+  <div class="src">「COMING SOON」のコーナーは、週次の号を重ねながら順次オープンします。</div>
+</section>
+
+<!-- バックナンバー -->
+<section>
+  <div class="eyebrow">Back Numbers ｜ バックナンバー</div>
+  <div class="s-title">これまでの号</div>
+  <div class="shelf" id="shelf"></div>
+</section>
+
+<!-- 免責 -->
+<div class="footer">
+  <div class="warn jp">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本サイトおよび各号は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本サイトは社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+  <div class="disc jp">本サイトは Capital Quest Corporation 投資調査部が作成する非公式リサーチであり、記載する各社とは一切関係がありません。市場ウェイト等は単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通し・予定は変更されることがあります。</div>
+  <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly</div>
+  <div class="arch">アーカイブ: <a href="daily_final.html">ししまるベトナム新聞（日次・休刊）最終号</a></div>
 </div>
+
+<script src="data/site.js"></script>
+<script>
+(function(){
+  var S=window.SITE;
+  // 最新号ヒーロー
+  var iss=S.issues[0];
+  document.getElementById("latest").href=iss.url;
+  document.getElementById("latest-bg").style.backgroundImage="url('"+iss.hero+"')";
+  document.getElementById("latest-tag").textContent="LATEST ISSUE ― VOL."+String(iss.vol).padStart(2,"0");
+  document.getElementById("latest-title").textContent=iss.title;
+  document.getElementById("latest-meta").textContent=iss.week+" ｜ "+iss.published;
+  document.getElementById("latest-sum").textContent=iss.summary;
+  // コーナーカード
+  document.getElementById("cards").innerHTML=S.corners.map(function(c){
+    var inner='<div class="ic">'+c.icon+'</div><h3>'+c.name+'</h3><p class="jp">'+c.desc+'</p>'+
+      '<span class="st">'+(c.status==="live"?"公開中":"COMING SOON")+'</span>';
+    return c.status==="live"
+      ? '<a class="card live" href="'+c.url+'">'+inner+'</a>'
+      : '<div class="card soon">'+inner+'</div>';
+  }).join("");
+  // バックナンバー棚
+  document.getElementById("shelf").innerHTML=S.issues.map(function(i){
+    return '<a class="book" href="'+i.url+'">'+
+      '<div class="thumb" style="background-image:url(\''+i.hero+'\')"></div>'+
+      '<div class="bd"><span class="vol">VOL.'+String(i.vol).padStart(2,"0")+'</span>'+
+      '<h4>'+i.title+'</h4><div class="wk">'+i.week+' ｜ '+i.published+'</div></div></a>';
+  }).join("");
+})();
+</script>
 </body>
 </html>

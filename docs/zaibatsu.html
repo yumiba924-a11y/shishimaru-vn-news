@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>財閥図鑑 ― Vietnam Weekly</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="questmap.html">攻略マップ</a>
+    <a class="on" href="zaibatsu.html">財閥図鑑</a>
+    <a href="scorecard.html">通信簿</a>
+  </nav>
+</div>
+
+<section>
+  <div class="eyebrow">Encyclopedia ｜ 財閥図鑑</div>
+  <div class="s-title">ベトナム経済を動かす一族を、収集する</div>
+  <div class="body jp" style="margin-bottom:30px;">週次の企業クエストで探索した財閥・企業グループを、同じ物差し（上場銘柄・VN-Index比・創業者・事業の二面性）で一枚ずつ収載していく図鑑。号を重ねるたびに、ページがめくれる。</div>
+  <div class="zgrid" id="zgrid"></div>
+  <div class="src">「探索予定」の日付・順序は時流により変更されることがあります。各カードの詳細（数字・出所・免責）は収載号の誌面を参照。</div>
+</section>
+
+<div class="footer">
+  <div class="warn jp">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本サイトおよび各号は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本サイトは社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+  <div class="disc jp">写真は各社公式サイトより転載（報道・解説目的の引用）。当社は記載する各社・各グループと一切関係がありません。</div>
+  <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly</div>
+</div>
+
+<script src="data/site.js"></script>
+<script>
+(function(){
+  var S=window.SITE;
+  document.getElementById("zgrid").innerHTML=S.zaibatsu.map(function(z){
+    var chips=z.tickers.map(function(t){return '<span class="chip">'+t+'</span>'}).join("");
+    var east=z.east?'<br><span class="east">🚂 東欧組 ― '+z.east+'</span>':"";
+    if(z.status==="done"){
+      return '<a class="zc" href="'+z.url+'">'+
+        '<div class="zimg" style="background-image:url(\''+z.img+'\')"><span class="done-rib">VOL.'+String(z.vol).padStart(2,"0")+' 収載済</span></div>'+
+        '<div class="zbd"><h3>'+z.name+'</h3><div class="zone jp">'+z.oneliner+'</div>'+
+        '<div class="chips">'+chips+'</div><div class="fdr">創業者: '+z.founder+east+'</div></div></a>';
+    }
+    return '<div class="zc planned">'+
+      '<div class="zimg"><span class="q">？</span></div>'+
+      '<div class="zbd"><h3>'+z.name+'</h3><div class="zone jp">'+z.oneliner+'</div>'+
+      '<div class="chips">'+chips+'</div><div class="fdr">創業者: '+z.founder+east+'</div>'+
+      '<span class="due">VOL.'+String(z.vol).padStart(2,"0")+' ― '+z.date+'</span></div></div>';
+  }).join("");
+})();
+</script>
+</body>
+</html>
