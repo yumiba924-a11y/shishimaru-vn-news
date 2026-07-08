@@ -207,17 +207,40 @@
 
 <div class="ribbon">📋 <b>制作中プレビュー（VOL.02ドラフト）</b> ― 特集パート先行版。数値は2026/7/6時点、<b>相場・ニュース各面は7/10（金）データ確定後に追加</b>。7/13（月）発刊予定</div>
 
-<!-- ① 表紙 -->
-<div class="hero" style="height:920px;">
-  <div class="hero-img" style="background:linear-gradient(135deg,#002D1A 0%,#00492C 55%,#0a5a3a 100%);"></div>
-  <div class="hero-grad"></div>
+<!-- ① 表紙＝VN30銀行14行の紋章壁 -->
+<style>
+  .bankwall{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:38px;}
+  .btile{background:#fff;border-radius:8px;height:106px;display:flex;align-items:center;justify-content:center;padding:16px 20px;box-shadow:0 10px 26px rgba(0,0,0,.30);}
+  .btile img{max-height:58px;max-width:100%;object-fit:contain;}
+  .btile.ph{background:rgba(255,255,255,.05);border:1px dashed rgba(245,196,0,.45);flex-direction:column;box-shadow:none;}
+  .btile.ph .tk{font-family:var(--sans-en);font-weight:700;font-size:28px;color:var(--gold);}
+  .btile.ph .pl{font-family:var(--gothic);font-size:11px;color:rgba(255,255,255,.55);margin-top:5px;}
+</style>
+<div class="hero" style="height:auto;min-height:1020px;">
+  <div class="hero-img" style="background:linear-gradient(160deg,#002D1A 0%,#00492C 58%,#063a26 100%);"></div>
   <div class="hero-nav">
     <div class="hero-brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
     <div class="hero-date num">VOL.02 ― 2026.7.6–7.10週<br>7月13日（月）発行予定</div>
   </div>
-  <div class="hero-body">
+  <div style="position:relative;z-index:3;padding:34px 64px 60px;">
     <div class="hero-quest">WEEKLY QUEST ② ― 今週の企業クエスト</div>
-    <div class="hero-title">静かなる支配者<span class="sub">― ベトナムの銀行</span></div>
+    <div class="hero-title">静かなる支配者<span class="sub">― ベトナムを動かす14の銀行</span></div>
+    <div class="bankwall">
+      <div class="btile"><img src="weekly_assets/banks/VCB.png" alt="ベトコムバンク"></div>
+      <div class="btile"><img src="weekly_assets/banks/BID.png" alt="BIDV"></div>
+      <div class="btile"><img src="weekly_assets/banks/CTG.png" alt="ベトインバンク"></div>
+      <div class="btile"><img src="weekly_assets/banks/TCB.svg" alt="テクコムバンク"></div>
+      <div class="btile"><img src="weekly_assets/banks/VPB.svg" alt="VPバンク"></div>
+      <div class="btile ph"><span class="tk">MBB</span><span class="pl">ロゴ準備中</span></div>
+      <div class="btile"><img src="weekly_assets/banks/LPB.png" alt="LPバンク"></div>
+      <div class="btile"><img src="weekly_assets/banks/HDB.png" alt="HDバンク"></div>
+      <div class="btile"><img src="weekly_assets/banks/STB.svg" alt="サコムバンク"></div>
+      <div class="btile"><img src="weekly_assets/banks/ACB.svg" alt="アジア商業銀行"></div>
+      <div class="btile"><img src="weekly_assets/banks/SHB.png" alt="サイゴンハノイ銀行"></div>
+      <div class="btile"><img src="weekly_assets/banks/SSB.png" alt="SeAバンク"></div>
+      <div class="btile ph"><span class="tk">VIB</span><span class="pl">ロゴ準備中</span></div>
+      <div class="btile"><img src="weekly_assets/banks/TPB.png" alt="TPバンク"></div>
+    </div>
   </div>
 </div>
 
@@ -347,7 +370,7 @@
     本紙は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。<span class="red">本ページはVOL.02の制作中ドラフト。数値は2026/7/6時点の実データ（VNDirect実測・概算）で、7/10（金）確定値で更新予定</span>。週間寄与度・セクター週間・集中度は単純時価総額ベースの概算。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
     <span class="red">本紙は社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
   </div>
-  <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各行・各社とは一切関係がありません</b>。国有/民間の区分・外国人枠消化率は当社推計。市場ウェイトは単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>
+  <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各行・各社とは一切関係がありません</b>。表紙および本文の各行ロゴは<b>それぞれの銀行の商標・登録商標</b>であり、各行公式サイトより引用（報道・解説目的）。当社はこれら各行と提携・関係を有しません。国有/民間の区分・外国人枠消化率は当社推計。市場ウェイトは単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>
   <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly VOL.02（制作中ドラフト） ｜ 2026.7.6–7.10週 ／ 2026.7.13発行予定</div>
 </div>
 
