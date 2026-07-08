@@ -45,6 +45,17 @@ FILL = {"gov": "#0B3D26", "mil": "#2E6B4A", "priv": "#A8C6B4"}
 TXT  = {"gov": "#FFFFFF", "mil": "#FFFFFF", "priv": "#0B3D26"}
 GOLD = "#F5C400"
 
+# 円換算ラベル（1USD≒162.5円・26,251VND＝約61.9億円/兆VND）。14行は数字テーブルと一致
+YEN = {
+    "VCB": "3.2兆円", "BID": "1.8兆円", "CTG": "1.6兆円", "TCB": "1.5兆円",
+    "VPB": "1.3兆円", "MBB": "1.3兆円", "LPB": "9,500億円", "HDB": "8,400億円",
+    "STB": "8,300億円", "ACB": "8,000億円", "SHB": "4,050億円", "SSB": "3,500億円",
+    "VIB": "3,400億円", "MSB": "3,000億円", "TPB": "2,800億円", "EIB": "2,300億円",
+    "OCB": "2,200億円", "NVB": "1,700億円", "NAB": "1,700億円", "ABB": "1,200億円",
+    "BAB": "1,100億円", "KLB": "870億円", "VBB": "740億円", "PGB": "620億円",
+    "VAB": "500億円", "BVB": "430億円", "SGB": "370億円",
+}
+
 AR = 1.744
 W, H = 100 * AR, 100.0
 sizes = [b[1] for b in BANKS]
@@ -73,13 +84,13 @@ for (ticker, mc, own, vn30), r in zip(BANKS, rects):
     if m >= 16:
         ax.text(cx, cy - dy * 0.06, ticker, ha="center", va="center",
                 fontsize=min(26, m * 1.05), fontweight="bold", color=tcol)
-        ax.text(cx, cy + dy * 0.16, f"{mc}兆", ha="center", va="center",
-                fontsize=min(15, m * 0.55), color=tcol)
+        ax.text(cx, cy + dy * 0.16, YEN[ticker], ha="center", va="center",
+                fontsize=min(15, m * 0.5), color=tcol)
     elif m >= 8.5:
         ax.text(cx, cy - dy * 0.05, ticker, ha="center", va="center",
                 fontsize=min(15, m * 0.9), fontweight="bold", color=tcol)
-        ax.text(cx, cy + dy * 0.22, f"{mc}兆", ha="center", va="center",
-                fontsize=min(10, m * 0.42), color=tcol)
+        ax.text(cx, cy + dy * 0.22, YEN[ticker], ha="center", va="center",
+                fontsize=min(9.5, m * 0.34), color=tcol)
     elif m >= 4.5:
         ax.text(cx, cy, ticker, ha="center", va="center",
                 fontsize=min(11, m * 0.85), fontweight="bold", color=tcol)
