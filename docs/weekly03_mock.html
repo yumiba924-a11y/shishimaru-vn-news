@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Vietnam Weekly VOL.03 ― ソビコ（表紙モック）</title>
+<style>
+  :root{
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","ＭＳ 明朝",serif;
+    --gothic:"Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+    --sans-en:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
+    --cream:#FAF8F2; --dark:#111; --light:#5F5F5F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#e9e5dd;}
+  body{font-family:var(--mincho);background:#fff;color:var(--dark);width:1080px;max-width:100%;margin:0 auto;box-shadow:0 0 60px rgba(0,0,0,.12);}
+  .ribbon{background:#7a1414;color:#fff;font-family:var(--gothic);font-size:15px;letter-spacing:.04em;text-align:center;padding:9px 16px;}
+  .ribbon b{color:var(--gold);}
+  .hero{position:relative;height:1180px;overflow:hidden;background:#0b2a1c;}
+  .hero-img{position:absolute;inset:0;background:url('weekly_assets/vol03_cover.jpg') center 42%/cover no-repeat;}
+  .hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,28,18,.30) 0%,rgba(0,24,15,.14) 26%,rgba(0,22,14,.55) 52%,rgba(0,20,13,.74) 74%,rgba(0,18,12,.90) 100%);}
+  .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;padding:30px 60px;}
+  .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:15px;line-height:1.5;opacity:.92;}
+  .hero-brand b{color:var(--gold);font-weight:700;}
+  .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.08em;font-size:15px;border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:8px 16px;border-radius:2px;text-align:right;line-height:1.6;}
+  .hero-body{position:absolute;left:0;right:0;bottom:120px;z-index:3;padding:0 64px;}
+  .hero-quest{font-family:var(--sans-en);letter-spacing:.34em;font-size:19px;color:var(--gold);margin-bottom:26px;display:flex;align-items:center;gap:16px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hero-quest::before{content:"";width:44px;height:2px;background:var(--gold);}
+  .hero-title{font-family:var(--mincho);font-weight:900;font-size:128px;line-height:1.12;color:#fff;letter-spacing:.02em;text-shadow:0 4px 30px rgba(0,0,0,.75),0 1px 6px rgba(0,0,0,.6);}
+  .hero-lead{font-family:var(--mincho);font-size:27px;line-height:1.75;color:rgba(255,255,255,.94);margin-top:28px;max-width:620px;text-shadow:0 2px 14px rgba(0,0,0,.7);border-left:3px solid var(--vn-red);padding-left:20px;}
+  .hero-kpis{display:flex;gap:52px;margin-top:38px;}
+  .hk-l{font-family:var(--sans-en);letter-spacing:.14em;font-size:14px;color:rgba(255,255,255,.72);text-transform:uppercase;}
+  .hk-v{font-family:var(--mincho);font-weight:700;font-size:38px;margin-top:6px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hk-v .g{color:var(--gold);}
+  .hk-v .sm{font-size:22px;}
+  /* タオ・インセット（この財閥の顔） */
+  .face{position:absolute;right:64px;bottom:392px;z-index:4;width:232px;text-align:center;}
+  .face img{width:232px;height:290px;object-fit:cover;object-position:center 22%;border:3px solid rgba(245,196,0,.85);box-shadow:0 10px 40px rgba(0,0,0,.55);}
+  .face .cap{font-family:var(--gothic);font-size:13px;color:#fff;margin-top:9px;line-height:1.5;text-shadow:0 1px 6px rgba(0,0,0,.85);white-space:nowrap;}
+  .face .cap b{color:var(--gold);}
+</style>
+</head>
+<body>
+<div class="ribbon">📋 <b>制作中プレビュー（VOL.03ドラフト）</b> ― ソビコ特集・<b>表紙モック</b>。表紙写真は低解像の仮置き（最終は高解像に差替）。7/20（月）発行予定</div>
+
+<div class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-nav">
+    <div class="hero-brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+    <div class="hero-date">VOL.03 ― 2026.7.13–7.17週<br>2026.7.20（月）発行</div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-quest">WEEKLY QUEST 03 ― 今週の企業クエスト</div>
+    <div class="hero-title">空飛ぶ財閥</div>
+    <div class="hero-lead">誰もが知る格安航空、ベトジェット。その翼を握るのは、銀行から不動産・リゾートまで束ねる一族——<strong>ソビコ</strong>。上場2社は、氷山の一角にすぎない。</div>
+    <div class="hero-kpis">
+      <div><div class="hk-l">上場は2社</div><div class="hk-v"><span class="num">VJC＋HDB</span> <span class="g sm">約1.5兆円</span></div></div>
+      <div><div class="hk-l">創業者タオ 純資産</div><div class="hk-v"><span class="num g">約$42億</span> <span class="sm">ベトナム2位</span></div></div>
+      <div><div class="hk-l">グループの柱</div><div class="hk-v"><span class="num g">5事業</span> <span class="sm">航空・銀行ほか</span></div></div>
+    </div>
+  </div>
+
+  <div class="face">
+    <img src="weekly_assets/vol03_thao.jpg" alt="タオ会長">
+    <div class="cap">この財閥の、顔<br><b>マダム・タオ</b>（ベトジェット／ソビコ会長）</div>
+  </div>
+</div>
+
+<div style="background:#002D1A;color:rgba(255,255,255,.72);font-family:var(--gothic);font-size:12px;line-height:1.7;padding:22px 64px;">
+  <b style="color:var(--gold);">⚠️ 制作中ドラフト（VOL.03 表紙モック）・社内限定</b> ― 本ページは生成AIによる試作の表紙モックで、写真・数値・構成はすべて暫定です。<span style="color:#ff9b95;">社内・グループ内限定。顧客・社外への転送／配布は固くお断りします。</span> 表紙およびポートレートの写真は各社（ベトジェット航空・HDBank／ソビコ・グループ）公式サイトより引用（報道・解説目的）。当社はこれら各社と一切関係がありません。表紙写真は低解像の仮置きで、最終版で高解像に差し替えます。
+</div>
+</body>
+</html>
