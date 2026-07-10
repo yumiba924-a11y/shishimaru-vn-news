@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam Weekly ― ポータル試作（パララックス版）</title>
+<style>
+  :root{
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","ＭＳ 明朝",serif;
+    --gothic:"Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+    --sans-en:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
+    --cream:#FAF8F2; --dark:#111; --mid:#333; --light:#5F5F5F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--mincho);color:var(--dark);background:var(--cream);overflow-x:hidden;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .ribbon{background:#7a1414;color:#fff;font-family:var(--gothic);font-size:13px;letter-spacing:.03em;text-align:center;padding:8px 16px;position:relative;z-index:20;}
+  .ribbon b{color:var(--gold);}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  .hl{color:var(--gold);}
+  .en{font-family:var(--sans-en);letter-spacing:.24em;text-transform:uppercase;}
+
+  /* パララックス基盤 */
+  .px-sec{position:relative;overflow:hidden;}
+  .px-bg{position:absolute;top:-18%;left:0;width:100%;height:136%;background-size:cover;background-position:center;will-change:transform;z-index:0;}
+  .px-sec>.inner{position:relative;z-index:2;}
+
+  /* ① ヒーロー */
+  .hero{height:100vh;min-height:640px;display:flex;align-items:center;}
+  .hero .px-bg{background-image:url('weekly_assets/portal_hero.jpg');}
+  .hero-grad{position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(0,26,17,.62) 0%,rgba(0,22,14,.42) 42%,rgba(0,20,13,.78) 100%);}
+  .hero .inner{width:100%;}
+  .hero .eyebrow{color:var(--gold);font-size:15px;margin-bottom:22px;}
+  .hero h1{font-weight:900;font-size:clamp(40px,7vw,96px);line-height:1.16;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.6);letter-spacing:.02em;}
+  .hero p.lead{font-size:clamp(17px,2vw,25px);line-height:1.8;color:rgba(255,255,255,.92);margin-top:24px;max-width:640px;border-left:3px solid var(--vn-red);padding-left:18px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hero .cta{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
+  .hero .cta a{font-family:var(--gothic);font-size:15px;color:#fff;border:1px solid rgba(255,255,255,.5);padding:13px 26px;border-radius:2px;text-decoration:none;backdrop-filter:blur(2px);transition:.25s;}
+  .hero .cta a.gold{background:var(--gold);color:var(--green-dark);border-color:var(--gold);font-weight:700;}
+  .hero .cta a:hover{background:rgba(255,255,255,.16);}
+  .hero .cta a.gold:hover{background:#ffd524;}
+  .scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-family:var(--sans-en);font-size:11px;letter-spacing:.2em;z-index:2;animation:bob 1.8s infinite;}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  /* ② CountUp帯 */
+  .stats{background:var(--green-dark);color:#fff;padding:74px 0;text-align:center;}
+  .stats .k{font-family:var(--sans-en);letter-spacing:.16em;font-size:13px;color:rgba(255,255,255,.66);}
+  .stats h2{font-weight:700;font-size:clamp(24px,3.4vw,38px);margin-bottom:44px;color:#fff;}
+  .stats .grid{display:flex;justify-content:center;gap:clamp(28px,6vw,90px);flex-wrap:wrap;}
+  .stats .n{font-weight:800;font-size:clamp(52px,8vw,96px);line-height:1;color:var(--gold);}
+  .stats .n .u{font-size:.42em;color:#fff;margin-left:4px;}
+  .stats .cl{font-family:var(--gothic);font-size:14px;color:rgba(255,255,255,.8);margin-top:10px;}
+  .stats .foot{font-family:var(--gothic);font-size:12px;color:rgba(255,255,255,.5);margin-top:40px;}
+
+  /* ③ 3ドライバー */
+  .drivers{padding:96px 0;background:var(--cream);}
+  .sec-head{text-align:center;margin-bottom:56px;}
+  .sec-head .e{color:var(--green);font-size:14px;margin-bottom:12px;}
+  .sec-head h2{font-weight:700;font-size:clamp(26px,3.6vw,40px);color:var(--green-dark);line-height:1.4;}
+  .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .dcard{background:#fff;border:1px solid rgba(0,73,44,.12);border-top:4px solid var(--green);border-radius:0 0 4px 4px;padding:34px 28px;}
+  .dcard .no{font-family:var(--sans-en);font-size:15px;color:var(--gold);font-weight:700;letter-spacing:.1em;}
+  .dcard .verb{font-weight:700;font-size:26px;color:var(--green-dark);margin:8px 0 4px;}
+  .dcard .val{font-family:var(--sans-en);font-weight:800;font-size:46px;color:var(--green);line-height:1;margin:12px 0;}
+  .dcard .val .x{font-size:.5em;}
+  .dcard p{font-family:var(--gothic);font-size:14.5px;line-height:1.8;color:var(--mid);}
+  .formula{text-align:center;margin-top:44px;font-family:var(--sans-en);font-size:clamp(15px,2.2vw,22px);color:var(--light);}
+  .formula b{color:var(--green-dark);}
+
+  /* ④ パララックス・ディバイダ */
+  .divider{height:56vh;min-height:360px;display:flex;align-items:center;justify-content:center;text-align:center;}
+  .divider .px-bg{background-image:url('weekly_assets/portal_band.jpg');}
+  .divider-grad{position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(0,22,14,.5),rgba(0,22,14,.62));}
+  .divider .inner{color:#fff;}
+  .divider .q{font-weight:700;font-size:clamp(26px,4.4vw,52px);line-height:1.4;text-shadow:0 3px 20px rgba(0,0,0,.6);}
+  .divider .s{font-family:var(--gothic);font-size:15px;color:rgba(255,255,255,.82);margin-top:16px;}
+
+  /* ⑤ 今週号 */
+  .week{padding:96px 0;background:#fff;}
+  .week-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border:1px solid rgba(0,73,44,.14);border-radius:6px;overflow:hidden;}
+  .week-hero .img{background:url('weekly_assets/bank_treemap.png') center/cover;min-height:300px;background-color:#0b2a1c;}
+  .week-hero .txt{padding:40px 38px;}
+  .week-hero .tag{font-family:var(--sans-en);font-size:12px;letter-spacing:.14em;color:var(--gold);background:var(--green-dark);display:inline-block;padding:5px 12px;border-radius:2px;}
+  .week-hero h3{font-weight:700;font-size:30px;color:var(--green-dark);margin:16px 0 12px;line-height:1.35;}
+  .week-hero p{font-family:var(--gothic);font-size:15px;line-height:1.85;color:var(--mid);}
+  .week-hero a.more{display:inline-block;margin-top:20px;font-family:var(--gothic);font-size:14px;color:var(--green);border-bottom:1px solid var(--green);text-decoration:none;padding-bottom:2px;}
+  .issues{display:flex;gap:16px;margin-top:26px;flex-wrap:wrap;}
+  .issue{flex:1;min-width:200px;display:flex;gap:14px;align-items:center;border:1px solid rgba(0,73,44,.12);border-radius:4px;padding:12px 14px;text-decoration:none;color:inherit;background:var(--cream);}
+  .issue time{font-family:var(--sans-en);font-size:12px;color:var(--light);}
+  .issue .t{font-size:14.5px;color:var(--green-dark);line-height:1.5;margin-top:2px;}
+
+  /* ⑥ コーナー：アコーディオン財閥カード */
+  .corners{padding:96px 0;background:var(--cream);}
+  .acc{background:#fff;border:1px solid rgba(0,73,44,.14);border-radius:6px;overflow:hidden;margin-bottom:14px;}
+  .acc-head{display:flex;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;user-select:none;}
+  .acc-tag{font-family:var(--gothic);font-size:12px;color:#fff;background:var(--green);padding:5px 12px;border-radius:2px;white-space:nowrap;}
+  .acc-head h4{font-weight:700;font-size:20px;color:var(--green-dark);flex:1;}
+  .acc-head .tg{width:26px;height:26px;position:relative;flex:none;}
+  .acc-head .tg::before,.acc-head .tg::after{content:"";position:absolute;background:var(--green);transition:.3s;}
+  .acc-head .tg::before{top:12px;left:3px;width:20px;height:2px;}
+  .acc-head .tg::after{top:3px;left:12px;width:2px;height:20px;}
+  .acc.open .tg::after{transform:rotate(90deg);opacity:0;}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .acc.open .acc-body{max-height:520px;}
+  .acc-inner{padding:0 24px 26px;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .acc-inner .lead{grid-column:1/-1;font-family:var(--gothic);font-size:15px;color:var(--mid);line-height:1.8;}
+  .ptable{width:100%;border-collapse:collapse;font-family:var(--gothic);font-size:14px;}
+  .ptable td{padding:8px 10px;border-bottom:1px solid rgba(0,73,44,.1);}
+  .ptable td:first-child{color:var(--light);width:44%;}
+  .ptable td:last-child{font-weight:700;color:var(--green-dark);text-align:right;}
+  .focus h5{font-family:var(--gothic);font-size:13px;color:var(--green);margin-bottom:8px;letter-spacing:.06em;}
+  .focus p{font-family:var(--gothic);font-size:14px;line-height:1.85;color:var(--mid);}
+  .cornernav{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap;}
+  .cornernav a{flex:1;min-width:150px;text-align:center;font-family:var(--gothic);font-size:15px;color:var(--green-dark);background:#fff;border:1px solid rgba(0,73,44,.16);border-radius:4px;padding:18px;text-decoration:none;transition:.2s;}
+  .cornernav a:hover{background:var(--green);color:#fff;}
+
+  /* footer */
+  footer{background:var(--green-dark);color:rgba(255,255,255,.62);font-family:var(--gothic);font-size:12px;line-height:1.7;padding:34px 0;}
+  footer .brand{font-family:var(--sans-en);letter-spacing:.1em;color:rgba(255,255,255,.8);margin-top:14px;}
+  footer .red{color:#ff9b95;}
+
+  @media(max-width:820px){
+    .dgrid{grid-template-columns:1fr;}
+    .week-hero{grid-template-columns:1fr;}
+    .acc-inner{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="ribbon">📋 <b>ポータル試作（パララックス版）</b> ― 2045を顔に、今週号を一段下、コーナーをその下に。数値・写真は暫定。社内限定。</div>
+
+<!-- ① ヒーロー -->
+<section class="px-sec hero">
+  <div class="px-bg" data-speed="0.22"></div>
+  <div class="hero-grad"></div>
+  <div class="inner wrap">
+    <div class="eyebrow en">Vietnam Weekly ｜ 長期の羅針盤</div>
+    <h1>2045年、<br>VN-Indexは<span class="hl">20,000</span>へ</h1>
+    <p class="lead">フロンティアから、新興国へ。2026年9月のFTSE昇格を転換点に、ベトナム株は世界の機関投資家の"投資対象"に加わる。20年で、いまの<span class="hl">10.8倍</span>。</p>
+    <div class="cta">
+      <a class="gold" href="https://yumiba924-a11y.github.io/vn-index-2045/" target="_blank" rel="noopener">2045の全文を読む →</a>
+      <a href="#week">今週の企業クエスト ▼</a>
+    </div>
+  </div>
+  <div class="scrollcue">SCROLL</div>
+</section>
+
+<!-- ② CountUp -->
+<section class="stats">
+  <div class="wrap">
+    <div class="k en">The Thesis</div>
+    <h2 class="reveal">数字でいうと、こういうことだ</h2>
+    <div class="grid">
+      <div class="reveal"><div class="n"><span data-count="10.8" data-dec="1">0.0</span><span class="u">倍</span></div><div class="cl">2026→2045（強気シナリオ）</div></div>
+      <div class="reveal"><div class="n"><span data-count="20000" data-dec="0">0</span><span class="u">pt</span></div><div class="cl">VN-Index 2045年 目標</div></div>
+      <div class="reveal"><div class="n"><span data-count="15" data-dec="0">0</span><span class="u">%</span></div><div class="cl">配当込み 年率（目安）</div></div>
+    </div>
+    <div class="foot">＝ 1,850 × 6.7倍（利益成長）× 1.6倍（リレーティング）。強気シナリオ。詳細・前提・弱気/基本シナリオは全文に。</div>
+  </div>
+</section>
+
+<!-- ③ 3ドライバー -->
+<section class="drivers">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="e en">Why ― 3 Drivers</div>
+      <h2>20,000への道は、<br>3つの力でできている</h2>
+    </div>
+    <div class="dgrid">
+      <div class="dcard reveal"><div class="no">01</div><div class="verb">稼ぐ</div><div class="val">6.7<span class="x">倍</span></div><p>名目GDP年率10%が20年続けば、企業の利益はおよそ6.7倍に。EPSは経済とともに膨らむ。</p></div>
+      <div class="dcard reveal"><div class="no">02</div><div class="verb">見直す</div><div class="val">1.6<span class="x">倍</span></div><p>予想PER 12.7倍は過去レンジの下限。新興国標準への回帰と市場の深化で、評価が1.6倍に。</p></div>
+      <div class="dcard reveal"><div class="no">03</div><div class="verb">開く</div><div class="val" style="font-size:34px;">FTSE→MSCI</div><p>2026年9月のFTSE昇格が入口。次にMSCI。世界の資金に"棚"が開く転換点。</p></div>
+    </div>
+    <div class="formula reveal"><b>1,850</b> × <b>6.7</b>（稼ぐ） × <b>1.6</b>（見直す） ≈ <b>20,000</b></div>
+  </div>
+</section>
+
+<!-- ④ パララックス・ディバイダ -->
+<section class="px-sec divider">
+  <div class="px-bg" data-speed="0.3"></div>
+  <div class="divider-grad"></div>
+  <div class="inner">
+    <div class="q">フロンティアから、<br>新興国へ。</div>
+    <div class="s">一人当たりGDP：2005年 約700ドル → 2025年 約5,026ドル → 2045年 約30,000ドル</div>
+  </div>
+</section>
+
+<!-- ⑤ 今週号 -->
+<section class="week" id="week">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="e en">This Week ― 企業クエスト</div>
+      <h2>羅針盤の次は、今週の攻略。</h2>
+    </div>
+    <div class="week-hero reveal">
+      <div class="img"></div>
+      <div class="txt">
+        <span class="tag">VOL.02 ｜ 2026.7.6–7.10週</span>
+        <h3>ベトナムの銀行セクター<br>― 49行・27行・14行</h3>
+        <p>市場の約3割は銀行でできている。国有と民間の二面性、そして「同じ銀行でも91ptの差」——数字で構造を暴く。</p>
+        <a class="more" href="weekly02.html">この号を読む →</a>
+      </div>
+    </div>
+    <div class="issues reveal">
+      <a class="issue" href="weekly01.html"><time>2026.07.06</time><div><div class="t">VOL.01 ― ビングループ（Vin）</div></div></a>
+      <a class="issue" href="weekly02.html"><time>2026.07.13</time><div><div class="t">VOL.02 ― 銀行セクター</div></div></a>
+      <a class="issue" href="weekly03_mock.html"><time>2026.07.20</time><div><div class="t">VOL.03 ― ソビコ（予告）</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ コーナー：アコーディオン財閥カード -->
+<section class="corners">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="e en">Stock ― 財閥図鑑</div>
+      <h2>攻略した財閥を、収集する。</h2>
+    </div>
+
+    <div class="acc reveal open">
+      <div class="acc-head"><span class="acc-tag">財閥 ｜ VOL.01</span><h4>ビングループ（Vin）</h4><span class="tg"></span></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p class="lead">不動産が稼ぎ、EVが問う。VN-Indexの約28.7%を占める最大の一族。創業者パム・ニャット・ヴオン（＝東欧組）。</p>
+        <table class="ptable">
+          <tr><td>上場銘柄</td><td>VIC / VHM / VRE / VPL</td></tr>
+          <tr><td>時価総額（4社計）</td><td>約2,529兆VND</td></tr>
+          <tr><td>VN-Index比</td><td>約28.7%</td></tr>
+          <tr><td>VN-Index寄与（24末→足元）</td><td>+27.8%pt</td></tr>
+        </table>
+        <div class="focus"><h5>着目ポイント</h5><p>VIC単体で市場の上げ582ptのうち260pt＝約45%を押し上げた"市場そのもの"。EV（VinFast）の資金負担が最大の問い。</p></div>
+      </div></div>
+    </div>
+
+    <div class="acc reveal">
+      <div class="acc-head"><span class="acc-tag">財閥 ｜ VOL.03予告</span><h4>ソビコ（Sovico）</h4><span class="tg"></span></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p class="lead">空を飛ぶ財閥。ベトジェット（攻め）とHDBank（守り）を一族で束ねる。創業者タオ＝アジア初の自力女性ビリオネア。</p>
+        <table class="ptable">
+          <tr><td>上場銘柄</td><td>VJC / HDB</td></tr>
+          <tr><td>時価総額（2社計）</td><td>約243兆VND（約1.5兆円）</td></tr>
+          <tr><td>VN-Index比</td><td>約2.8%</td></tr>
+          <tr><td>バーベル</td><td>航空 × 銀行</td></tr>
+        </table>
+        <div class="focus"><h5>着目ポイント</h5><p>ソビコ⇄ベトジェット⇄HDBankの持ち合い。ISEASが指摘するクロスオーナーシップが光と影の両方。</p></div>
+      </div></div>
+    </div>
+
+    <div class="cornernav reveal">
+      <a href="questmap.html">攻略マップ</a>
+      <a href="zaibatsu.html">財閥図鑑</a>
+      <a href="scorecard.html">決算通信簿</a>
+      <a href="https://yumiba924-a11y.github.io/vn-index-2045/" target="_blank" rel="noopener">2045 全文</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b style="color:var(--gold);">⚠️ ポータル試作・社内限定</b> ― 生成AIによる試作で、レイアウト・数値・写真は暫定。<span class="red">社内・グループ内限定。顧客・社外への転送／配布はお断りします。</span> 写真は各社公式サイトより引用（報道・解説目的）、当社は無関係。市場ウェイト等は単純時価総額ベースの概算。投資勧誘・助言ではありません。
+    <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // パララックス（多層・transformベース）
+  var bgs=[].slice.call(document.querySelectorAll('.px-bg'));
+  function parallax(){
+    var vh=window.innerHeight;
+    for(var i=0;i<bgs.length;i++){
+      var bg=bgs[i], sec=bg.parentElement, r=sec.getBoundingClientRect();
+      if(r.bottom<-100||r.top>vh+100) continue;
+      var speed=parseFloat(bg.getAttribute('data-speed')||'0.25');
+      var off=(r.top+r.height/2)-(vh/2);
+      bg.style.transform='translate3d(0,'+(-off*speed).toFixed(1)+'px,0)';
+    }
+  }
+  var ticking=false;
+  window.addEventListener('scroll',function(){ if(!ticking){requestAnimationFrame(function(){parallax();ticking=false;});ticking=true;} },{passive:true});
+  window.addEventListener('resize',parallax); parallax();
+
+  // reveal
+  var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+
+  // CountUp
+  function countup(el){
+    var target=parseFloat(el.getAttribute('data-count')), dec=parseInt(el.getAttribute('data-dec')||'0',10), dur=1400, t0=null;
+    function fmt(v){ return dec>0? v.toFixed(dec) : Math.round(v).toLocaleString(); }
+    function step(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3); el.textContent=fmt(target*e); if(p<1)requestAnimationFrame(step); else el.textContent=fmt(target); }
+    requestAnimationFrame(step);
+  }
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countup(e.target);co.unobserve(e.target);}});},{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+
+  // アコーディオン
+  document.querySelectorAll('.acc-head').forEach(function(h){ h.addEventListener('click',function(){ h.parentElement.classList.toggle('open'); }); });
+})();
+</script>
+</body>
+</html>
