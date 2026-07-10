@@ -1,0 +1,10 @@
+/* 動きの層（共有）― 内容・文言・構成は不変。スクロール表示＋パララックスのみ付与 */
+[data-dyn]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+[data-dyn].dyn-in{opacity:1;transform:none;}
+/* ヒーロー全面画像をパララックス可能に（はみ出し分を確保） */
+.hero-img{top:-12%!important;height:124%!important;will-change:transform;}
+.px-bg{will-change:transform;}
+/* モーション控えめ設定は完全に静的へ */
+@media (prefers-reduced-motion: reduce){
+  [data-dyn]{opacity:1!important;transform:none!important;transition:none!important;}
+}
