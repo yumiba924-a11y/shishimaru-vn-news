@@ -15,15 +15,21 @@
     if(cs.position==='fixed') return false;
     return true;
   });
-  els.forEach(function(el){ el.setAttribute('data-dyn',''); });
+  els.forEach(function(el){
+    el.setAttribute('data-dyn','');
+    // 同じ親のきょうだいで時差（スタッガー）を付ける
+    var sibs=[].slice.call(el.parentElement.children).filter(function(c){return c.hasAttribute('data-dyn');});
+    var idx=sibs.indexOf(el);
+    if(idx>0) el.style.transitionDelay=Math.min(idx*70,350)+'ms';
+  });
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('dyn-in'); io.unobserve(e.target); } });
-  },{threshold:0.06, rootMargin:'0px 0px -6% 0px'});
+  },{threshold:0.05, rootMargin:'0px 0px -14% 0px'});
   els.forEach(function(el){ io.observe(el); });
-  // 初期ビューポート内は即表示（読み込み直後の空白を防ぐ）
+  // 初期表示は"画面の上半分"だけ即出す→下半分はスクロールで明確に立ち上がる
   requestAnimationFrame(function(){
     var vh=w.innerHeight;
-    els.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<vh*0.92) el.classList.add('dyn-in'); });
+    els.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<vh*0.55) el.classList.add('dyn-in'); });
   });
 
   /* 2) パララックス（ヒーロー全面画像・分解チャート帯など） */
