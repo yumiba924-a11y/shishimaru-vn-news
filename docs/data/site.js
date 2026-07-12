@@ -15,6 +15,15 @@ window.SITE = {
   // ---- 発刊済みの号（新しい順） ----
   issues: [
     {
+      vol: 2,
+      week: "2026.7.6–7.10週",
+      published: "2026年7月13日（月）発行",
+      title: "静かなる支配者 ― ベトナムを動かす14の銀行",
+      hero: "weekly_assets/bank_treemap.png",
+      url: "weekly02.html",
+      summary: "銀行49行を27行、そして14行へ数えなおす。国有と民間の二面性、同じ銀行でも91pt開くリターン格差——市場の約3割を占める最大勢力の解剖。"
+    },
+    {
       vol: 1,
       week: "2026.6.29–7.3週",
       published: "2026年7月6日（月）発行",
@@ -48,20 +57,20 @@ window.SITE = {
     { t:"VHM", n:"ビンホームズ",        s:"不動産",     st:"done",    vol:1 },
     { t:"VRE", n:"ビンコムリテール",    s:"不動産",     st:"done",    vol:1 },
     { t:"VPL", n:"ビンパール",          s:"観光",       st:"done",    vol:1 },
-    { t:"VCB", n:"ベトコムバンク",      s:"銀行",       st:"next",    vol:2 },
-    { t:"BID", n:"ベトナム投資開発銀行", s:"銀行",      st:"next",    vol:2 },
-    { t:"CTG", n:"ベトナム工商銀行",    s:"銀行",       st:"next",    vol:2 },
-    { t:"TCB", n:"テクコムバンク",      s:"銀行",       st:"next",    vol:2 },
-    { t:"VPB", n:"VPバンク",            s:"銀行",       st:"next",    vol:2 },
-    { t:"MBB", n:"MBバンク",            s:"銀行",       st:"next",    vol:2 },
-    { t:"ACB", n:"アジア商業銀行",      s:"銀行",       st:"next",    vol:2 },
-    { t:"HDB", n:"HDバンク",            s:"銀行",       st:"next",    vol:2 },
-    { t:"STB", n:"サコムバンク",        s:"銀行",       st:"next",    vol:2 },
-    { t:"SHB", n:"サイゴンハノイ銀行",  s:"銀行",       st:"next",    vol:2 },
-    { t:"LPB", n:"LPバンク",            s:"銀行",       st:"next",    vol:2 },
-    { t:"VIB", n:"ベトナム国際銀行",    s:"銀行",       st:"next",    vol:2 },
-    { t:"TPB", n:"TPバンク",            s:"銀行",       st:"next",    vol:2 },
-    { t:"SSB", n:"SeAバンク",           s:"銀行",       st:"next",    vol:2 },
+    { t:"VCB", n:"ベトコムバンク",      s:"銀行",       st:"done",    vol:2 },
+    { t:"BID", n:"ベトナム投資開発銀行", s:"銀行",      st:"done",    vol:2 },
+    { t:"CTG", n:"ベトナム工商銀行",    s:"銀行",       st:"done",    vol:2 },
+    { t:"TCB", n:"テクコムバンク",      s:"銀行",       st:"done",    vol:2 },
+    { t:"VPB", n:"VPバンク",            s:"銀行",       st:"done",    vol:2 },
+    { t:"MBB", n:"MBバンク",            s:"銀行",       st:"done",    vol:2 },
+    { t:"ACB", n:"アジア商業銀行",      s:"銀行",       st:"done",    vol:2 },
+    { t:"HDB", n:"HDバンク",            s:"銀行",       st:"done",    vol:2 },
+    { t:"STB", n:"サコムバンク",        s:"銀行",       st:"done",    vol:2 },
+    { t:"SHB", n:"サイゴンハノイ銀行",  s:"銀行",       st:"done",    vol:2 },
+    { t:"LPB", n:"LPバンク",            s:"銀行",       st:"done",    vol:2 },
+    { t:"VIB", n:"ベトナム国際銀行",    s:"銀行",       st:"done",    vol:2 },
+    { t:"TPB", n:"TPバンク",            s:"銀行",       st:"done",    vol:2 },
+    { t:"SSB", n:"SeAバンク",           s:"銀行",       st:"done",    vol:2 },
     { t:"VJC", n:"ベトジェット",        s:"運輸",       st:"planned", vol:3 },
     { t:"MSN", n:"マサングループ",      s:"消費財",     st:"planned", vol:4 },
     { t:"HPG", n:"ホアファット",        s:"素材",       st:"planned", vol:5 },
@@ -119,6 +128,16 @@ window.SITE = {
 
   // ---- 決算通信簿（verdict: null=検証待ち / "◯"/"△"/"✕"） ----
   scorecard: [
+    {
+      vol:2, made:"2026/7/13",
+      claim:"預金金利の上昇（実質8.5〜9%・与信+6.38% vs 預金+4.3%）が銀行の利ざや（NIM）を圧迫する懸念——調達コスト上昇は決算に現れる",
+      test:"Q2銀行決算（7月下旬〜8月）で預金コストとNIMの変化を確認", verdict:null
+    },
+    {
+      vol:2, made:"2026/7/13",
+      claim:"LPBの「特別扱い」（PBR3.94倍＝VN30銀行唯一の3倍台・銀行安の週も逆行高）は業績が正当化できるか",
+      test:"LPBのQ2決算（ROE・増益率）とPBRの推移を確認", verdict:null
+    },
     {
       vol:1, made:"2026/7/6",
       claim:"銀行株の上げ（HDB+6.1%等）は株価が業績に先行しており、7月中旬からのQ2決算で裏付けが試される",
