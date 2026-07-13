@@ -1,0 +1,43 @@
+{
+  "_note": "日次の半自動・人編集枠。headline=今日のひとこと大見出し / lead=本文(配列=各行) / cards=きょうのポイント。cards: tag, color(green|red|gold|teal), icon(Bootstrap Icon名), text。text内は **赤太字** と [[緑強調]] が使える。空欄は render が interpret の自動生成で補完する。±3%急変は雛形を自動生成済み。",
+  "headline": "",
+  "lead": [],
+  "cards": [
+    {
+      "tag": "SHB -4.2%",
+      "color": "red",
+      "icon": "graph-down-arrow",
+      "text": ""
+    },
+    {
+      "tag": "SSB -3.7%",
+      "color": "red",
+      "icon": "graph-down-arrow",
+      "text": ""
+    },
+    {
+      "tag": "GVR -3.6%",
+      "color": "red",
+      "icon": "graph-down-arrow",
+      "text": ""
+    },
+    {
+      "tag": "SSI -3.4%",
+      "color": "red",
+      "icon": "graph-down-arrow",
+      "text": ""
+    },
+    {
+      "tag": "LPB -3.4%",
+      "color": "red",
+      "icon": "graph-down-arrow",
+      "text": ""
+    },
+    {
+      "tag": "CTG -3.3%",
+      "color": "red",
+      "icon": "graph-down-arrow",
+      "text": ""
+    }
+  ]
+}
