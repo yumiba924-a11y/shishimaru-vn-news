@@ -232,6 +232,19 @@
   .rich tr.star{background:rgba(245,196,0,.14);}
   .rich tr.star td{font-weight:700;}
   .rich .w{color:var(--vn-red);font-size:11px;border:1px solid rgba(218,37,29,.3);border-radius:2px;padding:1px 6px;margin-left:6px;font-family:var(--gothic);}
+  /* VOL.03 循環三角形・顧客の旅 */
+  .eco{display:flex;gap:26px;align-items:stretch;flex-wrap:wrap;margin-top:20px;}
+  .eco .tri{flex:1.4;min-width:440px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px 10px;display:flex;align-items:center;}
+  .eco .slb{flex:1;min-width:280px;background:#fff;border:1px solid var(--border);border-left:4px solid var(--vn-red);border-radius:6px;padding:24px 28px;}
+  .eco .slb .tag{font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-micro);color:var(--vn-red);font-weight:700;}
+  .eco .slb h4{font-family:var(--mincho);font-size:var(--fs-lead);margin:8px 0 12px;}
+  .eco .slb p{font-family:var(--gothic);font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);}
+  .journey{display:flex;gap:0;align-items:stretch;margin-top:14px;}
+  .jstep{flex:1;background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:18px 10px 16px;text-align:center;}
+  .jstep .ic{font-size:26px;line-height:1;}
+  .jstep .br{font-family:var(--sans-en);font-weight:700;font-size:12px;letter-spacing:.03em;color:var(--green);margin-top:9px;}
+  .jstep .tx{font-family:var(--gothic);font-size:12px;color:var(--mid);line-height:1.5;margin-top:5px;}
+  .jarrow{flex:0 0 24px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;font-weight:700;}
 </style>
 <link rel="stylesheet" href="assets/dynamics.css">
 </head>
@@ -258,7 +271,7 @@
 <section>
   <div class="eyebrow">Weekly Quest ③ ｜ Sovico</div>
   <div class="s-title">ベトジェットは、氷山の一角</div>
-  <div class="lead jp">ベトナムの空を最も安く飛ぶ航空会社、ベトジェット航空（VJC）。誰もが知るこのLCCの持ち主が、実は<strong>ソビコ・グループ</strong>という多角財閥であることは、あまり知られていない。ソビコは<strong>HDBank</strong>（HDB）も束ね、さらに水面下には不動産・リゾート・再生可能エネルギーが広がる。上場しているのは航空と銀行の2社だけ——<strong>市場から見えるのは、氷山の一角にすぎない</strong>。</div>
+  <div class="lead jp">ベトナムの空を最も安く飛ぶ航空会社、ベトジェット航空（VJC）。誰もが知るこのLCCの持ち主が、実は<strong>ソビコ・グループ</strong>という多角財閥であることは、あまり知られていない。ソビコは<strong>HDBank</strong>（HDB）も束ね、さらに水面下には不動産・リゾート・エネルギー・テクノロジーが広がる。上場しているのは航空と銀行の2社だけ——<strong>市場から見えるのは、氷山の一角にすぎない</strong>。</div>
   <div class="berg">
     <div class="tier up">
       <div class="tlab">🌊 水面上 ― 上場（市場から見える）</div>
@@ -275,10 +288,11 @@
         <div class="ub"><h6>Phú Long（不動産）</h6><p>ホーチミン等の都市開発。タオ会長が統括。</p></div>
         <div class="ub"><h6>Furama／Aryana（リゾート）</h6><p>ダナン等のビーチリゾート・ホテル。</p></div>
         <div class="ub"><h6>再生可能エネルギー</h6><p>Keppelと持続可能エネルギー・都市開発で協業。</p></div>
+        <div class="ub"><h6>Galaxy（テクノロジー）</h6><p>2021年設立のデジタル/AI部門。決済・マイル・DXでグループを配線。</p></div>
       </div>
     </div>
   </div>
-  <div class="src">出所：グループ構造＝WEF・theinvestor・Crunchbase等の公開情報。VJC・HDBの時価総額＝VNDirect（2026/7/10終値・円換算1USD≒161.8円/26,214VND）。ソビコのHDB持分14.37%＝HDBank 2023年報（一次開示）。VJC寄与＝当社集計（先週7/6–7/10・VN30ベース）。非上場事業の位置づけは公開情報に基づく当社整理。</div>
+  <div class="src">出所：グループ構造＝WEF・theinvestor・Crunchbase・Galaxy Holdings公開情報等。VJC・HDBの時価総額＝VNDirect（2026/7/10終値・円換算1USD≒161.8円/26,214VND）。ソビコのHDB持分14.37%＝HDBank 2023年報（一次開示）。Galaxy＝ソビコのデジタル/AI部門（2021年設立）。VJC寄与＝当社集計（先週7/6–7/10・VN30ベース）。非上場事業の位置づけは公開情報に基づく当社整理。</div>
 </section>
 
 <!-- ②-a2 富豪バンド写真＝タオ（フォーブス・フォーラム） -->
@@ -319,21 +333,67 @@
       <p style="margin:0 0 16px;">ソビコは、一組の夫婦がつくった帝国だ。二人はともに旧ソ連圏で学び、そこで最初の富を築いた——VOL.01で見たビングループのファム・ニャット・ヴオンと同じ、<strong>「東欧組」の系譜</strong>である。</p>
       <p style="margin:0 0 16px;"><strong>グエン・タイン・フン（夫）。</strong>ソビコ・グループの創業者・会長にして、ベトジェット航空の副会長。ウクライナ・ハリコフで電気工学の修士を、モスクワのロシア科学アカデミーで博士を修めた技術者だ。表舞台に立つことは少なく、経営の設計を担う——いわば<strong>黒衣の頭脳</strong>である。</p>
       <p style="margin:0 0 16px;"><strong>グエン・ティ・フオン・タオ（妻）。</strong>ソビコ会長兼CEO、ベトジェット会長、HDBank常任副会長を兼ねる、この帝国の<strong>顔</strong>。モスクワのプレハノフ経済大で経済・金融を学びながら、1980年代に旧ソ連圏でファックス機・ゴム・プラスチックといった商品貿易を手がけて蓄財した。その資本が、のちのベトジェット構想の原点になる。彼女は<strong>ベトナム初、そして東南アジア初の"自力"女性ビリオネア</strong>だ（フォーブス純資産 約42億ドル）。</p>
-      <p style="margin:0;">妻が翼で世界に名を売り、夫が資本の配線を組む。ヴオン（乾麺）、クアン（マサン＝即席麺）と並ぶ<strong>東欧組の一角</strong>として、この夫婦は航空と銀行という二つの装置を、一つのグループに束ねてみせた。次章では、その"攻めと守り"の二面性を数字で見る。</p>
+      <p style="margin:0;">妻が翼で世界に名を売り、夫が資本の配線を組む。ヴオン（乾麺）、クアン（マサン＝即席麺）と並ぶ<strong>東欧組の一角</strong>として、この夫婦は航空・銀行・不動産・テクノロジーを一つのグループに束ねてみせた。では、それらはどう噛み合って稼ぐのか——次章で"回る仕組み"を解剖する。</p>
     </div>
   </div>
   <div class="src">出所：フンの略歴＝WEF（一次プロフィール）。タオの兼任職・略歴＝HDBank 2023年報（一次開示）・Forbesプロフィール。純資産はForbes（2026/7/9時点）。「東欧組」＝当社の分類（ヴオン=ウクライナ・ハリコフ、タオ=モスクワ、クアン=ロシア）。</div>
 </section>
 
-<!-- ②-c バーベル＝航空×銀行 -->
+<!-- ②-c エコシステム＝資金の循環（三角形） -->
 <section style="background:var(--cream);">
-  <div class="eyebrow">Barbell ｜ 二面性</div>
-  <div class="s-title">攻めの航空、守りの銀行</div>
-  <div class="barbell">
-    <div class="bcard"><div class="tag">ATTACK ― 航空</div><h4>ベトジェット航空（VJC）</h4><p class="jp">景気敏感の格安航空＝"攻め"。2025年は<strong>売上82兆ドン（約5,000億円）・純利益＋51%</strong>、旅客2,820万人・機材135機・254路線と過去最高水準。市場はこの成長期待を織り込み、PERは<strong>41倍</strong>（航空は利益変動が大きく高PERになりやすい）、PBRは3.98倍。外国人枠の消化は21%と余地を残す。時価総額 約6,400億円。</p></div>
-    <div class="bcard loss" style="border-top-color:var(--up);"><div class="tag" style="color:var(--up);">DEFENSE ― 銀行</div><h4>HDBank（HDB）</h4><p class="jp">安定収益の銀行＝"守り"。2025年は<strong>税引前利益＋27.4%・ROE 25.3%・総資産＋33.5%</strong>と高成長を続けつつ、評価はPER<strong>7.8倍</strong>・PBR1.66倍と堅実。ソビコが約14.4%を握る中核だ。増資も継続中（定款資本を段階的に引き上げ）。外国人枠は80%と厚めに買われる。時価総額 約8,200億円。</p></div>
+  <div class="eyebrow">Ecosystem ｜ 資金の循環</div>
+  <div class="s-title">帝国は、三角形で回る</div>
+  <div class="lead jp" style="max-width:940px;">ソビコの強さは、個々の会社ではなく<strong>「回路」</strong>にある。航空が現金を生み、その現金が不動産・リゾートに化けて価値を貯め、その資産を土台に銀行が金融を回す——そしてまた航空へ。中心で全部を配線するのが、2021年に立ち上げたテクノロジー部門<strong>Galaxy</strong>だ。攻めの航空も守りの銀行も、この回路の"部品"にすぎない。</div>
+  <div class="eco">
+    <div class="tri">
+      <svg viewBox="0 0 700 480" width="100%" style="font-family:'Yu Gothic','Hiragino Kaku Gothic ProN',sans-serif;display:block;">
+        <defs><marker id="ecoah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#00492C"/></marker></defs>
+        <path d="M425,98 C640,150 660,300 580,364" fill="none" stroke="#00492C" stroke-width="2.4" marker-end="url(#ecoah)"/>
+        <path d="M484,440 Q350,484 218,440" fill="none" stroke="#00492C" stroke-width="2.4" marker-end="url(#ecoah)"/>
+        <path d="M112,368 C30,250 40,150 266,96" fill="none" stroke="#00492C" stroke-width="2.4" marker-end="url(#ecoah)"/>
+        <text x="640" y="238" text-anchor="middle" font-size="12" fill="#333">現金→開発</text>
+        <text x="350" y="418" text-anchor="middle" font-size="12" fill="#333">資産→融資基盤</text>
+        <text x="60" y="238" text-anchor="middle" font-size="12" fill="#333">金融→運航</text>
+        <rect x="272" y="214" width="156" height="64" rx="10" fill="#fff" stroke="#F5C400" stroke-width="2.5"/>
+        <text x="350" y="242" text-anchor="middle" font-size="16" font-weight="700" fill="#00492C">Galaxy</text>
+        <text x="350" y="262" text-anchor="middle" font-size="11" fill="#5F5F5F">決済・マイル・DXで配線</text>
+        <rect x="255" y="26" width="190" height="76" rx="8" fill="#00492C"/>
+        <text x="350" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">ベトジェット（航空）</text>
+        <text x="350" y="82" text-anchor="middle" font-size="13" fill="#F5C400">現金を生む</text>
+        <rect x="22" y="372" width="190" height="76" rx="8" fill="#00492C"/>
+        <text x="117" y="404" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">HDBank（金融）</text>
+        <text x="117" y="428" text-anchor="middle" font-size="13" fill="#F5C400">レバレッジ</text>
+        <rect x="488" y="372" width="190" height="76" rx="8" fill="#00492C"/>
+        <text x="583" y="404" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">不動産・リゾート</text>
+        <text x="583" y="428" text-anchor="middle" font-size="13" fill="#F5C400">価値を貯める</text>
+      </svg>
+    </div>
+    <div class="slb">
+      <div class="tag">ASSET-LIGHT ― なぜ航空が"現金製造機"か</div>
+      <h4>持たざる経営</h4>
+      <p>ベトジェットは機体を買ってすぐリース会社へ売り、リースで飛ばす<strong>セール＆リースバック</strong>を多用する。売却益を早期に現金化し、バランスシートを軽く保つ手法だ。2025年は旅客2,820万人・純利益＋51%と過去最高水準——旺盛な中間層の旅行需要が座席を埋め、生まれた現金がグループの回路に注ぎ込まれる。市場がVJCを高PER（41倍）で買うのは、この"現金を生む力"への期待でもある。</p>
+    </div>
   </div>
-  <div class="src">出所：時価総額・PER・PBR・外国人枠＝VNDirect（2026/7/10終値・円換算1USD≒161.8円/26,214VND）。ベトジェット2025年実績＝2026年4月AGM開示（VIR）。HDBank2025年実績＝The Asian Banker等（速報）。PERは実績（TTM）ベース。外国人枠消化＝(1−残枠/上限)の当社推計。</div>
+  <div class="src">出所：グループ事業構成＝WEF・theinvestor・Galaxy Holdings公開情報等。ベトジェット2025年実績＝2026年4月AGM開示（VIR）。セール＆リースバックはベトジェットの開示・報道に基づく一般的手法の説明。Galaxy＝ソビコのデジタル/AI部門（2021年設立、Galaxy Pay・Galaxy Joy・Galaxy Technology等）。循環図は資金・顧客の流れを示す当社の概念整理で、実際の取引・持分関係を厳密に表すものではない。</div>
+</section>
+
+<!-- ②-d 顧客の旅（カスタマージャーニー） -->
+<section>
+  <div class="eyebrow">Customer Journey ｜ 顧客は、知らぬ間に一周する</div>
+  <div class="s-title">ひとりの客が、財閥を一周する</div>
+  <div class="body jp" style="max-width:940px;">たとえば地方都市の若者の、ある一日。彼が使うサービスは、気づかぬうちに、ほぼすべてソビコの回路の上にある。</div>
+  <div class="journey">
+    <div class="jstep"><div class="ic">🛍️</div><div class="br">HD SAISON</div><div class="tx">スマホを分割で購入（消費者金融）</div></div>
+    <div class="jarrow">▶</div>
+    <div class="jstep"><div class="ic">📱</div><div class="br">Galaxy Pay</div><div class="tx">ベトジェットのアプリで航空券を決済</div></div>
+    <div class="jarrow">▶</div>
+    <div class="jstep"><div class="ic">🏦</div><div class="br">HDBank</div><div class="tx">口座で支払い・Galaxy Joyにマイルが貯まる</div></div>
+    <div class="jarrow">▶</div>
+    <div class="jstep"><div class="ic">✈️</div><div class="br">Vietjet</div><div class="tx">ダナンへ飛ぶ</div></div>
+    <div class="jarrow">▶</div>
+    <div class="jstep"><div class="ic">🏖️</div><div class="br">Furama / Aryana</div><div class="tx">傘下リゾートに泊まる</div></div>
+  </div>
+  <div class="note jp" style="margin-top:16px;">一人の消費が、<strong>消費者金融→決済→銀行→航空→リゾート</strong>と、グループの各事業を順に潤す。これがソビコの"経済圏"だ。※各サービスは実在（HD SAISON・Galaxy Pay/Joy・ベトジェット・HDBank・Furama/Aryana）。本図はそれらを繋いだ消費動線の当社イメージで、特定の提携・優待を示すものではない。</div>
 </section>
 
 <!-- ②-d 数字で見る＝上場2社 -->
@@ -346,7 +406,7 @@
     <tr><td><strong>HDB</strong>／HDBank</td><td>銀行（守り）</td><td class="num">約8,200億円</td><td class="num hl-vhm">7.8x</td><td class="num">1.66x</td><td class="num">80%</td></tr>
   </table></div>
   <div style="margin-top:20px;padding:22px 30px;background:var(--cream);border-left:4px solid var(--gold);">
-    <div class="body jp" style="font-size:var(--fs-bodysm);line-height:var(--lh-card);">同じグループでも、市場の値付けは正反対だ。<strong>航空のVJCはPER41倍</strong>＝景気敏感で利益がぶれやすく、市場は将来の成長を先に織り込む。<strong>銀行のHDBはPER7.8倍</strong>＝高成長（ROE25%）でも安定ゆえ堅実な評価。攻めは"期待"で、守りは"実績"で買われる——バーベルは、バリュエーションにもそのまま表れる。合計時価総額は約1.5兆円で、VN-Indexの約2.8%（ビングループ一族の約28.7%と比べれば小粒だが、航空×銀行のバーベルが1グループで揃うのは越で唯一）。</div>
+    <div class="body jp" style="font-size:var(--fs-bodysm);line-height:var(--lh-card);">ここで投資家の現実に戻る。<strong>回る機械の歯車は5つ以上あるのに、市場で買えるのはVJCとHDBの2つだけ</strong>——不動産もリゾートもGalaxyも非上場で、帝国の一部にしか投資できない。しかもその2つの値付けは正反対だ。<strong>航空のVJCはPER41倍＝"期待"</strong>で（景気敏感で利益がぶれやすく、成長を先に織り込む）、<strong>銀行のHDBはPER7.8倍＝"実績"</strong>で買われる（2025年ROE25.3%の高成長でも安定ゆえ堅実な評価）。上場2社の合計は約1.5兆円で、VN-Indexの約2.8%（ビングループ一族の約28.7%と比べれば小粒だが、航空×銀行×テクノロジーが1グループで噛み合うのは越で唯一）。</div>
   </div>
   <div class="src">出所：VNDirect（2026/7/10終値時点・PER/PBRは実績TTM）。外国人枠消化＝(1−残枠/上限)の当社推計（直近取引日ベース）。円換算は1USD≒161.8円・26,214VND。VN-Index比は単純時価総額ベースの概算。赤＝景気敏感の高倍率、緑＝安定の割安圏。</div>
 </section>
