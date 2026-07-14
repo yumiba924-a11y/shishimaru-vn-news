@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Vietnam Weekly VOL.03 ― 空飛ぶ財閥・ソビコ（2026.7.13–7.17週）</title>
+<style>
+  :root{
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","ＭＳ 明朝",serif;
+    --gothic:"Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+    --sans-en:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
+    --cream:#FAF8F2; --cream-dark:#F0EBE0; --dark:#111; --mid:#333; --light:#5F5F5F;
+    --up:#00A86B; --down:#DA251D; --border:rgba(0,73,44,.12);
+    /* タイプスケール（整理済み・8段階） */
+    --fs-stat:96px; --fs-title:38px; --fs-numlg:40px; --fs-lead:22px;
+    --fs-body:19px; --fs-bodysm:16px; --fs-label:14px; --fs-micro:12px;
+    /* 行間（役割別・4段階） */
+    --lh-head:1.35; --lh-body:1.9; --lh-card:1.8; --lh-note:1.65;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#e9e5dd;}
+  body{font-family:var(--mincho);background:#fff;color:var(--dark);width:1080px;max-width:100%;margin:0 auto;box-shadow:0 0 60px rgba(0,0,0,.12);}
+  .num{font-family:var(--sans-en);letter-spacing:-.01em;}
+  .jp{text-align:justify;line-break:strict;}
+
+  /* プレビュー注記リボン */
+  .ribbon{background:#7a1414;color:#fff;font-family:var(--gothic);font-size:15px;letter-spacing:.04em;text-align:center;padding:9px 16px;}
+  .ribbon b{color:var(--gold);}
+
+  /* HERO */
+  .hero{position:relative;height:1180px;overflow:hidden;background:#0b2a1c;}
+  .hero-img{position:absolute;inset:0;background:url('weekly_assets/cover_vingroup.jpg') center 38%/cover no-repeat;}
+  .hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,28,18,.34) 0%,rgba(0,28,18,.10) 20%,rgba(0,24,15,.52) 40%,rgba(0,24,15,.60) 55%,rgba(0,24,15,.24) 72%,rgba(0,22,14,.82) 100%);}
+  .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:30px 60px;}
+  .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:15px;line-height:1.5;opacity:.9;}
+  .hero-brand b{color:var(--gold);font-weight:700;}
+  .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.08em;font-size:15px;border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:8px 16px;border-radius:2px;text-align:right;line-height:1.5;}
+  .hero-body{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;padding:0 64px;}
+  .hero-quest{font-family:var(--sans-en);letter-spacing:.34em;font-size:19px;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hero-quest::before{content:"";width:44px;height:2px;background:var(--gold);}
+  .hero-title{font-family:var(--mincho);font-weight:900;font-size:114px;line-height:1.18;color:#fff;letter-spacing:.01em;text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 6px rgba(0,0,0,.6);}
+  .hero-title .sub{display:block;font-size:56px;font-weight:700;margin-top:16px;color:rgba(255,255,255,.92);}
+  .hero-lead{font-family:var(--mincho);font-size:27px;line-height:1.7;color:rgba(255,255,255,.92);margin-top:26px;max-width:900px;text-shadow:0 2px 14px rgba(0,0,0,.65);border-left:3px solid var(--vn-red);padding-left:20px;}
+  .hero-kpis{display:flex;gap:52px;margin-top:34px;}
+  .hk-l{font-family:var(--sans-en);letter-spacing:.14em;font-size:14px;color:rgba(255,255,255,.72);text-transform:uppercase;}
+  .hk-v{font-family:var(--mincho);font-weight:700;font-size:40px;margin-top:4px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hk-v .g{color:var(--gold);}
+  /* ヒーロー直下の分解チャート帯 */
+  .chartband{padding:46px 64px 40px;background:#fff;border-bottom:1px solid var(--border);}
+  .chartband img{width:100%;display:block;}
+  .chartband .hc-note{font-family:var(--gothic);font-size:var(--fs-micro);color:#5a6b62;line-height:var(--lh-note);margin-top:10px;}
+
+  /* SECTION 共通 */
+  section{padding:70px 64px;}
+  .eyebrow{font-family:var(--sans-en);letter-spacing:.26em;font-size:var(--fs-label);color:var(--green);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--gold);}
+  .s-title{font-family:var(--mincho);font-weight:700;font-size:var(--fs-title);line-height:var(--lh-head);color:var(--green-dark);margin-bottom:28px;}
+  .lead{font-size:var(--fs-lead);font-weight:500;line-height:var(--lh-body);border-left:3px solid var(--vn-red);padding-left:20px;margin-bottom:24px;text-align:justify;}
+  .body{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--mid);text-align:justify;}
+  .body strong{color:var(--dark);font-weight:700;}
+  .src{font-size:var(--fs-label);color:var(--light);margin-top:14px;font-family:var(--gothic);line-height:var(--lh-note);}
+  .fake{color:var(--vn-red);font-family:var(--gothic);font-weight:700;}
+
+  /* バーベル */
+  .barbell{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+  .compics{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;}
+  .compic img{width:100%;height:320px;object-fit:cover;display:block;border:1px solid var(--border);border-radius:2px;}
+  .compic figcaption{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);margin-top:7px;line-height:var(--lh-note);}
+  .bcard{padding:28px;border:1px solid var(--border);border-top:4px solid var(--up);background:#fff;}
+  .bcard.loss{border-top-color:var(--vn-red);}
+  .bcard h4{font-family:var(--mincho);font-size:var(--fs-lead);margin-bottom:6px;}
+  .bcard .tag{font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-micro);color:var(--up);font-weight:700;}
+  .bcard.loss .tag{color:var(--vn-red);}
+  .bcard p{font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);margin-top:12px;text-align:justify;}
+
+  /* テーブル */
+  .mtable{width:100%;border-collapse:collapse;margin-top:6px;font-size:var(--fs-bodysm);}
+  .mtable th,.mtable td{padding:14px 16px;border-bottom:1px solid var(--border);text-align:left;}
+  .mtable th{font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);text-transform:uppercase;background:var(--cream);}
+  .mtable td.num{font-family:var(--sans-en);font-weight:600;}
+  .hl-vic{color:var(--vn-red);font-weight:700;} .hl-vhm{color:var(--up);font-weight:700;}
+
+  /* 先週の相場：週間KPI＋日次バー＋セクター */
+  .weekwrap{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start;}
+  .sumstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 24px;}
+  .sumstrip .wk-kpi{margin-bottom:0;height:100%;display:flex;flex-direction:column;}
+  .sumstrip .wk-kpi .l{line-height:1.45;}
+  .sumstrip .wk-kpi .lsub{display:block;font-size:var(--fs-micro);opacity:.8;margin-top:1px;}
+  .sumstrip .wk-kpi .v{margin-top:auto;padding-top:10px;}
+  /* DAY-BY-DAY ダイバージング（＋上／−下） */
+  .ddiv{display:flex;gap:14px;position:relative;margin-top:2px;}
+  .ddiv .zero{position:absolute;left:0;right:0;top:100px;border-top:1px dashed #bbb;z-index:0;}
+  .ddiv .dcol{flex:1;display:flex;flex-direction:column;z-index:1;}
+  .ddiv .barea{height:200px;display:flex;flex-direction:column;}
+  .ddiv .htop{height:100px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;}
+  .ddiv .hbot{height:100px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;}
+  .ddiv .dv{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-bottom:5px;}
+  .ddiv .dvb{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-top:5px;}
+  .ddiv .bar{width:100%;min-height:3px;border-radius:3px 3px 0 0;background:var(--up);}
+  .ddiv .barb{width:100%;min-height:3px;border-radius:0 0 3px 3px;background:var(--down);}
+  .ddiv .lab{text-align:center;font-family:var(--sans-en);font-size:var(--fs-label);color:var(--light);margin-top:8px;}
+  .wk-kpi{background:var(--cream);border-left:3px solid var(--green);padding:24px 26px;margin-bottom:18px;}
+  .wk-kpi .l{font-family:var(--sans-en);font-size:var(--fs-label);letter-spacing:.08em;color:var(--light);}
+  .wk-kpi .v{font-family:var(--mincho);font-size:var(--fs-numlg);font-weight:800;line-height:1;margin-top:6px;}
+  .wk-kpi .v.pos{color:var(--up);} .wk-kpi .v.neg{color:var(--down);}
+  .daybars{display:flex;align-items:flex-end;gap:12px;height:150px;margin-top:6px;}
+  .daycol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .dv{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-bottom:6px;}
+  .db{width:100%;border-radius:2px 2px 0 0;min-height:4px;}
+  .db.pos{background:var(--up);} .db.neg{background:var(--down);}
+  .dl{font-family:var(--sans-en);font-size:var(--fs-label);color:var(--light);margin-top:8px;}
+  .secrow{display:flex;align-items:center;gap:14px;padding:9px 0;}
+  .secname{width:152px;font-size:var(--fs-body);white-space:nowrap;}
+  .secbar{flex:1;height:12px;background:var(--cream-dark);border-radius:2px;position:relative;overflow:hidden;}
+  .secbar i{position:absolute;top:0;bottom:0;left:50%;}
+  .secval{width:78px;text-align:right;font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);}
+
+  /* 集中度モニター */
+  .conc{background:var(--green-dark);color:#fff;}
+  .conc .eyebrow{color:var(--gold);} .conc .eyebrow::before{background:var(--gold);}
+  .conc .s-title{color:#fff;}
+  .bigstat{display:flex;align-items:center;gap:36px;margin:4px 0 26px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.15);}
+  .bigstat .n{font-family:var(--mincho);font-weight:800;font-size:var(--fs-stat);line-height:.86;color:var(--gold);}
+  .bigstat .n span{font-size:var(--fs-numlg);}
+  .bigstat .c{font-size:var(--fs-body);line-height:var(--lh-card);color:rgba(255,255,255,.9);}
+  .crow{display:grid;grid-template-columns:200px 1fr 130px;gap:18px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+  .crow .cl{font-size:var(--fs-body);color:rgba(255,255,255,.9);}
+  .crow .cbar{height:14px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;}
+  .crow .cbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#e0a800);}
+  .crow .cv{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-lead);color:var(--gold);text-align:right;}
+  .conc .note{font-size:var(--fs-label);color:rgba(255,255,255,.55);margin-top:16px;line-height:var(--lh-note);}
+
+  /* Ex-Vin */
+  .callout{background:var(--cream);border-left:5px solid var(--gold);padding:32px 36px;margin-top:20px;}
+  .callout .big{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;color:var(--green-dark);line-height:var(--lh-card);}
+  .callout .big em{color:var(--vn-red);font-style:normal;}
+
+  /* 動いた株×フロー */
+  .flow{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+  .fcol h4{font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);margin-bottom:12px;}
+  .fcol.buy h4{color:var(--up);} .fcol.sell h4{color:var(--down);}
+  .fitem{background:#fff;border:1px solid var(--border);border-left:3px solid var(--up);padding:16px 18px;margin-bottom:10px;}
+  .fcol.sell .fitem{border-left-color:var(--down);}
+  .fitem .top{display:flex;justify-content:space-between;align-items:baseline;}
+  .fitem .tk{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;}
+  .fitem .fv{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);}
+  .fitem .fv.pos{color:var(--up);} .fitem .fv.neg{color:var(--down);}
+  .fitem .nw{font-size:var(--fs-bodysm);color:var(--mid);line-height:var(--lh-note);margin-top:6px;}
+  .domestic{background:var(--cream);border-left:3px solid var(--green);padding:18px 22px;margin-top:16px;font-size:var(--fs-body);line-height:var(--lh-card);}
+
+  /* トピックス */
+  .topics{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px;}
+  .tcard{background:#fff;border:1px solid var(--border);padding:24px 26px;position:relative;}
+  .tcard::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--green),var(--gold));}
+  .ttag{display:inline-block;font-family:var(--sans-en);font-size:var(--fs-micro);letter-spacing:.08em;padding:3px 10px;border-radius:20px;margin-bottom:12px;}
+  .ttag.macro{background:rgba(0,73,44,.08);color:var(--green);}
+  .ttag.micro{background:rgba(218,37,29,.08);color:var(--vn-red);}
+  .tcard h4{font-family:var(--mincho);font-size:var(--fs-lead);line-height:var(--lh-head);margin-bottom:10px;}
+  .tcard p{font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
+
+  /* 今週/今後の予定 */
+  .cal{margin-top:8px;}
+  .calgrp{font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);color:var(--gold);text-transform:uppercase;margin:22px 0 10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.15);}
+  .calitem{display:grid;grid-template-columns:150px 1fr auto;gap:18px;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+  .caldate{font-family:var(--sans-en);font-size:var(--fs-bodysm);color:var(--gold);}
+  .calbody{font-size:var(--fs-body);color:rgba(255,255,255,.92);}
+  .caldist{font-family:var(--sans-en);font-size:var(--fs-label);color:rgba(255,255,255,.5);white-space:nowrap;}
+
+  /* リスク */
+  .risk{background:var(--green);color:#fff;}
+  .risk .eyebrow{color:var(--gold);}.risk .eyebrow::before{background:var(--gold);}
+  .risk .s-title{color:#fff;}
+  .risk ul{list-style:none;margin-top:6px;}
+  .risk li{font-size:var(--fs-body);line-height:var(--lh-card);padding:14px 0 14px 30px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;color:rgba(255,255,255,.9);text-align:justify;}
+  .risk li::before{content:"";position:absolute;left:0;top:23px;width:9px;height:9px;background:var(--vn-red);border-radius:50%;}
+
+  /* 予定セクション（濃背景） */
+  .plan{background:var(--green-dark);color:#fff;}
+  .plan .eyebrow{color:var(--gold);}.plan .eyebrow::before{background:var(--gold);}
+  .plan .s-title{color:#fff;}
+
+  /* 注目銘柄（VN30 週間寄与度） */
+  .contrib{margin-top:34px;border-top:1px solid var(--border);padding-top:26px;}
+  .contrib-h{font-family:var(--sans-en);font-size:var(--fs-label);letter-spacing:.1em;color:var(--light);margin-bottom:14px;}
+  .contrib-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+  .cdir{font-size:var(--fs-label);font-weight:700;margin-bottom:6px;}
+  .ci{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--border);font-size:var(--fs-body);}
+  .ci .tk{font-weight:700;}
+  .ci .pt{font-family:var(--sans-en);font-weight:700;}
+  .ci .pt.pos{color:var(--up);} .ci .pt.neg{color:var(--down);}
+  .spotlight{display:grid;grid-template-columns:1fr;gap:20px;margin-top:22px;}
+  .sp{background:#fff;border:1px solid var(--border);border-left:4px solid var(--green);padding:24px 30px;}
+  .sp.dn{border-left-color:var(--vn-red);}
+  .sp h5{font-family:var(--mincho);font-size:var(--fs-lead);margin-bottom:6px;}
+  .sp p{font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
+
+  /* 免責 */
+  .footer{background:var(--green-dark);padding:40px 64px;}
+  .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:15px 18px;font-size:var(--fs-label);color:rgba(255,255,255,.8);line-height:var(--lh-card);}
+  .footer .warn b{color:var(--gold);} .footer .warn .red{color:#ff8a8a;}
+  .footer .disc{font-size:var(--fs-micro);color:rgba(255,255,255,.44);line-height:var(--lh-card);margin-top:16px;}
+  .footer .brand{color:rgba(255,255,255,.5);font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);margin-top:16px;}
+  /* VOL.03 表紙タオ・インセット */
+  .face{position:absolute;right:64px;bottom:150px;z-index:4;width:236px;text-align:center;}
+  .face img{width:236px;height:296px;object-fit:cover;object-position:center 20%;border:3px solid rgba(245,196,0,.85);box-shadow:0 12px 44px rgba(0,0,0,.55);}
+  .face .cap{font-family:var(--gothic);font-size:13px;color:#fff;margin-top:9px;line-height:1.5;text-shadow:0 1px 6px rgba(0,0,0,.85);white-space:nowrap;}
+  .face .cap b{color:var(--gold);}
+  /* VOL.03 氷山フォーマット */
+  .berg{display:grid;grid-template-columns:1fr;gap:0;margin:26px 0 8px;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+  .berg .tier{padding:24px 30px;}
+  .berg .up{background:linear-gradient(180deg,#eaf4fb,#dcecf7);}
+  .berg .waterline{height:0;border-top:2px dashed #4a90d9;position:relative;}
+  .berg .waterline span{position:absolute;right:14px;top:-11px;background:#fff;padding:0 10px;font-family:var(--gothic);font-size:12px;color:#4a90d9;}
+  .berg .dn{background:linear-gradient(180deg,#eaf0ee,#e2ebe7);}
+  .berg .tlab{font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--green);margin-bottom:12px;}
+  .berg .row{display:flex;gap:14px;flex-wrap:wrap;}
+  .berg .co{flex:1;min-width:220px;background:#fff;border:1px solid var(--border);border-radius:4px;padding:14px 18px;}
+  .berg .co.g{border-left:4px solid var(--gold);}
+  .berg .co h5{font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);}
+  .berg .co .m{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);color:var(--green);margin-top:4px;}
+  .berg .co p{font-family:var(--gothic);font-size:13px;color:var(--mid);line-height:var(--lh-card);margin-top:6px;}
+  .berg .unlisted{display:flex;gap:12px;flex-wrap:wrap;}
+  .berg .ub{flex:1;min-width:150px;background:rgba(0,73,44,.05);border:1px dashed var(--border);border-radius:4px;padding:14px 16px;}
+  .berg .ub h6{font-family:var(--mincho);font-size:var(--fs-bodysm);color:var(--green-dark);}
+  .berg .ub p{font-family:var(--gothic);font-size:12px;color:var(--light);margin-top:4px;line-height:1.6;}
+  /* VOL.03 富豪ランキング表 */
+  .rich{width:100%;border-collapse:collapse;font-size:var(--fs-bodysm);margin-top:8px;}
+  .rich th{font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);text-transform:uppercase;background:var(--cream);padding:10px 12px;text-align:left;}
+  .rich td{padding:11px 12px;border-bottom:1px solid var(--border);font-family:var(--gothic);}
+  .rich td.num{font-family:var(--sans-en);font-weight:600;text-align:right;}
+  .rich tr.star{background:rgba(245,196,0,.14);}
+  .rich tr.star td{font-weight:700;}
+  .rich .w{color:var(--vn-red);font-size:11px;border:1px solid rgba(218,37,29,.3);border-radius:2px;padding:1px 6px;margin-left:6px;font-family:var(--gothic);}
+</style>
+<link rel="stylesheet" href="assets/dynamics.css">
+</head>
+<body>
+
+<div class="ribbon">📋 <b>制作中プレビュー（VOL.03ドラフト）</b> ― ソビコ特集・先行版。特集面は7/10終値ベース、<b>相場・ニュース各面は7/17（金）データ確定後に追加</b>。表紙機体は仮の低解像。7/20（月）発刊予定</div>
+
+<!-- ① 表紙＝ベトジェット機ヒーロー＋タオ前面 -->
+<div class="hero" style="height:auto;min-height:1080px;">
+  <div class="hero-img" style="background:url('weekly_assets/vol03_cover.jpg') center 42%/cover no-repeat;"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-nav">
+    <div class="hero-brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+    <div class="hero-date num">VOL.03 ― 2026.7.13–7.17週<br>7月20日（月）発行</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;padding:0 64px;">
+    <div class="hero-quest">WEEKLY QUEST ③ ― 今週の企業クエスト</div>
+    <div class="hero-title">空飛ぶ財閥</div>
+    <div class="hero-lead" style="max-width:660px;">誰もが知る格安航空、ベトジェット。その翼を握るのは、銀行から不動産・リゾートまで束ねる一族——<strong>ソビコ</strong>。上場2社は、氷山の一角にすぎない。</div>
+    <div class="hero-kpis">
+      <div><div class="hk-l">上場は2社</div><div class="hk-v"><span class="num">VJC＋HDB</span> <span class="g" style="font-size:22px">約1.5兆円</span></div></div>
+      <div><div class="hk-l">創業者タオ 純資産</div><div class="hk-v"><span class="num g">$4.2B</span> <span style="font-size:22px">世界1,011位</span></div></div>
+      <div><div class="hk-l">グループの柱</div><div class="hk-v"><span class="num g">5事業</span> <span style="font-size:22px">航空・銀行ほか</span></div></div>
+    </div>
+  </div>
+  <div class="face">
+    <img src="weekly_assets/vol03_thao.jpg" alt="タオ会長">
+    <div class="cap">この財閥の、顔<br><b>マダム・タオ</b>（ベトジェット／ソビコ会長）</div>
+  </div>
+</div>
+
+<!-- ② 企業クエスト・リード＝氷山の反転（この号の背骨） -->
+<section>
+  <div class="eyebrow">Weekly Quest ③ ｜ Sovico</div>
+  <div class="s-title">ベトジェットは、氷山の一角</div>
+  <div class="lead jp">ベトナムの空を最も安く飛ぶ航空会社、ベトジェット航空（VJC）。誰もが知るこのLCCの持ち主が、実は<strong>ソビコ・グループ</strong>という多角財閥であることは、あまり知られていない。ソビコは<strong>HDBank</strong>（HDB）も束ね、さらに水面下には不動産・リゾート・再生可能エネルギーが広がる。上場しているのは航空と銀行の2社だけ——<strong>市場から見えるのは、氷山の一角にすぎない</strong>。この号では、見える翼から、見えない本体へと潜っていく。</div>
+  <div class="berg">
+    <div class="tier up">
+      <div class="tlab">🌊 水面上 ― 上場（市場から見える）</div>
+      <div class="row">
+        <div class="co g"><h5>ベトジェット航空（VJC）</h5><div class="m">約6,600億円 ／ 航空（LCC）</div><p>格安航空。景気敏感の"攻め"。直近の週間集計（7/6–7/10週）ではVN-Index寄与+0.66ptでVN30の9位＝この財閥が単体で市場を押し上げた側。</p></div>
+        <div class="co g"><h5>HDBank（HDB）</h5><div class="m">約8,400億円 ／ 銀行</div><p>安定収益の"守り"。ソビコ・グループが直接約14.4%を保有する主要株主。</p></div>
+      </div>
+    </div>
+    <div class="waterline"><span>ここまでが、市場の見る「ソビコ」</span></div>
+    <div class="tier dn">
+      <div class="tlab">🧊 水面下 ― 非上場（見えない本体）</div>
+      <div class="unlisted">
+        <div class="ub"><h6>ソビコ本体（Holdings）</h6><p>頂点の持株会社。VJC・HDBを束ね、資本が循環する。</p></div>
+        <div class="ub"><h6>Phú Long（不動産）</h6><p>ホーチミン等の都市開発。タオ会長が統括。</p></div>
+        <div class="ub"><h6>Furama／Aryana（リゾート）</h6><p>ダナン等のビーチリゾート・ホテル。</p></div>
+        <div class="ub"><h6>再生可能エネルギー</h6><p>Keppelと持続可能エネルギー・都市開発で協業。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="src">出所：グループ構造＝WEF・theinvestor・Crunchbase等の公開情報。VJC・HDBの時価総額＝VNDirect（2026/7/10終値・円換算1USD≒161.8円/26,214VND）。ソビコのHDB持分14.37%＝HDBank 2023年報（一次開示）。VJC寄与＝当社集計（先週7/6–7/10・VN30ベース）。非上場事業の位置づけは公開情報に基づく当社整理。</div>
+</section>
+
+<!-- ②-a2 富豪ランキング（フォーブス2026） -->
+<section class="conc">
+  <div class="eyebrow">By the Rich List ｜ フォーブス2026・ベトナムの富豪</div>
+  <div class="s-title">女性は3人、"自力"は1人</div>
+  <div class="bigstat">
+    <div class="n">$4.2<span>B</span></div>
+    <div class="c jp">ソビコ／ベトジェット会長 マダム・タオの純資産（フォーブス・世界1,011位）。ベトナムには8人のドル・ビリオネアがいて、うち<strong style="color:#fff">女性は3人。だがその2人はビン系（配偶者・親族）——ゼロから自分で築いた"自力"の女性は、タオただ一人</strong>だ。旧ソ連圏の商品貿易から、ベトナム初の女性ビリオネアへ。「花」の裏付けは、この一行に集約される。</div>
+  </div>
+  <table class="rich">
+    <tr><th style="width:44px">順</th><th>富豪</th><th>グループ</th><th style="width:110px;text-align:right">純資産</th><th style="width:96px;text-align:right">世界順位</th></tr>
+    <tr><td class="num">1</td><td>ファム・ニャット・ヴォン</td><td>Vingroup</td><td class="num">$27.7B</td><td class="num">#93</td></tr>
+    <tr class="star"><td class="num">2</td><td>グエン・ティ・フオン・タオ<span class="w">自力・女性</span></td><td>ソビコ／ベトジェット</td><td class="num">$4.2B</td><td class="num">#1,011</td></tr>
+    <tr><td class="num">3</td><td>ファム・トゥ・フオン<span class="w">女性・ビン系</span></td><td>Vingroup（副会長）</td><td class="num">$3.0B</td><td class="num">#1,406</td></tr>
+    <tr><td class="num">4</td><td>チャン・ディン・ロン</td><td>ホアファット</td><td class="num">$2.9B</td><td class="num">—</td></tr>
+    <tr><td class="num">5</td><td>ホー・フン・アイン</td><td>テクコムバンク</td><td class="num">$2.5B</td><td class="num">—</td></tr>
+    <tr><td class="num">6</td><td>ファム・トゥイ・ハン<span class="w">女性・ビン系</span></td><td>Vingroup（副会長）</td><td class="num">$2.1B</td><td class="num">#1,982</td></tr>
+    <tr><td class="num">7</td><td>グエン・ダン・クアン</td><td>マサン</td><td class="num">$1.2B</td><td class="num">—</td></tr>
+    <tr><td class="num">8</td><td>ゴー・チー・ズン</td><td>VPバンク</td><td class="num">新規</td><td class="num">—</td></tr>
+  </table>
+  <div class="note jp"><strong>ヴォン、先週まさにニュースに。</strong>VOL.01の主役ヴォンは、実時間の資産評価では純資産$36B超・世界59位＝<strong style="color:#fff">東南アジア一の富豪</strong>に到達した（VIC株が最高値226,000ドンを更新）。ビン号からソビコ号へ——富豪ランキングが2つの財閥を橋渡しする。出所：Forbes 2026 World's Billionaires List（2026年3月時点の年次リスト）／Forbesプロフィール（タオ純資産は2026/7/9時点）／VnExpress・theinvestor（ヴォンの実時間値・SEA一）。年次リストと実時間値は乖離があり、表は年次リストで統一。</div>
+</section>
+
+<!-- ②-b 創業者コーナー（東欧組・第2話） -->
+<section>
+  <div class="eyebrow">Founders ｜ 東欧組・第2話</div>
+  <div class="s-title">黒衣の夫、花のある妻</div>
+  <div style="background:var(--cream);border:1px solid var(--border);border-left:4px solid var(--gold);padding:34px 46px;">
+    <div class="body">
+      <p style="margin:0 0 16px;">ソビコは、一組の夫婦がつくった帝国だ。二人はともに旧ソ連圏で学び、そこで最初の富を築いた——VOL.01で見たビングループのファム・ニャット・ヴオンと同じ、<strong>「東欧組」の系譜</strong>である。</p>
+      <p style="margin:0 0 16px;"><strong>グエン・タイン・フン（夫）。</strong>ソビコ・グループの創業者・会長にして、ベトジェット航空の副会長。ウクライナ・ハリコフで電気工学の修士を、モスクワのロシア科学アカデミーで博士を修めた技術者だ。表舞台に立つことは少なく、経営の設計を担う——いわば<strong>黒衣の頭脳</strong>である。</p>
+      <p style="margin:0 0 16px;"><strong>グエン・ティ・フオン・タオ（妻）。</strong>ソビコ会長兼CEO、ベトジェット会長、HDBank常任副会長を兼ねる、この帝国の<strong>顔</strong>。モスクワのプレハノフ経済大で経済・金融を学びながら、1980年代に旧ソ連圏でファックス機・ゴム・プラスチックといった商品貿易を手がけて蓄財した。その資本が、のちのベトジェット構想の原点になる。彼女は<strong>ベトナム初、そして東南アジア初の"自力"女性ビリオネア</strong>だ（フォーブス純資産 約42億ドル）。</p>
+      <p style="margin:0;">妻が翼で世界に名を売り、夫が資本の配線を組む。ヴオン（乾麺）、クアン（マサン＝即席麺）と並ぶ<strong>東欧組の一角</strong>として、この夫婦は航空と銀行という二つの装置を、一つのグループに束ねてみせた。次章では、その"攻めと守り"の二面性を数字で見る。</p>
+    </div>
+  </div>
+  <div class="src">出所：フンの略歴＝WEF（一次プロフィール）。タオの兼任職・略歴＝HDBank 2023年報（一次開示）・Forbesプロフィール。純資産はForbes（2026/7/9時点）。「東欧組」＝当社の分類（ヴオン=ウクライナ・ハリコフ、タオ=モスクワ、クアン=ロシア）。</div>
+</section>
+
+<!-- ②-c バーベル＝航空×銀行 -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Barbell ｜ 二面性</div>
+  <div class="s-title">攻めの航空、守りの銀行</div>
+  <div class="barbell">
+    <div class="bcard"><div class="tag">ATTACK ― 航空</div><h4>ベトジェット航空（VJC）</h4><p class="jp">景気敏感の格安航空＝"攻め"。2025年は<strong>売上82兆ドン（約5,000億円）・純利益＋51%</strong>、旅客2,820万人・機材135機・254路線と過去最高水準。市場はこの成長期待を織り込み、PERは<strong>41倍</strong>（航空は利益変動が大きく高PERになりやすい）、PBRは3.98倍。外国人枠の消化は21%と余地を残す。時価総額 約6,400億円。</p></div>
+    <div class="bcard loss" style="border-top-color:var(--up);"><div class="tag" style="color:var(--up);">DEFENSE ― 銀行</div><h4>HDBank（HDB）</h4><p class="jp">安定収益の銀行＝"守り"。2025年は<strong>税引前利益＋27.4%・ROE 25.3%・総資産＋33.5%</strong>と高成長を続けつつ、評価はPER<strong>7.8倍</strong>・PBR1.66倍と堅実。ソビコが約14.4%を握る中核だ。増資も継続中（定款資本を段階的に引き上げ）。外国人枠は80%と厚めに買われる。時価総額 約8,200億円。</p></div>
+  </div>
+  <div class="src">出所：時価総額・PER・PBR・外国人枠＝VNDirect（2026/7/10終値・円換算1USD≒161.8円/26,214VND）。ベトジェット2025年実績＝2026年4月AGM開示（VIR）。HDBank2025年実績＝The Asian Banker等（速報）。PERは実績（TTM）ベース。外国人枠消化＝(1−残枠/上限)の当社推計。</div>
+</section>
+
+<!-- ②-d 数字で見る＝上場2社 -->
+<section>
+  <div class="eyebrow">By the Numbers ｜ ソビコの上場2社</div>
+  <div class="s-title">数字で見る、攻めと守り</div>
+  <div class="mwrap"><table class="mtable" style="font-size:16px;">
+    <tr><th>銘柄</th><th>事業</th><th>時価総額（円換算）</th><th>PER</th><th>PBR</th><th>外国人枠 消化</th></tr>
+    <tr><td><strong>VJC</strong>／ベトジェット航空</td><td>航空（攻め）</td><td class="num">約6,400億円</td><td class="num hl-vic">41.4x</td><td class="num hl-vic">3.98x</td><td class="num">21%</td></tr>
+    <tr><td><strong>HDB</strong>／HDBank</td><td>銀行（守り）</td><td class="num">約8,200億円</td><td class="num hl-vhm">7.8x</td><td class="num">1.66x</td><td class="num">80%</td></tr>
+  </table></div>
+  <div style="margin-top:20px;padding:22px 30px;background:var(--cream);border-left:4px solid var(--gold);">
+    <div class="body jp" style="font-size:var(--fs-bodysm);line-height:var(--lh-card);">同じグループでも、市場の値付けは正反対だ。<strong>航空のVJCはPER41倍</strong>＝景気敏感で利益がぶれやすく、市場は将来の成長を先に織り込む。<strong>銀行のHDBはPER7.8倍</strong>＝高成長（ROE25%）でも安定ゆえ堅実な評価。攻めは"期待"で、守りは"実績"で買われる——バーベルは、バリュエーションにもそのまま表れる。合計時価総額は約1.5兆円で、VN-Indexの約2.8%（ビングループ一族の約28.7%と比べれば小粒だが、航空×銀行のバーベルが1グループで揃うのは越で唯一）。</div>
+  </div>
+  <div class="src">出所：VNDirect（2026/7/10終値時点・PER/PBRは実績TTM）。外国人枠消化＝(1−残枠/上限)の当社推計（直近取引日ベース）。円換算は1USD≒161.8円・26,214VND。VN-Index比は単純時価総額ベースの概算。赤＝景気敏感の高倍率、緑＝安定の割安圏。</div>
+</section>
+
+<!-- ②-e リスク（死角）＝クロスオーナーシップ -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Blind Spot ｜ 死角</div>
+  <div class="s-title">持ち合いという、光と影</div>
+  <div class="body jp" style="font-size:var(--fs-body);line-height:var(--lh-body);max-width:920px;">ソビコの強みは、そのまま最大のリスクでもある。<strong>ソビコ本体 ⇄ ベトジェット ⇄ HDBank</strong> は、資本を持ち合う関係にある。ソビコはHDBankの唯一の5%超株主（約14.4%）であり、HDBank自身もベトジェット株を保有し、タオ会長＋関係者でベトジェットの約52%を握る（2018年時点）。航空・不動産・銀行がひとつの資本連鎖で結ばれている。</div>
+  <div style="display:flex;gap:16px;margin-top:22px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:260px;background:#fff;border:1px solid var(--border);border-top:4px solid var(--vn-red);border-radius:4px;padding:20px 24px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);color:var(--vn-red);margin-bottom:8px;">RISK ― 関連当事者取引</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);line-height:var(--lh-card);">シンガポールのISEAS研究所は、ベトナムの「不動産デベロッパー×銀行」のクロスオーナーシップの代表例として<strong>「HDBank と ソビコ・グループ」を名指し</strong>した（2022年ペーパー）。財閥が銀行を支配して自社事業へ融資する構図は、グループ内融資・利益相反の温床になりうる。加えて航空は景気循環に弱く、レバレッジも重い。ベトジェットは航空機リースをめぐる国際訴訟（FW Aviation、1.8億ドル規模）も抱える。</div>
+    </div>
+    <div style="flex:1;min-width:260px;background:#fff;border:1px solid var(--border);border-top:4px solid var(--up);border-radius:4px;padding:20px 24px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);color:var(--up);margin-bottom:8px;">MITIGANT ― 緩和材料</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);line-height:var(--lh-card);">もっとも、この持ち合いは<strong>自主的に薄まる方向</strong>にある。HDBankは近年ベトジェット株を段階的に縮小し、関連当事者エクスポージャーを自ら削っている。HDBankのROEは25%と本業が強く、ベトジェットも2025年は過去最高水準の増収増益。持ち合いのリスクを、本業の稼ぐ力で相殺できるかが問われる局面だ。</div>
+    </div>
+  </div>
+  <div class="src">出所：ISEAS Perspective 2022-14（一次学術）。持分比率＝HDBank 2023年報・Vietnam News（ベトジェット創業株主）。HDBankのベトジェット株縮小＝VnExpress。リース訴訟＝Global Law Experts等。数値はas-of時点のもので、持ち合い比率は増資・売却で変動する。</div>
+</section>
+
+<!-- ③〜⑦ 市場面は7/17金データ確定後 -->
+<section style="background:var(--cream);text-align:center;padding:56px 64px;">
+  <div class="eyebrow" style="justify-content:center;">In Production ｜ 制作中</div>
+  <div class="body jp" style="text-align:center;color:var(--light);max-width:760px;margin:0 auto;">相場概況・セクター騰落・Top Gainers &amp; Losers・スポットライト・ニューストピックス・注目材料の各面は、対象週の取引終了（7/17金）後に実データで組み、7/20（月）に発刊します。</div>
+</section>
+
+<!-- ⑧ 免責 -->
+<div class="footer">
+  <div class="warn jp">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本紙は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。<span class="red">本ページはVOL.03の制作中ドラフト。特集面の数値は2026/7/10終値ベースで、相場・ニュース各面は対象週の取引終了（7/17金）後に追加し7/20（月）に発刊します</span>。市場ウェイト・持分比率は概算・as-of時点のもの。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本紙は社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+  <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各社・各グループとは一切関係がありません</b>。表紙・本文の写真（ベトジェット航空の機体、マダム・タオのポートレート等）は各社公式サイト・報道より引用（報道・解説目的）で、各社の商標・肖像はそれぞれの権利者に帰属します。当社はこれら各社と提携・関係を有しません。純資産額はForbes等の実時間評価で変動し、記載は作成時点の値です。市場ウェイトは単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>
+  <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly VOL.03（制作中ドラフト） ｜ 2026.7.13–7.17週 ／ 2026.7.20発行予定</div>
+</div>
+
+<script src="assets/dynamics.js"></script>
+</body>
+</html>
