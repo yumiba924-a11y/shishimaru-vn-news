@@ -1,0 +1,1092 @@
+{
+  "as_of": "2026-07-14",
+  "generated_at": "2026-07-14T10:44:39",
+  "data_age_days": 0,
+  "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
+  "contribution_index": "VN30",
+  "card_threshold_pct": 3.0,
+  "indices": {
+    "VNINDEX": {
+      "close": 1806.63,
+      "change": 6.09,
+      "pct": 0.34,
+      "volume": 488594894,
+      "date": "2026-07-14"
+    },
+    "VN30": {
+      "close": 1946.06,
+      "change": 6.22,
+      "pct": 0.32,
+      "volume": 241224934,
+      "date": "2026-07-14"
+    }
+  },
+  "trend": {
+    "VNINDEX": {
+      "closes": [
+        1806.2,
+        1830.47,
+        1824.53,
+        1857.91,
+        1869.04,
+        1878.02,
+        1863.07,
+        1871.91,
+        1854.97,
+        1860.01,
+        1867.21,
+        1866.35,
+        1862.08,
+        1843.5,
+        1848.25,
+        1853.7,
+        1840.7,
+        1828.34,
+        1800.54,
+        1806.63
+      ],
+      "dates": [
+        "06/17",
+        "06/18",
+        "06/19",
+        "06/22",
+        "06/23",
+        "06/24",
+        "06/25",
+        "06/26",
+        "06/29",
+        "06/30",
+        "07/01",
+        "07/02",
+        "07/03",
+        "07/06",
+        "07/07",
+        "07/08",
+        "07/09",
+        "07/10",
+        "07/13",
+        "07/14"
+      ]
+    },
+    "VN30": {
+      "closes": [
+        1957.17,
+        1967.22,
+        1963.57,
+        1980.13,
+        1995.12,
+        2010.15,
+        2004.62,
+        2008.57,
+        2004.29,
+        1995.71,
+        2013.35,
+        2009.04,
+        2002.56,
+        1991.11,
+        1995.91,
+        1998.44,
+        1987.11,
+        1970.82,
+        1939.84,
+        1946.06
+      ],
+      "dates": [
+        "06/17",
+        "06/18",
+        "06/19",
+        "06/22",
+        "06/23",
+        "06/24",
+        "06/25",
+        "06/26",
+        "06/29",
+        "06/30",
+        "07/01",
+        "07/02",
+        "07/03",
+        "07/06",
+        "07/07",
+        "07/08",
+        "07/09",
+        "07/10",
+        "07/13",
+        "07/14"
+      ]
+    }
+  },
+  "breadth": {
+    "up": 19,
+    "down": 10,
+    "flat": 1,
+    "total": 30
+  },
+  "hose_breadth": {
+    "up": 192,
+    "down": 113,
+    "flat": 54,
+    "total": 359
+  },
+  "by_sector": [
+    {
+      "sector": "エネルギー",
+      "count": 3,
+      "avg_pct": 4.42,
+      "up": 3,
+      "down": 0
+    },
+    {
+      "sector": "素材",
+      "count": 2,
+      "avg_pct": 1.92,
+      "up": 2,
+      "down": 0
+    },
+    {
+      "sector": "消費財",
+      "count": 3,
+      "avg_pct": 1.08,
+      "up": 3,
+      "down": 0
+    },
+    {
+      "sector": "小売",
+      "count": 1,
+      "avg_pct": 1.05,
+      "up": 1,
+      "down": 0
+    },
+    {
+      "sector": "銀行",
+      "count": 14,
+      "avg_pct": 0.77,
+      "up": 10,
+      "down": 3
+    },
+    {
+      "sector": "IT",
+      "count": 1,
+      "avg_pct": -0.28,
+      "up": 0,
+      "down": 1
+    },
+    {
+      "sector": "証券",
+      "count": 1,
+      "avg_pct": -0.39,
+      "up": 0,
+      "down": 1
+    },
+    {
+      "sector": "運輸",
+      "count": 1,
+      "avg_pct": -0.82,
+      "up": 0,
+      "down": 1
+    },
+    {
+      "sector": "不動産",
+      "count": 3,
+      "avg_pct": -1.28,
+      "up": 0,
+      "down": 3
+    },
+    {
+      "sector": "観光",
+      "count": 1,
+      "avg_pct": -1.33,
+      "up": 0,
+      "down": 1
+    }
+  ],
+  "stocks": [
+    {
+      "code": "BSR",
+      "sector": "エネルギー",
+      "close": 27.2,
+      "change": 1.45,
+      "pct": 5.63,
+      "ref": 25.75,
+      "volume": 18606700,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 73.37,
+        "buy_val": 95.46,
+        "sell_val": 22.09,
+        "total_room": 2453576846,
+        "current_room": 2394166170,
+        "room_used_pct": 2.4
+      },
+      "shares": 5007299686,
+      "mcap_t": 136.2,
+      "weight": 0.02171
+    },
+    {
+      "code": "GAS",
+      "sector": "エネルギー",
+      "close": 78.5,
+      "change": 3.1,
+      "pct": 4.11,
+      "ref": 75.4,
+      "volume": 2251800,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 23.8,
+        "buy_val": 32.44,
+        "sell_val": 8.64,
+        "total_room": 1182345380,
+        "current_room": 1132731213,
+        "room_used_pct": 4.2
+      },
+      "shares": 2412949756,
+      "mcap_t": 189.4,
+      "weight": 0.03019
+    },
+    {
+      "code": "PLX",
+      "sector": "エネルギー",
+      "close": 36.8,
+      "change": 1.25,
+      "pct": 3.52,
+      "ref": 35.55,
+      "volume": 3602800,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 10.88,
+        "buy_val": 13.75,
+        "sell_val": 2.86,
+        "total_room": 258775616,
+        "current_room": 77778460,
+        "room_used_pct": 69.9
+      },
+      "shares": 1270592235,
+      "mcap_t": 46.8,
+      "weight": 0.00745
+    },
+    {
+      "code": "GVR",
+      "sector": "素材",
+      "close": 30.5,
+      "change": 1.0,
+      "pct": 3.39,
+      "ref": 29.5,
+      "volume": 1379100,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 8.72,
+        "buy_val": 9.29,
+        "sell_val": 0.57,
+        "total_room": 520000000,
+        "current_room": 494667020,
+        "room_used_pct": 4.9
+      },
+      "shares": 4000000000,
+      "mcap_t": 122.0,
+      "weight": 0.01945
+    },
+    {
+      "code": "STB",
+      "sector": "銀行",
+      "close": 70.4,
+      "change": 1.9,
+      "pct": 2.77,
+      "ref": 68.5,
+      "volume": 4375100,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 59.77,
+        "buy_val": 73.41,
+        "sell_val": 13.63,
+        "total_room": 565564714,
+        "current_room": 349890922,
+        "room_used_pct": 38.1
+      },
+      "shares": 1885215716,
+      "mcap_t": 132.7,
+      "weight": 0.02115
+    },
+    {
+      "code": "ACB",
+      "sector": "銀行",
+      "close": 22.85,
+      "change": 0.4,
+      "pct": 1.78,
+      "ref": 22.45,
+      "volume": 18290500,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 26.74,
+        "buy_val": 43.88,
+        "sell_val": 17.14,
+        "total_room": 1741326587,
+        "current_room": 316045366,
+        "room_used_pct": 81.9
+      },
+      "shares": 5804421957,
+      "mcap_t": 132.6,
+      "weight": 0.02114
+    },
+    {
+      "code": "VIB",
+      "sector": "銀行",
+      "close": 15.75,
+      "change": 0.25,
+      "pct": 1.61,
+      "ref": 15.5,
+      "volume": 6137200,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -13.89,
+        "buy_val": 1.78,
+        "sell_val": 15.67,
+        "total_room": 169859884,
+        "current_room": 36336628,
+        "room_used_pct": 78.6
+      },
+      "shares": 3404005710,
+      "mcap_t": 53.6,
+      "weight": 0.00855
+    },
+    {
+      "code": "SSB",
+      "sector": "銀行",
+      "close": 15.9,
+      "change": 0.25,
+      "pct": 1.6,
+      "ref": 15.65,
+      "volume": 2117100,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -0.01,
+        "buy_val": 2.8,
+        "sell_val": 2.81,
+        "total_room": 1028640000,
+        "current_room": 1018132583,
+        "room_used_pct": 1.0
+      },
+      "shares": 3428800000,
+      "mcap_t": 54.5,
+      "weight": 0.00869
+    },
+    {
+      "code": "SHB",
+      "sector": "銀行",
+      "close": 12.8,
+      "change": 0.2,
+      "pct": 1.59,
+      "ref": 12.6,
+      "volume": 43115600,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 42.77,
+        "buy_val": 50.89,
+        "sell_val": 8.12,
+        "total_room": 1438260007,
+        "current_room": 1254651518,
+        "room_used_pct": 12.8
+      },
+      "shares": 4884333454,
+      "mcap_t": 62.5,
+      "weight": 0.00996
+    },
+    {
+      "code": "SAB",
+      "sector": "消費財",
+      "close": 46.8,
+      "change": 0.65,
+      "pct": 1.41,
+      "ref": 46.15,
+      "volume": 400600,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 4.71,
+        "buy_val": 6.01,
+        "sell_val": 1.3,
+        "total_room": 1282562372,
+        "current_room": 530332522,
+        "room_used_pct": 58.7
+      },
+      "shares": 1282562372,
+      "mcap_t": 60.0,
+      "weight": 0.00957
+    },
+    {
+      "code": "VNM",
+      "sector": "消費財",
+      "close": 56.0,
+      "change": 0.6,
+      "pct": 1.08,
+      "ref": 55.4,
+      "volume": 1755100,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 23.77,
+        "buy_val": 32.27,
+        "sell_val": 8.5,
+        "total_room": 2089955445,
+        "current_room": 1071583630,
+        "room_used_pct": 48.7
+      },
+      "shares": 2089955445,
+      "mcap_t": 117.0,
+      "weight": 0.01865
+    },
+    {
+      "code": "MWG",
+      "sector": "小売",
+      "close": 76.8,
+      "change": 0.8,
+      "pct": 1.05,
+      "ref": 76.0,
+      "volume": 2788000,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -6.88,
+        "buy_val": 5.43,
+        "sell_val": 12.31,
+        "total_room": 720149656,
+        "current_room": 0,
+        "room_used_pct": 100.0
+      },
+      "shares": 1468423529,
+      "mcap_t": 112.8,
+      "weight": 0.01797
+    },
+    {
+      "code": "BID",
+      "sector": "銀行",
+      "close": 40.25,
+      "change": 0.3,
+      "pct": 0.75,
+      "ref": 39.95,
+      "volume": 2737300,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -15.29,
+        "buy_val": 1.38,
+        "sell_val": 16.68,
+        "total_room": 2184019563,
+        "current_room": 905903044,
+        "room_used_pct": 58.5
+      },
+      "shares": 7021361917,
+      "mcap_t": 282.6,
+      "weight": 0.04504
+    },
+    {
+      "code": "MSN",
+      "sector": "消費財",
+      "close": 68.4,
+      "change": 0.5,
+      "pct": 0.74,
+      "ref": 67.9,
+      "volume": 2364800,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 17.8,
+        "buy_val": 55.69,
+        "sell_val": 37.88,
+        "total_room": 1534951081,
+        "current_room": 1168327270,
+        "room_used_pct": 23.9
+      },
+      "shares": 1445915457,
+      "mcap_t": 98.9,
+      "weight": 0.01576
+    },
+    {
+      "code": "VCB",
+      "sector": "銀行",
+      "close": 59.2,
+      "change": 0.3,
+      "pct": 0.51,
+      "ref": 58.9,
+      "volume": 2829200,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -54.22,
+        "buy_val": 78.77,
+        "sell_val": 132.99,
+        "total_room": 2506702528,
+        "current_room": 818710287,
+        "room_used_pct": 67.3
+      },
+      "shares": 8355675094,
+      "mcap_t": 494.7,
+      "weight": 0.07884
+    },
+    {
+      "code": "HPG",
+      "sector": "素材",
+      "close": 22.5,
+      "change": 0.1,
+      "pct": 0.45,
+      "ref": 22.4,
+      "volume": 22481900,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -48.96,
+        "buy_val": 51.49,
+        "sell_val": 100.46,
+        "total_room": 4137052614,
+        "current_room": 2336036507,
+        "room_used_pct": 43.5
+      },
+      "shares": 8442964520,
+      "mcap_t": 190.0,
+      "weight": 0.03028
+    },
+    {
+      "code": "MBB",
+      "sector": "銀行",
+      "close": 24.55,
+      "change": 0.1,
+      "pct": 0.41,
+      "ref": 24.45,
+      "volume": 12268700,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -9.76,
+        "buy_val": 53.88,
+        "sell_val": 63.63,
+        "total_room": 1871587283,
+        "current_room": 79231325,
+        "room_used_pct": 95.8
+      },
+      "shares": 8054999909,
+      "mcap_t": 197.8,
+      "weight": 0.03152
+    },
+    {
+      "code": "VPB",
+      "sector": "銀行",
+      "close": 26.5,
+      "change": 0.1,
+      "pct": 0.38,
+      "ref": 26.4,
+      "volume": 14462900,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -83.94,
+        "buy_val": 28.35,
+        "sell_val": 112.29,
+        "total_room": 2380177080,
+        "current_room": 486051829,
+        "room_used_pct": 79.6
+      },
+      "shares": 7933923601,
+      "mcap_t": 210.2,
+      "weight": 0.03351
+    },
+    {
+      "code": "HDB",
+      "sector": "銀行",
+      "close": 26.8,
+      "change": 0.1,
+      "pct": 0.37,
+      "ref": 26.7,
+      "volume": 9627000,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 12.33,
+        "buy_val": 23.8,
+        "sell_val": 11.46,
+        "total_room": 1351424607,
+        "current_room": 274155350,
+        "room_used_pct": 79.7
+      },
+      "shares": 5005276323,
+      "mcap_t": 134.1,
+      "weight": 0.02138
+    },
+    {
+      "code": "CTG",
+      "sector": "銀行",
+      "close": 32.6,
+      "change": 0.0,
+      "pct": 0.0,
+      "ref": 32.6,
+      "volume": 11189700,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -107.08,
+        "buy_val": 30.43,
+        "sell_val": 137.5,
+        "total_room": 2330083391,
+        "current_room": 413915834,
+        "room_used_pct": 82.2
+      },
+      "shares": 7766944637,
+      "mcap_t": 253.2,
+      "weight": 0.04036
+    },
+    {
+      "code": "LPB",
+      "sector": "銀行",
+      "close": 51.5,
+      "change": -0.1,
+      "pct": -0.19,
+      "ref": 51.6,
+      "volume": 2294600,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 9.63,
+        "buy_val": 15.42,
+        "sell_val": 5.8,
+        "total_room": 149364105,
+        "current_room": 115640769,
+        "room_used_pct": 22.6
+      },
+      "shares": 2987282100,
+      "mcap_t": 153.8,
+      "weight": 0.02452
+    },
+    {
+      "code": "FPT",
+      "sector": "IT",
+      "close": 70.3,
+      "change": -0.2,
+      "pct": -0.28,
+      "ref": 70.5,
+      "volume": 6626800,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -81.62,
+        "buy_val": 32.27,
+        "sell_val": 113.89,
+        "total_room": 834718489,
+        "current_room": 362796169,
+        "room_used_pct": 56.5
+      },
+      "shares": 1703507121,
+      "mcap_t": 119.8,
+      "weight": 0.01909
+    },
+    {
+      "code": "TPB",
+      "sector": "銀行",
+      "close": 15.5,
+      "change": -0.05,
+      "pct": -0.32,
+      "ref": 15.55,
+      "volume": 7153700,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -43.18,
+        "buy_val": 3.74,
+        "sell_val": 46.91,
+        "total_room": 832214061,
+        "current_room": 182448478,
+        "room_used_pct": 78.1
+      },
+      "shares": 2774046873,
+      "mcap_t": 43.0,
+      "weight": 0.00685
+    },
+    {
+      "code": "SSI",
+      "sector": "証券",
+      "close": 25.55,
+      "change": -0.1,
+      "pct": -0.39,
+      "ref": 25.65,
+      "volume": 17962100,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -31.06,
+        "buy_val": 15.81,
+        "sell_val": 46.87,
+        "total_room": 2503089220,
+        "current_room": 1722651017,
+        "room_used_pct": 31.2
+      },
+      "shares": 2906280710,
+      "mcap_t": 74.3,
+      "weight": 0.01184
+    },
+    {
+      "code": "TCB",
+      "sector": "銀行",
+      "close": 32.2,
+      "change": -0.15,
+      "pct": -0.46,
+      "ref": 32.35,
+      "volume": 11243700,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -42.95,
+        "buy_val": 43.37,
+        "sell_val": 86.32,
+        "total_room": 1597139381,
+        "current_room": 73548698,
+        "room_used_pct": 95.4
+      },
+      "shares": 7086240414,
+      "mcap_t": 228.2,
+      "weight": 0.03637
+    },
+    {
+      "code": "VJC",
+      "sector": "運輸",
+      "close": 133.3,
+      "change": -1.1,
+      "pct": -0.82,
+      "ref": 134.4,
+      "volume": 925900,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -7.15,
+        "buy_val": 4.45,
+        "sell_val": 11.6,
+        "total_room": 230727888,
+        "current_room": 182294070,
+        "room_used_pct": 21.0
+      },
+      "shares": 769094734,
+      "mcap_t": 102.5,
+      "weight": 0.01634
+    },
+    {
+      "code": "VIC",
+      "sector": "不動産",
+      "close": 219.0,
+      "change": -2.5,
+      "pct": -1.13,
+      "ref": 221.5,
+      "volume": 3450700,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -92.25,
+        "buy_val": 67.0,
+        "sell_val": 159.25,
+        "total_room": 3713436895,
+        "current_room": 3469105560,
+        "room_used_pct": 6.6
+      },
+      "shares": 7706031024,
+      "mcap_t": 1687.6,
+      "weight": 0.26898
+    },
+    {
+      "code": "VRE",
+      "sector": "不動産",
+      "close": 25.6,
+      "change": -0.3,
+      "pct": -1.16,
+      "ref": 25.9,
+      "volume": 3288600,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": -18.25,
+        "buy_val": 19.23,
+        "sell_val": 37.49,
+        "total_room": 1141121020,
+        "current_room": 863524678,
+        "room_used_pct": 24.3
+      },
+      "shares": 2272318410,
+      "mcap_t": 58.2,
+      "weight": 0.00927
+    },
+    {
+      "code": "VPL",
+      "sector": "観光",
+      "close": 81.8,
+      "change": -1.1,
+      "pct": -1.33,
+      "ref": 82.9,
+      "volume": 745100,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 3.37,
+        "buy_val": 3.71,
+        "sell_val": 0.34,
+        "total_room": 878717184,
+        "current_room": 845031625,
+        "room_used_pct": 3.8
+      },
+      "shares": 1793300377,
+      "mcap_t": 146.7,
+      "weight": 0.02338
+    },
+    {
+      "code": "VHM",
+      "sector": "不動産",
+      "close": 140.8,
+      "change": -2.2,
+      "pct": -1.54,
+      "ref": 143.0,
+      "volume": 4386200,
+      "date": "2026-07-14",
+      "prev_date": "2026-07-13",
+      "foreign": {
+        "date": "2026-07-14",
+        "net_val": 23.62,
+        "buy_val": 150.2,
+        "sell_val": 126.57,
+        "total_room": 2053706002,
+        "current_room": 1744451346,
+        "room_used_pct": 15.1
+      },
+      "shares": 4107412004,
+      "mcap_t": 578.3,
+      "weight": 0.09218
+    }
+  ],
+  "macro": {
+    "usd_vnd": {
+      "value": 26191.0,
+      "live": true,
+      "src": "open.er-api.com"
+    },
+    "vnd_jpy": {
+      "value": 161.4,
+      "live": true,
+      "src": "open.er-api.com"
+    },
+    "gold": {
+      "value": 4020.0,
+      "live": true,
+      "src": "gold-api.com"
+    },
+    "oil": {
+      "value": 78,
+      "live": false,
+      "src": "手動"
+    },
+    "fetched": "2026-07-14T10:44:36"
+  },
+  "interpretation": {
+    "headline": "VIC安が指数を圧迫",
+    "summary": "VICだけで指数を約0.3pt押し下げ。エネルギー3社の上昇(+0.3pt)も及ばず上昇。物色は不動産からエネルギーへ。",
+    "tone": "up",
+    "result": "上昇",
+    "contribution": {
+      "index": "VN30",
+      "note": "概算寄与度（単純時価総額ウェイト。正式VN30ウェイトとはズレる）",
+      "push_up": 0.67,
+      "push_down": -0.54,
+      "net": 0.13,
+      "top_up": [
+        {
+          "code": "GAS",
+          "sector": "エネルギー",
+          "pct": 4.11,
+          "contrib": 0.124
+        },
+        {
+          "code": "BSR",
+          "sector": "エネルギー",
+          "pct": 5.63,
+          "contrib": 0.122
+        },
+        {
+          "code": "GVR",
+          "sector": "素材",
+          "pct": 3.39,
+          "contrib": 0.066
+        },
+        {
+          "code": "STB",
+          "sector": "銀行",
+          "pct": 2.77,
+          "contrib": 0.059
+        },
+        {
+          "code": "VCB",
+          "sector": "銀行",
+          "pct": 0.51,
+          "contrib": 0.04
+        }
+      ],
+      "top_down": [
+        {
+          "code": "VIC",
+          "sector": "不動産",
+          "pct": -1.13,
+          "contrib": -0.304
+        },
+        {
+          "code": "VHM",
+          "sector": "不動産",
+          "pct": -1.54,
+          "contrib": -0.142
+        },
+        {
+          "code": "VPL",
+          "sector": "観光",
+          "pct": -1.33,
+          "contrib": -0.031
+        },
+        {
+          "code": "TCB",
+          "sector": "銀行",
+          "pct": -0.46,
+          "contrib": -0.017
+        },
+        {
+          "code": "VJC",
+          "sector": "運輸",
+          "pct": -0.82,
+          "contrib": -0.013
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "エネルギー",
+          "contrib": 0.27,
+          "count": 3
+        },
+        {
+          "sector": "銀行",
+          "contrib": 0.23,
+          "count": 14
+        },
+        {
+          "sector": "素材",
+          "contrib": 0.08,
+          "count": 2
+        },
+        {
+          "sector": "消費財",
+          "contrib": 0.04,
+          "count": 3
+        },
+        {
+          "sector": "小売",
+          "contrib": 0.02,
+          "count": 1
+        },
+        {
+          "sector": "IT",
+          "contrib": -0.0,
+          "count": 1
+        },
+        {
+          "sector": "証券",
+          "contrib": -0.0,
+          "count": 1
+        },
+        {
+          "sector": "運輸",
+          "contrib": -0.01,
+          "count": 1
+        },
+        {
+          "sector": "観光",
+          "contrib": -0.03,
+          "count": 1
+        },
+        {
+          "sector": "不動産",
+          "contrib": -0.46,
+          "count": 3
+        }
+      ]
+    },
+    "cards": [
+      {
+        "code": "BSR",
+        "sector": "エネルギー",
+        "pct": 5.63,
+        "contrib": 0.122,
+        "dir": "up",
+        "reason": ""
+      },
+      {
+        "code": "GAS",
+        "sector": "エネルギー",
+        "pct": 4.11,
+        "contrib": 0.124,
+        "dir": "up",
+        "reason": ""
+      },
+      {
+        "code": "PLX",
+        "sector": "エネルギー",
+        "pct": 3.52,
+        "contrib": 0.026,
+        "dir": "up",
+        "reason": ""
+      },
+      {
+        "code": "GVR",
+        "sector": "素材",
+        "pct": 3.39,
+        "contrib": 0.066,
+        "dir": "up",
+        "reason": ""
+      }
+    ],
+    "cards_more": 0,
+    "lines": [
+      "上昇 19／下落 10／変わらず 1（30銘柄）。"
+    ],
+    "top_gainer": {
+      "code": "BSR",
+      "pct": 5.63
+    },
+    "top_loser": {
+      "code": "VHM",
+      "pct": -1.54
+    }
+  }
+}
