@@ -1,6 +1,6 @@
 {
   "as_of": "2026-07-15",
-  "generated_at": "2026-07-15T10:48:31",
+  "generated_at": "2026-07-15T22:56:09",
   "data_age_days": 0,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
@@ -124,8 +124,8 @@
   "hose_breadth": {
     "up": 70,
     "down": 240,
-    "flat": 47,
-    "total": 357
+    "flat": 59,
+    "total": 369
   },
   "by_sector": [
     {
@@ -207,7 +207,7 @@
       "change": 0.25,
       "pct": 1.09,
       "ref": 22.85,
-      "volume": 23294700,
+      "volume": 23313791,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -230,7 +230,7 @@
       "change": 0.2,
       "pct": 0.36,
       "ref": 56.0,
-      "volume": 2491200,
+      "volume": 2495997,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -253,7 +253,7 @@
       "change": 0.0,
       "pct": 0.0,
       "ref": 59.2,
-      "volume": 2633300,
+      "volume": 2645866,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -276,7 +276,7 @@
       "change": 0.0,
       "pct": 0.0,
       "ref": 51.5,
-      "volume": 2313000,
+      "volume": 2315415,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -299,7 +299,7 @@
       "change": 0.0,
       "pct": 0.0,
       "ref": 81.8,
-      "volume": 865600,
+      "volume": 866636,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -322,7 +322,7 @@
       "change": -0.1,
       "pct": -0.44,
       "ref": 22.5,
-      "volume": 21464500,
+      "volume": 21529048,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -345,7 +345,7 @@
       "change": -0.4,
       "pct": -0.58,
       "ref": 68.4,
-      "volume": 2633500,
+      "volume": 2637335,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -368,7 +368,7 @@
       "change": -0.1,
       "pct": -0.63,
       "ref": 15.9,
-      "volume": 2091700,
+      "volume": 2092188,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -391,14 +391,14 @@
       "change": -0.6,
       "pct": -0.78,
       "ref": 76.8,
-      "volume": 1802400,
+      "volume": 1804241,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
         "date": "2026-07-15",
         "net_val": -2.47,
-        "buy_val": 6.55,
-        "sell_val": 9.02,
+        "buy_val": 6.56,
+        "sell_val": 9.03,
         "total_room": 720149656,
         "current_room": 0,
         "room_used_pct": 100.0
@@ -414,7 +414,7 @@
       "change": -0.6,
       "pct": -0.85,
       "ref": 70.4,
-      "volume": 3008400,
+      "volume": 3012728,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -437,7 +437,7 @@
       "change": -2.0,
       "pct": -0.91,
       "ref": 219.0,
-      "volume": 3687900,
+      "volume": 3697873,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -460,7 +460,7 @@
       "change": -0.9,
       "pct": -1.15,
       "ref": 78.5,
-      "volume": 946200,
+      "volume": 948280,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -483,7 +483,7 @@
       "change": -0.2,
       "pct": -1.29,
       "ref": 15.5,
-      "volume": 7412400,
+      "volume": 7420954,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -506,7 +506,7 @@
       "change": -0.4,
       "pct": -1.31,
       "ref": 30.5,
-      "volume": 1005100,
+      "volume": 1006520,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -529,7 +529,7 @@
       "change": -0.45,
       "pct": -1.38,
       "ref": 32.6,
-      "volume": 6516900,
+      "volume": 6530659,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -552,7 +552,7 @@
       "change": -0.2,
       "pct": -1.56,
       "ref": 12.8,
-      "volume": 29951400,
+      "volume": 29966927,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -575,7 +575,7 @@
       "change": -0.75,
       "pct": -1.6,
       "ref": 46.8,
-      "volume": 311700,
+      "volume": 313060,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -598,7 +598,7 @@
       "change": -0.45,
       "pct": -1.68,
       "ref": 26.8,
-      "volume": 8384000,
+      "volume": 8387503,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -621,7 +621,7 @@
       "change": -0.75,
       "pct": -1.86,
       "ref": 40.25,
-      "volume": 2688800,
+      "volume": 2696215,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -644,7 +644,7 @@
       "change": -0.3,
       "pct": -1.9,
       "ref": 15.75,
-      "volume": 5628500,
+      "volume": 5633610,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -667,7 +667,7 @@
       "change": -0.75,
       "pct": -2.04,
       "ref": 36.8,
-      "volume": 1498800,
+      "volume": 1502175,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -690,7 +690,7 @@
       "change": -0.7,
       "pct": -2.17,
       "ref": 32.2,
-      "volume": 8134600,
+      "volume": 8149471,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -713,7 +713,7 @@
       "change": -0.6,
       "pct": -2.44,
       "ref": 24.55,
-      "volume": 12725100,
+      "volume": 12765272,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -736,7 +736,7 @@
       "change": -0.7,
       "pct": -2.64,
       "ref": 26.5,
-      "volume": 12957400,
+      "volume": 12967745,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -759,7 +759,7 @@
       "change": -3.6,
       "pct": -2.7,
       "ref": 133.3,
-      "volume": 920100,
+      "volume": 923739,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -782,7 +782,7 @@
       "change": -0.8,
       "pct": -3.12,
       "ref": 25.6,
-      "volume": 4077000,
+      "volume": 4089339,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -805,7 +805,7 @@
       "change": -0.9,
       "pct": -3.31,
       "ref": 27.2,
-      "volume": 9268800,
+      "volume": 9282541,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -828,7 +828,7 @@
       "change": -0.85,
       "pct": -3.33,
       "ref": 25.55,
-      "volume": 19919600,
+      "volume": 19945922,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -851,7 +851,7 @@
       "change": -4.8,
       "pct": -3.41,
       "ref": 140.8,
-      "volume": 4540200,
+      "volume": 4566741,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -874,7 +874,7 @@
       "change": -3.5,
       "pct": -4.98,
       "ref": 70.3,
-      "volume": 21271900,
+      "volume": 21371799,
       "date": "2026-07-15",
       "prev_date": "2026-07-14",
       "foreign": {
@@ -903,7 +903,7 @@
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4030.0,
+      "value": 4061.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -912,6 +912,6 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-07-15T10:48:28"
+    "fetched": "2026-07-15T22:56:08"
   }
 }
