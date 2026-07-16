@@ -1,0 +1,25 @@
+{
+  "_note": "日次の半自動・人編集枠。headline=今日のひとこと大見出し / lead=本文(配列=各行) / cards=きょうのポイント。cards: tag, color(green|red|gold|teal), icon(Bootstrap Icon名), text。text内は **赤太字** と [[緑強調]] が使える。空欄は render が interpret の自動生成で補完する。±3%急変は雛形を自動生成済み。",
+  "headline": "",
+  "lead": [],
+  "cards": [
+    {
+      "tag": "VHM +5.0%",
+      "color": "green",
+      "icon": "graph-up-arrow",
+      "text": ""
+    },
+    {
+      "tag": "HDB +3.0%",
+      "color": "green",
+      "icon": "graph-up-arrow",
+      "text": ""
+    },
+    {
+      "tag": "",
+      "color": "green",
+      "icon": "newspaper",
+      "text": ""
+    }
+  ]
+}
