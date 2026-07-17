@@ -12,9 +12,11 @@
     --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
     --cream:#FAF8F2; --cream-dark:#F0EBE0; --dark:#111; --mid:#333; --light:#5F5F5F;
     --up:#00A86B; --down:#DA251D; --border:rgba(0,73,44,.12);
-    /* タイプスケール（整理済み・8段階） */
-    --fs-stat:96px; --fs-title:38px; --fs-numlg:40px; --fs-lead:22px;
-    --fs-body:19px; --fs-bodysm:16px; --fs-label:14px; --fs-micro:12px;
+    /* タイプスケール（整理済み・全トークン化） */
+    --fs-hero:114px; --fs-herosub:56px; --fs-herolead:27px;   /* 表紙ディスプレイ */
+    --fs-stat:96px; --fs-numlg:40px; --fs-title:38px;          /* 大数字・見出し */
+    --fs-lead:22px; --fs-sub:20px; --fs-body:19px; --fs-bodysm:16px;  /* 本文系 */
+    --fs-label:14px; --fs-cap:13px; --fs-micro:12px; --fs-mini:11px;  /* 小・ラベル系 */
     /* 行間（役割別・4段階） */
     --lh-head:1.35; --lh-body:1.9; --lh-card:1.8; --lh-note:1.65;
   }
@@ -25,7 +27,7 @@
   .jp{text-align:justify;line-break:strict;}
 
   /* プレビュー注記リボン */
-  .ribbon{background:#7a1414;color:#fff;font-family:var(--gothic);font-size:15px;letter-spacing:.04em;text-align:center;padding:9px 16px;}
+  .ribbon{background:#7a1414;color:#fff;font-family:var(--gothic);font-size:var(--fs-label);letter-spacing:.04em;text-align:center;padding:9px 16px;}
   .ribbon b{color:var(--gold);}
 
   /* HERO */
@@ -33,18 +35,18 @@
   .hero-img{position:absolute;inset:0;background:url('weekly_assets/cover_vingroup.jpg') center 38%/cover no-repeat;}
   .hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,28,18,.34) 0%,rgba(0,28,18,.10) 20%,rgba(0,24,15,.52) 40%,rgba(0,24,15,.60) 55%,rgba(0,24,15,.24) 72%,rgba(0,22,14,.82) 100%);}
   .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:30px 60px;}
-  .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:15px;line-height:1.5;opacity:.9;}
+  .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:var(--fs-label);line-height:1.5;opacity:.9;}
   .hero-brand b{color:var(--gold);font-weight:700;}
-  .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.08em;font-size:15px;border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:8px 16px;border-radius:2px;text-align:right;line-height:1.5;}
+  .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-label);border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:8px 16px;border-radius:2px;text-align:right;line-height:1.5;}
   .hero-body{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;padding:0 64px;}
-  .hero-quest{font-family:var(--sans-en);letter-spacing:.34em;font-size:19px;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hero-quest{font-family:var(--sans-en);letter-spacing:.34em;font-size:var(--fs-body);color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
   .hero-quest::before{content:"";width:44px;height:2px;background:var(--gold);}
-  .hero-title{font-family:var(--mincho);font-weight:900;font-size:114px;line-height:1.18;color:#fff;letter-spacing:.01em;text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 6px rgba(0,0,0,.6);}
-  .hero-title .sub{display:block;font-size:56px;font-weight:700;margin-top:16px;color:rgba(255,255,255,.92);}
-  .hero-lead{font-family:var(--mincho);font-size:27px;line-height:1.7;color:rgba(255,255,255,.92);margin-top:26px;max-width:900px;text-shadow:0 2px 14px rgba(0,0,0,.65);border-left:3px solid var(--vn-red);padding-left:20px;}
+  .hero-title{font-family:var(--mincho);font-weight:900;font-size:var(--fs-hero);line-height:1.18;color:#fff;letter-spacing:.01em;text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 6px rgba(0,0,0,.6);}
+  .hero-title .sub{display:block;font-size:var(--fs-herosub);font-weight:700;margin-top:16px;color:rgba(255,255,255,.92);}
+  .hero-lead{font-family:var(--mincho);font-size:var(--fs-herolead);line-height:1.7;color:rgba(255,255,255,.92);margin-top:26px;max-width:900px;text-shadow:0 2px 14px rgba(0,0,0,.65);border-left:3px solid var(--vn-red);padding-left:20px;}
   .hero-kpis{display:flex;gap:52px;margin-top:34px;}
-  .hk-l{font-family:var(--sans-en);letter-spacing:.14em;font-size:14px;color:rgba(255,255,255,.72);text-transform:uppercase;}
-  .hk-v{font-family:var(--mincho);font-weight:700;font-size:40px;margin-top:4px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hk-l{font-family:var(--sans-en);letter-spacing:.14em;font-size:var(--fs-label);color:rgba(255,255,255,.72);text-transform:uppercase;}
+  .hk-v{font-family:var(--mincho);font-weight:700;font-size:var(--fs-numlg);margin-top:4px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);}
   .hk-v .g{color:var(--gold);}
   /* ヒーロー直下の分解チャート帯 */
   .chartband{padding:46px 64px 40px;background:#fff;border-bottom:1px solid var(--border);}
@@ -62,17 +64,10 @@
   .src{font-size:var(--fs-label);color:var(--light);margin-top:14px;font-family:var(--gothic);line-height:var(--lh-note);}
   .fake{color:var(--vn-red);font-family:var(--gothic);font-weight:700;}
 
-  /* バーベル */
-  .barbell{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+  /* 画像比較（テンプレート予備） */
   .compics{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px;}
   .compic img{width:100%;height:320px;object-fit:cover;display:block;border:1px solid var(--border);border-radius:2px;}
   .compic figcaption{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);margin-top:7px;line-height:var(--lh-note);}
-  .bcard{padding:28px;border:1px solid var(--border);border-top:4px solid var(--up);background:#fff;}
-  .bcard.loss{border-top-color:var(--vn-red);}
-  .bcard h4{font-family:var(--mincho);font-size:var(--fs-lead);margin-bottom:6px;}
-  .bcard .tag{font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-micro);color:var(--up);font-weight:700;}
-  .bcard.loss .tag{color:var(--vn-red);}
-  .bcard p{font-size:var(--fs-bodysm);line-height:var(--lh-card);color:var(--mid);margin-top:12px;text-align:justify;}
 
   /* テーブル */
   .mtable{width:100%;border-collapse:collapse;margin-top:6px;font-size:var(--fs-bodysm);}
@@ -201,17 +196,12 @@
   .footer .warn b{color:var(--gold);} .footer .warn .red{color:#ff8a8a;}
   .footer .disc{font-size:var(--fs-micro);color:rgba(255,255,255,.44);line-height:var(--lh-card);margin-top:16px;}
   .footer .brand{color:rgba(255,255,255,.5);font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);margin-top:16px;}
-  /* VOL.03 表紙タオ・インセット */
-  .face{position:absolute;right:64px;bottom:150px;z-index:4;width:236px;text-align:center;}
-  .face img{width:236px;height:296px;object-fit:cover;object-position:center 20%;border:3px solid rgba(245,196,0,.85);box-shadow:0 12px 44px rgba(0,0,0,.55);}
-  .face .cap{font-family:var(--gothic);font-size:13px;color:#fff;margin-top:9px;line-height:1.5;text-shadow:0 1px 6px rgba(0,0,0,.85);white-space:nowrap;}
-  .face .cap b{color:var(--gold);}
   /* VOL.03 氷山フォーマット */
   .berg{display:grid;grid-template-columns:1fr;gap:0;margin:26px 0 8px;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
   .berg .tier{padding:24px 30px;}
   .berg .up{background:linear-gradient(180deg,#eaf4fb,#dcecf7);}
   .berg .waterline{height:0;border-top:2px dashed #4a90d9;position:relative;}
-  .berg .waterline span{position:absolute;right:14px;top:-11px;background:#fff;padding:0 10px;font-family:var(--gothic);font-size:12px;color:#4a90d9;}
+  .berg .waterline span{position:absolute;right:14px;top:-11px;background:#fff;padding:0 10px;font-family:var(--gothic);font-size:var(--fs-micro);color:#4a90d9;}
   .berg .dn{background:linear-gradient(180deg,#eaf0ee,#e2ebe7);}
   .berg .tlab{font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--green);margin-bottom:12px;}
   .berg .row{display:flex;gap:14px;flex-wrap:wrap;}
@@ -219,23 +209,20 @@
   .berg .co.g{border-left:4px solid var(--gold);}
   .berg .co h5{font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);}
   .berg .co .m{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);color:var(--green);margin-top:4px;}
-  .berg .co .tag{font-family:var(--sans-en);letter-spacing:.1em;font-size:11px;font-weight:700;margin-bottom:5px;}
-  .berg .co p{font-family:var(--gothic);font-size:13px;color:var(--mid);line-height:var(--lh-card);margin-top:6px;}
+  .berg .co .tag{font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-mini);font-weight:700;margin-bottom:5px;}
+  .berg .co p{font-family:var(--gothic);font-size:var(--fs-cap);color:var(--mid);line-height:var(--lh-card);margin-top:6px;}
   .berg .unlisted{display:flex;gap:12px;flex-wrap:wrap;}
   .berg .ub{flex:1;min-width:150px;background:rgba(0,73,44,.05);border:1px dashed var(--border);border-radius:4px;padding:14px 16px;}
   .berg .ub h6{font-family:var(--mincho);font-size:var(--fs-bodysm);color:var(--green-dark);}
-  .berg .ub p{font-family:var(--gothic);font-size:12px;color:var(--light);margin-top:4px;line-height:1.6;}
+  .berg .ub p{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);margin-top:4px;line-height:1.6;}
   .berg .upcol{flex:1;min-width:220px;display:flex;flex-direction:column;gap:12px;}
   .berg .upcol .co{flex:0 0 auto;}
   .berg .cofig{margin:0;}
   .berg .cofig img{width:100%;height:210px;object-fit:cover;border-radius:4px;border:1px solid var(--border);display:block;}
-  .berg .cofig figcaption{font-family:var(--gothic);font-size:11px;color:var(--light);line-height:1.5;margin-top:6px;}
+  .berg .cofig figcaption{font-family:var(--gothic);font-size:var(--fs-mini);color:var(--light);line-height:1.5;margin-top:6px;}
   .berg .ubfig{margin:10px 0 0;}
   .berg .ubfig img{width:100%;height:150px;object-fit:cover;border-radius:3px;border:1px solid var(--border);display:block;}
-  .berg .ubfig figcaption{font-family:var(--gothic);font-size:10px;color:var(--light);line-height:1.45;margin-top:5px;}
-  .berg .co, .berg .ub{position:relative;}
-  .berg .cardlogo{position:absolute;bottom:calc(100% + 4px);right:2px;height:24px;width:auto;object-fit:contain;}
-  .berg .cardlogo.big{height:44px;}
+  .berg .ubfig figcaption{font-family:var(--gothic);font-size:var(--fs-mini);color:var(--light);line-height:1.45;margin-top:5px;}
   /* VOL.03 富豪ランキング表 */
   .rich{width:100%;border-collapse:collapse;font-size:var(--fs-bodysm);margin-top:8px;}
   .rich th{font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);text-transform:uppercase;background:var(--cream);padding:10px 12px;text-align:left;}
@@ -243,7 +230,7 @@
   .rich td.num{font-family:var(--sans-en);font-weight:600;text-align:right;}
   .rich tr.star{background:rgba(245,196,0,.14);}
   .rich tr.star td{font-weight:700;}
-  .rich .w{color:var(--vn-red);font-size:11px;border:1px solid rgba(218,37,29,.3);border-radius:2px;padding:1px 6px;margin-left:6px;font-family:var(--gothic);}
+  .rich .w{color:var(--vn-red);font-size:var(--fs-mini);border:1px solid rgba(218,37,29,.3);border-radius:2px;padding:1px 6px;margin-left:6px;font-family:var(--gothic);}
   /* VOL.03 循環三角形・顧客の旅 */
   .eco{display:flex;flex-direction:column;gap:22px;margin-top:20px;}
   .eco .tri{width:100%;background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;align-items:center;justify-content:center;}
@@ -255,24 +242,21 @@
   .journey{display:flex;gap:0;align-items:stretch;margin-top:14px;}
   .jstep{flex:1;background:#fff;border:1px solid var(--border);border-radius:6px;padding:18px 10px 16px;text-align:center;}
   .jstep .ic{font-size:26px;line-height:1;}
-  .jstep .br{font-family:var(--sans-en);font-weight:700;font-size:12px;letter-spacing:.03em;color:var(--green);margin-top:9px;}
-  .jstep .tx{font-family:var(--gothic);font-size:12px;color:var(--mid);line-height:1.5;margin-top:5px;}
+  .jstep .br{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-micro);letter-spacing:.03em;color:var(--green);margin-top:9px;}
+  .jstep .tx{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--mid);line-height:1.5;margin-top:5px;}
   .jarrow{flex:0 0 24px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;font-weight:700;}
   /* VOL.03 ソビコ経済圏 フローカード */
   .cyc{display:flex;align-items:stretch;gap:0;margin-top:24px;}
   .cyc .cyccard{flex:1;background:#fff;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:8px;padding:22px 20px;text-align:center;}
-  .cyc .cyc-ic{width:74px;height:74px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 14px;}
-  .cyc .cyc-step{font-family:var(--sans-en);font-size:11px;letter-spacing:.06em;font-weight:700;color:#B8912E;}
-  .cyc .cyc-t{font-family:var(--mincho);font-size:20px;font-weight:700;color:var(--green-dark);margin:5px 0 9px;}
-  .cyc .cyc-d{font-family:var(--gothic);font-size:13px;line-height:1.65;color:var(--mid);text-align:left;}
+  .cyc .cyc-step{font-family:var(--sans-en);font-size:var(--fs-mini);letter-spacing:.06em;font-weight:700;color:#B8912E;}
+  .cyc .cyc-t{font-family:var(--mincho);font-size:var(--fs-sub);font-weight:700;color:var(--green-dark);margin:5px 0 9px;}
+  .cyc .cyc-d{font-family:var(--gothic);font-size:var(--fs-cap);line-height:1.65;color:var(--mid);text-align:left;}
   .cyc-arrow{flex:0 0 42px;display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--gold);font-weight:700;}
-  .cyc-loop{text-align:center;font-family:var(--gothic);font-size:13.5px;color:var(--green);margin-top:14px;font-weight:600;}
+  .cyc-loop{text-align:center;font-family:var(--gothic);font-size:var(--fs-cap);color:var(--green);margin-top:14px;font-weight:600;}
   .cmd{display:flex;align-items:center;gap:18px;background:var(--green-dark);border-radius:8px;padding:20px 28px;margin-top:24px;}
-  .cmd-badge{flex:0 0 auto;background:var(--gold);color:var(--green-dark);font-family:var(--gothic);font-weight:700;font-size:14px;padding:7px 15px;border-radius:5px;white-space:nowrap;}
-  .cmd-body{font-family:var(--gothic);font-size:15px;line-height:1.7;color:#fff;}
+  .cmd-badge{flex:0 0 auto;background:var(--gold);color:var(--green-dark);font-family:var(--gothic);font-weight:700;font-size:var(--fs-label);padding:7px 15px;border-radius:5px;white-space:nowrap;}
+  .cmd-body{font-family:var(--gothic);font-size:var(--fs-label);line-height:1.7;color:#fff;}
   .cmd-body strong{color:var(--gold);}
-  .concl{background:var(--cream);border-left:4px solid var(--gold);padding:22px 30px;margin-top:24px;font-family:var(--mincho);font-size:18px;line-height:1.85;color:var(--dark);}
-  .concl strong{color:var(--green-dark);}
   /* (A) ロゴ・ストリップ */
   .logostrip{display:flex;align-items:center;justify-content:center;gap:46px;flex-wrap:wrap;}
   .logostrip img{height:38px;width:auto;object-fit:contain;filter:grayscale(100%);opacity:.72;}
@@ -444,7 +428,7 @@
 <section>
   <div class="eyebrow">By the Numbers ｜ ソビコの上場2社</div>
   <div class="s-title">数字で見るソビコ</div>
-  <div class="mwrap"><table class="mtable" style="font-size:16px;">
+  <div class="mwrap"><table class="mtable">
     <tr><th>銘柄</th><th>事業</th><th>時価総額（円換算）</th><th>PER</th><th>PBR</th><th>外国人枠 消化</th></tr>
     <tr><td><strong>VJC</strong>／ベトジェット航空</td><td>航空（攻め）</td><td class="num">約6,400億円</td><td class="num hl-vic">41.4x</td><td class="num hl-vic">3.98x</td><td class="num">21%</td></tr>
     <tr><td><strong>HDB</strong>／HDBank</td><td>銀行（守り）</td><td class="num">約8,200億円</td><td class="num hl-vhm">7.8x</td><td class="num">1.66x</td><td class="num">80%</td></tr>
