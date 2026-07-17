@@ -258,6 +258,21 @@
   .jstep .br{font-family:var(--sans-en);font-weight:700;font-size:12px;letter-spacing:.03em;color:var(--green);margin-top:9px;}
   .jstep .tx{font-family:var(--gothic);font-size:12px;color:var(--mid);line-height:1.5;margin-top:5px;}
   .jarrow{flex:0 0 24px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;font-weight:700;}
+  /* VOL.03 ソビコ経済圏 フローカード */
+  .cyc{display:flex;align-items:stretch;gap:0;margin-top:24px;}
+  .cyc .cyccard{flex:1;background:#fff;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:8px;padding:22px 20px;text-align:center;}
+  .cyc .cyc-ic{width:54px;height:54px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:27px;margin:0 auto 12px;}
+  .cyc .cyc-step{font-family:var(--sans-en);font-size:11px;letter-spacing:.06em;font-weight:700;color:#B8912E;}
+  .cyc .cyc-t{font-family:var(--mincho);font-size:20px;font-weight:700;color:var(--green-dark);margin:5px 0 9px;}
+  .cyc .cyc-d{font-family:var(--gothic);font-size:13px;line-height:1.65;color:var(--mid);text-align:left;}
+  .cyc-arrow{flex:0 0 42px;display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--gold);font-weight:700;}
+  .cyc-loop{text-align:center;font-family:var(--gothic);font-size:13.5px;color:var(--green);margin-top:14px;font-weight:600;}
+  .cmd{display:flex;align-items:center;gap:18px;background:var(--green-dark);border-radius:8px;padding:20px 28px;margin-top:24px;}
+  .cmd-badge{flex:0 0 auto;background:var(--gold);color:var(--green-dark);font-family:var(--gothic);font-weight:700;font-size:14px;padding:7px 15px;border-radius:5px;white-space:nowrap;}
+  .cmd-body{font-family:var(--gothic);font-size:15px;line-height:1.7;color:#fff;}
+  .cmd-body strong{color:var(--gold);}
+  .concl{background:var(--cream);border-left:4px solid var(--gold);padding:22px 30px;margin-top:24px;font-family:var(--mincho);font-size:18px;line-height:1.85;color:var(--dark);}
+  .concl strong{color:var(--green-dark);}
 </style>
 <link rel="stylesheet" href="assets/dynamics.css">
 </head>
@@ -360,11 +375,34 @@
   <div class="eyebrow">Ecosystem ｜ 資金の循環</div>
   <div class="s-title">ソビコ経済圏</div>
   <div class="lead jp" style="max-width:940px;">ソビコ・グループの競争力は、個々の企業の規模ではない。航空、銀行、不動産、テクノロジーを一つの資本循環へと結び付けた<strong>「回路」そのもの</strong>にある。</div>
-  <div class="body jp" style="max-width:940px;">
-    <p style="margin:0 0 16px;">起点となるのは<strong>ベトジェット航空</strong>だ。高い回転率で生み出したキャッシュフローは、不動産やリゾート開発へと投じられ、長期資産へ姿を変える。その資産を裏付けに<strong>HDBank</strong>が金融機能を担い、融資や決済を通じてグループ全体へ資金を循環させる。そして生まれた資本は、再び航空事業の成長投資へと戻っていく。</p>
-    <p style="margin:0 0 16px;">この循環を束ねる司令塔として2021年に発足したのが、テクノロジー部門<strong>「Galaxy」</strong>である。データとデジタル基盤を横断的に統合し、航空、金融、不動産を一つの経営システムとして機能させる役割を担う。</p>
-    <p style="margin:0;">つまり、ソビコにとって航空は主役でも、銀行は脇役でもない。どちらも巨大な資本回路を構成する一つの部品にすぎない。<strong>真の競争力は個社ではなく、異なる事業を相互に接続し、資本を絶えず循環させる「仕組み」そのもの</strong>にある。</p>
+  <div class="cyc">
+    <div class="cyccard">
+      <div class="cyc-ic">✈️</div>
+      <div class="cyc-step">STEP 1 ― 起点</div>
+      <div class="cyc-t">ベトジェット航空</div>
+      <div class="cyc-d">高い回転率でキャッシュフローを生み出す。すべての起点。</div>
+    </div>
+    <div class="cyc-arrow">→</div>
+    <div class="cyccard">
+      <div class="cyc-ic">🏝️</div>
+      <div class="cyc-step">STEP 2 ― 蓄積</div>
+      <div class="cyc-t">不動産・リゾート</div>
+      <div class="cyc-d">生んだ現金を開発へ投じ、長期資産へ姿を変える。</div>
+    </div>
+    <div class="cyc-arrow">→</div>
+    <div class="cyccard">
+      <div class="cyc-ic">🏦</div>
+      <div class="cyc-step">STEP 3 ― 循環</div>
+      <div class="cyc-t">HDBank</div>
+      <div class="cyc-d">資産を裏付けに、融資・決済でグループ全体へ資金を回す。</div>
+    </div>
   </div>
+  <div class="cyc-loop">↩ そして生まれた資本は、再び航空事業の成長投資へ戻っていく。</div>
+  <div class="cmd">
+    <div class="cmd-badge">司令塔</div>
+    <div class="cmd-body"><strong>Galaxy（2021年発足）</strong> ― データとデジタル基盤を横断的に統合し、航空・金融・不動産を一つの経営システムとして機能させる。</div>
+  </div>
+  <div class="concl jp">航空は主役でも、銀行は脇役でもない。どちらも巨大な資本回路を構成する一つの"部品"にすぎない。<strong>真の競争力は個社ではなく、異なる事業を相互に接続し、資本を絶えず循環させる「仕組み」そのものにある。</strong></div>
   <div class="src">出所：グループ事業構成＝WEF・theinvestor・Galaxy Holdings公開情報等。Galaxy＝ソビコのデジタル/AI部門（2021年設立、Galaxy Pay・Galaxy Joy・Galaxy Technology等）。事業間の関係は公開情報に基づく当社の整理で、実際の取引・持分関係を厳密に表すものではない。</div>
 </section>
 
