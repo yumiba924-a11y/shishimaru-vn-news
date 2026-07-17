@@ -224,6 +224,11 @@
   .berg .ub{flex:1;min-width:150px;background:rgba(0,73,44,.05);border:1px dashed var(--border);border-radius:4px;padding:14px 16px;}
   .berg .ub h6{font-family:var(--mincho);font-size:var(--fs-bodysm);color:var(--green-dark);}
   .berg .ub p{font-family:var(--gothic);font-size:12px;color:var(--light);margin-top:4px;line-height:1.6;}
+  .berg .upcol{flex:1;min-width:220px;display:flex;flex-direction:column;gap:12px;}
+  .berg .upcol .co{flex:0 0 auto;}
+  .berg .cofig{margin:0;}
+  .berg .cofig img{width:100%;height:210px;object-fit:cover;border-radius:4px;border:1px solid var(--border);display:block;}
+  .berg .cofig figcaption{font-family:var(--gothic);font-size:11px;color:var(--light);line-height:1.5;margin-top:6px;}
   /* VOL.03 富豪ランキング表 */
   .rich{width:100%;border-collapse:collapse;font-size:var(--fs-bodysm);margin-top:8px;}
   .rich th{font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);text-transform:uppercase;background:var(--cream);padding:10px 12px;text-align:left;}
@@ -271,23 +276,28 @@
 <section>
   <div class="eyebrow">Weekly Quest ③ ｜ Sovico</div>
   <div class="s-title">ベトジェットは、氷山の一角</div>
-  <div class="lead jp">ベトナムの空を最も安く飛ぶ航空会社、ベトジェット航空（VJC）。誰もが知るこのLCCの持ち主が、実は<strong>ソビコ・グループ</strong>という多角財閥であることは、あまり知られていない。ソビコは<strong>HDBank</strong>（HDB）も束ね、さらに水面下には不動産・リゾート・エネルギー・テクノロジーが広がる。上場しているのは航空と銀行の2社だけ——<strong>市場から見えるのは、氷山の一角にすぎない</strong>。</div>
+  <div class="lead jp">ベトナムの空を最も安く飛ぶ航空会社、ベトジェット航空（VJC）。誰もが知るこのLCCの持ち主が、実は<strong>ソビコ・グループ</strong>という多角財閥であることは、あまり知られていない。ソビコは<strong>HDBank</strong>（HDB）も束ね、さらに水面下には不動産・リゾート・テクノロジーが広がる。上場しているのは航空と銀行の2社だけ——<strong>市場から見えるのは、氷山の一角にすぎない</strong>。</div>
   <div class="berg">
+    <div style="background:var(--green-dark);color:#fff;padding:15px 30px;font-family:var(--gothic);font-size:14px;line-height:1.65;">🏔️ <b style="color:var(--gold);">この氷山まるごとが、非上場の持株会社〈ソビコ本体〉。</b>その頂点から、上場のVJC・HDBと、非上場の事業群が連なる。</div>
     <div class="tier up">
-      <div class="tlab">🌊 水面上 ― 上場（市場から見える）</div>
+      <div class="tlab">🌊 水面上 ― 上場</div>
       <div class="row">
-        <div class="co g"><h5>ベトジェット航空（VJC）</h5><div class="m">約6,600億円 ／ 航空（LCC）</div></div>
-        <div class="co g"><h5>HDBank（HDB）</h5><div class="m">約8,400億円 ／ 銀行</div></div>
+        <div class="upcol">
+          <div class="co g"><h5>ベトジェット航空（VJC）</h5><div class="m">約6,600億円（時価総額） ／ 航空（LCC）</div></div>
+          <figure class="cofig"><img src="weekly_assets/photo_vjc.jpg" alt="ベトジェット航空の機体とクルー"><figcaption>ベトジェット航空の機体とクルー（イメージ）。出所：ベトジェット航空公式サイトより転載（報道・解説目的の引用）。</figcaption></figure>
+        </div>
+        <div class="upcol">
+          <div class="co g"><h5>HDBank（HDB）</h5><div class="m">約8,400億円（時価総額） ／ 銀行</div></div>
+          <figure class="cofig"><img src="weekly_assets/photo_hdb.jpg" alt="HDBank店舗"><figcaption>HDBankの店舗（イメージ）。出所：HDBank公式サイトより転載（報道・解説目的の引用）。</figcaption></figure>
+        </div>
       </div>
     </div>
     <div class="waterline"><span>ここまでが、市場の見る「ソビコ」</span></div>
     <div class="tier dn">
-      <div class="tlab">🧊 水面下 ― 非上場（見えない本体）</div>
+      <div class="tlab">🧊 水面下 ― 非上場</div>
       <div class="unlisted">
-        <div class="ub"><h6>ソビコ本体（Holdings）</h6><p>頂点の持株会社。VJC・HDBを束ね、資本が循環する。</p></div>
         <div class="ub"><h6>Phú Long（不動産）</h6><p>ホーチミン等の都市開発。タオ会長が統括。</p></div>
         <div class="ub"><h6>Furama／Aryana（リゾート）</h6><p>ダナン等のビーチリゾート・ホテル。</p></div>
-        <div class="ub"><h6>再生可能エネルギー</h6><p>Keppelと持続可能エネルギー・都市開発で協業。</p></div>
         <div class="ub"><h6>Galaxy（テクノロジー）</h6><p>2021年設立のデジタル/AI部門。決済・マイル・DXでグループを配線。</p></div>
       </div>
     </div>
@@ -424,7 +434,7 @@
     本紙は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。<span class="red">本ページはVOL.03の制作中ドラフト。特集面の数値は2026/7/10終値ベースで、相場・ニュース各面は対象週の取引終了（7/17金）後に追加し7/20（月）に発刊します</span>。市場ウェイト・持分比率は概算・as-of時点のもの。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
     <span class="red">本紙は社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
   </div>
-  <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各社・各グループとは一切関係がありません</b>。表紙のヒーロー画像は<b>本紙が作成した生成AIによるイメージ（実在の写真ではありません）</b>で、ベトジェット航空の塗装を模した機体を含みますが、当社はベトジェット航空・ソビコおよび記載各社と提携・関係を有しません。各社の商標・名称はそれぞれの権利者に帰属します。純資産額はForbes等の実時間評価で変動し、記載は作成時点の値です。市場ウェイトは単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>
+  <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各社・各グループとは一切関係がありません</b>。表紙のヒーロー画像は<b>本紙が作成した生成AIによるイメージ（実在の写真ではありません）</b>で、ベトジェット航空の塗装を模した機体を含みますが、当社はベトジェット航空・ソビコおよび記載各社と提携・関係を有しません。本文中の各社写真（ベトジェット航空・HDBank等）は各社公式サイトより報道・解説目的で引用したもので、著作権・商標・名称はそれぞれの権利者に帰属します。純資産額はForbes等の実時間評価で変動し、記載は作成時点の値です。市場ウェイトは単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>
   <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly VOL.03（制作中ドラフト） ｜ 2026.7.13–7.17週 ／ 2026.7.20発行予定</div>
 </div>
 
