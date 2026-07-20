@@ -15,6 +15,15 @@ window.SITE = {
   // ---- 発刊済みの号（新しい順） ----
   issues: [
     {
+      vol: 3,
+      week: "2026.7.13–7.17週",
+      published: "2026年7月21日（火）発行",
+      title: "空飛ぶ財閥 ― ソビコ（VJC・HDB）",
+      hero: "weekly_assets/vol03_iceberg.jpg",
+      url: "weekly03.html",
+      summary: "ベトジェットの背後にある非上場コングロマリット、ソビコ。航空が現金を生み、不動産に化け、銀行が回す——夫婦が築いた「回路」を氷山モデルで解剖する。"
+    },
+    {
       vol: 2,
       week: "2026.7.6–7.10週",
       published: "2026年7月13日（月）発行",
@@ -71,8 +80,8 @@ window.SITE = {
     { t:"VIB", n:"ベトナム国際銀行",    s:"銀行",       st:"done",    vol:2 },
     { t:"TPB", n:"TPバンク",            s:"銀行",       st:"done",    vol:2 },
     { t:"SSB", n:"SeAバンク",           s:"銀行",       st:"done",    vol:2 },
-    { t:"VJC", n:"ベトジェット",        s:"運輸",       st:"planned", vol:3 },
-    { t:"MSN", n:"マサングループ",      s:"消費財",     st:"planned", vol:4 },
+    { t:"VJC", n:"ベトジェット",        s:"運輸",       st:"done",    vol:3 },
+    { t:"MSN", n:"マサングループ",      s:"消費財",     st:"next",    vol:4 },
     { t:"HPG", n:"ホアファット",        s:"素材",       st:"planned", vol:5 },
     { t:"SSI", n:"SSI証券",             s:"証券",       st:"planned", vol:6 },
     { t:"FPT", n:"FPT",                 s:"IT",         st:"planned", vol:7 },
@@ -95,10 +104,11 @@ window.SITE = {
       oneliner:"不動産が稼ぎ、EVが問う。VN-Indexの約28.7%（単純時価総額・2026/7/2概算）を占める最大の一族。"
     },
     {
-      name:"ソビコ", status:"planned", vol:3, date:"7/20（月）予定",
-      tickers:["VJC","HDB"],
-      founder:"グエン・タイン・フン ＆ グエン・ティ・フオン・タオ", east:"ハリコフ大学 → ロシアで創業",
-      oneliner:"航空が運び、銀行が貸す。夫婦で築いたベトナム初の女性ビリオネアの帝国。"
+      name:"ソビコ", status:"done", vol:3, url:"weekly03.html",
+      img:"weekly_assets/vol03_iceberg.jpg",
+      tickers:["VJC","HDB","Phú Long","Furama","Galaxy"],
+      founder:"グエン・タイン・フン ＆ グエン・ティ・フオン・タオ", east:"ハリコフ工科大 → モスクワ（旧ソ連で創業）",
+      oneliner:"航空が運び、銀行が貸す。夫婦で築いたベトナム初の女性ビリオネアの帝国。上場2社は氷山の一角。"
     },
     {
       name:"マサン", status:"planned", vol:4, date:"7/27（月）予定",
@@ -128,6 +138,11 @@ window.SITE = {
 
   // ---- 決算通信簿（verdict: null=検証待ち / "◯"/"△"/"✕"） ----
   scorecard: [
+    {
+      vol:3, made:"2026/7/21",
+      claim:"ソビコの二面性——攻めのベトジェット（VJC・PER41倍＝期待先行）と守りのHDBank（ROE25%＝実績）——が、Q2決算で「期待と実績」の色分け通りに出るか",
+      test:"VJC・HDBのQ2決算（増益率・ROE）とバリュエーションの推移を確認", verdict:null
+    },
     {
       vol:2, made:"2026/7/13",
       claim:"預金金利の上昇（実質8.5〜9%・与信+6.38% vs 預金+4.3%）が銀行の利ざや（NIM）を圧迫する懸念——調達コスト上昇は決算に現れる",
