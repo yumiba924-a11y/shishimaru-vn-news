@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>決算ウォッチ ― Vietnam Weekly</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .ew-bar{display:flex;gap:44px;flex-wrap:wrap;background:var(--green-dark);
+    color:#fff;padding:26px 34px;border-radius:4px;margin:6px 0 34px;}
+  .ew-bar .n{font-family:var(--sans-en);font-size:40px;font-weight:700;line-height:1;}
+  .ew-bar .n small{font-size:18px;color:rgba(255,255,255,.6);}
+  .ew-bar .l{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--gold);
+    letter-spacing:.08em;margin-top:8px;}
+
+  .ew-card{border:1px solid var(--border);border-left:5px solid var(--green);
+    border-radius:6px;background:var(--cream);margin-bottom:26px;overflow:hidden;}
+  .ew-hd{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+    padding:20px 26px 14px;}
+  .ew-sym{font-family:var(--sans-en);font-size:30px;font-weight:700;color:var(--green-dark);
+    letter-spacing:-.01em;line-height:1;}
+  .ew-nm{font-family:var(--gothic);font-size:var(--fs-bodysm);color:var(--mid);margin-top:6px;}
+  .ew-bd{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap;}
+  .ew-bd span{font-family:var(--gothic);font-size:var(--fs-micro);padding:2px 10px;border-radius:20px;
+    border:1px solid var(--border);color:var(--green);background:#fff;}
+  .ew-bd .vn{background:var(--green);color:#fff;border-color:var(--green);}
+  .ew-when{font-family:var(--gothic);text-align:right;color:var(--light);
+    font-size:var(--fs-micro);line-height:1.7;white-space:nowrap;}
+  .ew-vd{padding:11px 26px;font-family:var(--gothic);font-size:var(--fs-bodysm);font-weight:700;}
+  .ew-vd.g{background:rgba(0,168,107,.10);color:#00794d;}
+  .ew-vd.r{background:rgba(218,37,29,.09);color:var(--down);}
+  .ew-vd.n{background:var(--cream-dark);color:var(--light);}
+
+  .ew-sec{padding:16px 26px;border-top:1px solid var(--border);}
+  .ew-lb{font-family:var(--gothic);font-size:var(--fs-micro);letter-spacing:.08em;
+    color:var(--green);margin-bottom:11px;}
+  .ew-perf{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .ew-m{background:#fff;border:1px solid var(--border);border-radius:5px;padding:12px 15px;}
+  .ew-m .k{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);}
+  .ew-m .v{font-family:var(--sans-en);font-size:23px;font-weight:700;color:var(--dark);margin-top:3px;}
+  .ew-m .v small{font-family:var(--gothic);font-size:13px;color:var(--light);font-weight:400;}
+  .ew-m .g2{font-family:var(--gothic);font-size:13px;margin-top:6px;}
+  .up{color:var(--up);} .down{color:var(--down);}
+
+  .ew-ind{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .ew-ind .v{background:#fff;border:1px solid var(--border);border-radius:5px;
+    padding:9px 8px;text-align:center;}
+  .ew-ind .v .k{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);}
+  .ew-ind .v .num2{font-family:var(--sans-en);font-size:18px;font-weight:700;color:var(--dark);margin-top:3px;}
+  .ew-ind .v .in{font-family:var(--gothic);font-size:11px;color:var(--light);margin-top:2px;}
+  .ew-ind .v.cheap .num2{color:var(--up);}
+
+  .ew-prose{font-family:var(--gothic);font-size:var(--fs-bodysm);line-height:1.85;
+    color:var(--mid);text-align:justify;}
+  .ew-src{font-family:var(--gothic);font-size:11px;color:var(--light);margin-top:9px;line-height:1.6;}
+  .ew-ft{padding:12px 26px;border-top:1px solid var(--border);display:flex;gap:22px;
+    flex-wrap:wrap;font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);}
+  .ew-note{font-family:var(--gothic);font-size:var(--fs-micro);color:var(--light);
+    line-height:1.7;margin-top:6px;}
+  #ew-state{font-family:var(--gothic);color:var(--light);padding:20px 0;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="questmap.html">攻略マップ</a>
+    <a href="zaibatsu.html">財閥図鑑</a>
+    <a class="on" href="earnings.html">決算ウォッチ</a>
+  </nav>
+</div>
+
+<section>
+  <div class="eyebrow">Earnings Watch ｜ 決算ウォッチ</div>
+  <div class="s-title" id="ew-title">VN主要企業の決算を、出た順に整理する</div>
+  <div class="body jp" style="margin-bottom:6px;">
+    VN30とVN100の四半期決算を毎日自動で見張り、発表された会社から順にカード化する。
+    数字（売上・純利益・6指標）は機械で集計し円換算を併記、背景・見通しは<strong>会社の公式開示（利益変動説明）と主要報道</strong>を基に記す。
+  </div>
+  <div class="ew-note" id="ew-updated"></div>
+
+  <div class="ew-bar" id="ew-bar"></div>
+
+  <div id="ew-cards"></div>
+  <div id="ew-state">決算データを読み込み中…</div>
+
+  <div class="src" style="margin-top:26px;">
+    数字の出所: FireAnt（公開API・機械集計）／円換算は日次為替（as-of併記）／
+    伸び率は前年同期が赤字・欠損の場合は非表示。全100社の一覧・決算カレンダーは
+    <a href="https://yumiba924-a11y.github.io/vn-earnings/" target="_blank" style="color:var(--green);border-bottom:1px solid var(--gold);">決算ボード（別紙）</a>へ。
+  </div>
+</section>
+
+<div class="footer">
+  <div class="warn jp">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本サイトおよび各号は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本サイトは社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+</div>
+
+<script>
+var CARDS_URL = "https://yumiba924-a11y.github.io/vn-earnings/data/cards.json";
+
+function fmtVND(v){
+  if(v==null) return "—";
+  var a=Math.abs(v), s=v<0?"-":"";
+  if(a>=1e12) return s+(a/1e12).toFixed(2)+"兆VND";
+  return s+(a/1e9).toFixed(0)+"十億VND";
+}
+function fmtJPY(j){
+  if(j==null) return "";
+  var a=Math.abs(j), s=j<0?"-":"";
+  if(a>=1e12) return "≒ "+s+(a/1e12).toFixed(2)+"兆円";
+  if(a>=1e8)  return "≒ 約"+s+(a/1e8).toFixed(0)+"億円";
+  return "≒ "+s+(a/1e6).toFixed(0)+"百万円";
+}
+function pct(v){ if(v==null) return "—"; return (v>=0?"+":"")+v.toFixed(1)+"%"; }
+function cls(v){ return v==null?"":(v>=0?"up":"down"); }
+function esc(s){ return (s==null?"":String(s)).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); }
+
+function indCell(label,val,unit,ind,cheap){
+  if(val==null) return '<div class="v"><div class="k">'+label+'</div><div class="num2">—</div><div class="in"></div></div>';
+  var inTxt = ind!=null ? "業種 "+ind+(unit||"") : "";
+  return '<div class="v'+(cheap?' cheap':'')+'"><div class="k">'+label+'</div><div class="num2">'
+    +val+(unit||"")+'</div><div class="in">'+inTxt+'</div></div>';
+}
+
+function renderCard(c){
+  var vdcls = c.verdict && c.verdict[0]==="◎"||c.verdict[0]==="○" ? "g"
+            : (c.verdict && c.verdict[0]==="▲") ? "r" : "n";
+  var cheapPER = (c.per!=null && c.per_ind!=null && c.per<c.per_ind);
+  var cheapPBR = (c.pbr!=null && c.pbr_ind!=null && c.pbr<c.pbr_ind);
+  var srcTxt = (c.sources&&c.sources.length)
+    ? "出典: "+c.sources.map(function(s){return esc(s.source)+"（"+esc((s.date||"").slice(0,10))+"）";}).join(" ／ ")
+    : "";
+  var badges='<span>'+esc(c.sector)+'</span>'+(c.tier==="tier1"?'<span class="vn">VN30</span>':'');
+  return ''
+  +'<div class="ew-card">'
+  +'  <div class="ew-hd">'
+  +'    <div><div class="ew-sym">'+esc(c.symbol)+'</div>'
+  +'      <div class="ew-nm">'+esc(c.name)+'</div>'
+  +'      <div class="ew-bd">'+badges+'</div></div>'
+  +'    <div class="ew-when">'+esc(c.quarter)+'<br>'+(c.detected?("検知 "+esc(c.detected)):"")+'</div>'
+  +'  </div>'
+  +'  <div class="ew-vd '+vdcls+'">'+esc(c.verdict)+'</div>'
+  +'  <div class="ew-sec"><div class="ew-lb">業績（金額＝VND／円換算・伸び率）</div>'
+  +'    <div class="ew-perf">'
+  +'      <div class="ew-m"><div class="k">売上（営業収益）</div>'
+  +'        <div class="v">'+fmtVND(c.sales)+' <small>'+fmtJPY(c.sales_jpy)+'</small></div>'
+  +'        <div class="g2 '+cls(c.sales_yoy)+'">YoY '+pct(c.sales_yoy)+'</div></div>'
+  +'      <div class="ew-m"><div class="k">純利益</div>'
+  +'        <div class="v">'+fmtVND(c.npat)+' <small>'+fmtJPY(c.npat_jpy)+'</small></div>'
+  +'        <div class="g2"><span class="'+cls(c.npat_yoy)+'">YoY '+pct(c.npat_yoy)+'</span>'
+  +'          　<span class="'+cls(c.npat_qoq)+'">QoQ '+pct(c.npat_qoq)+'</span></div></div>'
+  +'    </div></div>'
+  +'  <div class="ew-sec"><div class="ew-lb">指標（かっこ内は業種平均／PEGは1未満が割安の目安）</div>'
+  +'    <div class="ew-ind">'
+  +      indCell("PER", c.per, "倍", c.per_ind, cheapPER)
+  +      indCell("PBR", c.pbr, "倍", c.pbr_ind, cheapPBR)
+  +      indCell("ROE", c.roe, "%", c.roe_ind, false)
+  +      indCell("PEG", c.peg, "", null, (c.peg!=null&&c.peg<1))
+  +      indCell("売上高純利益率", c.net_margin, "%", c.net_margin_ind, false)
+  +      indCell("営業利益率", c.op_margin, "%", null, false)
+  +'    </div></div>'
+  +'  <div class="ew-sec"><div class="ew-lb">背景 ― 会社発表・報道より</div>'
+  +'    <div class="ew-prose">'+esc(c.background)+'</div>'
+  +'    <div class="ew-src">'+srcTxt+'</div></div>'
+  +'  <div class="ew-sec"><div class="ew-lb">見通し・論点</div>'
+  +'    <div class="ew-prose">'+esc(c.outlook)+'</div></div>'
+  +'  <div class="ew-ft">'
+  +    (c.foreign!=null?'<span>外国人保有 '+c.foreign+'%</span>':'')
+  +    (c.mktcap_jpy!=null?'<span>時価総額 '+fmtJPY(c.mktcap_jpy).replace("≒ ","")+'</span>':'')
+  +'  </div>'
+  +'</div>';
+}
+
+fetch(CARDS_URL,{cache:"no-store"}).then(function(r){return r.json();}).then(function(d){
+  document.getElementById("ew-title").textContent = d.quarter+" 決算ウォッチ";
+  document.getElementById("ew-updated").textContent =
+    "最終更新 "+d.updated+" JST ／ 為替 1兆VND ≒ 約"+(1e12/d.fx_vnd_per_jpy/1e8).toFixed(0)+"億円（"+d.fx_asof+"）";
+  var vn30 = d.cards.filter(function(c){return c.tier==="tier1";}).length;
+  document.getElementById("ew-bar").innerHTML =
+     '<div><div class="n">'+d.count+'<small> 社</small></div><div class="l">発表済み（'+esc(d.quarter)+'）</div></div>'
+    +'<div><div class="n">'+vn30+'<small> /30</small></div><div class="l">うちVN30</div></div>';
+  document.getElementById("ew-state").style.display="none";
+  document.getElementById("ew-cards").innerHTML = d.cards.map(renderCard).join("");
+}).catch(function(e){
+  document.getElementById("ew-state").textContent = "決算データを読み込めませんでした（時間をおいて再読み込みしてください）。";
+});
+</script>
+</body>
+</html>
