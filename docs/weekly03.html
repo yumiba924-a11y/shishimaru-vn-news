@@ -74,6 +74,7 @@
   .mtable th,.mtable td{padding:14px 16px;border-bottom:1px solid var(--border);text-align:left;}
   .mtable th{font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);text-transform:uppercase;background:var(--cream);}
   .mtable td.num{font-family:var(--sans-en);font-weight:600;}
+  .mtable.gl td.num{text-align:right;}
   .hl-vic{color:var(--vn-red);font-weight:700;} .hl-vhm{color:var(--up);font-weight:700;}
 
   /* 先週の相場：週間KPI＋日次バー＋セクター */
@@ -481,7 +482,7 @@
 <section>
   <div class="eyebrow">Top Gainers &amp; Losers ｜ VN30・週次騰落</div>
   <div class="s-title">逆行高は民間銀行、崩れたのは証券とFPT</div>
-  <div class="mwrap"><table class="mtable">
+  <div class="mwrap"><table class="mtable gl">
     <tr><th>▲ 上昇 上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th><th style="width:40px"></th><th>▼ 下落 上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th></tr>
     <tr><td><strong>STB</strong></td><td>銀行</td><td class="num hl-vhm">+4.85%</td><td></td><td><strong>SSI</strong></td><td>証券</td><td class="num hl-vic">−8.66%</td></tr>
     <tr><td><strong>ACB</strong></td><td>銀行</td><td class="num hl-vhm">+4.43%</td><td></td><td><strong>VRE</strong></td><td>観光</td><td class="num hl-vic">−6.83%</td></tr>
