@@ -1,6 +1,6 @@
 {
   "as_of": "2026-07-21",
-  "generated_at": "2026-07-21T11:06:48",
+  "generated_at": "2026-07-21T22:52:55",
   "data_age_days": 0,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
@@ -903,7 +903,7 @@
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4059.0,
+      "value": 4082.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -912,7 +912,7 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-07-21T11:06:46"
+    "fetched": "2026-07-21T22:52:54"
   },
   "interpretation": {
     "headline": "VIC急落、銀行も支えきれず",
