@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Vietnam Weekly VOL.04 ― 食卓の帝国・マサン（2026.7.20–7.24週）</title>
+<style>
+  :root{
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","ＭＳ 明朝",serif;
+    --gothic:"Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+    --sans-en:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
+    --cream:#FAF8F2; --cream-dark:#F0EBE0; --dark:#111; --mid:#333; --light:#5F5F5F;
+    --up:#00A86B; --down:#DA251D; --border:rgba(0,73,44,.12);
+    /* タイプスケール（整理済み・全トークン化） */
+    --fs-hero:114px; --fs-herosub:56px; --fs-herolead:27px;   /* 表紙ディスプレイ */
+    --fs-stat:96px; --fs-numlg:40px; --fs-title:38px;          /* 大数字・見出し */
+    --fs-lead:22px; --fs-sub:20px; --fs-body:19px; --fs-bodysm:16px;  /* 本文系 */
+    --fs-label:14px;  /* 小・ラベル系（14で統一） */
+    /* 行間（役割別・4段階） */
+    --lh-head:1.35; --lh-body:1.9; --lh-card:1.8; --lh-note:1.65;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#e9e5dd;}
+  body{font-family:var(--mincho);background:#fff;color:var(--dark);width:1080px;max-width:100%;margin:0 auto;box-shadow:0 0 60px rgba(0,0,0,.12);}
+  .num{font-family:var(--sans-en);letter-spacing:-.01em;}
+  .jp{text-align:justify;line-break:strict;}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:#04120f;}
+  .hero-img{position:absolute;inset:0;}
+  .hero-grad{position:absolute;inset:0;}
+  .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:30px 60px;}
+  .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:var(--fs-label);line-height:1.5;opacity:.9;}
+  .hero-brand b{color:var(--gold);font-weight:700;}
+  .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-label);border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:8px 16px;border-radius:2px;text-align:right;line-height:1.5;}
+  .hero-body{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;padding:0 64px;}
+  .hero-quest{font-family:var(--sans-en);letter-spacing:.34em;font-size:var(--fs-body);color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hero-quest::before{content:"";width:44px;height:2px;background:var(--gold);}
+  .hero-title{font-family:var(--mincho);font-weight:900;font-size:var(--fs-hero);line-height:1.18;color:#fff;letter-spacing:.02em;text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 6px rgba(0,0,0,.6);}
+  .hero-title .sub{display:block;font-size:var(--fs-herosub);font-weight:700;margin-top:16px;color:rgba(255,255,255,.92);}
+  .hero-lead{font-family:var(--mincho);font-size:var(--fs-herolead);line-height:1.7;color:rgba(255,255,255,.92);margin-top:30px;max-width:900px;text-shadow:0 2px 14px rgba(0,0,0,.65);border-left:3px solid var(--vn-red);padding-left:20px;}
+
+  /* SECTION 共通 */
+  section{padding:70px 64px;}
+  .eyebrow{font-family:var(--sans-en);letter-spacing:.26em;font-size:var(--fs-label);color:var(--green);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--gold);}
+  .s-title{font-family:var(--mincho);font-weight:700;font-size:var(--fs-title);line-height:var(--lh-head);color:var(--green-dark);margin-bottom:28px;}
+  .lead{font-size:var(--fs-lead);font-weight:500;line-height:var(--lh-body);border-left:3px solid var(--vn-red);padding-left:20px;margin-bottom:24px;text-align:justify;}
+  .body{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--mid);text-align:justify;}
+  .body strong{color:var(--dark);font-weight:700;}
+  .src{font-size:var(--fs-label);color:var(--light);margin-top:14px;font-family:var(--gothic);line-height:var(--lh-note);}
+
+  /* テーブル */
+  .mtable{width:100%;border-collapse:collapse;margin-top:6px;font-size:var(--fs-bodysm);}
+  .mtable th,.mtable td{padding:14px 16px;border-bottom:1px solid var(--border);text-align:left;}
+  .mtable th{font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);text-transform:uppercase;background:var(--cream);}
+  .mtable td.num{font-family:var(--sans-en);font-weight:600;}
+  .mtable td.num.r{text-align:right;}
+  .hl-a{color:var(--green);font-weight:700;} .hl-b{color:var(--vn-red);font-weight:700;}
+
+  /* 集中度・濃背景の共通 */
+  .conc{background:var(--green-dark);color:#fff;}
+  .conc .eyebrow{color:var(--gold);} .conc .eyebrow::before{background:var(--gold);}
+  .conc .s-title{color:#fff;}
+
+  /* 免責 */
+  .footer{background:var(--green-dark);padding:40px 64px;}
+  .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:15px 18px;font-size:var(--fs-label);color:rgba(255,255,255,.8);line-height:var(--lh-card);}
+  .footer .warn b{color:var(--gold);} .footer .warn .red{color:#ff8a8a;}
+  .footer .disc{font-size:var(--fs-label);color:rgba(255,255,255,.44);line-height:var(--lh-card);margin-top:16px;}
+  .footer .brand{color:rgba(255,255,255,.5);font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);margin-top:16px;}
+
+  /* ===== VOL.04 専用パーツ ===== */
+  /* 背骨＝一日のタイムライン */
+  .tl{display:flex;align-items:stretch;gap:0;margin-top:24px;}
+  .tlstep{flex:1;background:#fff;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:8px;padding:20px 12px 18px;text-align:center;display:flex;flex-direction:column;}
+  .tlstep .tm{font-family:var(--gothic);font-weight:700;font-size:var(--fs-bodysm);color:var(--green-dark);}
+  .tlstep .ic{font-size:30px;line-height:1;margin:11px 0 9px;}
+  .tlstep .br{font-family:var(--sans-en);font-weight:700;font-size:var(--fs-label);letter-spacing:.02em;color:var(--green);min-height:32px;display:flex;align-items:center;justify-content:center;}
+  .tlstep .tx{font-family:var(--gothic);font-size:var(--fs-label);color:var(--mid);line-height:1.5;margin-top:6px;}
+  .tlar{flex:0 0 20px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:17px;font-weight:700;}
+  .tlclose{text-align:center;font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);margin-top:24px;font-weight:700;}
+  .tlclose em{font-style:normal;color:var(--vn-red);}
+  /* 資産ツリー＝見えない帝国 */
+  .mtree{margin-top:26px;}
+  .mtree .holdco{max-width:460px;margin:0 auto;background:var(--green-dark);color:#fff;border-radius:8px;padding:18px 26px;text-align:center;}
+  .mtree .holdco .t{font-family:var(--mincho);font-size:var(--fs-sub);font-weight:700;}
+  .mtree .holdco .t b{color:var(--gold);font-family:var(--sans-en);}
+  .mtree .holdco .s{font-family:var(--gothic);font-size:var(--fs-label);color:rgba(255,255,255,.82);margin-top:5px;}
+  .mtree .stem{width:2px;height:26px;background:var(--border);margin:0 auto;}
+  .mtree .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:6px;}
+  .mtree .col{border:1px solid var(--border);border-radius:8px;padding:18px 22px;}
+  .mtree .col.listed{background:#fff;border-top:4px solid var(--green);}
+  .mtree .col.unlisted{background:rgba(0,73,44,.045);border-top:4px dashed #B8912E;}
+  .mtree .col h4{font-family:var(--gothic);font-size:var(--fs-bodysm);font-weight:700;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline;color:var(--green-dark);}
+  .mtree .col h4 span{font-family:var(--sans-en);font-size:var(--fs-label);color:var(--light);font-weight:400;letter-spacing:.02em;}
+  .mtree .node{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--border);}
+  .mtree .node:last-child{border-bottom:none;}
+  .mtree .node .nm{font-family:var(--gothic);font-size:var(--fs-label);color:var(--dark);}
+  .mtree .node .nm b{font-family:var(--sans-en);color:var(--green);font-weight:700;}
+  .mtree .node .nm .star{color:var(--vn-red);font-family:var(--gothic);font-size:var(--fs-label);margin-left:6px;}
+  .mtree .node .rv{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;color:var(--mid);white-space:nowrap;}
+  .mtree .assoc{margin-top:20px;background:#fff;border:1px solid var(--border);border-left:4px solid var(--vn-red);border-radius:8px;padding:16px 24px;display:flex;gap:18px;align-items:center;}
+  .mtree .assoc .b{font-family:var(--gothic);font-weight:700;color:var(--vn-red);font-size:var(--fs-label);white-space:nowrap;}
+  .mtree .assoc .x{font-family:var(--gothic);font-size:var(--fs-label);color:var(--mid);line-height:1.65;}
+  .mtree .assoc .x b{color:var(--green-dark);}
+  .discount{background:var(--cream);border-left:5px solid var(--gold);padding:26px 32px;margin-top:26px;}
+  .discount .big{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;color:var(--green-dark);line-height:var(--lh-card);}
+  .discount .big em{color:var(--vn-red);font-style:normal;}
+  /* 三つの顔 */
+  .faces{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
+  .face{background:#fff;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:8px;padding:24px 24px;}
+  .face .cap{font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-label);font-weight:700;color:#B8912E;}
+  .face h4{font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);margin:7px 0 11px;}
+  .face p{font-family:var(--gothic);font-size:var(--fs-label);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
+  /* 写真プレースホルダ（後日挿入） */
+  .ph{background:repeating-linear-gradient(45deg,#f4f2ec,#f4f2ec 12px,#ece7db 12px,#ece7db 24px);border:1px dashed rgba(0,73,44,.28);border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;color:#9a8f76;font-family:var(--gothic);font-size:var(--fs-label);line-height:1.5;padding:10px;}
+  .phband{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;}
+  .phband .ph{height:150px;}
+  /* ⑤-b タングステン */
+  .wchips{display:flex;gap:12px;flex-wrap:wrap;margin-top:2px;}
+  .wchip{background:#fff;border:1px solid var(--border);border-radius:24px;padding:10px 20px;font-family:var(--gothic);font-size:var(--fs-label);color:var(--green-dark);}
+  .wgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px;align-items:stretch;}
+  .wfact{background:var(--green-dark);color:#fff;border-radius:8px;padding:26px 30px;}
+  .wfact .k{font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);color:var(--gold);}
+  .wfact .n{font-family:var(--mincho);font-size:var(--fs-sub);font-weight:800;margin:7px 0 2px;line-height:1.25;}
+  .wfact p{font-family:var(--gothic);font-size:var(--fs-label);line-height:var(--lh-card);color:rgba(255,255,255,.85);margin-top:10px;text-align:justify;}
+  .wjp{background:#fff;border:1px solid var(--border);border-left:4px solid var(--vn-red);border-radius:8px;padding:24px 30px;}
+  .wjp .tag{font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-label);font-weight:700;color:var(--vn-red);}
+  .wjp h4{font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);margin:7px 0 11px;}
+  .wjp p{font-family:var(--gothic);font-size:var(--fs-label);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
+</style>
+</head>
+<body>
+
+
+<!-- ① 表紙＝タイポグラフィ・ヒーロー（実在ロゴ・写真なし／後日差替可） -->
+<div class="hero" style="min-height:980px;">
+  <div class="hero-img" style="background:
+      radial-gradient(1100px 620px at 78% 26%,rgba(245,196,0,.16),transparent 60%),
+      radial-gradient(900px 700px at 12% 88%,rgba(0,168,107,.14),transparent 62%),
+      linear-gradient(160deg,#04122a 0%,#04231a 52%,#00160f 100%);"></div>
+  <div class="hero-grad" style="background:linear-gradient(to bottom,rgba(2,10,20,.10) 0%,rgba(2,10,20,0) 34%,rgba(1,14,10,.30) 74%,rgba(1,12,8,.72) 100%);"></div>
+  <div class="hero-nav">
+    <div class="hero-brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+    <div class="hero-date num">VOL.04 ― 2026.7.20–7.24週<br>7月27日（月）発行</div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-quest">WEEKLY QUEST ④ ― 今週の企業クエスト</div>
+    <div class="hero-title">食卓の帝国<span class="sub">マサン・グループ（MSN）</span></div>
+    <div class="hero-lead" style="max-width:880px;">朝のコーヒーから、夜の決済まで。<br>ベトナム人の一日は、気づかぬうちに<strong>マサン</strong>の上を流れている。<br>食品会社に見えて、その正体は「生活インフラ」だ。</div>
+  </div>
+</div>
+
+
+<!-- ② リード＝あなたの一日は、マサンから始まる（この号の背骨） -->
+<section>
+  <div class="eyebrow">Weekly Quest ④ ｜ Masan</div>
+  <div class="s-title">あなたの一日は、マサンから始まる</div>
+  <div class="lead jp" style="max-width:940px;">マサン・グループ（MSN）は「食品メーカー」と思われがちだ。だがその実態は、調味料から精肉、スーパー、カフェ、そして銀行までを一本の生活動線に束ねた<strong>「消費インフラ」</strong>である。朝食の魚醤から夜の決済まで——ベトナム人の一日の消費の多くが、知らぬ間にマサンの回路を通っている。</div>
+  <div class="tl">
+    <div class="tlstep"><div class="tm">朝 ｜ 買い物</div><div class="ic">🛒</div><div class="br">WinMart</div><div class="tx">近所のWinMartで<br>食料品をそろえる</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">朝食 ｜ 食卓</div><div class="ic">🍜</div><div class="br">Chin-su・Omachi</div><div class="tx">調味料と即席麺で<br>一食をととのえる</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">昼 ｜ 主菜</div><div class="ic">🥩</div><div class="br">MEAT Deli・Nam Ngư</div><div class="tx">安全な精肉と魚醤で<br>家族の食卓を</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">午後 ｜ 一服</div><div class="ic">☕</div><div class="br">Phúc Long</div><div class="tx">お茶かコーヒーで<br>ひと休み</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">夕 ｜ 注文</div><div class="ic">📱</div><div class="br">WinMart+</div><div class="tx">アプリで<br>オンライン注文</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">夜 ｜ 決済</div><div class="ic">💳</div><div class="br">Techcombank</div><div class="tx">決済し、WiNに<br>ポイントが貯まる</div></div>
+  </div>
+  <div class="tlclose">そして彼は今日、<em>マサンから一歩も外へ出なかった。</em></div>
+  <!-- 写真は後日、各社公式サイトから挿入 -->
+  <div class="phband">
+    <div class="ph">写真：WinMart／WinMart+ 店内<br>（後日挿入・WinCommerce公式）</div>
+    <div class="ph">写真：Chin-su／Nam Ngư 商品棚<br>（後日挿入・Masan Consumer公式）</div>
+    <div class="ph">写真：Phúc Long 店舗／MEAT Deli<br>（後日挿入・各社公式）</div>
+  </div>
+  <div class="src">出所：グループ事業構成＝マサン・グループ公式（IR）ほか公開情報を当社が整理。事業間の連なりは生活動線を示すイメージで、実際の取引・持分関係を厳密に表すものではない。写真は各社公式サイトより報道・解説目的で引用予定。</div>
+</section>
+
+
+<!-- ③ 見えない帝国＝上場 vs 未上場（資産ツリー） -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Structure ｜ 見えない帝国</div>
+  <div class="s-title">市場が見ているのは、半分だけ</div>
+  <div class="lead jp" style="max-width:940px;">マサンで上場しているのは4社。だが、グループ<strong>最大の稼ぎ頭は市場に姿を見せていない</strong>。2025年、小売WinCommerceの売上は約2,400億円（38,979十億VND）で、看板の消費財マサン・コンシューマー（約1,900億円）を<strong>初めて上回った</strong>。そのWinCommerceは、非上場だ。</div>
+  <div class="mtree">
+    <div class="holdco">
+      <div class="t"><b>MSN</b>｜Masan Group（持株会社・HOSE）</div>
+      <div class="s">戦略・投資・資本配分でグループ全体を束ねる本体</div>
+    </div>
+    <div class="stem"></div>
+    <div class="cols">
+      <div class="col listed">
+        <h4>上場＝市場から見える <span>LISTED</span></h4>
+        <div class="node"><div class="nm"><b>MCH</b>／マサン・コンシューマー（消費財）<span style="color:var(--light)">HOSE</span></div><div class="rv">売上 約1,900億円</div></div>
+        <div class="node"><div class="nm"><b>MSR</b>／マサン・ハイテク素材（タングステン）<span style="color:var(--light)">UPCoM</span></div><div class="rv">Núi Pháo鉱山</div></div>
+        <div class="node"><div class="nm"><b>MML</b>／マサン・ミートライフ（精肉）<span style="color:var(--light)">UPCoM</span></div><div class="rv">売上 約570億円</div></div>
+      </div>
+      <div class="col unlisted">
+        <h4>未上場＝市場に見えない本体 <span>UNLISTED</span></h4>
+        <div class="node"><div class="nm">WinCommerce／小売・WinMart<span class="star">★グループ最大</span></div><div class="rv">売上 約2,400億円</div></div>
+        <div class="node"><div class="nm">Phúc Long／茶・コーヒーチェーン</div><div class="rv">売上 約120億円</div></div>
+        <div class="node"><div class="nm">The CrownX／中間持株（小売＋消費財）</div><div class="rv">—</div></div>
+        <div class="node"><div class="nm">Wintel・Reddi／通信（MVNO）</div><div class="rv">—</div></div>
+        <div class="node"><div class="nm">WinEco／農産（生鮮の裏付け）</div><div class="rv">—</div></div>
+      </div>
+    </div>
+    <div class="assoc">
+      <div class="b">戦略パートナー<br>（持分法・関連会社）</div>
+      <div class="x jp"><b>Techcombank（TCB）</b>／ベトナム有数の民間銀行。マサンが<b>直接 約15%</b>を保有する関連会社で、会長は<b>マサン共同創業者のホ・フン・アイン</b>。決済・与信でグループの生活動線を金融面から支える。</div>
+    </div>
+  </div>
+  <div class="discount">
+    <div class="big jp">上場子会社MCH一社の時価総額（<em>約1兆1,200億円</em>）が、親会社MSN（<em>約5,900億円</em>）を上回る。さらにTechcombank持分の相当額だけで約1,970億円——<strong>"見えない本体"の価値が、親会社の株価には十分に映っていない</strong>。</div>
+  </div>
+  <div class="src">出所：時価総額・持分＝VNDirect（2026/7/22終値・円換算1USD≒163.0円/26,239VND、1兆VND≒62.1億円）。セグメント売上＝マサンFY2025連結（会社開示）。MCHは2025年12月にUPCoM→HOSE本則へ移管。MSR・MMLはUPCoM。Techcombank持分は直接ベース（転換社債等を含む「経済的持分」は別基準）。未上場各社の位置づけは公開情報に基づく当社整理。</div>
+</section>
+
+
+<!-- ④ 創業者＝東欧組・第3話 -->
+<section>
+  <div class="eyebrow">Founders ｜ 東欧組・第3話</div>
+  <div class="s-title">ロシアで即席麺を売った物理学者</div>
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:34px;align-items:start;">
+    <div class="ph" style="height:360px;">写真：グエン・ダン・クアン<br>（後日挿入・Forbes／マサン公式等より<br>報道・解説目的の引用）</div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-left:4px solid var(--gold);padding:30px 38px;">
+      <div class="body jp">
+        <p style="margin:0 0 15px;">マサンの創業者<strong>グエン・ダン・クアン</strong>は、1963年、中部クアンチ省に生まれた。モスクワのプレハーノフ経済大学でMBAを、ベラルーシの国立科学アカデミーで博士号を修めた——学究肌の理系人（報道では「核物理学の博士」とも紹介される）。ビングループのファム・ニャット・ヴオン（ウクライナ）、ソビコのグエン・ティ・フオン・タオ（モスクワ）と同じ、旧ソ連で最初の資本を築いた<strong>「東欧組」</strong>の一人だ。</p>
+        <p style="margin:0 0 15px;">1990年代、クアンはロシアで貿易会社<strong>Masan Rus Trading</strong>を立ち上げる。当初は在ロシアのベトナム人向けに即席麺を売り、やがてロシア人の食卓へ。月産3,000万パックの工場を構え、大豆・魚醤・チリソースへと広げた。「ロシア人に即席麺の食べ方を教えた男」と呼ばれる。</p>
+        <p style="margin:0 0 15px;">2001年に軸足をベトナムへ戻し、翌2002年、醤油ブランド<strong>Chin-su</strong>を投入。2004年、盟友<strong>ホ・フン・アイン</strong>（現Techcombank会長）とともにマサン・グループを創業した。消費財で得た安定収益を元手に、小売・精肉・鉱山、そして金融へと版図を広げていく。</p>
+        <p style="margin:0;">Forbesの2026年リストで純資産は<strong>12億ドル</strong>。資産源は「消費財と銀行」——ヴオン、タオと並ぶ、旧ソ連発・自力の実業家である。</p>
+      </div>
+    </div>
+  </div>
+  <div class="src">出所：略歴＝Forbesプロフィール（純資産は2026/3時点）、公開報道（VnExpress・Vietnamnet等）を当社が整理。「東欧組」＝当社の分類（ヴオン＝ウクライナ・ハリコフ、タオ＝モスクワ、クアン＝ロシア／ベラルーシ）。クアンは自社「Masan」ブランドで展開しており、即席麺ブランド「Mivina」はヴオン系（別）。博士号の呼称は報道により表現が揺れる。</div>
+</section>
+
+
+<!-- ⑤ マサンの正体＝食品会社か、小売か、銀行か -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">The Question ｜ マサンの正体</div>
+  <div class="s-title">食品会社か、小売か、銀行か</div>
+  <div class="lead jp" style="max-width:940px;">「食品会社」という第一印象は、もう古い。いまのマサンは、性格の異なる<strong>三つの顔</strong>を持つ。ブランド力は消費財、規模は小売、そして利益を下支えするのは銀行だ。</div>
+  <div class="faces">
+    <div class="face">
+      <div class="cap">FACE 1 ― ブランドの顔</div>
+      <h4>消費財</h4>
+      <p>Chin-su・Nam Ngư・Omachi・Vinacafé。魚醤・醤油・即席麺で国内トップクラスのシェアを握る、景気に強い"ブランドの束"。上場子会社MCHがグループの利益エンジンだ。</p>
+    </div>
+    <div class="face">
+      <div class="cap">FACE 2 ― 規模の顔</div>
+      <h4>小売</h4>
+      <p>WinMart／WinMart+は2025年末で<strong>4,592店</strong>まで拡大し、全国最大級の近代小売網に。売上はいまやグループ最大。長年の赤字を抜け、2025年に黒字が定着した。</p>
+    </div>
+    <div class="face">
+      <div class="cap">FACE 3 ― 利益の顔</div>
+      <h4>銀行</h4>
+      <p>直接約15%を持つTechcombankは、持分法の関連会社。会長は共同創業者ホ・フン・アイン。連結に映らないこの銀行が、グループの純益を静かに下支えする。</p>
+    </div>
+  </div>
+  <div class="body jp" style="max-width:940px;margin-top:24px;">2025年、マサンは<strong>過去最高益</strong>を記録した。税引後利益（少数株主前）は約420億円（6,764十億VND）と前年比＋58%。長く赤字だった小売と精肉が黒字化し、"三つの顔"がそろって噛み合い始めた一年だった。<strong>マサンを一言で括るのは難しい——それこそが、この財閥の強さである。</strong></div>
+  <div class="src">出所：業績＝マサンFY2025連結（会社開示・税引後利益は少数株主前=pre-MI、円換算1兆VND≒62.1億円）。WinCommerce店舗数＝2025年末（The Investor等）。Techcombank持分は直接ベース＝持分法適用の関連会社。市場シェアは各カテゴリでトップクラスとされるが、個別％は会社・報道ベースの概算。</div>
+</section>
+
+
+<!-- ⑤-b タングステン＝食卓の外の顔 -->
+<section style="background:#eef1f2;">
+  <div class="eyebrow">Strategic Metal ｜ 食卓の外へ</div>
+  <div class="s-title">世界に売る、硬い金属</div>
+  <div class="lead jp" style="max-width:940px;">マサンのほとんどは、ベトナム人の"食卓"へ向く。だが一つだけ、世界の製造業へ向いた事業がある——<strong>タングステン</strong>だ。上場子会社マサン・ハイテク素材（MSR）が握るこの硬い金属は、超硬工具から半導体まで、現代のものづくりに欠かせない戦略物資である。</div>
+  <div class="wchips">
+    <div class="wchip">🛠 超硬工具・切削</div>
+    <div class="wchip">💻 半導体・電子部品</div>
+    <div class="wchip">✈️ 航空・防衛</div>
+    <div class="wchip">🔋 電池・高機能材料</div>
+  </div>
+  <div class="wgrid">
+    <div class="wfact">
+      <div class="k">NÚI PHÁO MINE ｜ タイグエン省</div>
+      <div class="n">世界有数の<br>タングステン鉱山</div>
+      <p>中国以外では最大級とされるヌイパオ鉱山を核に、採掘から加工まで手がけるMSR。景気に左右されにくい消費財に対し、こちらは世界市況に乗る"別の攻め"だ。</p>
+    </div>
+    <div class="wjp">
+      <div class="tag">日系ハイライト ― 三菱マテリアル</div>
+      <h4>川上の鉱山に、日本が10%</h4>
+      <p><strong>三菱マテリアル</strong>は2020年、約9,000万ドルを投じてMSRに<strong>10%出資</strong>。さらに2024年には、MSR傘下のタングステン加工会社<strong>H.C. Starck</strong>（独）を三菱マテリアルへ売却した。マサンは川下の加工を手放し、<strong>採掘という川上に集中</strong>——選択と集中の一手だ。</p>
+    </div>
+  </div>
+  <div class="body jp" style="max-width:940px;margin-top:24px;">消費財が景気に強い"守り"なら、タングステンは世界の製造業サイクルに乗る"もう一つの攻め"。<strong>マサン唯一のグローバル資源アーム</strong>であり、食卓中心のポートフォリオに、外貨と分散をもたらしている。</div>
+  <div class="src">出所：三菱マテリアル公式（2020年の出資約9,000万ドル・出資後持株比率10%、2024年のH.C. Starck取得）。Núi Pháo鉱山・事業内容＝マサン・ハイテク素材（MSR）公開情報。用途は一般的なタングステンの主要用途。市況・業績はas-of時点で変動する。</div>
+</section>
+
+
+<!-- ⑥ 数字で見るマサン＝上場4社＋盟友TCB -->
+<section>
+  <div class="eyebrow">By the Numbers ｜ マサンの上場4社</div>
+  <div class="s-title">数字で見るマサン</div>
+  <div class="mwrap"><table class="mtable">
+    <tr><th>銘柄</th><th>事業</th><th>市場</th><th style="text-align:right">時価総額（円換算）</th><th style="text-align:right">PER</th><th style="text-align:right">PBR</th></tr>
+    <tr><td><strong>MSN</strong>／マサン・グループ</td><td>持株会社（本体）</td><td>HOSE</td><td class="num r">約5,900億円</td><td class="num r">19.1x</td><td class="num r">2.59x</td></tr>
+    <tr><td><strong>MCH</strong>／マサン・コンシューマー</td><td>消費財（ブランド）</td><td>HOSE</td><td class="num r hl-a">約1兆1,200億円</td><td class="num r">26.3x</td><td class="num r hl-b">10.48x</td></tr>
+    <tr><td><strong>MSR</strong>／マサン・ハイテク素材</td><td>タングステン等</td><td>UPCoM</td><td class="num r">約2,350億円</td><td class="num r">49.1x</td><td class="num r">2.97x</td></tr>
+    <tr><td><strong>MML</strong>／マサン・ミートライフ</td><td>精肉</td><td>UPCoM</td><td class="num r">約580億円</td><td class="num r">16.5x</td><td class="num r">1.81x</td></tr>
+    <tr style="background:rgba(218,37,29,.04);"><td><strong>TCB</strong>／Techcombank<span style="font-family:var(--gothic);color:var(--light);font-size:var(--fs-label);"> ※非連結・関連会社</span></td><td>民間銀行（持分法）</td><td>HOSE</td><td class="num r">約1兆3,100億円<span style="font-family:var(--gothic);color:var(--light);font-size:var(--fs-label);">（うちマサン持分相当 約1,970億円）</span></td><td class="num r">8.1x</td><td class="num r">1.18x</td></tr>
+  </table></div>
+  <div class="src">出所：VNDirect（2026/7/22終値・PER/PBRは実績TTM）。円換算は1USD≒163.0円・26,239VND（1兆VND≒62.1億円）。MCHは2025年12月にUPCoM→HOSE本則へ移管。MML・MSRはUPCoM。Techcombankは連結子会社ではなく持分法適用の関連会社で、時価総額は銀行全体・持分相当はマサン直接約15%換算の当社概算。時価総額・倍率はas-of時点で変動する。</div>
+</section>
+
+
+<!-- 特集→相場面 パート・ディバイダ -->
+<div style="padding:44px 64px 40px;">
+  <div style="display:flex;align-items:center;gap:26px;max-width:820px;margin:0 auto;">
+    <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(245,196,0,.65));"></div>
+    <div style="flex:0 0 auto;width:9px;height:9px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 0 5px rgba(245,196,0,.14);"></div>
+    <div style="font-family:var(--sans-en);letter-spacing:.34em;font-size:var(--fs-lead);color:#B8912E;white-space:nowrap;">PART II ― MARKET</div>
+    <div style="flex:0 0 auto;width:9px;height:9px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 0 5px rgba(245,196,0,.14);"></div>
+    <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,rgba(245,196,0,.65));"></div>
+  </div>
+</div>
+
+
+<!-- ③〜⑧ 相場面（プレースホルダ・7/27発刊時に差し込み） -->
+<section class="conc" style="text-align:center;">
+  <div class="eyebrow" style="justify-content:center;">Coming ｜ 相場面</div>
+  <div class="s-title" style="color:#fff;">先週（7/20–7/24）の相場面は、7/27（月）発刊時に差し込みます</div>
+  <div class="body jp" style="color:rgba(255,255,255,.82);max-width:820px;margin:0 auto;">Market Summary（週間騰落・日次バー）／Sector Performance／Top Gainers &amp; Losers／Spotlight／News Topics／Looking Ahead を、対象週の<strong style="color:#fff">VNDirect実測データ</strong>で組んで挿入します。特集面（上記）は先行して確定。</div>
+</section>
+
+
+<!-- 免責 -->
+<div class="footer">
+  <div class="warn jp">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本紙は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。特集面の時価総額・PER等は2026/7/22終値ベース、業績はマサンFY2025連結（会社開示）。市場ウェイト・持分比率は概算・as-of時点のもの。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本紙は社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+  <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各社・各グループとは一切関係がありません</b>。表紙は本紙が作成したタイポグラフィによるデザインで、実在のロゴ・写真は含みません。本文中の各社写真（WinMart／WinCommerce・Masan Consumer・Phúc Long・Masan MEATLife・Techcombank等）は、挿入時に各社公式サイトより報道・解説目的で引用するもので、著作権・商標・名称はそれぞれの権利者に帰属します。純資産額はForbes等の実時間評価で変動し、記載は作成時点の値です。時価総額・倍率は単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>
+  <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly VOL.04 ｜ 2026.7.20–7.24週 ／ 2026.7.27発行</div>
+</div>
+
+</body>
+</html>
