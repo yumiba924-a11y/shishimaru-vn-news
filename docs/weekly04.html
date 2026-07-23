@@ -118,6 +118,9 @@
   .ph{background:repeating-linear-gradient(45deg,#f4f2ec,#f4f2ec 12px,#ece7db 12px,#ece7db 24px);border:1px dashed rgba(0,73,44,.28);border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;color:#9a8f76;font-family:var(--gothic);font-size:var(--fs-label);line-height:1.5;padding:10px;}
   .phband{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;}
   .phband .ph{height:150px;}
+  .phimg{margin:0;}
+  .phimg img{width:100%;height:180px;object-fit:cover;border:1px solid var(--border);border-radius:6px;display:block;}
+  .phimg figcaption{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);line-height:var(--lh-note);margin-top:6px;}
   /* ⑤-b タングステン */
   .wchips{display:flex;gap:12px;flex-wrap:wrap;margin-top:2px;}
   .wchip{background:#fff;border:1px solid var(--border);border-radius:24px;padding:10px 20px;font-family:var(--gothic);font-size:var(--fs-label);color:var(--green-dark);}
@@ -169,12 +172,13 @@
     <div class="tlstep"><div class="tm">夜 ｜ 決済</div><div class="ic">💳</div><div class="br">Techcombank</div></div>
   </div>
   <!-- 写真は後日、各社公式サイトから挿入 -->
-  <div class="phband">
-    <div class="ph">写真：WinMart／WinMart+ 店内<br>（後日挿入・WinCommerce公式）</div>
-    <div class="ph">写真：Chin-su／Nam Ngư 商品棚<br>（後日挿入・Masan Consumer公式）</div>
-    <div class="ph">写真：Phúc Long 店舗／MEAT Deli<br>（後日挿入・各社公式）</div>
+  <div class="phband" style="grid-template-columns:repeat(4,1fr);">
+    <figure class="phimg"><img src="weekly_assets/winmart.jpg" alt="WinMartでの買い物"><figcaption>WinMartでの買い物（イメージ）。出所：Masan／WinCommerce公式より引用。</figcaption></figure>
+    <figure class="phimg"><img src="weekly_assets/chinsu_omachi.jpg" alt="OmachiとChin-suの一食"><figcaption>Omachi＋Chin-suの一食（イメージ）。出所：Masan Consumer公式より引用。</figcaption></figure>
+    <figure class="phimg"><img src="weekly_assets/chinsu.jpg" alt="Chin-su／Nam Ngưの調味料ブランド群"><figcaption>Chin-su／Nam Ngưの調味料ブランド群。出所：Masan Consumer公式より引用。</figcaption></figure>
+    <figure class="phimg"><img src="weekly_assets/phuc_long.jpg" alt="Phúc Longの店舗"><figcaption>Phúc Longの店舗（イメージ・Since 1968）。出所：Phúc Long公式より引用。</figcaption></figure>
   </div>
-  <div class="src">出所：グループ事業構成＝マサン・グループ公式（IR）ほか公開情報を当社が整理。事業間の連なりは生活動線を示すイメージで、実際の取引・持分関係を厳密に表すものではない。写真は各社公式サイトより報道・解説目的で引用予定。</div>
+  <div class="src">出所：グループ事業構成＝マサン・グループ公式（IR）ほか公開情報を当社が整理。事業間の連なりは生活動線を示すイメージで、実際の取引・持分関係を厳密に表すものではない。写真は各社公式サイト等より報道・解説目的で引用したもので、当社は各社と無関係。</div>
 </section>
 
 
