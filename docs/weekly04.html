@@ -133,6 +133,40 @@
   .wjp .tag{font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-label);font-weight:700;color:var(--vn-red);}
   .wjp h4{font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);margin:7px 0 11px;}
   .wjp p{font-family:var(--gothic);font-size:var(--fs-label);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
+  /* ③ 見えない帝国：構造カード（インフォグラフィック型・正しい数字） */
+  .blabel{text-align:center;font-family:var(--gothic);font-weight:700;font-size:var(--fs-bodysm);color:#fff;background:var(--green-dark);border-radius:6px;padding:11px 18px;margin:34px 0 18px;letter-spacing:.03em;}
+  .blabel span{font-weight:400;opacity:.82;font-size:var(--fs-label);}
+  .mgrid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .mcard{background:#fff;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:8px;padding:18px 18px 20px;display:flex;flex-direction:column;}
+  .mcard .tk{display:flex;align-items:center;gap:9px;}
+  .mcard .tk .no{width:26px;height:26px;border-radius:5px;color:#fff;font-family:var(--sans-en);font-weight:700;font-size:var(--fs-bodysm);display:flex;align-items:center;justify-content:center;}
+  .mcard .tk b{font-family:var(--sans-en);font-size:var(--fs-sub);font-weight:800;color:var(--green-dark);letter-spacing:.02em;}
+  .mcard .co{font-family:var(--mincho);font-size:var(--fs-bodysm);font-weight:700;color:var(--dark);margin-top:10px;}
+  .mcard .biz{font-family:var(--gothic);font-size:var(--fs-label);color:var(--mid);line-height:1.6;margin-top:5px;}
+  .mcard .brands{font-family:var(--gothic);font-size:var(--fs-label);color:var(--green);line-height:1.65;margin-top:9px;}
+  .mcard .mk{display:inline-block;font-family:var(--sans-en);font-size:var(--fs-label);letter-spacing:.04em;color:var(--light);border:1px solid var(--border);border-radius:3px;padding:1px 8px;margin-top:9px;align-self:flex-start;}
+  .mcard .metric{margin-top:auto;padding-top:13px;border-top:1px dashed var(--border);}
+  .mcard .metric .ml{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);}
+  .mcard .metric .mv{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:800;color:var(--green-dark);line-height:1.25;}
+  .mcard .metric .mj{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);}
+  .uwin{background:#fff;border:1px solid var(--border);border-left:5px solid #B8912E;border-radius:8px;padding:20px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .uwin .t{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;color:var(--green-dark);}
+  .uwin .t .star{font-family:var(--gothic);font-size:var(--fs-label);color:var(--vn-red);margin-left:10px;}
+  .uwin .d{font-family:var(--gothic);font-size:var(--fs-label);color:var(--mid);margin-top:5px;line-height:1.6;max-width:640px;}
+  .uwin .r{text-align:right;}
+  .uwin .r .mv{font-family:var(--mincho);font-size:var(--fs-numlg);font-weight:800;color:#B8912E;line-height:1;}
+  .uwin .r .mj{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);margin-top:3px;}
+  .uchips{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px;}
+  .uchip{background:rgba(0,73,44,.05);border:1px dashed var(--border);border-radius:8px;padding:14px 16px;}
+  .uchip h6{font-family:var(--mincho);font-size:var(--fs-bodysm);color:var(--green-dark);}
+  .uchip p{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);line-height:1.55;margin-top:5px;}
+  .tcb{background:#fff;border:1px solid var(--border);border-top:4px solid var(--vn-red);border-radius:8px;padding:22px 28px;display:grid;grid-template-columns:1.25fr 1fr;gap:26px;align-items:center;}
+  .tcb .name{font-family:var(--sans-en);font-size:var(--fs-lead);font-weight:800;color:var(--vn-red);letter-spacing:.02em;}
+  .tcb .desc{font-family:var(--gothic);font-size:var(--fs-label);color:var(--mid);line-height:1.75;margin-top:9px;text-align:justify;}
+  .tcb .desc b{color:var(--green-dark);}
+  .tcb .stats{display:flex;gap:24px;flex-wrap:wrap;border-left:1px solid var(--border);padding-left:26px;}
+  .tcb .st .sl{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);}
+  .tcb .st .sv{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:800;color:var(--green-dark);white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -186,37 +220,73 @@
   <div class="eyebrow">Structure ｜ 見えない帝国</div>
   <div class="s-title">市場が見ているのは、半分だけ</div>
   <div class="lead jp" style="max-width:940px;">マサンで上場しているのは4社。だが、グループ<strong>最大の稼ぎ頭は市場に姿を見せていない</strong>。2025年、小売WinCommerceの売上は約2,400億円（38,979十億VND）で、看板の消費財マサン・コンシューマー（約1,900億円）を<strong>初めて上回った</strong>。そのWinCommerceは、非上場だ。</div>
-  <div class="mtree">
-    <div class="holdco">
-      <div class="t"><b>MSN</b>｜Masan Group（持株会社・HOSE）</div>
-      <div class="s">戦略・投資・資本配分でグループ全体を束ねる本体</div>
+  <!-- 上場企業 -->
+  <div class="blabel">上場企業 <span>― 投資家が直接投資できる4社</span></div>
+  <div class="mgrid4">
+    <div class="mcard" style="border-top-color:#16233d;">
+      <div class="tk"><span class="no" style="background:#16233d;">1</span><b>MSN</b></div>
+      <div class="co">Masan Group</div>
+      <div class="biz">持株会社（本体）。グループ全体の戦略・投資・資本配分を担う。</div>
+      <div class="mk">HOSE</div>
+      <div class="metric"><div class="ml">時価総額</div><div class="mv">約95兆VND</div><div class="mj">約5,900億円</div></div>
     </div>
-    <div class="stem"></div>
-    <div class="cols">
-      <div class="col listed">
-        <h4>上場＝市場から見える <span>LISTED</span></h4>
-        <div class="node"><div class="nm"><b>MCH</b>／マサン・コンシューマー（消費財）<span style="color:var(--light)">HOSE</span></div><div class="rv">売上 約1,900億円</div></div>
-        <div class="node"><div class="nm"><b>MSR</b>／マサン・ハイテク素材（タングステン）<span style="color:var(--light)">UPCoM</span></div><div class="rv">Núi Pháo鉱山</div></div>
-        <div class="node"><div class="nm"><b>MML</b>／マサン・ミートライフ（精肉）<span style="color:var(--light)">UPCoM</span></div><div class="rv">売上 約570億円</div></div>
-      </div>
-      <div class="col unlisted">
-        <h4>未上場＝市場に見えない本体 <span>UNLISTED</span></h4>
-        <div class="node"><div class="nm">WinCommerce／小売・WinMart<span class="star">★グループ最大</span></div><div class="rv">売上 約2,400億円</div></div>
-        <div class="node"><div class="nm">Phúc Long／茶・コーヒーチェーン</div><div class="rv">売上 約120億円</div></div>
-        <div class="node"><div class="nm">The CrownX／中間持株（小売＋消費財）</div><div class="rv">—</div></div>
-        <div class="node"><div class="nm">Wintel・Reddi／通信（MVNO）</div><div class="rv">—</div></div>
-        <div class="node"><div class="nm">WinEco／農産（生鮮の裏付け）</div><div class="rv">—</div></div>
-      </div>
+    <div class="mcard" style="border-top-color:var(--green);">
+      <div class="tk"><span class="no" style="background:var(--green);">2</span><b>MCH</b></div>
+      <div class="co">Masan Consumer</div>
+      <div class="biz">消費財（食品・飲料）。ベトナムNo.1級のブランド群。</div>
+      <div class="brands">CHIN-SU・Nam Ngư・Omachi・Kokomi・Vinacafé・Wake-up</div>
+      <div class="mk">HOSE</div>
+      <div class="metric"><div class="ml">売上高（FY2025）</div><div class="mv">約30.6兆VND</div><div class="mj">約1,900億円</div></div>
     </div>
-    <div class="assoc">
-      <div class="b">戦略パートナー<br>（持分法・関連会社）</div>
-      <div class="x jp"><b>Techcombank（TCB）</b>／ベトナム有数の民間銀行。マサンが<b>直接 約15%</b>を保有する関連会社で、会長は<b>マサン共同創業者のホ・フン・アイン</b>。決済・与信でグループの生活動線を金融面から支える。</div>
+    <div class="mcard" style="border-top-color:#B8912E;">
+      <div class="tk"><span class="no" style="background:#B8912E;">3</span><b>MSR</b></div>
+      <div class="co">Masan High-Tech Materials</div>
+      <div class="biz">ハイテク素材。タングステン等の戦略金属で世界をリード（Núi Pháo鉱山）。</div>
+      <div class="mk">UPCoM</div>
+      <div class="metric"><div class="ml">売上高（FY2024）</div><div class="mv">約14兆VND</div><div class="mj">約870億円</div></div>
+    </div>
+    <div class="mcard" style="border-top-color:var(--vn-red);">
+      <div class="tk"><span class="no" style="background:var(--vn-red);">4</span><b>MML</b></div>
+      <div class="co">Masan MEATLife</div>
+      <div class="biz">精肉（MEAT Deli）。飼料〜農場〜加工〜小売を統合。</div>
+      <div class="mk">UPCoM</div>
+      <div class="metric"><div class="ml">売上高（FY2025）</div><div class="mv">約9.2兆VND</div><div class="mj">約570億円</div></div>
+    </div>
+  </div>
+
+  <!-- 未上場 -->
+  <div class="blabel">未上場の主要事業 <span>― 市場に見えない、本体</span></div>
+  <div class="uwin">
+    <div>
+      <div class="t">WinCommerce ― 小売（WinMart／WinMart+）<span class="star">★グループ最大の稼ぎ頭</span></div>
+      <div class="d">ベトナム最大級の近代小売網。全国63省・市に約4,592店（2025年末）。売上はグループ最大だが、非上場。</div>
+    </div>
+    <div class="r"><div class="mv">約2,400億円</div><div class="mj">売上・約39兆VND（FY2025）</div></div>
+  </div>
+  <div class="uchips">
+    <div class="uchip"><h6>Phúc Long</h6><p>茶・コーヒーチェーン<br>売上 約120億円</p></div>
+    <div class="uchip"><h6>The CrownX</h6><p>中間持株<br>（小売＋消費財）</p></div>
+    <div class="uchip"><h6>Wintel・Reddi</h6><p>通信（MVNO）<br>WinMart店舗で展開</p></div>
+    <div class="uchip"><h6>WinEco</h6><p>農産<br>生鮮の裏付け</p></div>
+  </div>
+
+  <!-- 戦略パートナー -->
+  <div class="blabel">戦略パートナー <span>― 持分法適用の関連会社</span></div>
+  <div class="tcb">
+    <div>
+      <div class="name">Techcombank（TCB）</div>
+      <div class="desc">ベトナム有数の民間銀行。マサンが<b>直接 約15%</b>を保有する持分法適用の関連会社で、会長は<b>マサン共同創業者のホ・フン・アイン</b>。決済・与信でグループの生活動線を金融面から支える。</div>
+    </div>
+    <div class="stats">
+      <div class="st"><div class="sl">総資産</div><div class="sv">約6.1兆円</div></div>
+      <div class="st"><div class="sl">税引後利益(2024)</div><div class="sv">約1,700億円</div></div>
+      <div class="st"><div class="sl">マサン持分</div><div class="sv">約15%</div></div>
     </div>
   </div>
   <div class="discount">
     <div class="big jp">上場子会社MCH一社の時価総額（<em>約1兆1,200億円</em>）が、親会社MSN（<em>約5,900億円</em>）を上回る。さらにTechcombank持分の相当額だけで約1,970億円——<strong>"見えない本体"の価値が、親会社の株価には十分に映っていない</strong>。</div>
   </div>
-  <div class="src">出所：時価総額・持分＝VNDirect（2026/7/22終値・円換算1USD≒163.0円/26,239VND、1兆VND≒62.1億円）。セグメント売上＝マサンFY2025連結（会社開示）。MCHは2025年12月にUPCoM→HOSE本則へ移管。MSR・MMLはUPCoM。Techcombank持分は直接ベース（転換社債等を含む「経済的持分」は別基準）。未上場各社の位置づけは公開情報に基づく当社整理。</div>
+  <div class="src">出所：時価総額・持分＝VNDirect（2026/7/22終値・円換算1USD≒163.0円/26,239VND、1兆VND≒62.1億円）。セグメント売上＝マサンFY2025連結（MSRはFY2024）・会社開示。MCHは2025年12月にUPCoM→HOSE本則へ移管、MSR・MMLはUPCoM。Techcombankは持分法適用の関連会社（マサン直接約15%・総資産/利益は2024実績。転換社債等を含む「経済的持分」は別基準）。未上場各社の位置づけは公開情報に基づく当社整理。</div>
 </section>
 
 
