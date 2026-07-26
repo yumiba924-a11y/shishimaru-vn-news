@@ -167,6 +167,33 @@
   .tcb .stats{display:flex;gap:24px;flex-wrap:wrap;border-left:1px solid var(--border);padding-left:26px;}
   .tcb .st .sl{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);}
   .tcb .st .sv{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:800;color:var(--green-dark);white-space:nowrap;}
+  /* 相場面：週間KPI・日次バー・セクター */
+  .sumstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 24px;}
+  .sumstrip .wk-kpi{margin-bottom:0;height:100%;display:flex;flex-direction:column;}
+  .sumstrip .wk-kpi .l{line-height:1.45;}
+  .sumstrip .wk-kpi .lsub{display:block;font-size:var(--fs-label);opacity:.8;margin-top:1px;}
+  .sumstrip .wk-kpi .v{margin-top:auto;padding-top:10px;}
+  .wk-kpi{background:var(--cream);border-left:3px solid var(--green);padding:24px 26px;margin-bottom:18px;}
+  .wk-kpi .l{font-family:var(--sans-en);font-size:var(--fs-label);letter-spacing:.08em;color:var(--light);}
+  .wk-kpi .v{font-family:var(--mincho);font-size:var(--fs-numlg);font-weight:800;line-height:1;margin-top:6px;}
+  .wk-kpi .v.pos{color:var(--up);} .wk-kpi .v.neg{color:var(--down);}
+  .ddiv{display:flex;gap:14px;position:relative;margin-top:2px;}
+  .ddiv .zero{position:absolute;left:0;right:0;top:100px;border-top:1px dashed #bbb;z-index:0;}
+  .ddiv .dcol{flex:1;display:flex;flex-direction:column;z-index:1;}
+  .ddiv .barea{height:200px;display:flex;flex-direction:column;}
+  .ddiv .htop{height:100px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;}
+  .ddiv .hbot{height:100px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;}
+  .ddiv .dv{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-bottom:5px;}
+  .ddiv .dvb{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-top:5px;}
+  .ddiv .bar{width:100%;min-height:3px;border-radius:3px 3px 0 0;background:var(--up);}
+  .ddiv .barb{width:100%;min-height:3px;border-radius:0 0 3px 3px;background:var(--down);}
+  .ddiv .lab{text-align:center;font-family:var(--sans-en);font-size:var(--fs-label);color:var(--light);margin-top:8px;}
+  .secrow{display:flex;align-items:center;gap:14px;padding:9px 0;}
+  .secname{width:172px;font-size:var(--fs-body);white-space:nowrap;}
+  .secbar{flex:1;height:12px;background:var(--cream-dark);border-radius:2px;position:relative;overflow:hidden;}
+  .secbar i{position:absolute;top:0;bottom:0;left:50%;}
+  .secval{width:82px;text-align:right;font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);}
+  .callout{background:var(--cream);border-left:5px solid var(--gold);padding:22px 30px;margin-top:18px;}
 </style>
 </head>
 <body>
@@ -361,11 +388,136 @@
 </div>
 
 
-<!-- ③〜⑧ 相場面（プレースホルダ・7/27発刊時に差し込み） -->
-<section class="conc" style="text-align:center;">
-  <div class="eyebrow" style="justify-content:center;">Coming ｜ 相場面</div>
-  <div class="s-title" style="color:#fff;">先週（7/20–7/24）の相場面は、7/27（月）発刊時に差し込みます</div>
-  <div class="body jp" style="color:rgba(255,255,255,.82);max-width:820px;margin:0 auto;">Market Summary（週間騰落・日次バー）／Sector Performance／Top Gainers &amp; Losers／Spotlight／News Topics／Looking Ahead を、対象週の<strong style="color:#fff">VNDirect実測データ</strong>で組んで挿入します。特集面（上記）は先行して確定。</div>
+<!-- 相場③ Market Summary -->
+<section>
+  <div class="eyebrow">Market Summary ｜ 先週の相場（7/20–7/24）</div>
+  <div class="s-title">1,700割れ、4週続落 ― レバレッジの巻き戻し</div>
+  <div class="lead jp" style="max-width:940px;">VN-Indexは週間<strong>−5.67%（−101.34pt）</strong>と急落し、<strong>4週連続の下落</strong>。金曜終値は<strong>1,686.11</strong>と1,800どころか1,700の大台も割り込み、3カ月ぶりの安値圏に沈んだ。下げの主犯は明快で、<strong>銀行（−39.9pt）とビン系不動産（−29.5pt）の二大セクターだけで指数の下げの約7割</strong>を占める。記録的な信用取引残高（市場全体で約450兆VND）の巻き戻しに、外国人の銀行株売りが重なった。</div>
+  <div class="sumstrip">
+    <div class="wk-kpi"><div class="l">VN-Index 週間騰落</div><div class="lsub">7/17→7/24</div><div class="v neg num">−5.67%</div></div>
+    <div class="wk-kpi"><div class="l">週末終値（7/24）</div><div class="lsub">1,700割れ・3カ月ぶり安値圏</div><div class="v num">1,686.11</div></div>
+    <div class="wk-kpi"><div class="l">HOSE 値上がり／値下がり</div><div class="lsub">7/24・変わらず58</div><div class="v num" style="font-size:var(--fs-numlg)">88<span style="color:var(--light)">／</span><span style="color:var(--down)">227</span></div></div>
+  </div>
+  <div class="ddiv" style="margin-top:8px;">
+    <div class="zero"></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:69px"></div><div class="dvb" style="color:var(--down)">−2.46</div></div></div><div class="lab">月<br>7/20</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:21px"></div><div class="dvb" style="color:var(--down)">−0.74</div></div></div><div class="lab">火<br>7/21</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:100px"></div><div class="dvb" style="color:var(--down)">−3.58</div></div></div><div class="lab">水<br>7/22</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"><div class="dv" style="color:var(--up)">+1.85</div><div class="bar" style="height:52px"></div></div><div class="hbot"></div></div><div class="lab">木<br>7/23</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:22px"></div><div class="dvb" style="color:var(--down)">−0.78</div></div></div><div class="lab">金<br>7/24</div></div>
+  </div>
+  <div class="body jp" style="margin-top:26px;">値動きはほぼ一方通行で、月−2.46%→火−0.74%→水−3.58%→木+1.85%→金−0.78%。<strong>水曜（7/22）に−3.58%と急落</strong>し、翌7/23には1,700を明確に割った。背景は三つ。①記録的な<strong>信用取引残高（約450兆VND）の巻き戻し</strong>、②外国人の銀行株売り（<strong>VCB −452・VPB −403・TCB −344十億ドン</strong>）、③7/24に米国が新たな関税枠組みを提示し<strong>ベトナムを12.5%層</strong>に置いたこと。一方でマクロは強く、<strong>スタンダードチャータードは2026年GDP成長率予想を7.2%→9.5%へ大幅上方修正</strong>した。木曜に+1.85%の反発（底値確認の兆し）も出たが、金曜に息切れ。水曜だけでベトナムの富豪7人の資産は合計<strong>31億ドル</strong>目減りし、その中心がビン系。逃げ場は乏しく、消費のVNM（外国人買い越し首位＋318十億ドン）がわずかに踏みとどまった。</div>
+  <div class="src">出所：VNDirect実測（指数・日次騰落・ブレッドス＝interpreted.json、週次騰落＝7/17→7/24終値）。外国人フロー＝foreigns API（対象週5日netVal合計・単位＝十億ドン）。関税枠組み・GDP予想・富豪資産は現地報道（The Investor／VnExpress等）。円換算1兆ドン≒62.4億円（2026/7/24時点）。</div>
+</section>
+
+<!-- 相場④ Sector -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Sector ｜ 何が指数を動かしたか</div>
+  <div class="s-title">下げの約7割は、銀行とビン系</div>
+  <div class="body jp" style="max-width:940px;">VN-Indexの−101.34ptを構造で見ると、<strong>銀行（−39.9pt）と不動産＝ビン系（−29.5pt）の2セクターで−69.4pt</strong>。今週は<strong>プラスのセクターが一つもなく</strong>、エネルギー・素材まで軒並み二桁安の全面安だった。</div>
+  <div style="margin-top:18px;">
+    <div class="secrow"><div class="secname">運輸（VJC）</div><div class="secbar"><i style="left:auto;right:50%;width:1.1%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−0.89</div></div>
+    <div class="secrow"><div class="secname">観光（VPL）</div><div class="secbar"><i style="left:auto;right:50%;width:1.5%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−1.21</div></div>
+    <div class="secrow"><div class="secname">消費財（VNM他）</div><div class="secbar"><i style="left:auto;right:50%;width:2.3%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−1.91</div></div>
+    <div class="secrow"><div class="secname">IT（FPT）</div><div class="secbar"><i style="left:auto;right:50%;width:2.4%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−2.00</div></div>
+    <div class="secrow"><div class="secname">小売（MWG）</div><div class="secbar"><i style="left:auto;right:50%;width:3.2%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−2.70</div></div>
+    <div class="secrow"><div class="secname">証券（SSI）</div><div class="secbar"><i style="left:auto;right:50%;width:4.2%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−3.45</div></div>
+    <div class="secrow"><div class="secname">素材（HPG・GVR）</div><div class="secbar"><i style="left:auto;right:50%;width:7.6%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−6.33</div></div>
+    <div class="secrow"><div class="secname">エネルギー（GAS他）</div><div class="secbar"><i style="left:auto;right:50%;width:9.2%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−7.67</div></div>
+    <div class="secrow"><div class="secname">不動産（ビン系）</div><div class="secbar"><i style="left:auto;right:50%;width:35.4%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−29.46</div></div>
+    <div class="secrow"><div class="secname">銀行</div><div class="secbar"><i style="left:auto;right:50%;width:48%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−39.91</div></div>
+  </div>
+  <div class="src">出所：当社試算＝VN30構成銘柄の週次寄与度（TR%×単純時価総額ウェイト×7/17終値）をセクター別に合計。単位＝指数ポイント。VN-Indexの−101.34ptに対しVN30合計は−95.51pt（残差は非VN30）。正式指数（浮動株加重）とは差がある。</div>
+</section>
+
+<!-- 相場⑤ Top Gainers & Losers -->
+<section>
+  <div class="eyebrow">Top Gainers &amp; Losers ｜ VN30・週次騰落</div>
+  <div class="s-title">値上がりゼロ、全面安の一週間</div>
+  <div class="mwrap"><table class="mtable gl">
+    <tr><th>▲ 底堅い上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th><th style="width:40px"></th><th>▼ 下落 上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th></tr>
+    <tr><td><strong>STB</strong></td><td>銀行</td><td class="num hl-a">±0.00%</td><td></td><td><strong>GAS</strong></td><td>エネルギー</td><td class="num hl-b">−11.81%</td></tr>
+    <tr><td><strong>VNM</strong></td><td>消費財</td><td class="num hl-a">−0.17%</td><td></td><td><strong>GVR</strong></td><td>素材</td><td class="num hl-b">−11.78%</td></tr>
+    <tr><td><strong>SAB</strong></td><td>消費財</td><td class="num hl-a">−0.85%</td><td></td><td><strong>MWG</strong></td><td>小売</td><td class="num hl-b">−11.34%</td></tr>
+    <tr><td><strong>LPB</strong></td><td>銀行</td><td class="num hl-a">−0.95%</td><td></td><td><strong>VRE</strong></td><td>不動産</td><td class="num hl-b">−10.79%</td></tr>
+    <tr><td><strong>VJC</strong></td><td>運輸</td><td class="num hl-a">−2.97%</td><td></td><td><strong>TCB</strong></td><td>銀行</td><td class="num hl-b">−9.06%</td></tr>
+  </table></div>
+  <div class="callout">
+    <div class="body jp" style="font-size:var(--fs-bodysm);"><strong>ANALYST NOTE.</strong> 今週のVN30は<strong>値上がり銘柄がゼロ</strong>。最も底堅いSTBでも横ばいで、左の「上位5」はいずれも下落が小さいだけだ。下落側はエネルギー（GAS・GVR）と小売（MWG −11.3%）が二桁安。<strong>Q2で過去最高益を出したテクコムバンク（TCB −9.1%）まで売られた</strong>点に、レバレッジ巻き戻しの無差別さがにじむ。</div>
+  </div>
+  <div class="src">出所：VNDirect（週次騰落＝7/17→7/24のadClose・調整後/配当込）。セクターは当社分類（ICB準拠）。</div>
+</section>
+
+<!-- 相場⑥ Spotlight -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Spotlight ｜ 今週の主役2銘柄</div>
+  <div class="s-title">指数を沈めたVIC、踏みとどまったVNM</div>
+  <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--vn-red);border-radius:6px;padding:24px 28px;margin-top:16px;">
+    <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--vn-red);font-weight:700;">INDEX DRAG ― VIC（ビングループ）</div>
+    <div class="body jp" style="margin-top:8px;">週次<strong style="color:var(--vn-red)">−3.14%</strong>。下落率は大型株のなかでは小さいが、時価総額が突出して大きいため、寄与度は<strong>−15.68ptとVN30最大の押し下げ役</strong>。指数最大級のウェイトを持つ帝国が下げると、市場全体が連動して沈む。水曜だけでベトナムの富豪7人の資産が合計31億ドル目減りし、その中心がビン系だった。外国人も−228十億ドン売り越し。時価総額 約10.2兆円（1,642兆ドン）。<strong>WHY NOW?</strong> レバレッジ巻き戻しの局面では、値がさの指数株ほど機械的に売られる。</div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--up);border-radius:6px;padding:24px 28px;margin-top:16px;">
+    <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--up);font-weight:700;">DEFENSIVE BID ― VNM（ビナミルク）</div>
+    <div class="body jp" style="margin-top:8px;">週次<strong style="color:var(--up)">−0.17%</strong>とVN30で最も底堅く、外国人買い越しは<strong>＋318十億ドンでVN30首位</strong>。全面安のなか、安定収益・高配当の乳業ディフェンシブが数少ない避難先になった。時価総額 約7,700億円（123兆ドン）。<strong>WHY NOW?</strong> レバレッジ巻き戻しと外国人の銀行売りの局面で、資金は景気に鈍感な消費株へ退避した。</div>
+  </div>
+  <div class="src">出所：騰落・時価総額＝VNDirect（7/24終値・調整後）。外国人フロー＝foreigns API（対象週5日合計）。富豪資産は現地報道（VnExpress・7/22時点）。円換算1兆ドン≒62.4億円（2026/7/24）。</div>
+</section>
+
+<!-- 相場⑦ News Topics -->
+<section>
+  <div class="eyebrow">News Topics ｜ 先週のトピックス</div>
+  <div class="s-title">関税、レバレッジ、そして上方修正</div>
+  <div style="display:flex;flex-direction:column;gap:16px;margin-top:18px;">
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--vn-red);font-weight:700;">MARKET ― 相場</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>4週続落、1,700割れ。</strong>記録的な信用取引残高（市場全体で約450兆VND）の巻き戻しで、水曜に−3.58%の急落。「外国人が売るほど信用残が積み上がる」構図が、反転時のリスクとして繰り返し警戒された。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:#B8912E;font-weight:700;">TRADE ― 通商</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>米国が新たな世界関税枠組みを提示、ベトナムは12.5%層。</strong>7/24、輸出依存の高いベトナムに逆風となる税率区分が示された。前号で注目したSection 122の失効に続く動き。※税率・枠組みは提示／見込み段階で、最終規則により変わりうる。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--green);font-weight:700;">MACRO ― マクロ（好材料）</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>スタンダードチャータードが2026年GDP予想を7.2%→9.5%へ大幅上方修正。</strong>利上げ後に海外から58億ドルが流入、社債市場もQ2に80億ドル超が流入と、実体・資金の両面はむしろ強い。相場の急落は、業績ではなく需給（レバレッジと外国人フロー）が主因だったことを示す。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--green);font-weight:700;">EARNINGS ― Q2決算</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>テクコムバンクがQ2で過去最高益、VPBankも上半期最高益（与信＋25%）。</strong>だが株価はTCB −9.1%・VPB −3.5%と逆行安。決算の強さより、レバレッジと外国人フローが相場を支配した一週間だった。</div>
+    </div>
+  </div>
+  <div style="font-family:var(--sans-en);letter-spacing:.14em;font-size:var(--fs-label);color:var(--light);margin:26px 0 12px;">COLOR ｜ 今週のこぼれ話</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">💎 FPT、114兆ドン蒸発</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">ピークからの時価総額の目減りは<strong>銀行3行分</strong>に相当。FPT・MWG・SSIの旧「ダイヤモンド株」が揃って年初来二桁安、FPTは時価総額トップ10からも陥落した。</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">🧲 レアアースが米国へ</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">ベトナムのサプライヤーが希土類<strong>NdPr</strong>を米磁石メーカーへ初出荷。米中対立下の戦略物資として存在感が高まる（本紙特集の<strong>MSR＝タングステン</strong>とも重なるテーマ）。</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">📉 富豪、1日で31億ドル減</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">水曜の急落で、ベトナムの富豪7人の純資産が合計<strong>31億ドル</strong>目減り。株安が富の指標を直撃した一日となった。</div>
+    </div>
+  </div>
+  <div class="src">出所：現地報道（VnExpress・The Investor・CafeF・Vietstock等、2026/7/20–7/24）を当社が要約。関税は米国の提示／見込み段階で最終規則により変わりうる。信用残・GDP予想・決算・レアアースは現地報道ベース。市場数値は本紙のVNDirect実測と整合。</div>
+</section>
+
+<!-- 相場⑧ Looking Ahead -->
+<section class="conc">
+  <div class="eyebrow">Looking Ahead ｜ 注目材料</div>
+  <div class="s-title" style="color:#fff;">底値確認と、レバレッジの行方</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:8px;">
+    <div>
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--gold);font-weight:700;margin-bottom:10px;">今週（7/27–7/31）</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);color:rgba(255,255,255,.9);line-height:var(--lh-card);">・<strong style="color:#fff">1,700割れ後の底値確認</strong>：木曜の反発が続くか、それとも二番底か。<br>・<strong style="color:#fff">信用取引残高の減少ペース</strong>：強制決済が一巡すれば、需給の重しは軽くなる。<br>・Q2決算の最終盤：銀行の資産の質と、消費・小売の底堅さ。</div>
+    </div>
+    <div>
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--gold);font-weight:700;margin-bottom:10px;">今後・注目日程</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);color:rgba(255,255,255,.9);line-height:var(--lh-card);">・<strong style="color:#fff">2026/8/21</strong> FTSE昇格の構成リスト公表（あと約4週）<br>・<strong style="color:#fff">2026/9/21</strong> FTSE新興国指数への発効（あと約8週）<br>・<strong style="color:#fff">米関税の最終規則</strong>（12.5%層の確定時期）</div>
+    </div>
+  </div>
+  <div class="note" style="font-size:var(--fs-label);color:rgba(255,255,255,.55);margin-top:16px;line-height:var(--lh-note);">注目日程は既知の公表スケジュール。距離感は発刊日（7/27）基準。FTSEは節目のみ扱い、毎号の主役化はしない。</div>
 </section>
 
 
@@ -373,7 +525,7 @@
 <div class="footer">
   <div class="warn jp">
     <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
-    本紙は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。特集面の時価総額・PER等は2026/7/22終値ベース、業績はマサンFY2025連結（会社開示）。市場ウェイト・持分比率は概算・as-of時点のもの。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    本紙は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。特集面の時価総額・PER等は2026/7/22終値ベース、業績はマサンFY2025連結（会社開示）。相場・ニュース各面は対象週（2026/7/20–7/24）の実績。市場ウェイト・持分比率は概算・as-of時点のもの。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
     <span class="red">本紙は社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
   </div>
   <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各社・各グループとは一切関係がありません</b>。表紙のヒーロー画像は<b>本紙が作成した生成AIによるイメージ（実在の写真ではありません）</b>で、マサン・グループおよび傘下各社（WinMart・Chin-su・Phúc Long・Techcombank等）のブランド・ロゴを模した表現を含みますが、当社はこれら各社と提携・関係を有しません。<b>画像内の商品名・ロゴ・年号等の表記は生成AIによる自動生成のため、正確でない場合があります</b>。本文中の各社写真は、挿入時に各社公式サイトより報道・解説目的で引用するもので、著作権・商標・名称はそれぞれの権利者に帰属します。純資産額はForbes等の実時間評価で変動し、記載は作成時点の値です。時価総額・倍率は単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>

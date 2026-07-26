@@ -15,6 +15,15 @@ window.SITE = {
   // ---- 発刊済みの号（新しい順） ----
   issues: [
     {
+      vol: 4,
+      week: "2026.7.20–7.24週",
+      published: "2026年7月27日（月）発行",
+      title: "食卓の帝国 ― マサン（MSN）",
+      hero: "weekly_assets/vol04_hero_v2.png",
+      url: "weekly04.html",
+      summary: "マサンは食品会社ではない。調味料から小売、カフェ、銀行までを一本の生活動線に束ねた消費インフラ——最大の稼ぎ頭WinCommerceは非上場という「見えない帝国」を解剖する。"
+    },
+    {
       vol: 3,
       week: "2026.7.13–7.17週",
       published: "2026年7月21日（火）発行",
@@ -81,8 +90,8 @@ window.SITE = {
     { t:"TPB", n:"TPバンク",            s:"銀行",       st:"done",    vol:2 },
     { t:"SSB", n:"SeAバンク",           s:"銀行",       st:"done",    vol:2 },
     { t:"VJC", n:"ベトジェット",        s:"運輸",       st:"done",    vol:3 },
-    { t:"MSN", n:"マサングループ",      s:"消費財",     st:"next",    vol:4 },
-    { t:"HPG", n:"ホアファット",        s:"素材",       st:"planned", vol:5 },
+    { t:"MSN", n:"マサングループ",      s:"消費財",     st:"done",    vol:4 },
+    { t:"HPG", n:"ホアファット",        s:"素材",       st:"next",    vol:5 },
     { t:"SSI", n:"SSI証券",             s:"証券",       st:"planned", vol:6 },
     { t:"FPT", n:"FPT",                 s:"IT",         st:"planned", vol:7 },
     { t:"GAS", n:"ペトロベトナムガス",  s:"エネルギー", st:"open" },
@@ -111,10 +120,11 @@ window.SITE = {
       oneliner:"航空が運び、銀行が貸す。夫婦で築いたベトナム初の女性ビリオネアの帝国。上場2社は氷山の一角。"
     },
     {
-      name:"マサン", status:"planned", vol:4, date:"7/27（月）予定",
-      tickers:["MSN","MCH","MML","MSR"],
-      founder:"グエン・ダン・クアン", east:"ロシア（即席麺）",
-      oneliner:"消費財が稼ぎ、小売が広げる。WinMart 5,000店を擁する生活圏の支配者。"
+      name:"マサン", status:"done", vol:4, url:"weekly04.html",
+      img:"weekly_assets/vol04_hero_v2.png",
+      tickers:["MSN","MCH","MML","MSR","WinCommerce","Techcombank"],
+      founder:"グエン・ダン・クアン", east:"ロシア／ベラルーシ（即席麺）",
+      oneliner:"食品会社ではなく、生活インフラ。最大の稼ぎ頭WinCommerce（約4,592店）は非上場という「見えない帝国」。"
     },
     {
       name:"ホアファット", status:"planned", vol:5, date:"8/3（月）予定",
@@ -138,6 +148,11 @@ window.SITE = {
 
   // ---- 決算通信簿（verdict: null=検証待ち / "◯"/"△"/"✕"） ----
   scorecard: [
+    {
+      vol:4, made:"2026/7/27",
+      claim:"マサンの「持株会社ディスカウント」——上場子会社MCH一社の時価総額（約1兆1,200億円）が親会社MSN（約5,900億円）を上回る逆転——は、MCHのHOSE移管や『見えない本体』（WinCommerce等）の再評価で解消に向かうか",
+      test:"MSNの株価とNAVディスカウント、およびQ2以降のWinCommerce/MEATLifeの黒字持続を確認", verdict:null
+    },
     {
       vol:3, made:"2026/7/21",
       claim:"ソビコの二面性——攻めのベトジェット（VJC・PER41倍＝期待先行）と守りのHDBank（ROE25%＝実績）——が、Q2決算で「期待と実績」の色分け通りに出るか",
