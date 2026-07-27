@@ -1,6 +1,6 @@
 {
   "as_of": "2026-07-27",
-  "generated_at": "2026-07-27T12:21:57",
+  "generated_at": "2026-07-27T22:57:48",
   "data_age_days": 0,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
@@ -903,7 +903,7 @@
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4085.0,
+      "value": 4075.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -912,6 +912,6 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-07-27T12:21:54"
+    "fetched": "2026-07-27T22:57:45"
   }
 }
