@@ -27,3 +27,6 @@ weekly_covers/
 outputs/weekly01_proto.html
 outputs/weekly01_proto.png
 outputs/weekly01_hero.png
+
+# ローカル退避（未使用素材・生成元・重複）
+_unused_assets/
