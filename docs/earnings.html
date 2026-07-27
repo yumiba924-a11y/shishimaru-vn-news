@@ -93,6 +93,14 @@
   .ew-detail{display:none;padding:0 0 6px;}
   .ew-detail.open{display:block;}
   .ew-detail .ew-card{margin:0 0 10px;border-left-width:5px;}
+
+  /* ---- 見どころタグ ---- */
+  .ew-tag{display:inline-block;font-family:var(--gothic);font-size:10px;font-weight:700;
+    padding:1px 7px;border-radius:10px;margin-left:5px;vertical-align:middle;white-space:nowrap;}
+  .ew-tag.rec{background:#FBEACB;color:#8A6D00;border:1px solid #E7C766;}
+  .ew-tag.hot{background:#FCE1DA;color:#C0341C;border:1px solid #F0A594;}
+  .ew-tag.cheap{background:#DDF0E6;color:#00744A;border:1px solid #9AD3B6;}
+  .ew-hd .ew-tag{font-size:11px;margin:0 0 0 6px;}
   @media(max-width:1080px){
     .ew-hrow,.ew-row{grid-template-columns:96px 1fr 78px 78px 50px 20px;}
     .ew-hrow .h-sec,.ew-row .c-sec{display:none;}
@@ -132,6 +140,12 @@
       <span class="ew-chip on" data-v="all">全結果</span>
       <span class="ew-chip" data-v="up">増益</span>
       <span class="ew-chip" data-v="down">減益</span>
+    </div>
+    <div class="ew-chips" id="ew-f-tag">
+      <span class="ew-chip on" data-v="all">全社</span>
+      <span class="ew-chip" data-v="最高益">🏆 最高益</span>
+      <span class="ew-chip" data-v="ホット">🔥 ホット</span>
+      <span class="ew-chip" data-v="割安">💎 割安</span>
     </div>
     <span><label>セクター </label><select id="ew-f-sec"><option value="all">すべて</option></select></span>
     <span><label>並べ替え </label><select id="ew-sort">
@@ -198,13 +212,18 @@ function vdColor(c){
   var m=vdMark(c);
   return (m==="◎"||m==="○")?"up":(m==="▲")?"down":"";
 }
+function tagsHtml(c){
+  return (c.tags||[]).map(function(t){
+    return '<span class="ew-tag '+t.cls+'">'+(t.icon||"")+t.label+'</span>';
+  }).join("");
+}
 
 function renderRow(c,i){
   var cheapPER=(c.per!=null&&c.per_ind!=null&&c.per<c.per_ind);
   return ''
   +'<div class="ew-row" data-i="'+i+'">'
   +'  <div class="c-sym">'+esc(c.symbol)+(c.tier==="tier1"?'<span class="vn">VN30</span>':'')+'</div>'
-  +'  <div><div class="c-nm">'+esc(c.name)+'</div><div class="c-sec">'+esc(c.sector)+'</div></div>'
+  +'  <div><div class="c-nm">'+esc(c.name)+tagsHtml(c)+'</div><div class="c-sec">'+esc(c.sector)+'</div></div>'
   +'  <div class="c-vd '+vdColor(c)+'">'+vdMark(c)+' '+vdShort(c)+'</div>'
   +'  <div class="num2 '+cls(c.sales_yoy)+'">'+pct(c.sales_yoy)+'</div>'
   +'  <div class="num2 '+cls(c.npat_yoy)+'">'+pct(c.npat_yoy)+'</div>'
@@ -226,7 +245,7 @@ function renderCard(c){
   return ''
   +'<div class="ew-card">'
   +'  <div class="ew-hd">'
-  +'    <div><div class="ew-sym">'+esc(c.symbol)+'</div>'
+  +'    <div><div class="ew-sym">'+esc(c.symbol)+tagsHtml(c)+'</div>'
   +'      <div class="ew-nm">'+esc(c.name)+'</div>'
   +'      <div class="ew-bd">'+badges+'</div></div>'
   +'    <div class="ew-when">'+esc(c.quarter)+'<br>'+(c.detected?("検知 "+esc(c.detected)):"")+'</div>'
@@ -263,7 +282,7 @@ function renderCard(c){
   +'</div>';
 }
 
-var ALL=[], F={tier:"all",res:"all",sec:"all"}, SORT="std";
+var ALL=[], F={tier:"all",res:"all",sec:"all",tag:"all"}, SORT="std";
 
 var HEADER='<div class="ew-hrow"><div>銘柄</div><div class="h-sec">会社・セクター</div>'
   +'<div>判定</div><div class="r">売上YoY</div><div class="r">純益YoY</div>'
@@ -274,6 +293,7 @@ function passes(c){
   if(F.res==="up" && !(c.npat_yoy>0)) return false;
   if(F.res==="down" && !(c.npat_yoy<0)) return false;
   if(F.sec!=="all" && c.sector!==F.sec) return false;
+  if(F.tag!=="all" && !(c.tags||[]).some(function(t){return t.label===F.tag;})) return false;
   return true;
 }
 function sortCards(a){
@@ -331,7 +351,7 @@ fetch(CARDS_URL,{cache:"no-store"}).then(function(r){return r.json();}).then(fun
   });
   sel.addEventListener("change",function(){ F.sec=this.value; apply(); });
   document.getElementById("ew-sort").addEventListener("change",function(){ SORT=this.value; apply(); });
-  wireChips("ew-f-tier","tier"); wireChips("ew-f-res","res");
+  wireChips("ew-f-tier","tier"); wireChips("ew-f-res","res"); wireChips("ew-f-tag","tag");
   document.getElementById("ew-state").style.display="none";
   document.getElementById("ew-ctl").style.display="flex";
   apply();
