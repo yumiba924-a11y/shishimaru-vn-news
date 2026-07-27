@@ -212,6 +212,7 @@ function vdColor(c){
   var m=vdMark(c);
   return (m==="◎"||m==="○")?"up":(m==="▲")?"down":"";
 }
+function jaName(c){ return c.name_ja || c.name || c.symbol; }
 function tagsHtml(c){
   return (c.tags||[]).map(function(t){
     return '<span class="ew-tag '+t.cls+'">'+(t.icon||"")+t.label+'</span>';
@@ -223,7 +224,7 @@ function renderRow(c,i){
   return ''
   +'<div class="ew-row" data-i="'+i+'">'
   +'  <div class="c-sym">'+esc(c.symbol)+(c.tier==="tier1"?'<span class="vn">VN30</span>':'')+'</div>'
-  +'  <div><div class="c-nm">'+esc(c.name)+tagsHtml(c)+'</div><div class="c-sec">'+esc(c.sector)+'</div></div>'
+  +'  <div><div class="c-nm">'+esc(jaName(c))+tagsHtml(c)+'</div><div class="c-sec">'+esc(c.sector)+'</div></div>'
   +'  <div class="c-vd '+vdColor(c)+'">'+vdMark(c)+' '+vdShort(c)+'</div>'
   +'  <div class="num2 '+cls(c.sales_yoy)+'">'+pct(c.sales_yoy)+'</div>'
   +'  <div class="num2 '+cls(c.npat_yoy)+'">'+pct(c.npat_yoy)+'</div>'
@@ -246,7 +247,7 @@ function renderCard(c){
   +'<div class="ew-card">'
   +'  <div class="ew-hd">'
   +'    <div><div class="ew-sym">'+esc(c.symbol)+tagsHtml(c)+'</div>'
-  +'      <div class="ew-nm">'+esc(c.name)+'</div>'
+  +'      <div class="ew-nm">'+esc(jaName(c))+(c.name_ja&&c.name?' <span style="color:var(--light);font-size:11px;">'+esc(c.name)+'</span>':'')+'</div>'
   +'      <div class="ew-bd">'+badges+'</div></div>'
   +'    <div class="ew-when">'+esc(c.quarter)+'<br>'+(c.detected?("検知 "+esc(c.detected)):"")+'</div>'
   +'  </div>'
