@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Vietnam Weekly VOL.05 ― NVIDIAと組む、ベトナム最大のIT・FPT（2026.7.27–7.31週）</title>
+<style>
+  :root{
+    --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","ＭＳ 明朝",serif;
+    --gothic:"Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+    --sans-en:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --green:#00492C; --green-dark:#002D1A; --vn-red:#DA251D; --gold:#F5C400;
+    --cream:#FAF8F2; --cream-dark:#F0EBE0; --dark:#111; --mid:#333; --light:#5F5F5F;
+    --up:#00A86B; --down:#DA251D; --border:rgba(0,73,44,.12);
+    --fs-hero:114px; --fs-herosub:56px; --fs-herolead:27px;
+    --fs-stat:96px; --fs-numlg:40px; --fs-title:38px;
+    --fs-lead:22px; --fs-sub:20px; --fs-body:19px; --fs-bodysm:16px;
+    --fs-label:14px;
+    --lh-head:1.35; --lh-body:1.9; --lh-card:1.8; --lh-note:1.65;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#e9e5dd;}
+  body{font-family:var(--mincho);background:#fff;color:var(--dark);width:1080px;max-width:100%;margin:0 auto;box-shadow:0 0 60px rgba(0,0,0,.12);}
+  .num{font-family:var(--sans-en);letter-spacing:-.01em;}
+  .jp{text-align:justify;line-break:strict;}
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:#04120f;}
+  .hero-img{position:absolute;inset:0;}
+  .hero-grad{position:absolute;inset:0;}
+  .hero-nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:30px 60px;}
+  .hero-brand{color:#fff;font-family:var(--sans-en);letter-spacing:.14em;font-size:var(--fs-label);line-height:1.5;opacity:.9;}
+  .hero-brand b{color:var(--gold);font-weight:700;}
+  .hero-date{color:var(--gold);font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-label);border:1px solid rgba(245,196,0,.4);background:rgba(245,196,0,.12);padding:8px 16px;border-radius:2px;text-align:right;line-height:1.5;}
+  .hero-body{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;padding:0 64px;}
+  .hero-quest{font-family:var(--sans-en);letter-spacing:.34em;font-size:var(--fs-body);color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:16px;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+  .hero-quest::before{content:"";width:44px;height:2px;background:var(--gold);}
+  .hero-title{font-family:var(--mincho);font-weight:900;font-size:var(--fs-hero);line-height:1.18;color:#fff;letter-spacing:.02em;text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 6px rgba(0,0,0,.6);}
+  .hero-title .sub{display:block;font-size:var(--fs-herosub);font-weight:700;margin-top:16px;color:rgba(255,255,255,.92);}
+  .hero-lead{font-family:var(--mincho);font-size:var(--fs-herolead);line-height:1.7;color:rgba(255,255,255,.92);margin-top:30px;max-width:900px;text-shadow:0 2px 14px rgba(0,0,0,.65);border-left:3px solid var(--vn-red);padding-left:20px;}
+  /* SECTION 共通 */
+  section{padding:70px 64px;}
+  .eyebrow{font-family:var(--sans-en);letter-spacing:.26em;font-size:var(--fs-label);color:var(--green);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--gold);}
+  .s-title{font-family:var(--mincho);font-weight:700;font-size:var(--fs-title);line-height:var(--lh-head);color:var(--green-dark);margin-bottom:28px;}
+  .lead{font-size:var(--fs-lead);font-weight:500;line-height:var(--lh-body);border-left:3px solid var(--vn-red);padding-left:20px;margin-bottom:24px;text-align:justify;}
+  .body{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--mid);text-align:justify;}
+  .body strong{color:var(--dark);font-weight:700;}
+  .src{font-size:var(--fs-label);color:var(--light);margin-top:14px;font-family:var(--gothic);line-height:var(--lh-note);}
+  /* テーブル */
+  .mtable{width:100%;border-collapse:collapse;margin-top:6px;font-size:var(--fs-bodysm);}
+  .mtable th,.mtable td{padding:14px 16px;border-bottom:1px solid var(--border);text-align:left;}
+  .mtable th{font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);text-transform:uppercase;background:var(--cream);}
+  .mtable td.num{font-family:var(--sans-en);font-weight:600;}
+  .mtable td.num.r{text-align:right;}
+  .hl-a{color:var(--green);font-weight:700;} .hl-b{color:var(--vn-red);font-weight:700;}
+  .conc{background:var(--green-dark);color:#fff;}
+  .conc .eyebrow{color:var(--gold);} .conc .eyebrow::before{background:var(--gold);}
+  .conc .s-title{color:#fff;}
+  /* 免責 */
+  .footer{background:var(--green-dark);padding:40px 64px;}
+  .footer .warn{background:rgba(245,196,0,.08);border:1px solid rgba(245,196,0,.3);border-left:4px solid var(--gold);border-radius:4px;padding:15px 18px;font-size:var(--fs-label);color:rgba(255,255,255,.8);line-height:var(--lh-card);}
+  .footer .warn b{color:var(--gold);} .footer .warn .red{color:#ff8a8a;}
+  .footer .disc{font-size:var(--fs-label);color:rgba(255,255,255,.44);line-height:var(--lh-card);margin-top:16px;}
+  .footer .brand{color:rgba(255,255,255,.5);font-family:var(--sans-en);letter-spacing:.12em;font-size:var(--fs-label);margin-top:16px;}
+  /* 背骨＝変身タイムライン */
+  .tl{display:flex;align-items:stretch;gap:0;margin-top:24px;}
+  .tlstep{flex:1;background:#fff;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:8px;padding:20px 12px 18px;text-align:center;display:flex;flex-direction:column;}
+  .tlstep .tm{font-family:var(--sans-en);font-weight:800;font-size:var(--fs-lead);color:var(--green-dark);}
+  .tlstep .ic{font-size:46px;line-height:1;margin:12px 0 10px;}
+  .tlstep .br{font-family:var(--gothic);font-weight:700;font-size:var(--fs-label);color:var(--green);min-height:34px;display:flex;align-items:center;justify-content:center;}
+  .tlstep .tx{font-family:var(--gothic);font-size:var(--fs-label);color:var(--mid);line-height:1.5;margin-top:6px;}
+  .tlar{flex:0 0 20px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:17px;font-weight:700;}
+  .tlclose{text-align:center;font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);margin-top:24px;font-weight:700;}
+  .tlclose em{font-style:normal;color:var(--vn-red);}
+  /* 写真帯 */
+  .phband{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;}
+  .phimg{margin:0;}
+  .phimg img{width:100%;height:200px;object-fit:cover;border:1px solid var(--border);border-radius:6px;display:block;}
+  .phimg figcaption{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);line-height:var(--lh-note);margin-top:6px;}
+  /* 3つの顔 */
+  .faces{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
+  .face{background:#fff;border:1px solid var(--border);border-top:4px solid var(--green);border-radius:8px;padding:24px 24px;}
+  .face .cap{font-family:var(--sans-en);letter-spacing:.08em;font-size:var(--fs-label);font-weight:700;color:#B8912E;}
+  .face h4{font-family:var(--mincho);font-size:var(--fs-lead);color:var(--green-dark);margin:7px 0 11px;}
+  .face p{font-family:var(--gothic);font-size:var(--fs-label);line-height:var(--lh-card);color:var(--mid);text-align:justify;}
+  /* 未来三本柱チップ */
+  .wchips{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+  .wchip{background:#fff;border:1px solid var(--border);border-radius:24px;padding:10px 20px;font-family:var(--gothic);font-size:var(--fs-label);color:var(--green-dark);}
+  .wchip b{color:var(--vn-red);}
+  /* NVIDIA/AIファクト帯 */
+  .aifact{background:var(--green-dark);color:#fff;border-radius:8px;padding:26px 32px;margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;}
+  .aifact .n{font-family:var(--mincho);font-size:var(--fs-stat);font-weight:800;line-height:.9;color:var(--gold);white-space:nowrap;}
+  .aifact .n small{display:block;font-family:var(--sans-en);font-size:var(--fs-label);letter-spacing:.1em;color:rgba(255,255,255,.7);margin-top:8px;font-weight:400;}
+  .aifact p{font-family:var(--gothic);font-size:var(--fs-bodysm);line-height:var(--lh-card);color:rgba(255,255,255,.9);text-align:justify;}
+  .aifact p b{color:var(--gold);}
+  /* 引用（語り部フレーズ） */
+  .pull{background:var(--cream);border-left:5px solid var(--gold);padding:26px 34px;margin-top:22px;}
+  .pull p{font-family:var(--mincho);font-size:var(--fs-lead);font-weight:700;color:var(--green-dark);line-height:1.7;}
+  .pull p+p{margin-top:12px;}
+  .pull em{font-style:normal;color:var(--vn-red);}
+  /* 末尾＝整理（大数字） */
+  .bigstat{display:flex;align-items:center;gap:40px;margin:6px 0 26px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.15);}
+  .bigstat .n{font-family:var(--mincho);font-weight:800;font-size:var(--fs-stat);line-height:.86;color:var(--gold);white-space:nowrap;}
+  .bigstat .n span{font-size:var(--fs-numlg);}
+  .bigstat .c{font-size:var(--fs-body);line-height:var(--lh-card);color:rgba(255,255,255,.92);}
+  .bigstat .c b{color:#fff;}
+</style>
+</head>
+<body>
+
+
+<!-- ① 表紙＝タイポグラフィ・ヒーロー（NVIDIA前面／画像は後日差替可） -->
+<div class="hero" style="min-height:940px;">
+  <div class="hero-img" style="background:
+      radial-gradient(1200px 640px at 80% 22%,rgba(0,168,107,.20),transparent 60%),
+      radial-gradient(900px 700px at 8% 92%,rgba(245,196,0,.10),transparent 62%),
+      linear-gradient(160deg,#04122a 0%,#04231a 54%,#00160f 100%);"></div>
+  <div class="hero-grad" style="background:linear-gradient(to bottom,rgba(2,10,20,.10) 0%,rgba(2,10,20,0) 34%,rgba(1,14,10,.28) 74%,rgba(1,12,8,.72) 100%);"></div>
+  <div class="hero-nav">
+    <div class="hero-brand">CAPITAL QUEST CORPORATION<br><b>投資調査部 ｜ Vietnam Weekly</b></div>
+    <div class="hero-date num">VOL.05 ― 2026.7.27–7.31週<br>8月3日（月）発行</div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-quest">WEEKLY QUEST ⑤ ― 今週の企業クエスト</div>
+    <div class="hero-title">NVIDIAと組む<span class="sub">ベトナム最大のIT ― FPT</span></div>
+    <div class="hero-lead" style="max-width:880px;">食品会社として登記された会社が、いま<strong>NVIDIA</strong>のスーパーチップを回す。<br>ベトナム最大のIT企業、FPT。その頭脳の最大の顧客は——日本だ。</div>
+  </div>
+</div>
+
+
+<!-- ② 背骨＝変身タイムライン「食品会社が、NVIDIAと組むまで」 -->
+<section>
+  <div class="eyebrow">Weekly Quest ⑤ ｜ FPT</div>
+  <div class="s-title">食品会社が、NVIDIAと組むまで</div>
+  <div class="lead jp" style="max-width:940px;">FPTの設立時の正式名称は、<strong>「食品加工技術会社（Food Processing Technology Company）」</strong>。1988年、旧ソ連帰りの数学者たちが、社名に"製品名"を入れる登記の慣習に従い、あえて<strong>食品会社として登記</strong>したところから始まった。そこからソ連科学アカデミーへのPC納入、ベトナム航空の予約システム、ISP、企業内大学を経て、いま——<strong>NVIDIAのスーパーチップを回すAIファクトリー</strong>へ。ベトナム最大のIT企業の、38年の変身である。</div>
+  <div class="tl">
+    <div class="tlstep"><div class="tm">1988</div><div class="ic">🍜</div><div class="br">食品加工技術会社</div><div class="tx">科学者13人。社名の「F」は<br>もともとFood（食品）だった</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">1990</div><div class="ic">💻</div><div class="br">ITへ転向</div><div class="tx">ソ連科学アカデミーへの<br>PC納入契約が転機</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">1990末</div><div class="ic">✈️</div><div class="br">初の商用ソフト</div><div class="tx">ベトナム航空の<br>予約・発券システム</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">1998</div><div class="ic">🌐</div><div class="br">ネットの一角</div><div class="tx">ベトナム初期4社の<br>ISPの一つに</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">2006</div><div class="ic">🎓</div><div class="br">上場・大学</div><div class="tx">HOSE上場、認可第1号の<br>企業内大学FPT大学を開学</div></div>
+    <div class="tlar">▶</div>
+    <div class="tlstep"><div class="tm">2026</div><div class="ic">🤖</div><div class="br">NVIDIA／AI・半導体</div><div class="tx">$2億のAIファクトリー、<br>半導体テスト工場へ</div></div>
+  </div>
+  <div class="tlclose">「食品会社」として登記された会社が、いま<em>NVIDIAと組む。</em></div>
+  <div class="phband">
+    <figure class="phimg"><img src="weekly_assets/FPT-tower-3.webp" alt="FPTタワー（ハノイ本社）"><figcaption>FPTタワー（ハノイ本社）。出所：FPT公式より報道・解説目的で引用。当社はFPTと無関係。</figcaption></figure>
+    <figure class="phimg"><img src="weekly_assets/cong_nghe_home.webp" alt="FPTのテクノロジー"><figcaption>テクノロジー事業（イメージ）。出所：FPT公式より引用。</figcaption></figure>
+    <figure class="phimg"><img src="weekly_assets/giao_duc_home.webp" alt="FPT大学・教育"><figcaption>FPT大学・教育事業（イメージ）。出所：FPT公式より引用。</figcaption></figure>
+  </div>
+  <div class="src">出所：社史・沿革＝FPT公式（fpt.com）ほか公開情報を当社が整理。社名の由来（Food Processing Technology）・各年の出来事は創業者インタビュー等の公開報道に基づく。写真はFPT公式サイトより報道・解説目的で引用したもので、当社はFPTと無関係。</div>
+</section>
+
+
+<!-- ③ 事業分解＝成長方程式（3セグメント＋未来三本柱） -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Structure ｜ FPTの稼ぎ方</div>
+  <div class="s-title">テクノロジー、通信、教育 ― そして三本柱</div>
+  <div class="lead jp" style="max-width:940px;">FPTの利益は三つの源から生まれる。稼ぎ頭は<strong>テクノロジー</strong>（海外ソフト開発＝FPT Software）、安定源は<strong>通信</strong>、伸びしろは<strong>教育</strong>。上期はテクノロジー部門だけで売上の約88%を占めた。そして次の柱に、<strong>AI・半導体・EV</strong>を掲げる。</div>
+  <div class="faces">
+    <div class="face">
+      <div class="cap">SEGMENT 1 ― 稼ぎ頭</div>
+      <h4>テクノロジー</h4>
+      <p>FPT Software・FPT IS・半導体。海外ソフト開発が中心で、<strong>最大市場は日本</strong>。上期の海外IT売上は+13.4%、新規受注は二桁成長を回復。グループ売上の6割超・利益の柱。</p>
+    </div>
+    <div class="face">
+      <div class="cap">SEGMENT 2 ― 安定源</div>
+      <h4>通信</h4>
+      <p>FPT Telecom（FOX）。1998年のISP参入に始まる回線事業で、景気に鈍感な安定収益。※2026年から全部連結→持分法に会計変更（前年比較は遡及修正ベース）。</p>
+    </div>
+    <div class="face">
+      <div class="cap">SEGMENT 3 ― 伸びしろ</div>
+      <h4>教育・投資</h4>
+      <p>FPT大学は認可第1号の企業内大学。半導体人材1万人・AI教育の普及を掲げ、成長の源泉である「人」を自前で育てる。上期PBTは二桁成長。</p>
+    </div>
+  </div>
+  <div class="wchips">
+    <div class="wchip">🤖 <b>AI</b>：NVIDIA AIファクトリー（稼働率90%超・黒字化）</div>
+    <div class="wchip">🔧 <b>半導体</b>：テスト・パッケージ工場、日本へ初商用チップ</div>
+    <div class="wchip">🚗 <b>EV</b>：次世代の投資領域</div>
+  </div>
+  <div class="aifact">
+    <div class="n">$2<span style="font-size:var(--fs-numlg)">億</span><small>NVIDIA AI FACTORY 投資</small></div>
+    <div>
+      <p>ベトナムと日本の2つのAIファクトリーは稼働1年超で<b>稼働率90%超</b>、2026年Q2に<b>黒字化</b>。FPTは<b>NVIDIA</b>と組み、"数千のスーパーチップ"を回す。AI・データ分析の売上は2025年に1億ドル規模へ。ジェンスン・フアンは「ベトナムはNVIDIAの第二の故郷」と語る。ただし全社売上に占めるAIはなお数%で、<b>期待先行の側面</b>には留意。</p>
+    </div>
+  </div>
+  <div class="src">出所：セグメント構成・上期業績＝FPT公式開示（2026/7/16）。AIファクトリー・NVIDIA提携（$2億投資・稼働率・黒字化・データセット公開）＝FPT公式／NVIDIA公式（2026）。会計変更（FPT Telecom持分法化）に伴い前年比較は遡及修正ベース。数値は概算・as-of時点。</div>
+</section>
+
+
+<!-- ④ 創業者＝東欧組・第4話（縦組み・大写真） -->
+<section>
+  <div class="eyebrow">Founders ｜ 東欧組・第4話</div>
+  <div class="s-title">牛が草を食む滑走路で、涙した男</div>
+  <figure class="phimg" style="margin:0 0 26px;"><img src="weekly_assets/Truong-Gia-Binh-22072022.webp" alt="チュオン・ザ・ビン（FPT会長・創業者）" style="height:520px;object-fit:cover;object-position:center 28%;"><figcaption>チュオン・ザ・ビン（FPT会長・共同創業者）。出所：FPT公式より報道・解説目的で引用。当社はFPTと無関係。</figcaption></figure>
+  <div style="background:var(--cream);border:1px solid var(--border);border-left:4px solid var(--gold);padding:30px 40px;">
+    <div class="body jp">
+      <p style="margin:0 0 15px;">創業者<strong>チュオン・ザ・ビン</strong>は、モスクワ大学で数学の博士号を取り、1985年、29歳で12年ぶりに帰国した。家具・圧力鍋・アイロンを抱えての帰国。ノイバイ空港の広い滑走路で牛がのんびり草を食んでいるのを見て、静かに涙を流した——と本人は語る。ビングループのヴオン、ソビコのタオ、マサンのクアンと同じ、旧ソ連で学んだ<strong>「東欧組」</strong>の一人だ。</p>
+      <p style="margin:0 0 15px;">当時のインフレは三桁。月給は5ドル程度で、一週間分の食費にしかならない。友人から<strong>「ビン、助けてくれ。妻と子ども二人を養う金がない」</strong>と言われたことが、起業の直接の引き金だった。資本も資産も現金もなく、あったのは<strong>13人の若い科学者</strong>だけ。</p>
+      <p style="margin:0;">その会社を、彼らは<strong>食品会社として登記</strong>した。科学院長に「ハイテクをやりたい」と相談すると、「食品加工技術こそ最高のハイテクだ」と返された——そんな逸話とともに。ドイモイ直後の窮乏から、ベトナム最大のIT企業は生まれた。</p>
+    </div>
+  </div>
+  <div class="src">出所：略歴・逸話＝創業者インタビュー等の公開報道（VnExpress・Vietnamnet等）を当社が整理。「東欧組」＝当社の分類（ヴオン＝ウクライナ、タオ＝モスクワ、クアン＝ロシア/ベラルーシ、ビン＝モスクワ）。写真はFPT公式より引用。</div>
+</section>
+
+
+<!-- ⑤ 日本の物語＝なぜインドでなく、日本か -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Japan ｜ 最大の顧客</div>
+  <div class="s-title">なぜインドではなく、日本だったのか</div>
+  <div class="lead jp" style="max-width:940px;">FPTは1999年にバンガロール（インド）、2000年にシリコンバレー（米国）へ拠点を出したが、いずれも躓いた。初期顧客からの売上は数千ドル規模。転機は、最も参入が難しいとされた<strong>日本</strong>だった。2005年、<strong>大阪でわずか17人</strong>から始めた——ベトナム企業として初めて日本に法人を構えたIT企業である。</div>
+  <div class="body jp" style="max-width:940px;">いま日本は、FPT最大の海外市場だ。2024年の日本売上は<strong>5億ドルを突破</strong>、円安を追い風に<strong>円ベースでは+36.3%</strong>。東京・名古屋・福岡・沖縄など17拠点、日本市場向けにグローバルで1.5万人が従事し、経団連にも加盟する。2027年に<strong>10億ドル・日本IT企業トップ15入り</strong>を掲げる。日系企業のDX——その裏に、ハノイのコードがある。<strong>投資より先に、人と言語で繋がる</strong>。ベトナム国家基準のベトナム語能力検定が国外で初めて実施されたのも、FPT日本1号店と同じ<strong>大阪</strong>だった。</div>
+  <div class="pull">
+    <p>「海外売上の主戦場は、<em>日本</em>。」</p>
+    <p>「日系のDX。その裏に、<em>ハノイのコード</em>がある。」</p>
+  </div>
+  <div class="src">出所：FPT Japan沿革・日本売上（$5億突破・円ベース+36.3%・17拠点・2027年$10億目標）＝FPT公式／現地報道。インド・シリコンバレーの初期躓きは創業者・自社の公開回顧に基づく。ベトナム語能力検定の国外初開催（大阪）は在大阪ベトナム総領事館の公表。</div>
+</section>
+
+
+<!-- ⑥ 数字で見るFPT＝上場3社＋FTSE -->
+<section>
+  <div class="eyebrow">By the Numbers ｜ FPTグループの上場3社</div>
+  <div class="s-title">数字で見るFPT</div>
+  <div class="mwrap"><table class="mtable">
+    <tr><th>銘柄</th><th>事業</th><th>市場</th><th style="text-align:right">時価総額（円換算）</th><th style="text-align:right">PER</th><th style="text-align:right">PBR</th></tr>
+    <tr><td><strong>FPT</strong>／FPTコーポレーション</td><td>IT本体（テク・通信・教育）</td><td>HOSE</td><td class="num r hl-a">約6,700億円</td><td class="num r">11.1x</td><td class="num r">2.88x</td></tr>
+    <tr><td><strong>FRT</strong>／FPTリテール</td><td>小売（FPT Shop・Long Châu薬局）</td><td>HOSE</td><td class="num r">約1,200億円</td><td class="num r">21.1x</td><td class="num r">4.32x</td></tr>
+    <tr><td><strong>FTS</strong>／FPT証券</td><td>証券</td><td>HOSE</td><td class="num r">約510億円</td><td class="num r">19.5x</td><td class="num r">1.86x</td></tr>
+  </table></div>
+  <div class="body jp" style="max-width:940px;margin-top:22px;">本体FPTの<strong>PER11倍・PBR2.9倍・ROE約26%</strong>は、インド大手（TCS・Infosys＝PER14〜16倍）並みかやや割安の水準まで調整した。加えて、<strong>2026年9月21日に発効するFTSE新興国指数</strong>へ、FPTは組入れ32銘柄の一角として入る。ただしmid-cap扱いで、パッシブ流入はSSI推計で全組入れ完了ベース<strong>約9,000万ドル</strong>と中位。外国人保有に空きがあるぶん、"ルームが空いている"ことがむしろ流入を受け止めやすくする。</div>
+  <div class="src">出所：時価総額・倍率＝VNDirect（2026/7/27終値・PER/PBRは実績TTM）。円換算は1USD≒163.7円・26,257VND（1兆VND≒62.3億円／1円≒160VND）。ROEはPBR÷PERの概算。FTSE＝FTSE Russell公式・SSI等の推計（8/21に最終銘柄リスト・ウェイト確定予定）。時価総額・倍率はas-of時点で変動する。</div>
+</section>
+
+
+<!-- ⑦ 末尾＝整理「優等生は、なぜ売られるのか」 -->
+<section class="conc">
+  <div class="eyebrow">The Question ｜ 整理</div>
+  <div class="s-title" style="color:#fff;">優等生は、なぜ売られるのか</div>
+  <div class="bigstat">
+    <div class="n">27.6<span>%</span></div>
+    <div class="c jp">FPTの外国人保有比率（2026年7月中旬）。長年フォーリンルームが満杯だったこの"優等生"は、<b>2023年末の約49%から半分近くまで低下</b>した。業績は堅調（上期・税引前利益+18.1%）なのに、株価は年初来ほぼ半減——<b>業績と株価が逆行する「外国人売り主導の需給悪化」</b>局面にある。</div>
+  </div>
+  <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;">下落の主因は、市場全体ではなくFPT固有の需給だ。VN-Indexは最高値圏で推移する一方、外国人はFPTを取引所最大級の規模で売り越し続けた。皮肉なことに、株価急落で<strong style="color:#fff">個人株主は殺到</strong>——株主数は2024年末の約5.8万人から2025年末に<strong style="color:#fff">約12.7万人へ倍増</strong>し、株主総会の出席者は過去最多となった。会長は総会で流行歌『<strong style="color:#fff">再生（Tái sinh）</strong>』に触れ、「FPTは本当に再生している」と語った。その約3か月後、株価は高値からほぼ半値になった。<strong style="color:#fff">経営者の言葉と、株価は、別物である。</strong></div>
+  <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;margin-top:18px;">転換の芽はある。バリュエーションは歴史的な割安圏で、ROEは印大手を上回る。<strong style="color:#fff">9月21日のFTSE発効</strong>と外国人アクティブ資金の回帰が最初のシグナル候補だ。ただし第1トランシェは小さく、「イベントで材料出尽くし」のリスクも残る。<strong style="color:#fff">優等生が売られている今こそ、拾うのか、見送るのか</strong>——問いは、そこにある。</div>
+  <div class="src" style="color:rgba(255,255,255,.5);">出所：外国人保有比率（49%→約27.6%）・株主数（5.8万→12.7万人）・業績（上期PBT+18.1%）＝FPT公式開示・The Investor等の現地報道。株価は年初来ほぼ半減（2026/7下旬、ピーク比）。『再生（Tái sinh）』は流行歌の曲名（歌詞は引用しない）。将来見通しは予測であり実績ではない。</div>
+</section>
+
+
+<!-- 特集→相場面 パート・ディバイダ -->
+<div style="padding:44px 64px 40px;">
+  <div style="display:flex;align-items:center;gap:26px;max-width:820px;margin:0 auto;">
+    <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(245,196,0,.65));"></div>
+    <div style="flex:0 0 auto;width:9px;height:9px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 0 5px rgba(245,196,0,.14);"></div>
+    <div style="font-family:var(--sans-en);letter-spacing:.34em;font-size:var(--fs-lead);color:#B8912E;white-space:nowrap;">PART II ― MARKET</div>
+    <div style="flex:0 0 auto;width:9px;height:9px;transform:rotate(45deg);background:var(--gold);box-shadow:0 0 0 5px rgba(245,196,0,.14);"></div>
+    <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,rgba(245,196,0,.65));"></div>
+  </div>
+</div>
+
+
+<!-- ③〜⑧ 相場面（プレースホルダ・8/3発刊時に差し込み） -->
+<section class="conc" style="text-align:center;">
+  <div class="eyebrow" style="justify-content:center;">Coming ｜ 相場面</div>
+  <div class="s-title" style="color:#fff;">先週（7/27–7/31）の相場面は、8/3（月）発刊時に差し込みます</div>
+  <div class="body jp" style="color:rgba(255,255,255,.82);max-width:820px;margin:0 auto;">Market Summary／Sector／Top Gainers &amp; Losers／Spotlight／News Topics／Looking Ahead を、対象週の<strong style="color:#fff">VNDirect実測データ</strong>で組んで挿入します。特集面（上記）は先行して確定。</div>
+</section>
+
+
+<!-- 免責 -->
+<div class="footer">
+  <div class="warn jp">
+    <b>⚠️ ご注意 ― 試作品（プロトタイプ）・社内限定</b><br>
+    本紙は<b>Claude（生成AI）が自動作成する試みの段階の試作品</b>です。特集面の時価総額・PER等は2026/7/27終値ベース、業績はFPTの公式開示（2026年上期等）。相場・ニュース各面は対象週（2026/7/27–7/31）の実績。市場ウェイト・保有比率は概算・as-of時点のもの。数値・固有名詞に誤りを含む可能性があり、予告なく変更・停止・終了する場合があります。<br>
+    <span class="red">本紙は社内・グループ内限定です。顧客・社外への転送／配布は固くお断りします。</span> 投資勧誘・投資助言ではなく、投資判断はご自身の責任でお願いいたします。
+  </div>
+  <div class="disc jp">本紙は Capital Quest Corporation 投資調査部が作成する非公式レポートであり、<b>記載する各社とは一切関係がありません</b>。表紙は本紙が作成したタイポグラフィによるデザインで、実在のロゴ・写真は含みません。本文中のFPT関連写真（FPTタワー・事業・創業者等）は、FPT公式サイトより報道・解説目的で引用したもので、著作権・商標・名称はそれぞれの権利者に帰属します。純資産・株価・保有比率は実時間で変動し、記載は作成時点の値です。時価総額・倍率は単純時価総額ベースの概算で、公式指数（浮動株加重）とは差があります。将来見通しは予測であり実績ではありません。</div>
+  <div class="brand">CAPITAL QUEST CORPORATION ｜ 投資調査部 ｜ Vietnam Weekly VOL.05 ｜ 2026.7.27–7.31週 ／ 2026.8.3発行</div>
+</div>
+
+</body>
+</html>
