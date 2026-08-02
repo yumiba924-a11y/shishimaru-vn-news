@@ -104,6 +104,33 @@
   .bigstat .n span{font-size:var(--fs-numlg);}
   .bigstat .c{font-size:var(--fs-body);line-height:var(--lh-card);color:rgba(255,255,255,.92);}
   .bigstat .c b{color:#fff;}
+  /* 相場面：週間KPI・日次バー・セクター */
+  .sumstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 24px;}
+  .sumstrip .wk-kpi{margin-bottom:0;height:100%;display:flex;flex-direction:column;}
+  .sumstrip .wk-kpi .l{line-height:1.45;}
+  .sumstrip .wk-kpi .lsub{display:block;font-size:var(--fs-label);opacity:.8;margin-top:1px;}
+  .sumstrip .wk-kpi .v{margin-top:auto;padding-top:10px;}
+  .wk-kpi{background:var(--cream);border-left:3px solid var(--green);padding:24px 26px;margin-bottom:18px;}
+  .wk-kpi .l{font-family:var(--sans-en);font-size:var(--fs-label);letter-spacing:.08em;color:var(--light);}
+  .wk-kpi .v{font-family:var(--mincho);font-size:var(--fs-numlg);font-weight:800;line-height:1;margin-top:6px;}
+  .wk-kpi .v.pos{color:var(--up);} .wk-kpi .v.neg{color:var(--down);}
+  .ddiv{display:flex;gap:14px;position:relative;margin-top:2px;}
+  .ddiv .zero{position:absolute;left:0;right:0;top:100px;border-top:1px dashed #bbb;z-index:0;}
+  .ddiv .dcol{flex:1;display:flex;flex-direction:column;z-index:1;}
+  .ddiv .barea{height:200px;display:flex;flex-direction:column;}
+  .ddiv .htop{height:100px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;}
+  .ddiv .hbot{height:100px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;}
+  .ddiv .dv{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-bottom:5px;}
+  .ddiv .dvb{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-top:5px;}
+  .ddiv .bar{width:100%;min-height:3px;border-radius:3px 3px 0 0;background:var(--up);}
+  .ddiv .barb{width:100%;min-height:3px;border-radius:0 0 3px 3px;background:var(--down);}
+  .ddiv .lab{text-align:center;font-family:var(--sans-en);font-size:var(--fs-label);color:var(--light);margin-top:8px;}
+  .secrow{display:flex;align-items:center;gap:14px;padding:9px 0;}
+  .secname{width:172px;font-size:var(--fs-body);white-space:nowrap;}
+  .secbar{flex:1;height:12px;background:var(--cream-dark);border-radius:2px;position:relative;overflow:hidden;}
+  .secbar i{position:absolute;top:0;bottom:0;left:50%;}
+  .secval{width:82px;text-align:right;font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);}
+  .callout{background:var(--cream);border-left:5px solid var(--gold);padding:22px 30px;margin-top:18px;}
 </style>
 </head>
 <body>
@@ -282,11 +309,132 @@
 </div>
 
 
-<!-- ③〜⑧ 相場面（プレースホルダ・8/3発刊時に差し込み） -->
-<section class="conc" style="text-align:center;">
-  <div class="eyebrow" style="justify-content:center;">Coming ｜ 相場面</div>
-  <div class="s-title" style="color:#fff;">先週（7/27–7/31）の相場面は、8/3（月）発刊時に差し込みます</div>
-  <div class="body jp" style="color:rgba(255,255,255,.82);max-width:820px;margin:0 auto;">Market Summary／Sector／Top Gainers &amp; Losers／Spotlight／News Topics／Looking Ahead を、対象週の<strong style="color:#fff">VNDirect実測データ</strong>で組んで挿入します。特集面（上記）は先行して確定。</div>
+<!-- 相場③ Market Summary -->
+<section>
+  <div class="eyebrow">Market Summary ｜ 先週の相場（7/27–7/31）</div>
+  <div class="s-title">反発、1,700回復 ― 原油鎮静とVin決算</div>
+  <div class="lead jp" style="max-width:940px;">VN-Indexは週間<strong>+2.95%（+49.67pt）</strong>と反発し、<strong>4週続いた下落に歯止め</strong>。金曜終値は<strong>1,735.78</strong>と1,700の大台を回復した。先週の暴落を招いた二つの外的ショックのうち<strong>原油が急反落</strong>（米イラン停戦観測でBrentは$100超→$88、週間−8.7%）。この鎮静に、<strong>Vinの好決算</strong>と底値からの買いが重なった。</div>
+  <div class="sumstrip">
+    <div class="wk-kpi"><div class="l">VN-Index 週間騰落</div><div class="lsub">7/24→7/31</div><div class="v pos num">+2.95%</div></div>
+    <div class="wk-kpi"><div class="l">週末終値（7/31）</div><div class="lsub">1,700の大台を回復</div><div class="v num">1,735.78</div></div>
+    <div class="wk-kpi"><div class="l">HOSE 値上がり／値下がり</div><div class="lsub">7/31・変わらず49</div><div class="v num" style="font-size:var(--fs-numlg)"><span style="color:var(--up)">126</span><span style="color:var(--light)">／</span>200</div></div>
+  </div>
+  <div class="ddiv" style="margin-top:8px;">
+    <div class="zero"></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:43px"></div><div class="dvb" style="color:var(--down)">−1.01</div></div></div><div class="lab">月<br>7/27</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"><div class="dv" style="color:var(--up)">+0.70</div><div class="bar" style="height:30px"></div></div><div class="hbot"></div></div><div class="lab">火<br>7/28</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"><div class="dv" style="color:var(--up)">+1.43</div><div class="bar" style="height:61px"></div></div><div class="hbot"></div></div><div class="lab">水<br>7/29</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"><div class="dv" style="color:var(--up)">+2.35</div><div class="bar" style="height:100px"></div></div><div class="hbot"></div></div><div class="lab">木<br>7/30</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:22px"></div><div class="dvb" style="color:var(--down)">−0.51</div></div></div><div class="lab">金<br>7/31</div></div>
+  </div>
+  <div class="body jp" style="margin-top:26px;">月曜に−1.01%で安値を試したあと、火→木で切り返した（<strong>木+2.35%</strong>）。背景は三つ。①<strong>原油の急反落</strong>：米イラン停戦観測でBrentが$100超から$88へ（週間−8.7%）、先週の外的ショックが後退。②<strong>Vin Q2決算が牽引</strong>：ビングループの純利益が不動産売却とEV成長で<strong>6.5倍</strong>、Vincom Retailも+30%と伝わり、<strong>VHM+13.9%・VRE+13.2%</strong>が急騰した。③国有銀の反発（<strong>VCB+9.6%</strong>）と、<strong>銀行間金利が1年ぶりの低水準</strong>＝流動性の緩み。ただし外国人はVHMを<strong>−3,445十億ドン</strong>売り越しており（株高は国内買いが主導）、方向感はなお定まらない。米Section 301関税（12.5%・発効済）は、依然として残る重しである。</div>
+  <div class="src">出所：VNDirect実測（指数・日次騰落・ブレッドス＝interpreted.json、週次騰落＝7/24→7/31終値）。外国人フロー＝foreigns API（対象週5日netVal合計・十億ドン）。原油＝Brent（米イラン停戦観測で週間−8.7%・$88近辺、7/31時点）。Vin/銀行決算・銀行間金利は現地報道（The Investor等）。円換算1兆ドン≒60.5億円（2026/7/31時点）。</div>
+</section>
+
+<!-- 相場④ Sector -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Sector ｜ 何が指数を動かしたか</div>
+  <div class="s-title">反発の主役は、先週の下げ主犯</div>
+  <div class="body jp" style="max-width:940px;">VN-Indexの+49.67ptを構造で見ると、<strong>不動産＝ビン系（+27.8pt）と銀行（+19.6pt）で+47pt</strong>。先週この2セクターが下げの約7割を作り、今週は反発のほぼ全てを作った——<strong>完全な裏返し</strong>である。マイナスは運輸（VJC）のみだった。</div>
+  <div style="margin-top:18px;">
+    <div class="secrow"><div class="secname">運輸（VJC）</div><div class="secbar"><i style="left:auto;right:50%;width:0.9%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−0.50</div></div>
+    <div class="secrow"><div class="secname">証券（SSI）</div><div class="secbar"><i style="left:50%;width:1.1%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+0.63</div></div>
+    <div class="secrow"><div class="secname">小売（MWG）</div><div class="secbar"><i style="left:50%;width:2.2%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+1.25</div></div>
+    <div class="secrow"><div class="secname">IT（FPT）</div><div class="secbar"><i style="left:50%;width:3.7%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+2.12</div></div>
+    <div class="secrow"><div class="secname">消費財（VNM他）</div><div class="secbar"><i style="left:50%;width:3.7%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+2.13</div></div>
+    <div class="secrow"><div class="secname">観光（VPL）</div><div class="secbar"><i style="left:50%;width:4.7%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+2.71</div></div>
+    <div class="secrow"><div class="secname">エネルギー（GAS他）</div><div class="secbar"><i style="left:50%;width:4.8%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+2.77</div></div>
+    <div class="secrow"><div class="secname">素材（HPG他）</div><div class="secbar"><i style="left:50%;width:6.4%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+3.72</div></div>
+    <div class="secrow"><div class="secname">銀行</div><div class="secbar"><i style="left:50%;width:33.8%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+19.55</div></div>
+    <div class="secrow"><div class="secname">不動産（ビン系）</div><div class="secbar"><i style="left:50%;width:48%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+27.75</div></div>
+  </div>
+  <div class="src">出所：当社試算＝VN30構成銘柄の週次寄与度（TR%×単純時価総額ウェイト×7/24終値）をセクター別に合計。単位＝指数ポイント。VN-Indexの+49.67ptに対しVN30合計は+62.12pt（残差はVHM等の単純時価総額ウェイトが浮動株比で過大なため。正式指数＝浮動株加重とは差がある）。</div>
+</section>
+
+<!-- 相場⑤ Top Gainers & Losers -->
+<section>
+  <div class="eyebrow">Top Gainers &amp; Losers ｜ VN30・週次騰落</div>
+  <div class="s-title">Vinと国有銀が急騰、民間銀は逆行安</div>
+  <div class="mwrap"><table class="mtable gl">
+    <tr><th>▲ 上昇 上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th><th style="width:40px"></th><th>▼ 下落 上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th></tr>
+    <tr><td><strong>VHM</strong></td><td>不動産</td><td class="num hl-a">+13.92%</td><td></td><td><strong>STB</strong></td><td>銀行</td><td class="num hl-b">−2.99%</td></tr>
+    <tr><td><strong>VRE</strong></td><td>不動産</td><td class="num hl-a">+13.24%</td><td></td><td><strong>ACB</strong></td><td>銀行</td><td class="num hl-b">−2.67%</td></tr>
+    <tr><td><strong>VCB</strong></td><td>銀行</td><td class="num hl-a">+9.61%</td><td></td><td><strong>SHB</strong></td><td>銀行</td><td class="num hl-b">−2.54%</td></tr>
+    <tr><td><strong>VPL</strong></td><td>観光</td><td class="num hl-a">+6.85%</td><td></td><td><strong>HDB</strong></td><td>銀行</td><td class="num hl-b">−2.51%</td></tr>
+    <tr><td><strong>FPT</strong></td><td>IT</td><td class="num hl-a">+6.68%</td><td></td><td><strong>VJC</strong></td><td>運輸</td><td class="num hl-b">−1.88%</td></tr>
+  </table></div>
+  <div class="callout">
+    <div class="body jp" style="font-size:var(--fs-bodysm);"><strong>ANALYST NOTE.</strong> 反発を主導したのはVin系（VHM・VRE）と国有銀（VCB・CTG・BID）。一方で<strong>民間銀（STB・ACB・HDB）は逆行安</strong>で、資金は国有銀へローテーションした。下落上位を民間銀が独占する構図は、先週まで（民間銀が逆行高）とちょうど逆。<strong>本紙が特集したFPTも+6.68%と反発上位</strong>に顔を出した。</div>
+  </div>
+  <div class="src">出所：VNDirect（週次騰落＝7/24→7/31のadClose・調整後/配当込）。セクターは当社分類（ICB準拠）。</div>
+</section>
+
+<!-- 相場⑥ Spotlight -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Spotlight ｜ 今週の主役2銘柄</div>
+  <div class="s-title">決算で跳ねたVHM、売られ止んだFPT</div>
+  <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--up);border-radius:6px;padding:24px 28px;margin-top:16px;">
+    <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--up);font-weight:700;">EARNINGS POP ― VHM（ビンホームズ）</div>
+    <div class="body jp" style="margin-top:8px;">週次<strong style="color:var(--up)">+13.92%</strong>と大型株で最も上昇し、寄与度は<strong>+23.53ptとVN30最大の押し上げ役</strong>。親会社ビングループのQ2純利益6.5倍（不動産売却＋EV）を映した。ただし<strong>外国人はVHMを−3,445十億ドン売り越し</strong>——株高は国内資金が主導した。時価総額 約3兆6,800億円（608兆ドン）。<strong>WHY NOW?</strong> 暴落で最も売られたVin系が、好決算を口実に真っ先に買い戻された。</div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--green);border-radius:6px;padding:24px 28px;margin-top:16px;">
+    <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--green);font-weight:700;">COUNTER-SIGNAL ― FPT（今週の特集銘柄）</div>
+    <div class="body jp" style="margin-top:8px;">週次<strong style="color:var(--up)">+6.68%</strong>と反発上位。注目は需給で、<strong>外国人が+308十億ドンの買い越し</strong>に転じた。本紙特集で解いた「<strong>優等生が、なぜ売られるのか</strong>」——年初来の外国人売りに、初めてのカウンターが出た一週間だった。時価総額 約6,900億円（114兆ドン）。<strong>WHY NOW?</strong> 特集が指摘した転換シグナル（外国人アクティブ資金の回帰）の、最初の芽。</div>
+  </div>
+  <div class="src">出所：騰落・時価総額＝VNDirect（7/31終値・調整後）。外国人フロー＝foreigns API（対象週5日合計）。Vin決算は現地報道（The Investor・7/31）。円換算1兆ドン≒60.5億円（2026/7/31）。</div>
+</section>
+
+<!-- 相場⑦ News Topics -->
+<section>
+  <div class="eyebrow">News Topics ｜ 先週のトピックス</div>
+  <div class="s-title">停戦、好決算、そして反発</div>
+  <div style="display:flex;flex-direction:column;gap:16px;margin-top:18px;">
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:#B8912E;font-weight:700;">OIL ― 原油（ショック後退）</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>Brent原油が急反落、$100超から$88近辺へ（週間−8.7%）。</strong>米イランの停戦観測（イランが攻撃停止を表明と報道）で、先週の暴落を招いた地政学リスクが後退。原油高→インフレ→新興国資金流出、という先週の連鎖が緩んだ。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--green);font-weight:700;">EARNINGS ― Q2決算（反発の燃料）</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>ビングループのQ2純利益が6.5倍</strong>（不動産売却＋EV成長）と伝わり、Vin系が急騰＝反発の主役に。<strong>マサンもQ2で過去最高益、通期利益目標を最大+46%引き上げ</strong>（本紙VOL.04の"答え合わせ"）。テクコムバンク・BSR（ズンクワット製油）も過去最高益と、決算は総じて強い。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--vn-red);font-weight:700;">RATES &amp; FLOW ― 金利・資金</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>銀行間翌日物金利が1年ぶりの低水準</strong>に低下し、流動性が緩んだ。外国人フローには転換の芽（ドラゴンキャピタルのETFに資金流入、FPT等を買い越し）も見えたが、<strong>7/31は再び純売り越し</strong>と、方向感はまだ定まらない。</div>
+    </div>
+  </div>
+  <div style="font-family:var(--sans-en);letter-spacing:.14em;font-size:var(--fs-label);color:var(--light);margin:26px 0 12px;">COLOR ｜ 今週のこぼれ話</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">🔄 VHMの逆説</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">週間+13.9%で最も上げた銘柄を、外国人は最も売った（−3,445十億ドン）。株価と外国人フローが真逆に動く＝<strong>国内資金の底力</strong>を映す一枚。</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">🍜 マサン、目標+46%</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">本紙VOL.04で解いたマサンが、Q2過去最高益で<strong>通期利益目標を最大+46%上方修正</strong>。「見えない帝国」の稼ぐ力が数字で出た。</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">💻 ハイテク株、反転の芽</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">「AIは稼ぎ始めたのに、なぜハイテク株は下がるのか」と問われ続けたFPTが、今週は<strong>+6.7%・外国人買い越し</strong>。特集の"優等生"に光。</div>
+    </div>
+  </div>
+  <div class="src">出所：現地報道（VnExpress・The Investor・CafeF・Vietstock等、2026/7/27–7/31）を当社が要約。原油＝Brent（米イラン停戦観測）。決算・金利・フローは現地報道ベース。市場数値は本紙のVNDirect実測と整合。</div>
+</section>
+
+<!-- 相場⑧ Looking Ahead -->
+<section class="conc">
+  <div class="eyebrow">Looking Ahead ｜ 注目材料</div>
+  <div class="s-title" style="color:#fff;">反発の持続性と、外国人の帰趨</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:8px;">
+    <div>
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--gold);font-weight:700;margin-bottom:10px;">今週（8/3–8/7）</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);color:rgba(255,255,255,.9);line-height:var(--lh-card);">・<strong style="color:#fff">1,700の定着か、戻り売りか</strong>：反発の持続性を試す。<br>・<strong style="color:#fff">外国人フローの方向</strong>：買い越しの芽（FPT等）が続くか、7/31の売りが尾を引くか。<br>・<strong style="color:#fff">Q2決算の最終盤</strong>と、原油・停戦の行方。</div>
+    </div>
+    <div>
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--gold);font-weight:700;margin-bottom:10px;">今後・注目日程</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);color:rgba(255,255,255,.9);line-height:var(--lh-card);">・<strong style="color:#fff">2026/8/21</strong> FTSE昇格の構成リスト公表（あと約3週・FPTも組入れ32銘柄の一角）<br>・<strong style="color:#fff">2026/9/21</strong> FTSE新興国指数への発効（あと約7週）<br>・米12.5%関税（発効済・恒久）の業績波及</div>
+    </div>
+  </div>
+  <div class="note" style="font-size:var(--fs-label);color:rgba(255,255,255,.55);margin-top:16px;line-height:var(--lh-note);">注目日程は既知の公表スケジュール。距離感は発刊日（8/3）基準。FTSEは節目のみ扱い、毎号の主役化はしない。</div>
 </section>
 
 

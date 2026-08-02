@@ -15,6 +15,15 @@ window.SITE = {
   // ---- 発刊済みの号（新しい順） ----
   issues: [
     {
+      vol: 5,
+      week: "2026.7.27–7.31週",
+      published: "2026年8月3日（月）発行",
+      title: "NVIDIAと組む、ベトナム最大のIT ― FPT",
+      hero: "weekly_assets/FPT-tower-3.webp",
+      url: "weekly05.html",
+      summary: "食品会社として登記された会社が、いま世界のAIインフラを回す。日本を最大市場に育てたFPT——業績は堅調なのに株価は半減、外国人保有49%→27.6%。「優等生は、なぜ売られるのか」。"
+    },
+    {
       vol: 4,
       week: "2026.7.20–7.24週",
       published: "2026年7月27日（月）発行",
@@ -91,9 +100,9 @@ window.SITE = {
     { t:"SSB", n:"SeAバンク",           s:"銀行",       st:"done",    vol:2 },
     { t:"VJC", n:"ベトジェット",        s:"運輸",       st:"done",    vol:3 },
     { t:"MSN", n:"マサングループ",      s:"消費財",     st:"done",    vol:4 },
-    { t:"HPG", n:"ホアファット",        s:"素材",       st:"next",    vol:5 },
-    { t:"SSI", n:"SSI証券",             s:"証券",       st:"planned", vol:6 },
-    { t:"FPT", n:"FPT",                 s:"IT",         st:"planned", vol:7 },
+    { t:"FPT", n:"FPT",                 s:"IT",         st:"done",    vol:5 },
+    { t:"HPG", n:"ホアファット",        s:"素材",       st:"next",    vol:6 },
+    { t:"SSI", n:"SSI証券",             s:"証券",       st:"planned", vol:7 },
     { t:"GAS", n:"ペトロベトナムガス",  s:"エネルギー", st:"open" },
     { t:"BSR", n:"ビンソン石油精製",    s:"エネルギー", st:"open" },
     { t:"PLX", n:"ペトロリメックス",    s:"エネルギー", st:"open" },
@@ -139,15 +148,21 @@ window.SITE = {
       oneliner:"軍が営む通信帝国。銀行・物流・建設まで広がる国防省の経済圏。"
     },
     {
-      name:"FPT", status:"planned", vol:8, date:"8/24（月）予定",
+      name:"FPT", status:"done", vol:5, url:"weekly05.html",
+      img:"weekly_assets/FPT-tower-3.webp",
       tickers:["FPT","FRT","FTS"],
       founder:"チュオン・ザー・ビン", east:"モスクワ大学",
-      oneliner:"ベトナムのIT頭脳。外国人が売り続ける優等生の謎を解く。"
+      oneliner:"食品会社として登記され、いまNVIDIAと組む。日本を最大市場に育てた優等生が、なぜ外国人に売られるのか。"
     }
   ],
 
   // ---- 決算通信簿（verdict: null=検証待ち / "◯"/"△"/"✕"） ----
   scorecard: [
+    {
+      vol:5, made:"2026/8/3",
+      claim:"FPTの需給反転——外国人保有が49%（2023末）→約27.6%（2026/7）まで低下し、業績堅調(上期PBT+18.1%)でも株価は年初来ほぼ半減。9/21のFTSE発効と外国人アクティブ資金の回帰で、株価が業績に追いつくか。7/27–31週にFPTは+6.68%・外国人買い越し+308十億ドンと、最初のカウンターが出た",
+      test:"FPTの外国人フロー（買い越しの持続）とFTSE組入れ後の株価、およびQ3業績を確認", verdict:null
+    },
     {
       vol:4, made:"2026/7/27",
       claim:"マサンの「持株会社ディスカウント」——上場子会社MCH一社の時価総額（約1兆1,200億円）が親会社MSN（約5,900億円）を上回る逆転——は、MCHのHOSE移管や『見えない本体』（WinCommerce等）の再評価で解消に向かうか",
