@@ -1,6 +1,6 @@
 {
   "as_of": "2026-08-03",
-  "generated_at": "2026-08-03T12:21:29",
+  "generated_at": "2026-08-03T22:56:39",
   "data_age_days": 0,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
@@ -216,8 +216,8 @@
         "buy_val": 573.09,
         "sell_val": 48.81,
         "total_room": 834718489,
-        "current_room": 363289956,
-        "room_used_pct": 56.5
+        "current_room": 364477244,
+        "room_used_pct": 56.3
       },
       "shares": 1703507121,
       "mcap_t": 122.1,
@@ -239,8 +239,8 @@
         "buy_val": 109.73,
         "sell_val": 20.31,
         "total_room": 1871587283,
-        "current_room": 92448464,
-        "room_used_pct": 95.1
+        "current_room": 95988225,
+        "room_used_pct": 94.9
       },
       "shares": 8054999909,
       "mcap_t": 193.3,
@@ -262,8 +262,8 @@
         "buy_val": 85.23,
         "sell_val": 22.78,
         "total_room": 2503089220,
-        "current_room": 1752422133,
-        "room_used_pct": 30.0
+        "current_room": 1753774349,
+        "room_used_pct": 29.9
       },
       "shares": 2906280710,
       "mcap_t": 71.3,
@@ -285,7 +285,7 @@
         "buy_val": 22.71,
         "sell_val": 5.1,
         "total_room": 258775616,
-        "current_room": 76230205,
+        "current_room": 76414205,
         "room_used_pct": 70.5
       },
       "shares": 1270592235,
@@ -308,8 +308,8 @@
         "buy_val": 370.26,
         "sell_val": 86.9,
         "total_room": 4137052614,
-        "current_room": 2300854576,
-        "room_used_pct": 44.4
+        "current_room": 2305253488,
+        "room_used_pct": 44.3
       },
       "shares": 8442964520,
       "mcap_t": 190.4,
@@ -331,8 +331,8 @@
         "buy_val": 32.03,
         "sell_val": 3.41,
         "total_room": 1182345380,
-        "current_room": 1133238714,
-        "room_used_pct": 4.2
+        "current_room": 1133303228,
+        "room_used_pct": 4.1
       },
       "shares": 2412949756,
       "mcap_t": 171.8,
@@ -354,7 +354,7 @@
         "buy_val": 27.09,
         "sell_val": 29.56,
         "total_room": 723747294,
-        "current_room": 0,
+        "current_room": 9270,
         "room_used_pct": 100.0
       },
       "shares": 1468423529,
@@ -377,8 +377,8 @@
         "buy_val": 44.08,
         "sell_val": 11.46,
         "total_room": 1603260007,
-        "current_room": 1384937313,
-        "room_used_pct": 13.6
+        "current_room": 1386897223,
+        "room_used_pct": 13.5
       },
       "shares": 4884333454,
       "mcap_t": 58.1,
@@ -400,8 +400,8 @@
         "buy_val": 13.9,
         "sell_val": 85.43,
         "total_room": 1597139381,
-        "current_room": 101012472,
-        "room_used_pct": 93.7
+        "current_room": 106513712,
+        "room_used_pct": 93.3
       },
       "shares": 7086240414,
       "mcap_t": 212.2,
@@ -423,8 +423,8 @@
         "buy_val": 87.42,
         "sell_val": 8.39,
         "total_room": 2330083391,
-        "current_room": 422357351,
-        "room_used_pct": 81.9
+        "current_room": 423023101,
+        "room_used_pct": 81.8
       },
       "shares": 7766944637,
       "mcap_t": 247.0,
@@ -446,7 +446,7 @@
         "buy_val": 98.87,
         "sell_val": 12.47,
         "total_room": 1534951081,
-        "current_room": 1163379536,
+        "current_room": 1163688476,
         "room_used_pct": 24.2
       },
       "shares": 1445915457,
@@ -469,8 +469,8 @@
         "buy_val": 28.4,
         "sell_val": 26.53,
         "total_room": 1351424607,
-        "current_room": 273360785,
-        "room_used_pct": 79.8
+        "current_room": 275008964,
+        "room_used_pct": 79.7
       },
       "shares": 5005276323,
       "mcap_t": 130.1,
@@ -492,8 +492,8 @@
         "buy_val": 15.56,
         "sell_val": 28.27,
         "total_room": 1741326587,
-        "current_room": 329654740,
-        "room_used_pct": 81.1
+        "current_room": 333182264,
+        "room_used_pct": 80.9
       },
       "shares": 5804421957,
       "mcap_t": 130.9,
@@ -515,8 +515,8 @@
         "buy_val": 23.17,
         "sell_val": 2.35,
         "total_room": 1282562372,
-        "current_room": 529005638,
-        "room_used_pct": 58.8
+        "current_room": 529104378,
+        "room_used_pct": 58.7
       },
       "shares": 1282562372,
       "mcap_t": 57.5,
@@ -538,8 +538,8 @@
         "buy_val": 9.59,
         "sell_val": 66.22,
         "total_room": 2380177080,
-        "current_room": 528787324,
-        "room_used_pct": 77.8
+        "current_room": 530191474,
+        "room_used_pct": 77.7
       },
       "shares": 7933923601,
       "mcap_t": 202.3,
@@ -561,7 +561,7 @@
         "buy_val": 2.87,
         "sell_val": 3.05,
         "total_room": 520000000,
-        "current_room": 495444170,
+        "current_room": 495804820,
         "room_used_pct": 4.7
       },
       "shares": 4000000000,
@@ -584,7 +584,7 @@
         "buy_val": 157.18,
         "sell_val": 20.81,
         "total_room": 2506702528,
-        "current_room": 823753873,
+        "current_room": 824285572,
         "room_used_pct": 67.1
       },
       "shares": 8355675094,
@@ -607,8 +607,8 @@
         "buy_val": 10.14,
         "sell_val": 24.52,
         "total_room": 169859884,
-        "current_room": 51710715,
-        "room_used_pct": 69.6
+        "current_room": 52575415,
+        "room_used_pct": 69.0
       },
       "shares": 3404005710,
       "mcap_t": 50.5,
@@ -630,8 +630,8 @@
         "buy_val": 71.03,
         "sell_val": 4.39,
         "total_room": 149364105,
-        "current_room": 110207660,
-        "room_used_pct": 26.2
+        "current_room": 110361860,
+        "room_used_pct": 26.1
       },
       "shares": 2987282100,
       "mcap_t": 158.3,
@@ -653,8 +653,8 @@
         "buy_val": 14.58,
         "sell_val": 16.17,
         "total_room": 832214061,
-        "current_room": 218093532,
-        "room_used_pct": 73.8
+        "current_room": 219697037,
+        "room_used_pct": 73.6
       },
       "shares": 2774046873,
       "mcap_t": 39.9,
@@ -676,7 +676,7 @@
         "buy_val": 11.39,
         "sell_val": 2.81,
         "total_room": 919950684,
-        "current_room": 801480271,
+        "current_room": 801530191,
         "room_used_pct": 12.9
       },
       "shares": 1793300377,
@@ -699,8 +699,8 @@
         "buy_val": 36.84,
         "sell_val": 34.38,
         "total_room": 1141121020,
-        "current_room": 875012027,
-        "room_used_pct": 23.3
+        "current_room": 876196427,
+        "room_used_pct": 23.2
       },
       "shares": 2272318410,
       "mcap_t": 57.3,
@@ -722,8 +722,8 @@
         "buy_val": 7.86,
         "sell_val": 16.57,
         "total_room": 230727888,
-        "current_room": 183287187,
-        "room_used_pct": 20.6
+        "current_room": 183375687,
+        "room_used_pct": 20.5
       },
       "shares": 769094734,
       "mcap_t": 97.4,
@@ -745,7 +745,7 @@
         "buy_val": 14.72,
         "sell_val": 7.71,
         "total_room": 2184019563,
-        "current_room": 908654745,
+        "current_room": 908921245,
         "room_used_pct": 58.4
       },
       "shares": 7021361917,
@@ -768,8 +768,8 @@
         "buy_val": 23.43,
         "sell_val": 7.32,
         "total_room": 2453576846,
-        "current_room": 2395893524,
-        "room_used_pct": 2.4
+        "current_room": 2396235624,
+        "room_used_pct": 2.3
       },
       "shares": 5007299686,
       "mcap_t": 127.7,
@@ -791,8 +791,8 @@
         "buy_val": 25.68,
         "sell_val": 97.51,
         "total_room": 565564714,
-        "current_room": 354619381,
-        "room_used_pct": 37.3
+        "current_room": 355049652,
+        "room_used_pct": 37.2
       },
       "shares": 1885215716,
       "mcap_t": 134.8,
@@ -814,7 +814,7 @@
         "buy_val": 4.9,
         "sell_val": 2.19,
         "total_room": 1028640000,
-        "current_room": 1018920589,
+        "current_room": 1019119094,
         "room_used_pct": 0.9
       },
       "shares": 3428800000,
@@ -837,8 +837,8 @@
         "buy_val": 238.24,
         "sell_val": 245.67,
         "total_room": 2053706002,
-        "current_room": 1769032297,
-        "room_used_pct": 13.9
+        "current_room": 1770700493,
+        "room_used_pct": 13.8
       },
       "shares": 4107412004,
       "mcap_t": 607.9,
@@ -860,7 +860,7 @@
         "buy_val": 117.8,
         "sell_val": 158.06,
         "total_room": 3727215320,
-        "current_room": 3481231476,
+        "current_room": 3481845206,
         "room_used_pct": 6.6
       },
       "shares": 7706031024,
@@ -883,8 +883,8 @@
         "buy_val": 210.47,
         "sell_val": 214.96,
         "total_room": 2089955445,
-        "current_room": 1052600592,
-        "room_used_pct": 49.6
+        "current_room": 1055159512,
+        "room_used_pct": 49.5
       },
       "shares": 2089955445,
       "mcap_t": 126.0,
@@ -903,7 +903,7 @@
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4054.0,
+      "value": 4053.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -912,6 +912,6 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-08-03T12:21:28"
+    "fetched": "2026-08-03T22:56:37"
   }
 }
