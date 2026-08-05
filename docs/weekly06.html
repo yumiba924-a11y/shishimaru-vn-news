@@ -108,6 +108,37 @@
   .bigstat .n span{font-size:var(--fs-numlg);}
   .bigstat .c{font-size:var(--fs-body);line-height:var(--lh-card);color:rgba(255,255,255,.92);}
   .bigstat .c b{color:#fff;}
+  /* Bloombergストリップ（数字の快感） */
+  .bbstrip{display:flex;margin:24px 0 6px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;}
+  .bbcell{flex:1;padding:22px 18px;border-right:1px solid var(--border);}
+  .bbcell:last-child{border-right:none;}
+  .bbcell .bn{font-family:var(--mincho);font-weight:800;font-size:var(--fs-numlg);line-height:1;color:var(--charcoal);white-space:nowrap;}
+  .bbcell .bn .u{font-size:var(--fs-bodysm);font-weight:700;}
+  .bbcell .bn .dlt{font-family:var(--sans-en);font-size:var(--fs-label);color:var(--up);margin-left:5px;font-weight:700;}
+  .bbcell .bl{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);margin-top:9px;line-height:1.4;}
+  /* Dung Quat巨大さ（ダーク・グリッド） */
+  .dqgrid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:24px;border:1px solid rgba(255,255,255,.16);border-radius:8px;overflow:hidden;}
+  .dqcell{padding:26px 30px;border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);}
+  .dqcell:nth-child(2n){border-right:none;}
+  .dqcell:nth-last-child(-n+2){border-bottom:none;}
+  .dqcell .dn{font-family:var(--mincho);font-weight:800;font-size:var(--fs-numlg);color:var(--gold);line-height:1.05;}
+  .dqcell .dn .u{font-size:var(--fs-bodysm);color:rgba(255,255,255,.85);font-weight:700;}
+  .dqcell .dl{font-family:var(--gothic);font-size:var(--fs-label);color:rgba(255,255,255,.78);margin-top:9px;line-height:1.5;}
+  .dqcell .dl b{color:#fff;}
+  /* リスクリスト */
+  .risk{list-style:none;margin:10px 0 0;padding:0;}
+  .risk li{font-family:var(--gothic);font-size:var(--fs-bodysm);line-height:1.65;color:rgba(255,255,255,.9);padding-left:26px;position:relative;margin-bottom:9px;text-align:justify;}
+  .risk li::before{content:"\25B8";position:absolute;left:4px;color:var(--steel);}
+  .risk li b{color:#fff;}
+  /* 5秒で復習 */
+  .recap{background:#fff;border:1px solid var(--border);border-top:5px solid var(--steel);border-radius:10px;padding:34px 42px;margin:0 auto;max-width:860px;box-shadow:0 10px 34px rgba(0,0,0,.07);}
+  .recap h3{font-family:var(--mincho);font-weight:700;font-size:var(--fs-title);color:var(--green-dark);margin-bottom:4px;}
+  .recap .rsub{font-family:var(--gothic);font-size:var(--fs-label);color:var(--light);margin-bottom:18px;}
+  .recap ul{list-style:none;margin:0;padding:0;}
+  .recap li{font-family:var(--mincho);font-size:var(--fs-lead);color:var(--dark);line-height:1.55;padding:13px 0 13px 44px;position:relative;border-bottom:1px dashed var(--border);}
+  .recap li:last-child{border-bottom:none;}
+  .recap li::before{content:"\2713";position:absolute;left:8px;top:13px;color:var(--up);font-weight:800;font-family:var(--sans-en);}
+  .recap li b{color:var(--steel);font-weight:700;}
   /* 相場面：週間KPI・日次バー・セクター */
   .sumstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 24px;}
   .sumstrip .wk-kpi{margin-bottom:0;height:100%;display:flex;flex-direction:column;}
@@ -161,7 +192,7 @@
 <section>
   <div class="eyebrow">Weekly Quest ⑥ ｜ Hoa Phat</div>
   <div class="s-title">機械部品の商人が、高速鉄道のレールを造るまで</div>
-  <div class="lead jp" style="max-width:940px;">ホアファットは1992年、旧ソ連圏から中古機械を輸入する<strong>貿易会社</strong>として生まれた。そこから鋼管、そして誰もが尻込みした<strong>高炉一貫製鉄</strong>へ。いまや粗鋼で世界トップ30に迫り、次に狙うのは——<strong>南北高速鉄道のレールの国産化</strong>。ベトナム最大の民間製造業の、34年の変身である。</div>
+  <div class="lead jp" style="max-width:940px;">ホアファットは1992年、旧ソ連圏から中古機械を輸入する<strong>貿易会社</strong>として生まれた。そこから鋼管、そして誰もが尻込みした<strong>高炉一貫製鉄</strong>へ。いまや粗鋼で<strong>東南アジア最大</strong>、ベトナムを国別で世界10位に押し上げた立役者だ。次に狙うのは——<strong>南北高速鉄道のレールの国産化</strong>。ベトナム最大の民間製造業の、34年の変身である。</div>
   <div class="tl">
     <div class="tlstep"><div class="tm">1992</div><div class="ic">📦</div><div class="br">商人として創業</div><div class="tx">旧ソ連圏から<br>中古機械を輸入</div></div>
     <div class="tlar">▶</div>
@@ -190,6 +221,13 @@
   <div class="eyebrow">Structure ｜ 何で稼ぐか</div>
   <div class="s-title">鉄が九割、そして——卵</div>
   <div class="lead jp" style="max-width:940px;">ホアファットの売上は、<strong>約9割が鉄鋼</strong>（FY2025・連結売上約9,600億円）。だが残りに、意外な顔がある。<strong>養豚と養鶏</strong>だ。鉄を鋳る会社が、国民の食卓に卵を届ける。景気に激しく振れる鉄への、静かな備えである。</div>
+  <div class="bbstrip">
+    <div class="bbcell"><div class="bn">約9,600<span class="u">億円</span><span class="dlt">+13%</span></div><div class="bl">連結売上（FY2025）</div></div>
+    <div class="bbcell"><div class="bn">約940<span class="u">億円</span><span class="dlt">+29%</span></div><div class="bl">純利益（FY2025）</div></div>
+    <div class="bbcell"><div class="bn">約16<span class="u">%</span></div><div class="bl">ROE（自己資本利益率）</div></div>
+    <div class="bbcell"><div class="bn">36<span class="u">%超</span></div><div class="bl">建設用鉄筋シェア（国内No.1）</div></div>
+    <div class="bbcell"><div class="bn">約6<span class="u">割</span></div><div class="bl">HRC 国内生産シェア</div></div>
+  </div>
   <div class="faces">
     <div class="face">
       <div class="cap">SEGMENT 1 ― 本業（売上の約9割）</div>
@@ -233,7 +271,10 @@
   </div>
   <div style="font-family:var(--mincho);font-size:var(--fs-sub);font-weight:700;color:var(--charcoal);margin:30px 0 14px;padding-left:16px;border-left:4px solid var(--steel);">数十億ドルの、逆張り</div>
   <div class="body jp" style="max-width:940px;">
-    <p style="margin:0;">鋼管で足場を固めたロンは、2000年代、誰もが尻込みする道へ進む。<strong>高炉一貫製鉄</strong>——巨額の資本を飲み込み、失敗すれば会社ごと沈む重厚長大の世界だ。銀行も、投資家も、慎重を勧めた。それでもロンは、海沿いに巨大な製鉄所を築く道を選ぶ。輸入に頼っていた鉄を、自国で鋳るために。</p>
+    <p style="margin:0 0 15px;">鋼管で足場を固めたロンは、2000年代、誰もが尻込みする道へ踏み込む。<strong>高炉一貫製鉄</strong>だ。</p>
+    <p style="margin:0 0 15px;">鉄鋼は、需要が来る前に巨大な設備を建てる産業である。数十億ドルを先に注ぎ込み、市況が崩れれば会社ごと沈む——重厚長大の、最も残酷な博打だ。</p>
+    <p style="margin:0 0 15px;">銀行は融資に慎重だった。投資家は「無謀だ」と止めた。ベトナムの一民間企業に、臨海の巨大製鉄所を回せるのか、と。</p>
+    <p style="margin:0;">それでもロンは、中部の海沿いDung Quatに巨大な高炉を築く道を選ぶ。輸入に頼ってきた鉄を、自分たちの手で鋳る——ただ、その一点のために。</p>
   </div>
   <div class="pull"><p>「ベトナムが発展する限り、道路が敷かれ、ビルが建つ。<em>その足元には、いつも我々の鉄がある。</em>」</p></div>
   <div class="body jp" style="max-width:940px;">
@@ -244,21 +285,24 @@
 
 
 <!-- ⑤ Dung Quat 2 & レール＝投資家の核 -->
-<section style="background:var(--cream);">
+<section class="conc" style="background:radial-gradient(1000px 520px at 84% 6%,rgba(194,65,12,.32),transparent 60%),radial-gradient(700px 500px at 8% 96%,rgba(245,196,0,.10),transparent 60%),linear-gradient(160deg,#242017 0%,#1b1a18 54%,#121110 100%);">
   <div class="eyebrow">The Bet ｜ 大博打</div>
-  <div class="s-title">能力を倍にして、レールを狙う</div>
-  <div class="lead jp" style="max-width:940px;">いまホアファットは、二段構えの巨大投資の途中にある。ひとつは<strong>Dung Quat第2製鉄所</strong>（投資約5,100億円・85兆VND）。もうひとつが、その先の<strong>高速鉄道レール工場</strong>だ。汎用の鉄筋から、高付加価値のHRCとレールへ——付加価値の階段を、資本で駆け上がる。</div>
-  <div class="wchips" style="margin-top:18px;">
-    <div class="wchip"><b>粗鋼能力</b>：現在1,400万トン超 → 2026年末 約1,600万トン（世界トップ30）</div>
-    <div class="wchip"><b>Dung Quat 2</b>：HRC 460万トン＋条鋼・線材100万トン</div>
+  <div class="s-title" style="color:#fff;">Dung Quat ― 700haの、賭け</div>
+  <div class="lead jp" style="max-width:940px;color:rgba(255,255,255,.92);border-left-color:var(--steel);">ロンが築いた高炉は、いま国土の一角を覆う巨大複合体になった。中部クアンガイ省の海沿いに広がる<strong style="color:#fff">Dung Quat製鉄所</strong>——ここがホアファットの心臓だ。まず、その大きさを見てほしい。</div>
+  <div class="dqgrid">
+    <div class="dqcell"><div class="dn">約700<span class="u">ha</span></div><div class="dl">Dung Quat 第1・第2の総敷地。<b>東京ドーム約150個分</b>。うち専用港が約27ha</div></div>
+    <div class="dqcell"><div class="dn">20<span class="u">万トン級</span></div><div class="dl">自社<b>深水港</b>に着岸できる船の大きさ。鉄鉱石を直接荷揚げし、製品を世界へ積み出す</div></div>
+    <div class="dqcell"><div class="dn">約1,200<span class="u">万トン/年</span></div><div class="dl">複合体の設計<b>粗鋼能力</b>。総投資は第1・第2で137兆VND（約8,300億円）</div></div>
+    <div class="dqcell"><div class="dn">1,100<span class="u">万トン</span> <span style="font-size:var(--fs-label);color:var(--up);font-family:var(--sans-en);">+31%</span></div><div class="dl">2025年の粗鋼生産。<b>東南アジア最大</b>。ベトナムを国別で世界10位に押し上げた（国内粗鋼の44.7%）</div></div>
   </div>
-  <div class="aifact">
+  <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;margin-top:26px;">この心臓を、ロンはさらに拍動させる。<strong style="color:#fff">Dung Quat第2製鉄所</strong>（投資約5,100億円・85兆VND、HRC 460万トン＋条鋼・線材100万トン）が2025年9月に全面稼働。粗鋼能力は現在の1,400万トン超から、2026年末には約1,600万トンへ。汎用の鉄筋から、高付加価値のHRC、そして——レールへ。付加価値の階段を、資本で駆け上がる。</div>
+  <div class="aifact" style="background:#0c0b0a;">
     <div class="n">10<span style="font-size:var(--fs-numlg)">兆VND</span><small>RAIL &amp; SPECIAL STEEL 投資（約600億円）</small></div>
     <div>
       <p>2025年12月に着工した<b>レール・特殊鋼工場</b>（能力70万トン、独SMS・英Primetals製ライン）。高速鉄道・都市鉄道のレールと特殊鋼を、<b>2027年に初出荷</b>する計画だ。ロン会長は約<b>670億ドル規模の南北高速鉄道</b>に対し「鉄道向け鋼材（推計1,000万トン）を、輸入より安く全量供給する用意がある」と表明。臨海一貫＋自社港のコストで、中国製の安値攻勢に挑む。対中HRCには<b>アンチダンピング（23〜28%・2025年7月発効）</b>も追い風だ。</p>
     </div>
   </div>
-  <div class="src">出所：Dung Quat 2（85兆VND・560万トン・2025年9月全面稼働）、レール工場（10兆VND超≒約4億ドル・70万トン・2025/12着工・2027初出荷）＝Hoa Phat公式／VOV・VietnamNet。南北高速鉄道（約670億ドル・約1,500km・着工2026年後半見込み）とロン会長の供給表明は現地報道。対中HRCアンチダンピング（23.1〜27.83%・2025/7/6発効）＝VietnamPlus等。円換算1兆VND≒60.4億円（2026/8/3）。数値はas-of時点で変動。</div>
+  <div class="src" style="color:rgba(255,255,255,.5);">出所：Dung Quat複合体（総敷地約700ha・専用港は20万トン級着岸・設計能力約1,200万トン）＝Hoa Phat公式（thep.hoaphat.com.vn）／建設各社資料。東京ドーム換算は1個=約4.7ha。2025年粗鋼1,100万トン（+31%）・国内シェア44.7%・ベトナムが国別世界10位入り＝worldsteel／VietnamPlus・Nhan Dan（2026）。Dung Quat 2（85兆VND・560万トン・2025年9月全面稼働）、レール工場（10兆VND超≒約4億ドル・70万トン・2025/12着工・2027初出荷）、南北高速鉄道（約670億ドル・約1,500km）＝Hoa Phat公式／VOV等。対中HRCアンチダンピング（23.1〜27.83%・2025/7/6発効）＝VietnamPlus。円換算1兆VND≒60.4億円（2026/8/3）。数値は概算・as-of時点で変動。</div>
 </section>
 
 
@@ -285,9 +329,35 @@
     <div class="n">7.9<span>倍</span></div>
     <div class="c jp">HPGのPER（2026/8/3）。PBR1.30倍・ROE約16%とあわせ、<b>景気敏感株らしい割安圏</b>にある。だが鉄鋼株の宿命は、市況で激しく揺れること——鉄鋼価格、鉄鉱石・原料炭のコスト、そして中国の輸出動向に、業績が大きく左右される。</div>
   </div>
-  <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;">問いは一つ。ホアファットは、<strong style="color:#fff">「シクリカル（市況株）」の枠を超えられるか</strong>。答えの鍵は二つある。ひとつは<strong style="color:#fff">増産</strong>——Dung Quat 2のフル稼働で、粗鋼能力は世界トップ30級へ。もうひとつは<strong style="color:#fff">高付加価値化</strong>——汎用の鉄筋から、HRC、そして高速鉄道レールへと、利幅の厚い上流へ登る。国内シェアNo.1の安定と、国家インフラという巨大な需要が、その背中を押す。</div>
-  <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;margin-top:18px;">FPTが「頭脳（ソフト）」なら、ホアファットは「筋骨（ハード）」。外国人フローに揺れる優等生と、市況に揺れる鉄鋼王——<strong style="color:#fff">ベトナム経済の二つの顔</strong>である。鉄は、裏切らない。国が育つ限り、道路は敷かれ、ビルは建つ。その足元には、いつもこの会社の鉄がある。</div>
+  <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;">問いは一つ。ホアファットは、<strong style="color:#fff">「シクリカル（市況株）」の枠を超えられるか</strong>。答えの鍵は二つ。ひとつは<strong style="color:#fff">増産</strong>——Dung Quat 2のフル稼働で、粗鋼能力は東南アジア最大からさらに上へ。もうひとつは<strong style="color:#fff">高付加価値化</strong>——汎用の鉄筋から、HRC、そして高速鉄道レールへと、利幅の厚い上流へ登る。国内シェアNo.1の安定と、国家インフラという巨大な需要が、その背中を押す。</div>
+  <div style="max-width:940px;margin-top:26px;font-family:var(--mincho);font-size:var(--fs-sub);font-weight:700;color:#fff;padding-left:16px;border-left:4px solid var(--steel);">だが、市況株のリスクは消えない</div>
+  <ul class="risk" style="max-width:940px;margin-top:12px;">
+    <li><b>鉄鋼市況の反落</b>——価格が下がれば、積み上げた増産はそのまま利益減に振れる。</li>
+    <li><b>原材料コスト</b>——鉄鉱石・原料炭は輸入頼み。高騰すればマージンを直に圧迫する。</li>
+    <li><b>中国の過剰生産</b>——安値輸出が続く限り価格競争の圧力は消えない。対中アンチダンピングは一時的な盾にすぎない。</li>
+    <li><b>巨額投資の重さ</b>——Dung Quat 2・レール工場の減価償却と借入が、需要停滞期には重石になる。</li>
+    <li><b>国家プロジェクトの遅延</b>——南北高速鉄道が遅れれば、レールという成長の柱も後ずれする。</li>
+    <li><b>為替（ドン/円）</b>——円換算の価値は為替次第。ドン安・円高は目減り要因。</li>
+  </ul>
+  <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;margin-top:24px;">FPTが「頭脳（ソフト）」なら、ホアファットは「筋骨（ハード）」。外国人フローに揺れる優等生と、市況に揺れる鉄鋼王——<strong style="color:#fff">ベトナム経済の二つの顔</strong>である。</div>
+  <div style="max-width:940px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15);font-family:var(--mincho);font-size:var(--fs-lead);line-height:2.1;color:#fff;">国が成長する限り、道路は延びる。<br>橋は架かる。工場は建つ。<br>——その一本一本に、<span style="color:var(--gold);">ホアファットの鉄</span>が流れている。</div>
   <div class="src" style="color:rgba(255,255,255,.5);">出所：バリュエーション＝VNDirect（2026/8/3）。市況・原材料・中国動向のリスク、増産（Dung Quat 2）・高付加価値化（HRC/レール）は本紙の整理。将来見通しは予測であり実績ではない。</div>
+</section>
+
+
+<!-- 5秒で復習 -->
+<section style="background:var(--cream);">
+  <div class="recap">
+    <h3>この一枚で、ホアファット</h3>
+    <div class="rsub">5秒で復習 ― HPGとは何者か</div>
+    <ul>
+      <li><b>ベトナム最大の鉄鋼会社</b>。粗鋼生産は東南アジア最大</li>
+      <li>建設用<b>鉄筋シェア36%超</b>で国内No.1、<b>HRCは国内生産の約6割</b></li>
+      <li><b>高炉から自前で握る上流一貫</b>。臨海のDung Quat（約700ha・自社港）が心臓</li>
+      <li>次の一手は<b>高速鉄道レールの国産化</b>（2027年 初出荷予定）</li>
+      <li>中古機械の商人ロンが一代で築いた、<b>ベトナム最大の民間製造業</b></li>
+    </ul>
+  </div>
 </section>
 
 
