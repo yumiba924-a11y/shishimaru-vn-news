@@ -15,6 +15,15 @@ window.SITE = {
   // ---- 発刊済みの号（新しい順） ----
   issues: [
     {
+      vol: 6,
+      week: "2026.8.3–8.7週",
+      published: "2026年8月10日（月）発行",
+      title: "鉄は、国家をつくる ― ホアファット（HPG）",
+      hero: "weekly_assets/hpg_hero.png",
+      url: "weekly06.html",
+      summary: "中古機械の商人が興した貿易会社が、粗鋼で東南アジア最大の製鉄所を築いた。鉄が9割、そして卵。次の一手は南北高速鉄道レールの国産化——市況株の枠を、超えられるか。相場面は先週の入替発効・外国人の買い越し転換を分解。"
+    },
+    {
       vol: 5,
       week: "2026.7.27–7.31週",
       published: "2026年8月3日（月）発行",
@@ -96,20 +105,20 @@ window.SITE = {
     { t:"SHB", n:"サイゴンハノイ銀行",  s:"銀行",       st:"done",    vol:2 },
     { t:"LPB", n:"LPバンク",            s:"銀行",       st:"done",    vol:2 },
     { t:"VIB", n:"ベトナム国際銀行",    s:"銀行",       st:"done",    vol:2 },
-    { t:"TPB", n:"TPバンク",            s:"銀行",       st:"done",    vol:2 },
     { t:"SSB", n:"SeAバンク",           s:"銀行",       st:"done",    vol:2 },
     { t:"VJC", n:"ベトジェット",        s:"運輸",       st:"done",    vol:3 },
     { t:"MSN", n:"マサングループ",      s:"消費財",     st:"done",    vol:4 },
     { t:"FPT", n:"FPT",                 s:"IT",         st:"done",    vol:5 },
-    { t:"HPG", n:"ホアファット",        s:"素材",       st:"next",    vol:6 },
-    { t:"SSI", n:"SSI証券",             s:"証券",       st:"planned", vol:7 },
+    { t:"HPG", n:"ホアファット",        s:"素材",       st:"done",    vol:6 },
+    { t:"MCH", n:"マサンコンシューマー", s:"消費財",     st:"done",    vol:4 },
+    { t:"SSI", n:"SSI証券",             s:"証券",       st:"next",    vol:7 },
     { t:"GAS", n:"ペトロベトナムガス",  s:"エネルギー", st:"open" },
     { t:"BSR", n:"ビンソン石油精製",    s:"エネルギー", st:"open" },
-    { t:"PLX", n:"ペトロリメックス",    s:"エネルギー", st:"open" },
     { t:"SAB", n:"サベコ",              s:"消費財",     st:"open" },
     { t:"VNM", n:"ビナミルク",          s:"消費財",     st:"open" },
     { t:"MWG", n:"モバイルワールド",    s:"小売",       st:"open" },
-    { t:"GVR", n:"ベトナムゴム",        s:"素材",       st:"open" }
+    { t:"GVR", n:"ベトナムゴム",        s:"素材",       st:"open" },
+    { t:"TCX", n:"テクコム証券",        s:"証券",       st:"open" }
   ],
 
   // ---- 財閥図鑑（status: done=収載済 / planned=探索予定） ----
@@ -136,13 +145,14 @@ window.SITE = {
       oneliner:"食品会社ではなく、生活インフラ。最大の稼ぎ頭WinCommerce（約4,592店）は非上場という「見えない帝国」。"
     },
     {
-      name:"ホアファット", status:"planned", vol:5, date:"8/3（月）予定",
+      name:"ホアファット", status:"done", vol:6, url:"weekly06.html",
+      img:"weekly_assets/hpg_hero.png",
       tickers:["HPG"],
       founder:"チャン・ディン・ロン", east:null,
-      oneliner:"鉄の王。ベトナムの建設ブームを素材で支える最大の民間製造業。"
+      oneliner:"鉄が9割、そして卵。中古機械の商人が興した貿易会社が、粗鋼で東南アジア最大の製鉄所を築いた。次は高速鉄道レールの国産化。"
     },
     {
-      name:"ビエットテル系", status:"planned", vol:6, date:"8/10（月）予定",
+      name:"ビエットテル系", status:"planned", vol:null, date:"今後の号で予定",
       tickers:["MBB","VGI","VTP","CTR"],
       founder:"（軍隊系グループ）", east:null,
       oneliner:"軍が営む通信帝国。銀行・物流・建設まで広がる国防省の経済圏。"
@@ -158,6 +168,11 @@ window.SITE = {
 
   // ---- 決算通信簿（verdict: null=検証待ち / "◯"/"△"/"✕"） ----
   scorecard: [
+    {
+      vol:6, made:"2026/8/10",
+      claim:"ホアファットは「シクリカル（市況株）」の枠を超えられるか——鍵は増産（Dung Quat 2フル稼働で粗鋼能力が東南アジア最大からさらに上へ）と高付加価値化（汎用鉄筋→HRC→高速鉄道レール）。国内シェアNo.1の安定と、南北高速鉄道という巨大需要が背中を押す。PER7.9倍・PBR1.30倍・ROE約16%（2026/8/3）は割安圏だが、鉄鋼市況・原材料・中国の過剰生産に業績は左右される",
+      test:"粗鋼生産・HRC/レールの高付加価値比率とDung Quat 2の稼働、Q3以降の業績、鉄鋼市況（価格・鉄鉱石/原料炭コスト・中国輸出）とレール初出荷（2027目標）の進捗を確認", verdict:null
+    },
     {
       vol:5, made:"2026/8/3",
       claim:"FPTの需給反転——外国人保有が49%（2023末）→約27.6%（2026/7）まで低下し、業績堅調(上期PBT+18.1%)でも株価は年初来ほぼ半減。9/21のFTSE発効と外国人アクティブ資金の回帰で、株価が業績に追いつくか。7/27–31週にFPTは+6.68%・外国人買い越し+308十億ドンと、最初のカウンターが出た",

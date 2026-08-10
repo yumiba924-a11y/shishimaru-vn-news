@@ -1,8 +1,8 @@
 {
   "meta": {
     "index_basis": "2025-10 CPVN資料準拠",
-    "last_reviewed": "2026-06-30",
-    "rebalance_note": "VN30は毎年1月・7月の第4月曜に入替。次回 2026年7月第4月曜の入替後に constituents を手で見直すこと。入替が来たらこの last_reviewed と一覧を更新する。",
+    "last_reviewed": "2026-08-10",
+    "rebalance_note": "VN30は毎年1月・7月の第4月曜に入替。2026年7月定期見直し（HOSE公表）で PLX・TPB を除外、MCH（マサンコンシューマー）・TCX（テクコム証券）を採用。発効日 2026-08-03。次回は2027年1月第4月曜。入替が来たらこの last_reviewed と一覧・data/site.js の vn30[] を更新する。",
     "shares_note": "shares=発行済株式数。寄与度(週次)の概算ウェイト計算に使用。VNDirect OUTSTANDING_SHARES(2026-06-29)由来。増資・分割・自己株変動時のみ手更新。name_ja=ヒートマップ表示用の日本語社名。",
     "source": {
       "stocks": "VNDirect finfo (api-finfo.vndirect.com.vn)",
@@ -34,7 +34,7 @@
     { "code": "MBB", "sector": "銀行",       "name_ja": "MBバンク",           "shares": 8054999909 },
     { "code": "MSN", "sector": "消費財",     "name_ja": "マサングループ",     "shares": 1445915457 },
     { "code": "MWG", "sector": "小売",       "name_ja": "モバイルワールド",   "shares": 1468423529 },
-    { "code": "PLX", "sector": "エネルギー", "name_ja": "ペトロリメックス",   "shares": 1270592235 },
+    { "code": "MCH", "sector": "消費財",     "name_ja": "マサンコンシューマー", "shares": 1307404949 },
     { "code": "VPL", "sector": "観光",       "name_ja": "ビンパール",         "shares": 1793300377 },
     { "code": "SAB", "sector": "消費財",     "name_ja": "サベコ",             "shares": 1282562372 },
     { "code": "SHB", "sector": "銀行",       "name_ja": "サイゴンハノイ銀行", "shares": 4884333454 },
@@ -42,9 +42,9 @@
     { "code": "SSI", "sector": "証券",       "name_ja": "SSI証券",            "shares": 2906280710 },
     { "code": "STB", "sector": "銀行",       "name_ja": "サコムバンク",       "shares": 1885215716 },
     { "code": "TCB", "sector": "銀行",       "name_ja": "テクコムバンク",     "shares": 7086240414 },
-    { "code": "TPB", "sector": "銀行",       "name_ja": "TPバンク",           "shares": 2774046873 },
+    { "code": "TCX", "sector": "証券",       "name_ja": "テクコム証券",       "shares": 2773900195 },
     { "code": "VCB", "sector": "銀行",       "name_ja": "ベトコムバンク",     "shares": 8355675094 },
-    { "code": "VHM", "sector": "不動産",     "name_ja": "ビンホームズ",       "shares": 4107412004 },
+    { "code": "VHM", "sector": "不動産",     "name_ja": "ビンホームズ",       "shares": 8214824008 },
     { "code": "VIB", "sector": "銀行",       "name_ja": "ベトナム国際銀行",   "shares": 3404005710 },
     { "code": "VIC", "sector": "不動産",     "name_ja": "ビングループ",       "shares": 7706031024 },
     { "code": "VJC", "sector": "運輸",       "name_ja": "ベトジェット",       "shares": 769094734 },
