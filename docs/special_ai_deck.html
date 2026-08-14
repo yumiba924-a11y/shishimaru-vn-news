@@ -110,6 +110,16 @@ h2,.hero h1,.hero .sub,.hero .who,.lead,.callout,.card p,.card li,.pillar p,.pil
 .dark .card h4{color:#fff}.dark .card p{color:rgba(255,255,255,.8)}
 .two.fit1 .card li{font-size:18px;line-height:1.5}   /* 長い項目を1行に収める（スライド4） */
 
+/* flow5 : 「あるある」5ステップ・アイコンカード（前資料準拠） */
+.flow5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:24px 0 4px}
+.fcard{background:#f2f8f4;border:1px solid var(--border);border-radius:16px;padding:26px 14px;text-align:center}
+.fcard .ficon{width:64px;height:64px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.fcard .ficon svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fcard h5{font-size:19px;font-weight:700;color:var(--green-d);margin-bottom:8px}
+.fcard p{font-size:14px;color:var(--tx-mid);line-height:1.55}
+.darkbar{background:var(--ink);color:#fff;border-radius:16px;padding:22px 28px;margin-top:26px;text-align:center;font-size:26px;font-weight:700}
+.darkbar .g{color:var(--gold)}
+
 /* equation */
 .eq{display:flex;align-items:stretch;justify-content:center;gap:14px;margin:30px 0 6px}
 .eq .box{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 16px;text-align:center}
@@ -378,14 +388,15 @@ h2,.hero h1,.hero .sub,.hero .who,.lead,.callout,.card p,.card li,.pillar p,.pil
     <section class="slide">
       <div class="anim">
         <div class="eyebrow">01 ｜ まず、“あるある”から</div>
-        <h2>「毎回まったく同じ手順」のくり返し</h2>
-        <div class="two">
-          <div class="card"><h4><span class="dot" style="background:var(--green)"></span>僕の毎週</h4>
-            <p>データを集めて、表に整えて、レポートにして、変換して、決まった宛先に送る</p></div>
-          <div class="card"><h4><span class="dot" style="background:var(--gold-soft)"></span>君たちの毎週</h4>
-            <p>部活の連絡を回して、時間割を確認して、課題を集めて、まとめて、提出する</p></div>
+        <h2 class="sm">リサーチ・レポート業務には、毎回まったく同じ手作業がありませんか？</h2>
+        <div class="flow5">
+          <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h5>データを集める</h5><p>各種サイトから<br>毎回コピペ</p></div>
+          <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M4 20h4L18 10l-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg></div><h5>整える</h5><p>Excelで単位変換<br>並べ替え</p></div>
+          <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg></div><h5>レポートにする</h5><p>毎回おなじ体裁に<br>流し込む</p></div>
+          <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14-4M4 5v4h4"/><path d="M4 13a8 8 0 0 0 14 4m2 2v-4h-4"/></svg></div><h5>変換・出力</h5><p>HTML →<br>Word / PDF に直す</p></div>
+          <div class="fcard"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M21 3L3 10l7 3 3 7 8-17z"/><path d="M10 13l4-4"/></svg></div><h5>送る・共有</h5><p>決まった宛先へ<br>毎週おくる</p></div>
         </div>
-        <div class="callout">これ、来週も、再来週も、<span class="hl">同じ手順</span>でやりますよね。</div>
+        <div class="darkbar">これ、<span class="g">来週も、再来週も、</span>同じ手順でやりますよね。</div>
       </div>
     </section>
 
