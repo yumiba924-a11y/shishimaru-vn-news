@@ -60,8 +60,9 @@ h2,.hero h1,.act .big,.act .mark,.quote,.pillar h4,.tstep h4,.card h4,.chain .st
 }
 .lead,.callout,.card p,.card li,.pillar p,.tstep p,.stat .cap,.factgrid .stat .cap,
 .eq .box .d,.chain .step p,.act .sm,.hero .who,.hero .sub,.ba li,.finalq .opt>div,.finalq .lead{
-  text-wrap:pretty;                     /* 本文は最終行の“ぶら下がり1文字”を防ぐ */
+  text-wrap:balance;                    /* 短い本文も行長を均等化＝“ぶら下がり1文字”のがたつきを解消 */
 }
+.callout span,.lead span{text-wrap:inherit}
 h2,.hero h1,.hero .sub,.hero .who,.lead,.callout,.card p,.card li,.pillar p,.pillar h4,
 .tstep p,.tstep h4,.stat .cap,.factgrid .stat .cap,.chain .step p,.chain .step h5,
 .act .big,.act .sm,.quote,.ba li,.eq .box .d,.finalq .opt>div{
