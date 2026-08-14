@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>20年で、10倍。― 登壇用スライド ｜ CQC投資調査部</title>
+<meta name="description" content="研修登壇用プレゼンモード。全画面・矢印キー/クリックで送る。">
+<style>
+:root{
+  --mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","ＭＳ 明朝",serif;
+  --gothic:"Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo","Noto Sans JP",sans-serif;
+  --en:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --green:#00492C; --green-d:#00301C; --ink:#0B1710;
+  --gold:#F5C400; --gold-soft:#E7B400; --red:#DA251D; --up:#00A86B;
+  --cream:#FAF8F2; --paper:#fff;
+  --tx:#1C2620; --tx-mid:#43514A; --tx-light:#7C8A82; --border:rgba(0,73,44,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#05100a;font-family:var(--mincho);color:var(--tx)}
+.en{font-family:var(--en)} .num{font-family:var(--en);font-feature-settings:"tnum";letter-spacing:-.01em}
+
+/* ---- scaling stage : 1280x720 base, auto-fit ---- */
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#05100a}
+#stage{width:1280px;height:720px;position:relative;transform-origin:center center;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.slide{position:absolute;inset:0;padding:72px 82px;display:flex;flex-direction:column;justify-content:center;
+  opacity:0;visibility:hidden;transition:opacity .5s ease;background:var(--paper);overflow:hidden}
+.slide.on{opacity:1;visibility:visible;z-index:2}
+.slide.on .anim{animation:rise .6s .05s both cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* tones */
+.slide.dark{background:var(--ink);color:#fff}
+.slide.deep{background:radial-gradient(120% 100% at 80% 10%,#0d4a30,var(--ink) 62%);color:#fff}
+.slide.cream{background:var(--cream)}
+
+/* type */
+.eyebrow{font-family:var(--en);letter-spacing:.28em;font-size:17px;font-weight:700;text-transform:uppercase;
+  color:var(--green);display:inline-flex;align-items:center;gap:14px;margin-bottom:24px}
+.eyebrow::before{content:"";width:38px;height:2px;background:var(--gold)}
+.dark .eyebrow,.deep .eyebrow{color:var(--gold)}
+h2{font-weight:700;font-size:52px;line-height:1.28;color:var(--green-d);letter-spacing:.01em;margin-bottom:26px}
+.dark h2,.deep h2{color:#fff}
+h2.sm{font-size:42px}
+.lead{font-size:26px;line-height:1.85;color:var(--tx-mid)}
+.dark .lead,.deep .lead{color:rgba(255,255,255,.84)}
+.lead+.lead{margin-top:.7em}
+.hl{color:var(--red);font-weight:700}
+.hlg{color:var(--green);font-weight:700}.dark .hlg,.deep .hlg{color:var(--gold)}
+mark{background:linear-gradient(transparent 60%,rgba(245,196,0,.55) 60%);padding:0 .05em;color:inherit}
+.callout{border-left:4px solid var(--gold);padding:8px 0 8px 26px;margin-top:30px;font-size:27px;line-height:1.7;
+  font-weight:700;color:var(--green-d)}
+.dark .callout,.deep .callout{color:#fff}
+.quote{font-size:38px;line-height:1.55;font-weight:700;color:var(--green-d);position:relative;padding-left:6px}
+.dark .quote,.deep .quote{color:#fff}
+.quote::before{content:"\201C";font-family:var(--en);font-size:2em;color:var(--gold);position:absolute;left:-.34em;top:-.3em;opacity:.7}
+
+/* HERO */
+.hero .kicker{font-family:var(--en);letter-spacing:.42em;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:28px}
+.hero h1{font-weight:700;line-height:1.02;font-size:150px;color:#fff;letter-spacing:.02em}
+.hero h1 .x{color:var(--gold)}
+.hero .sub{font-size:30px;color:rgba(255,255,255,.8);margin-top:22px}
+.hero .who{margin-top:34px;font-size:19px;color:rgba(255,255,255,.62);line-height:1.8;border-left:2px solid var(--gold);padding-left:20px}
+.hero .who b{color:#fff;font-size:22px}
+
+/* stat row */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:36px 0 6px}
+.stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:30px 26px}
+.cream .stat,.paper .stat{background:#fff;border:1px solid var(--border)}
+.stat .big{font-family:var(--en);font-weight:700;font-size:66px;line-height:1;color:var(--gold)}
+.cream .stat .big{color:var(--green)}
+.stat .big small{font-size:.4em;margin-left:4px}
+.stat .cap{margin-top:14px;font-size:18px;line-height:1.6;color:rgba(255,255,255,.72)}
+.cream .stat .cap{color:var(--tx-mid)}
+
+/* two cards */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.card{border-radius:16px;padding:28px 30px;border:1px solid var(--border);background:#fff}
+.card h4{font-size:24px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:12px;color:var(--green-d)}
+.card h4 .dot{width:12px;height:12px;border-radius:50%;background:var(--tx-light)}
+.card ul{list-style:none}
+.card li{position:relative;padding-left:24px;margin:12px 0;font-size:21px;line-height:1.55;color:var(--tx-mid)}
+.card li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--tx-light)}
+.card p{font-size:21px;line-height:1.6;color:var(--tx-mid)}
+.card.bad{background:#fbf6f5}.card.bad h4{color:#9a3a34}.card.bad h4 .dot,.card.bad li::before{background:var(--red)}
+.card.good{background:#f2f8f4}.card.good h4{color:var(--green)}.card.good h4 .dot,.card.good li::before{background:var(--up)}
+.dark .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+.dark .card h4{color:#fff}.dark .card p{color:rgba(255,255,255,.8)}
+
+/* equation */
+.eq{display:flex;align-items:stretch;justify-content:center;gap:14px;margin:30px 0 6px}
+.eq .box{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px 16px;text-align:center}
+.eq .box .lab{font-family:var(--en);font-size:15px;letter-spacing:.12em;color:var(--gold);font-weight:700}
+.eq .box .v{font-family:var(--en);font-weight:700;font-size:50px;color:#fff;margin:8px 0;line-height:1}
+.eq .box .d{font-size:16px;color:rgba(255,255,255,.7);line-height:1.5}
+.eq .op{align-self:center;font-family:var(--en);font-weight:700;font-size:34px;color:var(--gold)}
+.eq .box.res{background:var(--gold);border-color:var(--gold)}
+.eq .box.res .lab,.eq .box.res .v{color:var(--green-d)}.eq .box.res .d{color:rgba(0,48,28,.8)}
+
+/* chain */
+.chain{display:flex;align-items:stretch;gap:14px;margin:28px 0 6px}
+.chain .step{flex:1;background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center}
+.chain .step .n{font-family:var(--en);font-size:15px;font-weight:700;color:var(--gold-soft);letter-spacing:.1em}
+.chain .step h5{font-size:21px;font-weight:700;color:var(--green-d);margin:8px 0}
+.chain .step p{font-size:16px;color:var(--tx-mid);line-height:1.5}
+.chain .arw{align-self:center;color:var(--gold-soft);font-size:28px;font-weight:700}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:26px 0 6px}
+.pillar{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:28px 26px}
+.pillar .no{font-family:var(--en);font-weight:700;font-size:17px;color:var(--gold);letter-spacing:.1em}
+.pillar h4{font-size:30px;font-weight:700;margin:8px 0 12px;color:#fff}
+.pillar p{font-size:19px;color:rgba(255,255,255,.74);line-height:1.6}
+.pillar .tag{display:inline-block;margin-top:14px;font-family:var(--en);font-size:14px;font-weight:700;letter-spacing:.08em;padding:5px 13px;border-radius:999px}
+.pillar.ai{background:linear-gradient(160deg,rgba(245,196,0,.16),rgba(245,196,0,.04));border-color:rgba(245,196,0,.4)}
+.pillar.human{background:linear-gradient(160deg,rgba(0,168,107,.16),rgba(0,168,107,.04));border-color:rgba(0,168,107,.4)}
+.pillar.ai .tag{background:var(--gold);color:var(--green-d)}.pillar.human .tag{background:var(--up);color:#fff}
+
+/* before/after */
+.ba{display:grid;grid-template-columns:1fr 1fr;margin-top:22px;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.ba>div{padding:30px 32px}
+.ba .before{background:#f6f2ec}
+.ba .after{background:linear-gradient(160deg,var(--green-d),var(--ink));color:#fff}
+.ba h4{font-family:var(--en);font-size:16px;letter-spacing:.14em;font-weight:700;margin-bottom:18px}
+.ba .before h4{color:var(--tx-light)}.ba .after h4{color:var(--gold)}
+.ba ol{list-style:none;counter-reset:s}
+.ba li{counter-increment:s;position:relative;padding-left:36px;margin:12px 0;font-size:19px;line-height:1.45}
+.ba li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;
+  font-family:var(--en);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ba .before li{color:var(--tx-mid)}.ba .before li::before{background:#e3dccf;color:var(--tx-mid)}
+.ba .after li{color:rgba(255,255,255,.86)}.ba .after li::before{background:var(--gold);color:var(--green-d)}
+.ba .res{margin-top:18px;padding-top:16px;font-size:19px;font-weight:700}
+.ba .before .res{border-top:1px solid rgba(0,0,0,.08);color:var(--red)}
+.ba .after .res{border-top:1px solid rgba(255,255,255,.18);color:var(--gold)}
+
+/* 3 numbered */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
+.tstep{background:#fff;border:1px solid var(--border);border-radius:16px;padding:30px 28px;position:relative}
+.tstep .n{position:absolute;top:-18px;left:28px;width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;
+  font-family:var(--en);font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center}
+.tstep h4{margin-top:12px;font-size:26px;font-weight:700;color:var(--green-d)}
+.tstep .k{font-size:17px;color:var(--gold-soft);font-weight:700;margin:4px 0 12px;font-family:var(--gothic)}
+.tstep p{font-size:19px;color:var(--tx-mid);line-height:1.6}
+
+/* act break */
+.slide.act{align-items:center;text-align:center}
+.act .mark{font-family:var(--en);font-size:18px;letter-spacing:.4em;font-weight:700;color:var(--gold);margin-bottom:30px}
+.act .big{font-size:64px;font-weight:700;line-height:1.35;color:#fff}
+.act .big em{font-style:normal;color:var(--gold)}
+.act .sm{margin-top:28px;font-size:24px;color:rgba(255,255,255,.76);line-height:1.7;max-width:900px}
+
+/* gdp */
+.gdp{display:flex;align-items:flex-end;gap:60px;height:280px;padding:0 40px;margin-top:10px}
+.gdp .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.gdp .bar{width:150px;border-radius:12px 12px 0 0;background:linear-gradient(180deg,var(--gold),var(--gold-soft));
+  display:flex;align-items:flex-start;justify-content:center;padding-top:14px}
+.gdp .bar.g1{background:linear-gradient(180deg,#c9d3cd,#aeb9b3)}
+.gdp .bar .v{font-family:var(--en);font-weight:700;font-size:30px;color:var(--green-d)}
+.gdp .bar.g1 .v{color:#3f4a44}
+.gdp .yr{margin-top:14px;font-family:var(--en);font-size:19px;font-weight:700;color:var(--tx-mid)}
+.gdplbl{font-family:var(--en);letter-spacing:.16em;font-size:15px;color:var(--tx-light);font-weight:700;margin-bottom:16px}
+
+/* final q */
+.finalq .opt{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0 6px}
+.finalq .opt>div{border-radius:16px;padding:32px 30px;font-size:28px;font-weight:700;line-height:1.5}
+.finalq .a{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.7)}
+.finalq .b{background:linear-gradient(160deg,rgba(245,196,0,.2),rgba(245,196,0,.05));border:1px solid var(--gold);color:#fff}
+.finalq .b .u{color:var(--gold)}
+
+/* bigline (slide 11) */
+.bigline{font-family:var(--en);font-weight:700;line-height:1;text-align:center;margin:10px 0}
+.bigline .n{font-size:170px;color:var(--green)}.bigline .u{font-size:46px;color:var(--gold-soft)}
+
+/* ---- chrome : nav / progress / counter ---- */
+#bar{position:fixed;top:0;left:0;height:4px;background:var(--gold);z-index:50;transition:width .35s ease}
+#hud{position:fixed;bottom:18px;right:22px;z-index:50;font-family:var(--en);font-size:15px;font-weight:700;
+  color:rgba(255,255,255,.75);letter-spacing:.08em;display:flex;align-items:center;gap:16px;
+  background:rgba(0,0,0,.35);padding:8px 14px;border-radius:999px;backdrop-filter:blur(4px)}
+#hud .cur{color:var(--gold)}
+#hud button{background:none;border:none;color:rgba(255,255,255,.75);font-size:20px;cursor:pointer;line-height:1;padding:2px 4px}
+#hud button:hover{color:var(--gold)}
+#dots{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:7px;
+  background:rgba(0,0,0,.28);padding:8px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+#dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.32);cursor:pointer;transition:.2s}
+#dots i.on{background:var(--gold);transform:scale(1.3)}
+#hint{position:fixed;bottom:20px;left:22px;z-index:50;font-family:var(--gothic);font-size:13px;color:rgba(255,255,255,.5);
+  background:rgba(0,0,0,.3);padding:7px 13px;border-radius:999px;transition:opacity .5s;line-height:1.5}
+#hint b{color:var(--gold)}
+#hint.hide{opacity:0;pointer-events:none}
+.edge{position:fixed;top:0;height:100%;width:14%;z-index:40;cursor:pointer}
+#prev{left:0}#next{right:0}
+@media(max-width:820px){#dots,#hint{display:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div id="viewport">
+  <div id="stage">
+
+    <!-- 1 HERO -->
+    <section class="slide deep hero on">
+      <div class="anim">
+        <div class="kicker">SPECIAL EDITION</div>
+        <h1>20年で、<span class="x">10倍</span>。</h1>
+        <div class="sub">これは予言か、それとも予測か。</div>
+        <div class="who"><b>投資の仕事と、AIの話。</b><br>ベトナムという国に20年賭けてきた人間の、現場から。</div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="slide dark">
+      <div class="anim">
+        <div class="eyebrow">まず、この数字を見てほしい</div>
+        <h2 class="sm">ベトナムの株価指数は、2045年までに約<span class="hlg">10倍</span>になる。</h2>
+        <div class="stats">
+          <div class="stat"><div class="big">10.8<small>倍</small></div><div class="cap">20年で、これだけ増える計算</div></div>
+          <div class="stat"><div class="big">20,000<small>pt</small></div><div class="cap">いま約1,750pt → 2万ptへ</div></div>
+          <div class="stat"><div class="big">15<small>%/年</small></div><div class="cap">20年間ずっと、複利で年15%</div></div>
+        </div>
+        <div class="callout">……占い師みたいだと思わなかった？ でも投資は、占いとは違う。今日はこの数字の「タネ」を全部見せます。</div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="slide cream">
+      <div class="anim">
+        <div class="eyebrow">タネの前に、ひとつの実話</div>
+        <h2 class="sm">2005年、この国に賭けた人がいた。</h2>
+        <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center">
+          <div>
+            <p class="lead">20年前のベトナムは、一人あたりGDP <span class="hlg">約700ドル</span>。1年の稼ぎが、いまの日本の1か月分もない国。</p>
+            <div class="quote" style="font-size:28px;margin:22px 0">この国は、かつての日本と同じ道を歩き始めている。</div>
+            <p class="lead">20年後、一人あたりGDPは <span class="hlg">約5,000ドル・7倍</span> に。大事なのは「当たった」ことより、<span class="hl">なぜ読めたのか</span>。</p>
+          </div>
+          <div>
+            <div class="gdplbl">一人あたりGDP（米ドル）</div>
+            <div class="gdp" style="height:300px;padding:0 10px;gap:36px">
+              <div class="col"><div class="bar g1" style="height:14%"><span class="v">700</span></div><div class="yr">2005</div></div>
+              <div class="col"><div class="bar" style="height:100%"><span class="v">5,026</span></div><div class="yr">2025</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="slide">
+      <div class="anim">
+        <div class="eyebrow">タネあかし ①</div>
+        <h2>予言と予測は、ちがう。</h2>
+        <div class="two">
+          <div class="card bad"><h4><span class="dot"></span>占い（予言）</h4><ul>
+            <li>当たり外れは、運まかせ</li><li>理由を説明できない</li><li>外れても、なぜ外れたか分からない</li></ul></div>
+          <div class="card good"><h4><span class="dot"></span>投資の読み（予測）</h4><ul>
+            <li>過去のパターン（型）に当てはめる</li><li>「なぜそうなるか」を筋道で説明できる</li><li>外れたら、どの前提が崩れたか分かる</li></ul></div>
+        </div>
+        <div class="callout" style="font-size:24px">会長の「型」——『国は 日本 → 韓国 → 台湾 → 中国 と同じ順番で豊かになる。ベトナムはいま、その道の途中』</div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="slide cream">
+      <div class="anim">
+        <div class="eyebrow">タネあかし ②</div>
+        <h2 class="sm">いまのベトナムは、50年前の日本。</h2>
+        <p class="lead">日本が1975年に通った <span class="hlg">「一人あたり5,000ドル」</span> に、ベトナムは2025年ちょうど到達。約50年の時差で、同じ場所。</p>
+        <div class="two" style="margin-top:22px">
+          <div class="card"><h4><span class="dot" style="background:var(--red)"></span>日本 ｜ 1975年に到達</h4><ul>
+            <li>家電・車・旅行にお金が回り始めた</li><li><b>その後20年で約9倍</b>（1995年に4.4万ドル）</li></ul></div>
+          <div class="card"><h4><span class="dot" style="background:var(--up)"></span>ベトナム ｜ 2025年に到達</h4><ul>
+            <li>スマホ・バイク・住宅・投資が拡大中</li><li><b>会社の予測：約5倍</b>（2045年に2.4万ドル）</li></ul></div>
+        </div>
+        <div class="callout" style="font-size:24px">うちの予測（5倍）は日本の実績（9倍）より <span class="hl">ずっと控えめ</span>。実際に起きたことより弱めに見積もっている。</div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="slide deep">
+      <div class="anim">
+        <div class="eyebrow">タネあかし ③</div>
+        <h2 class="sm">「10倍」は、ただのかけ算。</h2>
+        <div class="eq">
+          <div class="box"><div class="lab">2026年 いま</div><div class="v">1,850</div><div class="d">現在の株価指数</div></div>
+          <div class="op">×</div>
+          <div class="box"><div class="lab">① もうけ増</div><div class="v">6.7×</div><div class="d">経済 年10%成長×20年</div></div>
+          <div class="op">×</div>
+          <div class="box"><div class="lab">② 評価UP</div><div class="v">1.6×</div><div class="d">「新興国」に昇格</div></div>
+          <div class="op">=</div>
+          <div class="box res"><div class="lab">2045年</div><div class="v">20,000</div><div class="d">約10.8倍</div></div>
+        </div>
+        <p class="lead" style="font-size:23px">①「国が豊かになれば会社ももうかる」。②「無名の選手がプロリーグに昇格すると注目もお金も集まる」。<mark>2026年9月、ベトナムは実際に“昇格”する。</mark></p>
+        <div class="callout" style="font-size:24px">神のお告げではなく、2つの数字のかけ算。だから、どこが崩れたら外れるかも説明できる。</div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="slide">
+      <div class="anim">
+        <div class="eyebrow">タネあかし ④</div>
+        <h2>お金の流れを、たどってみる。</h2>
+        <div class="chain">
+          <div class="step"><div class="n">01</div><h5>外国の工場が来る</h5><p>サムスン等が工場建設</p></div>
+          <div class="arw">→</div>
+          <div class="step"><div class="n">02</div><h5>給料をもらう</h5><p>数十万人の雇用</p></div>
+          <div class="arw">→</div>
+          <div class="step"><div class="n">03</div><h5>家を買う・消費する</h5><p>ローン・消費が増える</p></div>
+          <div class="arw">→</div>
+          <div class="step"><div class="n">04</div><h5>銀行・不動産が潤う</h5><p>その会社の株が上がる</p></div>
+        </div>
+        <p class="lead" style="margin-top:8px">投資調査の仕事は、この流れを <span class="hlg">数字で確かめること</span>。給料は？ローンは？もうけは？——毎週・毎月データで追う。</p>
+        <div class="callout">そしてこの「毎週データを追う仕事」こそ、いま<span class="hl">AIが一番活躍している場所</span>。</div>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="slide dark">
+      <div class="anim">
+        <div class="eyebrow">ここからが本題</div>
+        <h2 class="sm">この資料、どうやって作ったと思う？</h2>
+        <p class="lead">投資調査の仕事の中身は、じつは <span class="hlg">3つ</span> しかない。</p>
+        <div class="pillars">
+          <div class="pillar ai"><div class="no">STEP ①</div><h4>集める</h4><p>ニュース・統計・株価をかき集める</p><span class="tag">AIが手伝う</span></div>
+          <div class="pillar ai"><div class="no">STEP ②</div><h4>整理する</h4><p>並べ、比べ、グラフや表にする</p><span class="tag">AIが手伝う</span></div>
+          <div class="pillar human"><div class="no">STEP ③</div><h4>判断する</h4><p>買うか、待つか、やめるか</p><span class="tag">人間の仕事</span></div>
+        </div>
+        <div class="callout" style="font-size:24px">①②はAIがもう手伝う。というより <span class="hlg">人間より速くて正確</span>。次から、毎週まわしている“自動レポートの仕組み”を見せます。</div>
+      </div>
+    </section>
+
+    <!-- 9 ACT -->
+    <section class="slide deep act">
+      <div class="anim">
+        <div class="mark">GITHUB ACTIONS のはなし ─ 高校生特別版</div>
+        <div class="big">めんどうなくり返しは、<br><em>「仕組み」</em>にやらせる。</div>
+        <div class="sm">毎週くり返している作業を、クラウド上の“ロボット”に任せる考え方。<br>── 未来の後輩たちへ ｜ CQC 投資調査部</div>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="slide">
+      <div class="anim">
+        <div class="eyebrow">01 ｜ まず、“あるある”から</div>
+        <h2>「毎回まったく同じ手順」の、くり返し。</h2>
+        <div class="two">
+          <div class="card"><h4><span class="dot" style="background:var(--green)"></span>僕の毎週</h4>
+            <p>データを集めて、表に整えて、レポートにして、変換して、決まった宛先に送る</p></div>
+          <div class="card"><h4><span class="dot" style="background:var(--gold-soft)"></span>君たちの毎週</h4>
+            <p>部活の連絡を回して、時間割を確認して、課題を集めて、まとめて、提出する</p></div>
+        </div>
+        <div class="callout">これ、来週も、再来週も、<span class="hl">同じ手順</span>でやりますよね。</div>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section class="slide cream act">
+      <div class="anim" style="width:100%">
+        <div class="eyebrow" style="justify-content:center">02 ｜ その“くり返し”、1年でいくら？</div>
+        <h2 style="margin-bottom:6px">週2時間の作業が、1年で——</h2>
+        <div class="bigline"><span class="n">100</span><span class="u"> 時間</span></div>
+        <p class="lead" style="max-width:820px;margin:0 auto">週2時間 × 約50週 ＝ 年100時間。映画なら約50本、ゲームの大作なら2〜3本ぶんの時間が、“ただ手を動かすだけ”に消える計算。しかも人数ぶん増える。</p>
+      </div>
+    </section>
+
+    <!-- 12 ACT -->
+    <section class="slide deep act">
+      <div class="anim">
+        <div class="mark">反 転</div>
+        <div class="big">その繰り返し、<br><em>“ロボット”</em>に任せられます。</div>
+        <div class="sm"><b style="color:#fff">GitHub Actions（ギットハブ・アクションズ）</b><br>決めた時間に／決めた作業を／PCを閉じてても／自動で実行。追加費用ほぼゼロ。</div>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section class="slide">
+      <div class="anim">
+        <div class="eyebrow">03 ｜ 覚えるのは、たった3つ</div>
+        <h2>「いつ・何を・何が出るか」を決めるだけ。</h2>
+        <div class="three">
+          <div class="tstep"><div class="n">1</div><h4>トリガー</h4><div class="k">いつ動くか</div><p>例：毎週月曜の朝7時 ／ ボタンを押した時</p></div>
+          <div class="tstep"><div class="n">2</div><h4>ワークフロー</h4><div class="k">何をするか</div><p>例：データ取得 → 整形 → レポート生成</p></div>
+          <div class="tstep"><div class="n">3</div><h4>成果物</h4><div class="k">何が出るか</div><p>例：Word・PDF・HTML が自動で完成</p></div>
+        </div>
+        <div class="callout">この3つが決まれば、あとは動く。</div>
+      </div>
+    </section>
+
+    <!-- 14 -->
+    <section class="slide cream">
+      <div class="anim">
+        <div class="eyebrow">04 ｜ 月曜の朝が、こう変わる</div>
+        <h2 class="sm">出社したら、もう完成している。</h2>
+        <div class="ba">
+          <div class="before"><h4>BEFORE ─ 手作業</h4><ol>
+            <li>出社して、まずデータ探し</li><li>各サイトからコピペで集める</li><li>Excelで単位変換・整形</li><li>いつもの体裁に整える</li><li>Word / PDF に変換して送信</li></ol>
+            <div class="res">→ 数時間かけて、やっと“ゼロから”完成</div></div>
+          <div class="after"><h4>AFTER ─ 自動化</h4><ol>
+            <li>夜のうちにデータ取得は完了</li><li>整形もレポート化も自動で済み</li><li>出社したら、もう完成している</li><li>人は“中身の確認”から始める</li><li>浮いた時間は、考える仕事へ</li></ol>
+            <div class="res">→ 人は“判断”に集中できる</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15 -->
+    <section class="slide">
+      <div class="anim">
+        <div class="eyebrow">05 ｜ 実例：ベトナムウィークリー</div>
+        <h2 class="sm">「20年で10倍」の材料も、この仕組みが毎週集めている。</h2>
+        <div class="chain">
+          <div class="step"><div class="n">01</div><h5>毎週 月曜</h5><p>決めた時刻に発火</p></div><div class="arw">→</div>
+          <div class="step"><div class="n">02</div><h5>データ取得</h5><p>自動でかき集める</p></div><div class="arw">→</div>
+          <div class="step"><div class="n">03</div><h5>レポート生成</h5><p>HTML / Word 化</p></div><div class="arw">→</div>
+          <div class="step"><div class="n">04</div><h5>出力・完成</h5><p>人が張り付かず自動で</p></div>
+        </div>
+        <div class="two" style="margin-top:20px">
+          <div class="card bad"><h4><span class="dot"></span>以前</h4><p>毎週、手作業で数時間。担当が動かないと進まない。</p></div>
+          <div class="card good"><h4><span class="dot"></span>今</h4><p>自動で実行。人は“中身の確認と判断”だけに集中。</p></div>
+        </div>
+        <div class="callout" style="margin-top:20px">一度つくれば、<span class="hlg">毎週ずっと効く。</span></div>
+      </div>
+    </section>
+
+    <!-- 16 -->
+    <section class="slide dark">
+      <div class="anim">
+        <div class="eyebrow">06 ｜ 「でも、コード書けない…」への答え</div>
+        <h2 class="sm">いまの答えはシンプル。<span class="hlg">AIに書かせればいい。</span></h2>
+        <div class="two">
+          <div class="card"><h4><span class="dot" style="background:var(--gold)"></span>君（監督）</h4>
+            <p>「毎週月曜に、この作業を自動でやる仕組みを作って」と日本語で頼むだけ</p></div>
+          <div class="card"><h4><span class="dot" style="background:var(--up)"></span>AI（実装役）</h4>
+            <p>プログラムを書き、動かし、エラーが出たら自分で直して、完成させる</p></div>
+        </div>
+        <div class="callout">大事なのは文法じゃなく <mark>「何を・どの順番で・どうなったら完成か」を言葉にできること</mark>。それは <span class="hlg">国語の力</span>。</div>
+      </div>
+    </section>
+
+    <!-- 17 -->
+    <section class="slide cream">
+      <div class="anim">
+        <div class="eyebrow">07 ｜ ただし、注意がひとつ</div>
+        <h2>AIもロボットも、まちがえる。</h2>
+        <div class="two">
+          <div class="card bad"><h4><span class="dot"></span>うのみにしない</h4><p>それっぽく見えて、まちがっていることがある。数字は特に。</p></div>
+          <div class="card good"><h4><span class="dot"></span>最終確認は人の仕事</h4><p>作るのはAIでいい。でも「これで出していいか」を決め、責任を持つのは人間。</p></div>
+        </div>
+        <div class="callout">気づいた？ ここでも同じ形——<span class="hlg">作業はAI、判断と責任は人間。</span></div>
+      </div>
+    </section>
+
+    <!-- 18 ACT -->
+    <section class="slide deep act">
+      <div class="anim">
+        <div class="mark">回 収</div>
+        <div class="big">“作業する人” から、<br><em>“仕組みを作る人”</em> へ。</div>
+        <div class="sm">仕事の価値は、手を動かすことじゃない。読み解いて、考えて、決めること。<br>くり返しはロボットに渡して、頭は“判断”に使う。</div>
+      </div>
+    </section>
+
+    <!-- 19 -->
+    <section class="slide">
+      <div class="anim">
+        <div class="eyebrow">08 ｜ きょうの宿題（やらなくてもいい方の宿題）</div>
+        <div class="two" style="margin-top:20px">
+          <div class="tstep"><div class="n">1</div><p style="margin-top:14px;font-size:23px;color:var(--tx)">自分が“毎週くり返していること”を、1つだけ書き出してみる。</p></div>
+          <div class="tstep"><div class="n">2</div><p style="margin-top:14px;font-size:23px;color:var(--tx)">「ロボットにやらせるなら、いつ・何を・何が出れば完成？」と考えてみる。</p></div>
+        </div>
+        <div class="callout">それを言葉にできた人は、もう <span class="hlg">“仕組みを作る側”の入口</span> に立っている。</div>
+      </div>
+    </section>
+
+    <!-- 20 -->
+    <section class="slide dark">
+      <div class="anim">
+        <div class="eyebrow">でも</div>
+        <h2>AIに、できなかったこと。</h2>
+        <p class="lead">2005年に戻ろう。当時のAIに世界中のデータを全部渡しても——</p>
+        <div class="quote" style="font-size:32px;margin:22px 0">700ドルのこの国が、20年後に7倍になる、とは言えなかった。</div>
+        <p class="lead">データは「過去」しか知らない。前例なきことに賭けるには、<mark style="background:linear-gradient(transparent 58%,rgba(245,196,0,.4) 58%)">現地を歩き、人と会い、「変わる」と信じて責任を取る人間</mark> が要る。</p>
+        <div class="callout" style="font-size:24px">①集める・②整理する はAIの仕事に。<span class="hlg">③判断して責任を取る——ここだけは、まだ人間の仕事。</span></div>
+      </div>
+    </section>
+
+    <!-- 21 -->
+    <section class="slide cream">
+      <div class="anim">
+        <div class="eyebrow">そして、いま僕がやっている仕事</div>
+        <h2 class="sm">人間の「読み」を、言葉にして残す。</h2>
+        <p class="lead">会長の頭の中には、20年ベトナムを見続けた「読みの型」がある。でも <span class="hl">本人の頭の中にしかない</span>。言葉にならない知恵は、受け継げないし、AIにも教えられない。</p>
+        <p class="lead">だから僕の仕事のひとつは、会長の判断を横で聞いて <span class="hlg">「なぜそう決めたのか」を言葉に起こすこと</span>。今日の「20年で10倍」の資料は、まさにその成果物。</p>
+        <div class="callout" style="font-size:25px">AIに仕事を「奪われる」んじゃない。<span class="hlg">人間の知恵をAIに「教える」側の仕事が、生まれている。</span></div>
+      </div>
+    </section>
+
+    <!-- 22 -->
+    <section class="slide deep finalq">
+      <div class="anim">
+        <div class="eyebrow">LAST QUESTION</div>
+        <h2 class="sm">君たちが働き始めるころ、「集める・整理する」はほぼAIの仕事。そのとき、君は——</h2>
+        <div class="opt">
+          <div class="a">AIに<u>できること</u>を、覚える人になる？</div>
+          <div class="b"><span class="u">AIにできないこと</span>を、決められる人になる？</div>
+        </div>
+        <p class="lead" style="margin-top:20px;color:rgba(255,255,255,.86)">2045年——VN-Indexが20,000ポイントに届くころ、<mark style="background:linear-gradient(transparent 56%,rgba(245,196,0,.45) 56%);color:#fff">答え合わせをしよう。</mark></p>
+      </div>
+    </section>
+
+  </div><!--/stage-->
+</div><!--/viewport-->
+
+<div class="edge" id="prev" title="前へ"></div>
+<div class="edge" id="next" title="次へ"></div>
+<div id="dots"></div>
+<div id="hud">
+  <button id="bprev">‹</button>
+  <span><span class="cur">01</span> / <span id="tot">22</span></span>
+  <button id="bnext">›</button>
+  <button id="bfull" title="全画面 (F)">⛶</button>
+</div>
+<div id="hint">← → / クリックで送る ｜ <b>F</b>=全画面 ｜ <b>Home</b>=先頭</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var N=slides.length, cur=0;
+  var stage=document.getElementById('stage'), vp=document.getElementById('viewport');
+  var bar=document.getElementById('bar'), dots=document.getElementById('dots');
+  var curEl=document.querySelector('#hud .cur'); document.getElementById('tot').textContent=('0'+N).slice(-2);
+  var hint=document.getElementById('hint');
+
+  // build dots
+  slides.forEach(function(_,i){var d=document.createElement('i');d.onclick=function(){go(i)};dots.appendChild(d);});
+  var dotEls=[].slice.call(dots.children);
+
+  function fit(){
+    var s=Math.min(window.innerWidth/1280, window.innerHeight/720);
+    stage.style.transform='scale('+s+')';
+  }
+  window.addEventListener('resize',fit); fit();
+
+  function go(i){
+    i=Math.max(0,Math.min(N-1,i));
+    slides[cur].classList.remove('on');
+    // restart entrance animation
+    var a=slides[i].querySelector('.anim'); if(a){a.style.animation='none'; void a.offsetWidth; a.style.animation='';}
+    slides[i].classList.add('on');
+    cur=i;
+    bar.style.width=((i)/(N-1)*100)+'%';
+    curEl.textContent=('0'+(i+1)).slice(-2);
+    dotEls.forEach(function(d,j){d.classList.toggle('on',j===i);});
+    if(i>0)hint.classList.add('hide');
+    location.hash=i+1;
+  }
+  function next(){go(cur+1)} function prev(){go(cur-1)}
+
+  document.addEventListener('keydown',function(e){
+    switch(e.key){
+      case 'ArrowRight':case ' ':case 'PageDown':case 'ArrowDown':next();e.preventDefault();break;
+      case 'ArrowLeft':case 'PageUp':case 'ArrowUp':prev();e.preventDefault();break;
+      case 'Home':go(0);break; case 'End':go(N-1);break;
+      case 'f':case 'F':toggleFull();break;
+    }
+  });
+  document.getElementById('next').onclick=next;
+  document.getElementById('prev').onclick=prev;
+  document.getElementById('bnext').onclick=function(ev){ev.stopPropagation();next()};
+  document.getElementById('bprev').onclick=function(ev){ev.stopPropagation();prev()};
+  document.getElementById('bfull').onclick=function(ev){ev.stopPropagation();toggleFull()};
+
+  function toggleFull(){
+    if(!document.fullscreenElement){ (document.documentElement.requestFullscreen||function(){})(); }
+    else{ (document.exitFullscreen||function(){})(); }
+  }
+  // touch swipe
+  var x0=null;
+  vp.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  vp.addEventListener('touchend',function(e){
+    if(x0===null)return; var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>50){ dx<0?next():prev(); } x0=null;
+  },{passive:true});
+
+  // deep link
+  var h=parseInt(location.hash.replace('#',''),10);
+  go(h>0?h-1:0);
+})();
+</script>
+</body>
+</html>
