@@ -1,7 +1,7 @@
 {
   "as_of": "2026-08-14",
-  "generated_at": "2026-08-14T09:59:17",
-  "data_age_days": 0,
+  "generated_at": "2026-08-16T22:16:34",
+  "data_age_days": 2,
   "source": "VNDirect (finfo + dchart) ※無料公開API・非公式",
   "contribution_index": "VN30",
   "card_threshold_pct": 3.0,
@@ -893,17 +893,17 @@
   ],
   "macro": {
     "usd_vnd": {
-      "value": 26034.0,
+      "value": 26072.0,
       "live": true,
       "src": "open.er-api.com"
     },
     "vnd_jpy": {
-      "value": 163.3,
+      "value": 163.7,
       "live": true,
       "src": "open.er-api.com"
     },
     "gold": {
-      "value": 4356.0,
+      "value": 4377.0,
       "live": true,
       "src": "gold-api.com"
     },
@@ -912,7 +912,7 @@
       "live": false,
       "src": "手動"
     },
-    "fetched": "2026-08-14T09:59:16"
+    "fetched": "2026-08-16T22:16:32"
   },
   "interpretation": {
     "headline": "VIC急落、ITも支えきれず",
