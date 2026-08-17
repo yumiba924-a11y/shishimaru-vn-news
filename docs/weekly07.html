@@ -111,11 +111,33 @@
   .recap li:last-child{border-bottom:none;}
   .recap li::before{content:"\2713";position:absolute;left:8px;top:12px;color:var(--up);font-weight:800;font-family:var(--sans-en);}
   .recap li b{color:var(--steel);font-weight:700;}
-  /* 相場面 共通（8/17差し込み用・VOL.06と同じクラス） */
+  /* 相場面：週間KPI・日次バー・セクター（VOL.06と同じクラス） */
   .sumstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 24px;}
-  .wk-kpi{background:var(--cream);border-left:3px solid var(--green);padding:24px 26px;}
+  .sumstrip .wk-kpi{margin-bottom:0;height:100%;display:flex;flex-direction:column;}
+  .sumstrip .wk-kpi .l{line-height:1.45;}
+  .sumstrip .wk-kpi .lsub{display:block;font-size:var(--fs-label);opacity:.8;margin-top:1px;}
+  .sumstrip .wk-kpi .v{margin-top:auto;padding-top:10px;}
+  .wk-kpi{background:var(--cream);border-left:3px solid var(--green);padding:24px 26px;margin-bottom:18px;}
   .wk-kpi .l{font-family:var(--sans-en);font-size:var(--fs-label);letter-spacing:.08em;color:var(--light);}
   .wk-kpi .v{font-family:var(--mincho);font-size:var(--fs-numlg);font-weight:800;line-height:1;margin-top:6px;}
+  .wk-kpi .v.pos{color:var(--up);} .wk-kpi .v.neg{color:var(--down);}
+  .ddiv{display:flex;gap:14px;position:relative;margin-top:2px;}
+  .ddiv .zero{position:absolute;left:0;right:0;top:100px;border-top:1px dashed #bbb;z-index:0;}
+  .ddiv .dcol{flex:1;display:flex;flex-direction:column;z-index:1;}
+  .ddiv .barea{height:200px;display:flex;flex-direction:column;}
+  .ddiv .htop{height:100px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;}
+  .ddiv .hbot{height:100px;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;}
+  .ddiv .dv{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-bottom:5px;}
+  .ddiv .dvb{font-family:var(--sans-en);font-size:var(--fs-label);font-weight:600;margin-top:5px;}
+  .ddiv .bar{width:100%;min-height:3px;border-radius:3px 3px 0 0;background:var(--up);}
+  .ddiv .barb{width:100%;min-height:3px;border-radius:0 0 3px 3px;background:var(--down);}
+  .ddiv .lab{text-align:center;font-family:var(--sans-en);font-size:var(--fs-label);color:var(--light);margin-top:8px;}
+  .secrow{display:flex;align-items:center;gap:14px;padding:9px 0;}
+  .secname{width:180px;font-size:var(--fs-body);white-space:nowrap;}
+  .secbar{flex:1;height:12px;background:var(--cream-dark);border-radius:2px;position:relative;overflow:hidden;}
+  .secbar i{position:absolute;top:0;bottom:0;left:50%;}
+  .secval{width:82px;text-align:right;font-family:var(--sans-en);font-weight:700;font-size:var(--fs-body);}
+  .callout{background:var(--cream);border-left:5px solid var(--gold);padding:22px 30px;margin-top:18px;}
 </style>
 </head>
 <body>
@@ -221,11 +243,11 @@
   <div class="s-title" style="color:#fff;">再評価は、これからか</div>
   <div class="bigstat">
     <div class="n">12<span>倍</span></div>
-    <div class="c jp">MWGの2026年予想PER。過去平均<b>18.8倍</b>やASEAN小売株に対し<b>2〜3割のディスカウント</b>。株価は2026年2月の高値から約3割下落した水準にある（時価総額 約6,900億円・ROE23%）。</div>
+    <div class="c jp">MWGの2026年予想PER。過去平均<b>18.8倍</b>やASEAN小売株に対し<b>2〜3割のディスカウント</b>。株価は2026年2月の高値から約3割下落した水準にある（時価総額 約6,500億円・ROE23%、8/14時点）。</div>
   </div>
   <div class="body jp" style="color:rgba(255,255,255,.9);max-width:940px;">問いは一つ。<strong style="color:#fff">「復活」は、まだ株価に織り込まれていないのか</strong>。追い風は三つ。①<strong style="color:#fff">内需の回復</strong>——上半期の小売売上は前年比+12.9%、MWGの高レバレッジがこれを増幅する。②<strong style="color:#fff">BHXの黒字定着</strong>——食品スーパーが利益の柱に育つか。③<strong style="color:#fff">FTSE新興国入り</strong>（9/21発効）で内需大型株に資金が向かうか。逆風は、ICT・家電の市場飽和、EC（Shopee等）の価格圧力、そして生鮮の運営難易度。景気敏感ゆえに、追い風が止めば同じ速さで逆回転する。</div>
   <div style="max-width:940px;margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);font-family:var(--mincho);font-size:var(--fs-lead);line-height:2.05;color:#fff;">MWGは、何を売っているのか。<br>スマホでも、冷蔵庫でも、野菜でもない。<br>——<span style="color:var(--gold);">ベトナム人の、生活そのもの</span>だ。</div>
-  <div class="src" style="color:rgba(255,255,255,.5);">出所：バリュエーション＝TCBS（2026予想PER約12倍・過去平均18.8倍）、VNDirect（時価総額約114.5兆ドン・ROE23.3%、2026/8/3時点）。小売売上高＝ベトナム国家統計局（H1'26 +12.9%）。FTSE新興国格上げは2026/9/21発効予定。将来見通しは予測であり実績ではない。</div>
+  <div class="src" style="color:rgba(255,255,255,.5);">出所：バリュエーション＝TCBS（2026予想PER約12倍・過去平均18.8倍）、VNDirect（時価総額約107兆ドン≒約6,500億円・ROE23.3%、2026/8/14時点）。小売売上高＝ベトナム国家統計局（H1'26 +12.9%）。FTSE新興国格上げは2026/9/21発効予定。将来見通しは予測であり実績ではない。</div>
 </section>
 
 
@@ -257,11 +279,137 @@
 </div>
 
 
-<!-- 相場面（プレースホルダ・8/17発刊時に差し込み） -->
-<section class="conc" style="text-align:center;">
-  <div class="eyebrow" style="justify-content:center;">Coming ｜ 相場面</div>
-  <div class="s-title" style="color:#fff;">今週（8/10–8/14）の相場面は、8/17（月）発刊時に差し込みます</div>
-  <div class="body jp" style="color:rgba(255,255,255,.82);max-width:820px;margin:0 auto;">Market Summary／Sector／Top Gainers &amp; Losers／Spotlight／News Topics／Looking Ahead を、対象週の<strong style="color:#fff">VNDirect実測データ</strong>で組んで挿入します。特集面（上記）は先行して確定。</div>
+<!-- 相場③ Market Summary -->
+<section>
+  <div class="eyebrow">Market Summary ｜ 先週の相場（8/10–8/14）</div>
+  <div class="s-title">反落 ― Vinが、指数を独りで沈めた</div>
+  <div class="lead jp" style="max-width:940px;">VN-Indexは週間<strong>−2.20%（−38.98pt）</strong>と<strong>3週ぶりに下落</strong>し、金曜終値は<strong>1,729.08</strong>。2週続いた上昇が止まった。主因は明快——<strong>Vin系不動産の急落</strong>だ。週半ばに1,790台へ戻したあと、木・金の2営業日で<strong>約−64pt</strong>と崩れた。外国人の売り越しも再燃した。</div>
+  <div class="sumstrip">
+    <div class="wk-kpi"><div class="l">VN-Index 週間騰落</div><div class="lsub">8/7→8/14</div><div class="v neg num">−2.20%</div></div>
+    <div class="wk-kpi"><div class="l">週末終値（8/14）</div><div class="lsub">2週続伸のあと反落</div><div class="v num">1,729.08</div></div>
+    <div class="wk-kpi"><div class="l">HOSE 値上がり／値下がり</div><div class="lsub">8/14時点</div><div class="v num" style="font-size:var(--fs-numlg)"><span style="color:var(--up)">67</span><span style="color:var(--light)">／</span><span style="color:var(--down)">257</span></div></div>
+  </div>
+  <div style="font-family:var(--sans-en);letter-spacing:.06em;font-size:var(--fs-label);color:var(--light);margin:6px 0 2px;">日次騰落率（VN-Index・%）</div>
+  <div class="ddiv" style="margin-top:2px;">
+    <div class="zero"></div>
+    <div class="dcol"><div class="barea"><div class="htop"><div class="dv" style="color:var(--up)">+0.49%</div><div class="bar" style="height:24px"></div></div><div class="hbot"></div></div><div class="lab">月<br>8/10</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:9px"></div><div class="dvb" style="color:var(--down)">−0.19%</div></div></div><div class="lab">火<br>8/11</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"><div class="dv" style="color:var(--up)">+1.11%</div><div class="bar" style="height:54px"></div></div><div class="hbot"></div></div><div class="lab">水<br>8/12</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:74px"></div><div class="dvb" style="color:var(--down)">−1.54%</div></div></div><div class="lab">木<br>8/13</div></div>
+    <div class="dcol"><div class="barea"><div class="htop"></div><div class="hbot"><div class="barb" style="height:100px"></div><div class="dvb" style="color:var(--down)">−2.07%</div></div></div><div class="lab">金<br>8/14</div></div>
+  </div>
+  <div class="body jp" style="margin-top:26px;">週半ばの水曜まで1,790台へ戻したが、木<strong>−1.54%</strong>・金<strong>−2.07%</strong>と急落した。分解すると三つ。①<strong>Vin系不動産の急落</strong>：VIC−6.79%・VHM−6.58%が売られ、不動産だけで指数を<strong>−30.56pt</strong>押し下げた。うちVIC1銘柄で<strong>−22.27pt</strong>（週の下げの約57%）。②<strong>外国人の売り越し再燃</strong>：外国人はVN30主要銘柄で週間約<strong>−2,731十億ドン</strong>を売り越し、VHM・TCB・VICに売りが集中した。③<strong>大型株の一斉調整</strong>：値下がり257／値上がり67（8/14）と全面安。<strong>FTSE構成リスト公表（8/21）を前に</strong>、利益確定と様子見が重なった。もっとも逆行もあった——本紙特集の<strong>MWG（+1.97%）</strong>やマサンコンシューマー（MCH+1.41%）など内需・消費系は上昇し、TCB（+7.74%）が銀行で独歩高となった。</div>
+  <div class="src">出所：VNDirect実測（指数・日次騰落・ブレッドス＝8/14、週次騰落＝8/7→8/14終値）。外国人フロー＝foreigns API（対象週5日netVal合計）＝VN30主要銘柄で週間約−2,731十億ドンの売り越し（当社実測）。8/14の全市場売り越し約−900十億ドン・VIC最大の売り越しは現地報道（The Investor／VietnamNet）と整合。円換算1兆ドン≒61.1億円（1USD≒26,065ドン・159.20円、2026/8/14）。</div>
+</section>
+
+<!-- 相場④ Sector -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Sector ｜ 何が指数を動かしたか</div>
+  <div class="s-title">Vinが、指数を独りで沈めた</div>
+  <div class="body jp" style="max-width:940px;">VN-Indexの−38.98ptを構造で見ると、VN30寄与合計は<strong>−35.78pt</strong>。その大半を<strong>不動産（ビン系）だけで−30.56pt</strong>——下げの約8割を、一つのセクターが作った。さらに<strong>VIC1銘柄で−22.27pt</strong>。プラスはわずかに小売（MWG）・消費財・エネルギーのみ。まさに「Vin次第」の一週間だった。</div>
+  <div style="margin-top:18px;">
+    <div class="secrow"><div class="secname">不動産（ビン系）</div><div class="secbar"><i style="left:auto;right:50%;width:48%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−30.56</div></div>
+    <div class="secrow"><div class="secname">銀行</div><div class="secbar"><i style="left:auto;right:50%;width:4.8%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−3.07</div></div>
+    <div class="secrow"><div class="secname">観光（VPL）</div><div class="secbar"><i style="left:auto;right:50%;width:2.5%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−1.62</div></div>
+    <div class="secrow"><div class="secname">IT（FPT）</div><div class="secbar"><i style="left:auto;right:50%;width:1.4%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−0.87</div></div>
+    <div class="secrow"><div class="secname">運輸（VJC）</div><div class="secbar"><i style="left:auto;right:50%;width:0.6%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−0.37</div></div>
+    <div class="secrow"><div class="secname">証券（SSI他）</div><div class="secbar"><i style="left:auto;right:50%;width:0.2%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−0.06</div></div>
+    <div class="secrow"><div class="secname">素材（HPG他）</div><div class="secbar"><i style="left:auto;right:50%;width:0.2%;background:var(--down)"></i></div><div class="secval" style="color:var(--down)">−0.01</div></div>
+    <div class="secrow"><div class="secname">エネルギー（GAS他）</div><div class="secbar"><i style="left:50%;width:0.3%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+0.15</div></div>
+    <div class="secrow"><div class="secname">消費財（MCH他）</div><div class="secbar"><i style="left:50%;width:0.3%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+0.17</div></div>
+    <div class="secrow"><div class="secname">小売（MWG）</div><div class="secbar"><i style="left:50%;width:0.7%;background:var(--up)"></i></div><div class="secval" style="color:var(--up)">+0.45</div></div>
+  </div>
+  <div class="src">出所：当社試算＝VN30構成銘柄（2026/8/3発効の新構成）の週次寄与度（TR%×単純時価総額ウェイト×8/7終値）をセクター別に合計。単位＝指数ポイント。VN-Indexの−38.98ptに対しVN30寄与合計は−35.78pt（差の約−3.2ptは中小型株の下落分。単純時価総額ウェイトのため正式指数＝浮動株加重とは差がある。VICは浮動株比で過大に出る）。</div>
+</section>
+
+<!-- 相場⑤ Top Gainers & Losers -->
+<section>
+  <div class="eyebrow">Top Gainers &amp; Losers ｜ VN30・週次騰落</div>
+  <div class="s-title">Vin系総崩れ、逆行はTCBと内需</div>
+  <div class="mwrap"><table class="mtable gl">
+    <tr><th>▲ 上昇 上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th><th style="width:40px"></th><th>▼ 下落 上位5</th><th>セクター</th><th style="text-align:right">週次騰落</th></tr>
+    <tr><td><strong>TCB</strong></td><td>銀行</td><td class="num hl-a">+7.74%</td><td></td><td><strong>VIC</strong></td><td>不動産</td><td class="num hl-b">−6.79%</td></tr>
+    <tr><td><strong>GVR</strong></td><td>素材</td><td class="num hl-a">+4.87%</td><td></td><td><strong>VHM</strong></td><td>不動産</td><td class="num hl-b">−6.58%</td></tr>
+    <tr><td><strong>MWG</strong></td><td>小売</td><td class="num hl-a">+1.97%</td><td></td><td><strong>VPL</strong></td><td>観光</td><td class="num hl-b">−5.70%</td></tr>
+    <tr><td><strong>GAS</strong></td><td>エネルギー</td><td class="num hl-a">+1.88%</td><td></td><td><strong>VRE</strong></td><td>不動産</td><td class="num hl-b">−4.01%</td></tr>
+    <tr><td><strong>MCH</strong></td><td>消費財</td><td class="num hl-a">+1.41%</td><td></td><td><strong>FPT</strong></td><td>IT</td><td class="num hl-b">−3.53%</td></tr>
+  </table></div>
+  <div class="callout">
+    <div class="body jp" style="font-size:var(--fs-bodysm);"><strong>ANALYST NOTE.</strong> 下落上位を<strong>Vin系（VIC・VHM・VRE）と観光VPL</strong>が独占。対照的に逆行高は、銀行で独歩高の<strong>TCB（+7.74%）</strong>・ゴムのGVR、そして本紙特集の<strong>MWG（+1.97%）</strong>やマサン系MCHなど<strong>内需・消費系</strong>。下げ相場で「Vinを売り、内需を拾う」ローテーションが起きた一週間だった。なおTCBは株価こそ独歩高だが、<strong>外国人は−713十億ドンと最大級の売り越し</strong>——国内資金が支えた形。</div>
+  </div>
+  <div class="src">出所：VNDirect（週次騰落＝8/7→8/14のadClose・調整後/配当込。対象週にVN30銘柄の権利落ちなし）。セクターは当社分類（ICB準拠）。VN30は2026/8/3発効の新構成。</div>
+</section>
+
+<!-- 相場⑥ Spotlight -->
+<section style="background:var(--cream);">
+  <div class="eyebrow">Spotlight ｜ 今週の主役2銘柄</div>
+  <div class="s-title">指数を沈めたVIC、逆行したMWG</div>
+  <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--down);border-radius:6px;padding:24px 28px;margin-top:16px;">
+    <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--down);font-weight:700;">INDEX SINKER ― VIC（ビングループ）</div>
+    <div class="body jp" style="margin-top:8px;">週次<strong style="color:var(--down)">−6.79%</strong>と大型株で最も下落し、<strong>指数を最も押し下げた</strong>（寄与−22.27pt＝週の下げの約57%）。外国人も<strong>約−537十億ドン</strong>を売り越した。2週続いたVin主導の上昇が、利益確定と外国人売りで反転——<strong>上げの主役が、そのまま下げの主役に</strong>なった。時価総額 約9.4兆円。<strong>WHY NOW?</strong> 指数の約2割を占める一社が動けば、市場全体が動く。</div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--bhx);border-radius:6px;padding:24px 28px;margin-top:16px;">
+    <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--bhx);font-weight:700;">FEATURE STOCK ― MWG（今週の特集銘柄）</div>
+    <div class="body jp" style="margin-top:8px;">下落相場で週次<strong style="color:var(--up)">+1.97%</strong>と<strong>逆行高</strong>、VN30の数少ない上昇組となった。外国人フローもほぼ中立。時価総額 約6,500億円・PER約12倍。<strong>WHY NOW?</strong> Vin系不動産が崩れる裏で、資金が内需・消費へ逃げた。本紙特集で解いた「<strong>生活を売る会社</strong>」——内需のバロメーターが、下げ相場では"守り"にも働くことを示した一週間だった。</div>
+  </div>
+  <div class="src">出所：騰落・時価総額・寄与＝VNDirect（8/14終値・調整後、PERは実績TTM・当社概算）。外国人フロー＝foreigns API（対象週5日合計）。円換算1兆ドン≒61.1億円（2026/8/14）。</div>
+</section>
+
+<!-- 相場⑦ News Topics -->
+<section>
+  <div class="eyebrow">News Topics ｜ 先週のトピックス</div>
+  <div class="s-title">利益確定、外国人売り、FTSE前夜</div>
+  <div style="display:flex;flex-direction:column;gap:16px;margin-top:18px;">
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--vn-red);font-weight:700;">REVERSAL ― Vin系の急落</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>2週続いたVin主導の上昇が、反転した。</strong>VIC−6.79%・VHM−6.58%を筆頭に不動産が売られ、指数を−30.56pt押し下げた。急騰の反動に、外国人売りが重なった形。指数の約2割を占めるVin系の値動きが、そのまま市場全体を揺らす——ベトナム相場の構造的な脆さが、再び表に出た。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--vn-red);font-weight:700;">FLOW ― 外国人売り越しが再燃</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;">8月初旬に3営業日連続の買い越しへ転じた外国人が、<strong>再び売り越し</strong>に回った。VN30主要銘柄で週間約<strong>−2,731十億ドン</strong>、VHM・TCB・VIC中心。買いはSSI・LPB・VNM等の一部に限られた。8月初旬に見えた「買い越し転換」の芽は、まだ定着していない。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--gold);font-weight:700;">EVENT ― FTSE前の様子見</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;"><strong>2026/8/21のFTSE構成リスト公表を控え、大型株が一斉に調整した。</strong>「リストで買われる」との期待で先回りされていた分に、利益確定が出た形。節目の直前に持ち高を軽くする、恒例の綾でもある。答え合わせは、リスト公表後の来週以降になる。</div>
+    </div>
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:20px 26px;">
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--green);font-weight:700;">RESILIENCE ― 内需・消費は逆行高</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);margin-top:6px;">Vin系が崩れる裏で、<strong>内需・消費は上昇した</strong>。本紙特集のMWG（+1.97%）、マサンコンシューマーMCH（+1.41%）、サベコSAB（+1.23%）が逆行高。不動産から抜けた資金の一部が、内需へ回った。景気敏感なVin系と、生活密着の内需系——<strong>下げ相場は、両者の性格の違いをあぶり出す</strong>。</div>
+    </div>
+  </div>
+  <div style="font-family:var(--sans-en);letter-spacing:.14em;font-size:var(--fs-label);color:var(--light);margin:26px 0 12px;">COLOR ｜ 今週のこぼれ話</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">🏢 VIC、1社で−22pt</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">週の指数下落−38.98ptのうち、<strong>VIC1銘柄で−22.27pt</strong>（約57%）。指数の約2割を占める帝国が動けば、市場が動く。VOL.01の"指数を動かす帝国"の、下げ版。</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">🛡 特集MWG、逆行の守り</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">本紙特集のMWGが下げ相場で<strong>+1.97%</strong>。「生活を売る会社」の内需性が、property売りの避難先になった。特集と相場が、同じ週にかみ合った。</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:6px;padding:18px 20px;">
+      <div style="font-family:var(--gothic);font-weight:700;color:var(--green-dark);margin-bottom:6px;">💰 TCB、独歩高の裏で</div>
+      <div class="body jp" style="font-size:var(--fs-label);line-height:var(--lh-card);">全面安のなかTCBは<strong>+7.74%</strong>と独歩高。ただし外国人は<strong>−713十億ドン</strong>と最大級の売り越し。株価を支えたのは国内資金だった。</div>
+    </div>
+  </div>
+  <div class="src">出所：現地報道（The Investor・VietnamNet・VnExpress等、2026/8/10–8/14）を当社が要約。市場数値は本紙のVNDirect実測と整合。将来の解釈は予測であり実績ではない。</div>
+</section>
+
+<!-- 相場⑧ Looking Ahead -->
+<section class="conc">
+  <div class="eyebrow">Looking Ahead ｜ 注目材料</div>
+  <div class="s-title" style="color:#fff;">底入れか、FTSE待ちか</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:8px;">
+    <div>
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--gold);font-weight:700;margin-bottom:10px;">今週（8/17–8/21）</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);color:rgba(255,255,255,.9);line-height:var(--lh-card);">・<strong style="color:#fff">反落の底入れ</strong>：Vin系の下げ止まりと、1,700の攻防。<br>・<strong style="color:#fff">外国人フローの反転</strong>：売り越し再燃が続くか、止まるか。<br>・<strong style="color:#fff">8/21 FTSE構成リスト</strong>：今週最大のイベント。答え合わせは次号で。</div>
+    </div>
+    <div>
+      <div style="font-family:var(--sans-en);letter-spacing:.1em;font-size:var(--fs-label);color:var(--gold);font-weight:700;margin-bottom:10px;">今後・注目日程</div>
+      <div class="body jp" style="font-size:var(--fs-bodysm);color:rgba(255,255,255,.9);line-height:var(--lh-card);">・<strong style="color:#fff">2026/8/21</strong> FTSE昇格の構成リスト公表（今週・あと数日）<br>・<strong style="color:#fff">2026/9/21</strong> FTSE新興国指数への発効（あと約5週）<br>・米12.5%関税（発効済）の業績波及</div>
+    </div>
+  </div>
+  <div class="note" style="font-size:var(--fs-label);color:rgba(255,255,255,.55);margin-top:16px;line-height:var(--lh-note);">注目日程は既知の公表スケジュール。距離感は発刊日（8/17）基準。FTSEは節目のみ扱い、毎号の主役化はしない。</div>
 </section>
 
 
