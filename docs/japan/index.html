@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本株 序章 — 失われた30年と最高値奪回</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+/* ════════════════════════════════════════ CSS VARIABLES ════════════════════════════════════════ */
+:root{
+  --navy:#1A2744;--navy-deep:#0D1526;--navy-mid:#152036;--navy-light:#243352;
+  --gold:#C5A572;--gold-light:#D4BA8E;--gold-pale:#E8D9BF;--gold-glow:rgba(197,165,114,0.06);--gold-border:rgba(197,165,114,0.18);
+  --crimson:#9E2B25;--crimson-soft:#B54A44;
+  --cream:#FAFAF6;--cream-warm:#F5F0E8;
+  --text:#1A2744;--text-mid:#3D4A60;--text-light:#8A94A6;--white:#FFFFFF;
+  --content-w:720px;--wide-w:1100px;--side-w:56px;--sp-pad:24px;
+  --transition:.5s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--text);line-height:1.9;font-size:15.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--navy-deep)}
+img{display:block;max-width:100%}
+
+/* PROGRESS BAR */
+.progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:2000;width:0;transition:width .1s linear;pointer-events:none}
+
+/* SIDE NAV */
+.sidenav{position:fixed;left:0;top:0;bottom:0;width:var(--side-w);background:var(--navy-deep);z-index:1500;display:flex;flex-direction:column;align-items:center;padding:20px 0;transition:width .4s var(--transition);overflow:hidden;border-right:1px solid rgba(197,165,114,0.08)}
+.sidenav:hover{width:300px}
+.sidenav-brand{writing-mode:vertical-rl;text-orientation:mixed;font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:11px;letter-spacing:.35em;white-space:nowrap;margin-bottom:auto;padding-top:8px;transition:opacity .3s}
+.sidenav:hover .sidenav-brand{opacity:0;position:absolute}
+.sidenav-content{opacity:0;width:100%;padding:24px 20px;transition:opacity .3s .1s;overflow-y:auto;position:absolute;top:0;bottom:0}
+.sidenav:hover .sidenav-content{opacity:1}
+.sidenav-title{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--gold-border)}
+.sidenav-part{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin:16px 0 4px;opacity:.5}
+.sidenav-link{display:flex;align-items:baseline;gap:8px;padding:4px 0;color:rgba(255,255,255,.55);text-decoration:none;font-size:12.5px;line-height:1.5;transition:color .2s,padding-left .2s;border:none;background:none;cursor:pointer;width:100%;text-align:left}
+.sidenav-link:hover{color:var(--gold);padding-left:4px}
+.sidenav-link.active{color:var(--gold-light)}
+.sidenav-link .num{font-family:'Cormorant Garamond',serif;font-size:10px;color:var(--gold);opacity:.5;min-width:18px}
+.sidenav-link.upcoming{opacity:.4;font-style:italic}
+
+/* MOBILE NAV */
+.mobile-nav-toggle{display:none;position:fixed;bottom:24px;right:24px;z-index:1600;width:48px;height:48px;border-radius:50%;background:var(--navy);border:1px solid var(--gold-border);color:var(--gold);font-size:20px;cursor:pointer;box-shadow:0 4px 20px rgba(13,21,38,0.3);align-items:center;justify-content:center;transition:transform .3s}
+.mobile-nav-toggle:active{transform:scale(.92)}
+.mobile-nav-overlay{display:none;position:fixed;inset:0;background:rgba(13,21,38,0.96);z-index:1550;padding:60px 32px;overflow-y:auto}
+.mobile-nav-overlay.open{display:flex;flex-direction:column;gap:6px}
+.mobile-nav-overlay .mn-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--gold);font-size:28px;cursor:pointer}
+.mobile-nav-overlay .mn-title{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px}
+.mobile-nav-overlay .mn-part{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin:14px 0 2px;opacity:.5}
+.mobile-nav-overlay a{color:rgba(255,255,255,.7);text-decoration:none;font-size:14px;padding:6px 0;display:block;transition:color .2s}
+.mobile-nav-overlay a:hover,.mobile-nav-overlay a:active{color:var(--gold)}
+
+/* LAYOUT */
+.main{margin-left:var(--side-w)}
+.content{max-width:var(--content-w);margin:0 auto;padding:0 48px}
+.wide{max-width:var(--wide-w);margin:0 auto;padding:0 48px}
+.full-bleed{margin-left:calc(var(--side-w) * -1);width:calc(100% + var(--side-w))}
+
+/* COVER */
+.cover{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--navy-deep)}
+.cover-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,21,38,.74) 0%,rgba(26,39,68,.58) 40%,rgba(13,21,38,.86) 100%),url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1920&q=80&fit=crop') center/cover no-repeat}
+.cover-grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);background-size:80px 80px}
+.cover-inner{position:relative;z-index:1;text-align:center;padding:60px 32px;max-width:920px}
+.cover-eyebrow{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:13px;letter-spacing:.5em;text-transform:uppercase;opacity:0;animation:fadeUp .7s ease forwards .3s}
+.cover-title{font-family:'Cormorant Garamond',serif;color:var(--white);font-size:clamp(56px,9vw,120px);font-weight:300;letter-spacing:.12em;line-height:.95;margin:18px 0 4px;opacity:0;animation:fadeUp .7s ease forwards .5s}
+.cover-jp{font-family:'Noto Serif JP',serif;color:var(--gold-pale);font-size:clamp(20px,3.4vw,34px);font-weight:600;letter-spacing:.08em;line-height:1.5;margin:8px 0 28px;opacity:0;animation:fadeUp .7s ease forwards .6s}
+.cover-rule{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 28px;opacity:0;animation:fadeUp .5s ease forwards .8s}
+.cover-sub{font-family:'Noto Serif JP',serif;color:var(--gold-pale);font-size:clamp(14px,2vw,17px);font-weight:400;line-height:2.1;opacity:0;animation:fadeUp .7s ease forwards .9s}
+.cover-meta{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:12px;letter-spacing:.3em;margin-top:44px;opacity:0;animation:fadeUp .5s ease forwards 1.1s}
+.cover-scroll{position:absolute;bottom:36px;left:0;right:0;display:flex;flex-direction:column;align-items:center;color:var(--gold);font-size:10px;letter-spacing:.2em;opacity:0;animation:fadeUp .5s ease forwards 1.3s;cursor:pointer}
+.cover-scroll span{padding-left:.2em}
+.cover-scroll::after{content:'';display:block;width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);margin:6px auto 0;animation:scrollPulse 2.5s ease infinite}
+
+/* DATA BAND */
+.data-band{background:var(--navy);padding:48px 24px;display:flex;justify-content:center;flex-wrap:wrap;gap:0}
+.data-band-item{flex:1;min-width:150px;max-width:250px;text-align:center;padding:24px 16px;border-right:1px solid rgba(197,165,114,0.12)}
+.data-band-item:last-child{border-right:none}
+.data-band-num{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:300;color:var(--gold);line-height:1}
+.data-band-label{font-size:12px;color:var(--gold-pale);opacity:.6;margin-top:6px;letter-spacing:.03em;line-height:1.5}
+
+/* PART DIVIDERS */
+.part-divider{min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;text-align:center;padding:80px 40px;overflow:hidden}
+.part-divider .pd-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.part-divider .pd-overlay{position:absolute;inset:0}
+.part-divider::before,.part-divider::after{content:'';position:absolute;left:60px;right:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:2}
+.part-divider::before{top:36px}
+.part-divider::after{bottom:36px}
+.part-divider .pd-content{position:relative;z-index:2}
+.part-label{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:12px;letter-spacing:.5em;text-transform:uppercase;margin-bottom:12px}
+.part-num{font-family:'Cormorant Garamond',serif;color:rgba(197,165,114,0.35);font-size:clamp(70px,12vw,150px);font-weight:300;line-height:.85;margin-bottom:8px}
+.part-title{font-family:'Noto Serif JP',serif;color:var(--white);font-size:clamp(22px,3.5vw,38px);font-weight:700;line-height:1.4}
+.part-sub{font-family:'Noto Serif JP',serif;color:var(--gold-pale);font-size:15px;font-weight:400;margin-top:8px;opacity:.65}
+
+/* SECTION HERO */
+.section-hero{background:var(--navy);padding:64px 40px;text-align:center;position:relative;overflow:hidden}
+.section-hero.crimson{background:linear-gradient(135deg,#2a1512 0%,#3a1a16 100%)}
+.section-hero .sh-num{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,10vw,130px);font-weight:300;color:var(--gold);line-height:.85;opacity:.42}
+.section-hero.crimson .sh-num{color:var(--crimson-soft);opacity:.55}
+.section-hero .sh-label{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin:8px 0 16px}
+.section-hero .sh-text{font-family:'Noto Serif JP',serif;font-size:clamp(18px,2.8vw,30px);font-weight:700;color:var(--white);line-height:1.6;max-width:720px;margin:0 auto}
+.section-hero .sh-sub{font-size:14px;color:var(--gold-pale);opacity:.62;margin-top:16px;max-width:620px;margin-left:auto;margin-right:auto}
+.section-hero .sh-rule{width:60px;height:2px;background:var(--gold);margin:20px auto}
+
+/* SECTIONS */
+.section{padding:64px 0 48px;border-bottom:1px solid var(--gold-border)}
+.section:last-child{border-bottom:none}
+.section-header{margin-bottom:32px}
+.section-number{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:52px;font-weight:300;line-height:1;opacity:.5}
+.section-title{font-family:'Noto Serif JP',serif;font-size:clamp(20px,3vw,25px);font-weight:700;color:var(--navy);line-height:1.5;margin-top:2px}
+.section-era{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.15em;color:var(--gold);margin-top:6px}
+.section-subtitle{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600;color:var(--navy);line-height:1.5;margin:40px 0 14px;padding-left:14px;border-left:3px solid var(--gold)}
+p{margin-bottom:1.2em;text-align:justify}
+p:last-child{margin-bottom:0}
+.lead{font-family:'Noto Serif JP',serif;font-size:17px;line-height:2;color:var(--text-mid);font-weight:400}
+
+/* INSIGHT / HL / NOTE */
+.insight{background:var(--white);border:1px solid var(--gold-border);border-radius:4px;padding:20px 24px;margin:20px 0;transition:transform .3s,box-shadow .3s}
+.insight:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(26,39,68,0.06)}
+.insight-label{font-weight:600;color:var(--gold);font-size:12px;letter-spacing:.05em;margin-bottom:4px}
+.hl-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--cream);padding:24px 28px;border-radius:4px;margin:28px 0;border-left:4px solid var(--gold);position:relative;overflow:hidden}
+.hl-box p{color:var(--cream);text-align:left;position:relative}
+.hl-label{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:10px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:8px;position:relative}
+.note{font-size:13px;color:var(--text-light);padding:10px 14px;background:var(--cream-warm);border-radius:3px;margin:14px 0;line-height:1.7}
+.pull{font-family:'Noto Serif JP',serif;font-size:clamp(18px,2.4vw,22px);font-weight:600;color:var(--navy);line-height:1.7;margin:36px 0;padding:0 0 0 22px;border-left:3px solid var(--gold)}
+
+/* TABLES */
+.table-wrap{margin:24px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--gold-border);border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;white-space:nowrap}
+thead th{background:var(--navy);color:var(--gold-pale);font-weight:500;padding:9px 12px;text-align:left;font-size:12.5px;letter-spacing:.02em;white-space:nowrap}
+tbody td{padding:9px 12px;border-bottom:1px solid var(--gold-border);vertical-align:top;white-space:nowrap}
+tbody tr:nth-child(even){background:var(--gold-glow)}
+.table-note{font-size:11.5px;color:var(--text-light);margin-top:6px;line-height:1.6}
+
+/* CHART BLOCKS */
+.chart-block{margin:28px 0;background:var(--white);border:1px solid var(--gold-border);border-radius:4px;padding:22px 24px 16px;overflow:visible}
+.chart-caption{font-size:11.5px;color:var(--text-light);margin-top:10px;line-height:1.6}
+.chart-guard{margin-top:12px;padding:10px 14px;background:var(--cream-warm);border-left:3px solid var(--gold-border);border-radius:0 3px 3px 0}
+.chart-guard-title{font-size:10.5px;font-weight:600;color:var(--gold);letter-spacing:.04em;margin-bottom:5px;text-transform:uppercase}
+.chart-guard ul{margin:0;padding-left:1.1em;list-style:disc}
+.chart-guard li{font-size:11.5px;color:var(--text-mid);line-height:1.75;margin-bottom:1px}
+.chart-guard li strong{font-weight:600;color:var(--text)}
+.chart-legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:12px;font-size:12px;color:var(--text-mid)}
+.chart-legend span{display:flex;align-items:center;gap:5px}
+.chart-legend .dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+
+/* FOOTER */
+.footer{background:var(--navy-deep);text-align:center;padding:60px 32px}
+.footer-brand{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:18px;letter-spacing:.15em;margin-bottom:6px}
+.footer-year{color:var(--gold-pale);font-size:12px;letter-spacing:.2em;opacity:.5}
+.footer-disc{max-width:600px;margin:20px auto 0;font-size:10.5px;color:var(--gold-pale);opacity:.35;line-height:1.8}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.reveal-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s var(--transition),transform .6s var(--transition)}
+.reveal-ready .reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-ready .reveal-d1{transition-delay:.08s}
+.reveal-ready .reveal-d2{transition-delay:.16s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .sidenav{display:none}.main{margin-left:0}.full-bleed{margin-left:0;width:100%}
+  .mobile-nav-toggle{display:flex}.content{padding:0 32px}.wide{padding:0 32px}
+}
+@media(max-width:768px){
+  body{font-size:15px;line-height:1.85}
+  .cover{min-height:90vh}.cover-inner{padding:40px 24px}
+  .data-band{padding:32px 16px;flex-direction:column;align-items:center}
+  .data-band-item{border-right:none;border-bottom:1px solid rgba(197,165,114,0.1);padding:18px 16px;max-width:100%;width:100%}
+  .data-band-item:last-child{border-bottom:none}
+  .part-divider{min-height:40vh;padding:60px 28px}
+  .part-divider::before,.part-divider::after{left:24px;right:24px}
+  .section-hero{padding:48px 28px}.section{padding:48px 0 36px}
+  .content{padding:0 var(--sp-pad)}.wide{padding:0 var(--sp-pad)}
+  .footer{padding:48px 24px}.section-subtitle{margin:32px 0 12px}
+  .chart-block{padding:16px 14px 12px}.chart-guard li{font-size:11px}
+}
+@media(max-width:480px){
+  body{font-size:14.5px;line-height:1.8}
+  .cover{min-height:85vh}.cover-inner{padding:32px 20px}.cover-sub{font-size:13.5px}
+  .data-band{padding:24px 12px}.data-band-item{padding:14px 12px}.data-band-num{font-size:clamp(28px,8vw,36px)}
+  .part-divider{min-height:35vh;padding:48px 20px}.section-hero{padding:36px 20px}
+  .section-hero .sh-text{font-size:clamp(16px,4.5vw,22px)}
+  .section{padding:36px 0 28px}.section-number{font-size:40px}.section-title{font-size:19px}
+  .content{padding:0 18px}.wide{padding:0 18px}
+  table{font-size:13px;min-width:520px}thead th{padding:7px 10px;font-size:12px}tbody td{padding:7px 10px}
+  .insight{padding:16px 18px}.hl-box{padding:18px 20px}
+  .mobile-nav-toggle{bottom:16px;right:16px;width:44px;height:44px}
+}
+@media(max-width:390px){
+  .cover-title{font-size:52px}.cover-sub{font-size:13px}
+  .content{padding:0 16px}.part-divider{padding:40px 16px}.section-hero{padding:32px 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+
+<!-- ════ SIDE NAV ════ -->
+<nav class="sidenav" id="sidenav">
+  <div class="sidenav-brand">JAPAN EQUITIES — PROLOGUE</div>
+  <div class="sidenav-content">
+    <div class="sidenav-title">Contents</div>
+    <a href="#intro" class="sidenav-link" data-nav><span class="num"></span>はじめに</a>
+    <div class="sidenav-part">序章 — 歴史</div>
+    <a href="#s01" class="sidenav-link" data-nav><span class="num">01</span>熱狂 — バブルの生成</a>
+    <a href="#s02" class="sidenav-link" data-nav><span class="num">02</span>崩壊 — 失われた時代へ</a>
+    <a href="#s03" class="sidenav-link" data-nav><span class="num">03</span>デフレ均衡</a>
+    <a href="#s04" class="sidenav-link" data-nav><span class="num">04</span>乖離 — 売上と利益</a>
+    <a href="#s05" class="sidenav-link" data-nav><span class="num">05</span>どん底 — 最安値</a>
+    <a href="#s06" class="sidenav-link" data-nav><span class="num">06</span>三本の矢</a>
+    <a href="#s07" class="sidenav-link" data-nav><span class="num">07</span>静かな革命</a>
+    <a href="#s08" class="sidenav-link" data-nav><span class="num">08</span>奪回 — 最高値</a>
+    <a href="#s09" class="sidenav-link" data-nav><span class="num">09</span>金利のある世界へ</a>
+    <a href="#outro" class="sidenav-link" data-nav><span class="num"></span>序章の結び</a>
+    <div class="sidenav-part">本編（予定）</div>
+    <span class="sidenav-link upcoming"><span class="num">I</span>マクロ — デフレ脱却</span>
+    <span class="sidenav-link upcoming"><span class="num">II</span>ミクロ — 東証改革</span>
+    <span class="sidenav-link upcoming"><span class="num">III</span>需給 — 資金フロー</span>
+  </div>
+</nav>
+
+<!-- ════ MOBILE NAV ════ -->
+<button class="mobile-nav-toggle" id="mnToggle" aria-label="目次">☰</button>
+<div class="mobile-nav-overlay" id="mnOverlay">
+  <button class="mn-close" id="mnClose">×</button>
+  <div class="mn-title">Contents</div>
+  <a href="#intro" class="mn-link">はじめに</a>
+  <div class="mn-part">序章 — 歴史</div>
+  <a href="#s01" class="mn-link">01 — 熱狂：バブルの生成</a>
+  <a href="#s02" class="mn-link">02 — 崩壊：失われた時代へ</a>
+  <a href="#s03" class="mn-link">03 — デフレ均衡</a>
+  <a href="#s04" class="mn-link">04 — 乖離：売上と利益</a>
+  <a href="#s05" class="mn-link">05 — どん底：最安値</a>
+  <a href="#s06" class="mn-link">06 — 三本の矢</a>
+  <a href="#s07" class="mn-link">07 — 静かな革命</a>
+  <a href="#s08" class="mn-link">08 — 奪回：最高値</a>
+  <a href="#s09" class="mn-link">09 — 金利のある世界へ</a>
+  <a href="#outro" class="mn-link">序章の結び</a>
+  <div class="mn-part">本編（予定）</div>
+  <a href="#outro" class="mn-link">I — マクロ ／ II — ミクロ ／ III — 需給</a>
+</div>
+
+<!-- ════ COVER ════ -->
+<header class="cover" id="top">
+  <div class="cover-bg"></div>
+  <div class="cover-grid"></div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">Japan Equities — Prologue</div>
+    <div class="cover-title">JAPAN</div>
+    <div class="cover-jp">失われた30年と、最高値奪回</div>
+    <div class="cover-rule"></div>
+    <div class="cover-sub">1989年の頂から2026年の新高値まで<br>35年の下降と再起を、一本の弧として読む</div>
+    <div class="cover-meta">2026 &nbsp;|&nbsp; 序章 · Research Note</div>
+  </div>
+  <div class="cover-scroll" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})"><span>SCROLL</span></div>
+</header>
+
+<div class="main">
+
+<!-- ══ DATA BAND ══ -->
+<div class="data-band full-bleed reveal">
+  <div class="data-band-item"><div class="data-band-num">38,916</div><div class="data-band-label">1989年の頂（12/29終値・円）</div></div>
+  <div class="data-band-item"><div class="data-band-num">7,055</div><div class="data-band-label">バブル後最安値（2009/3/10・円）</div></div>
+  <div class="data-band-item"><div class="data-band-num">34年</div><div class="data-band-label">最高値を奪回するまで（2024/2）</div></div>
+  <div class="data-band-item"><div class="data-band-num">68,714</div><div class="data-band-label">直近水準（2026/8/14・円）</div></div>
+</div>
+
+<!-- ══ はじめに ══ -->
+<div class="content">
+<section class="section" id="intro">
+  <div class="section-header reveal"><div class="section-title">はじめに — なぜ歴史から始めるのか</div></div>
+  <div class="reveal reveal-d1">
+    <p class="lead">2024年2月22日。日経平均は1989年12月29日以来、34年2カ月ぶりに史上最高値を塗り替えた。そして本稿を記す2026年8月、日経平均は約68,000円、TOPIXは連日の史上最高値。数字だけ見れば、日本株は完全に「復活」した。</p>
+    <p>だが、本レポートが問うのは「株価が上がった」ことではない。もう一段深い。<strong>いまの上昇は、1989年の熱狂の再来か。それとも、何かが根本から変わった結果か</strong>——。ここを見誤れば、目の前の高値が本物か、再び崩れる砂上の楼閣かを、見分けられない。</p>
+  </div>
+  <div class="reveal reveal-d2">
+    <p>結論を先に置く。いまの上昇は、三つの構造変化が同時に反転した帰結だ。本編は、その三つを順に追う。</p>
+    <div class="insight"><div class="insight-label">第1部 — マクロ</div><p>デフレからインフレへ。30年続いた「物価も賃金も上がらない」均衡が崩れ、日本経済は金利のある世界へ動き出した。土台となる地形そのものが変わった。</p></div>
+    <div class="insight"><div class="insight-label">第2部 — ミクロ</div><p>東証のPBR（株価純資産倍率）改革、政策保有株の解消、自社株買いとROE（自己資本利益率）の改善。企業がようやく「株主資本の効率」を意識し、動き始めた。</p></div>
+    <div class="insight"><div class="insight-label">第3部 — 需給</div><p>海外投資家の日本回帰、新NISAの個人マネー、持ち合い解消の巻き戻し。誰が買い、誰が売るのか。カネの流れが変わった。</p></div>
+  </div>
+  <div class="reveal">
+    <p>三つはいずれも、「停滞の30年に起きなかったこと」の裏返しだ。反転の意味を掴むには、まず停滞そのものを正しく知るしかない。序章が語るのは、その35年の物語。頂点の熱狂、崩壊、デフレへの緩慢な沈下、リーマン・ショックの底、アベノミクスの反転、静かな企業改革——最高値奪回は、これらの伏線がすべて回収された先に立ち現れる。</p>
+    <div class="note">※本序章は歴史の記述に徹し、投資判断・個別銘柄への言及は行わない。マクロ・ミクロ・需給の各論は本編（第1〜3部）で展開する。数値は特記なき限り日経平均株価（225種）の終値ベース。</div>
+  </div>
+</section>
+</div>
+
+<!-- ══ PART DIVIDER ══ -->
+<div class="part-divider full-bleed reveal">
+  <div class="pd-bg" style="background:url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=1920&q=80&fit=crop') center/cover no-repeat"></div>
+  <div class="pd-overlay" style="background:linear-gradient(170deg,rgba(13,21,38,.80) 0%,rgba(26,39,68,.64) 50%,rgba(13,21,38,.84) 100%)"></div>
+  <div class="pd-content">
+    <div class="part-label">Prologue</div>
+    <div class="part-num">序</div>
+    <div class="part-title">35年の弧</div>
+    <div class="part-sub">頂から底へ、そして頂の奪回へ</div>
+  </div>
+</div>
+
+<!-- ══ 35-YEAR CHART ══ -->
+<div class="wide">
+<section class="section reveal" style="border-bottom:1px solid var(--gold-border)">
+  <div class="section-header reveal"><div class="section-title">一枚の地図 — 日経平均 35年の軌跡</div></div>
+  <div class="reveal"><p>まず全体像を、一枚の地図で。1989年の頂から2026年の現在地まで、主要な節目を結んだ軌跡だ。以降の全章は、この曲線のどこかに位置づく。</p></div>
+  <div class="reveal">
+    <div class="chart-block">
+      <div class="chart-legend">
+        <span><span class="dot" style="background:#C5A572"></span>日経平均株価（主要節目・終値）</span>
+        <span><span class="dot" style="background:#9E2B25"></span>下落局面</span>
+      </div>
+      <div style="position:relative;width:100%;height:300px"><canvas id="chart-journey"></canvas></div>
+      <div class="chart-caption">日経平均株価。物語上の主要な節目を結んだ軌跡であり、全営業日の終値ではない。出所：日本経済新聞社（日経平均プロフィル）、金融庁、各種公開資料をもとに作成。直近値は2026年8月14日終値。</div>
+      <div class="chart-guard">
+        <div class="chart-guard-title">読み方</div>
+        <ul>
+          <li><strong>1989年（38,916円）：</strong>バブルの頂点。ここから約20年かけて5分の1まで下落する。</li>
+          <li><strong>2003年・2009年：</strong>二つの底（約7,600円／7,055円）。ITバブル崩壊とリーマン・ショックが刻んだ「ダブルボトム」。</li>
+          <li><strong>2013年以降：</strong>アベノミクスと異次元緩和による反転。約10年かけて頂点を目指す。</li>
+          <li><strong>2024年：</strong>2月に34年ぶり最高値、7月に42,224円、8月5日に過去最大の下落幅。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ══ 01 ══ -->
+<div class="content">
+<section class="section" id="s01">
+  <div class="section-header reveal"><div class="section-number">01</div><div class="section-title">熱狂 — バブルの生成</div><div class="section-era">1985 – 1989</div></div>
+  <div class="reveal"><p class="lead">日本株の物語は、勝ちすぎた国の話で幕を開ける。1980年代半ば、日本は世界最強の輸出国。その成功が、やがて史上まれに見る資産バブルへと化けていく。</p></div>
+  <div class="reveal"><p>転機は1985年9月のプラザ合意。行き過ぎたドル高を正すべく、日米欧が協調してドル安・円高へ舵を切った。円は1ドル=240円台から2年で120円台へ急伸。輸出企業は「円高不況」に直面する。日銀は緩和で応じ、公定歩合を2.5%まで下げた。景気の下支えのはずが、あふれたマネーは実体経済を素通りし、土地と株へなだれ込む。</p><p>資産高が担保価値を押し上げ、その担保でまた借り、その金でまた資産を買う——典型的な資産インフレの自己増殖が始まった。「土地は必ず上がる」。土地神話が信じられ、東京の地価は天文学的な高みへ。皇居の土地でカリフォルニア州全土が買える、と語られたのはこの頃だ。</p></div>
+  <div class="reveal"><div class="section-subtitle">頂点、そして「最後の日」</div><p>株もこれに歩を合わせた。日経平均は1985年末の約13,000円から、1989年12月29日の大納会に<strong>38,915円87銭</strong>（終値）の史上最高値をつけるまで、わずか4年で約3倍に膨張。東京証券取引所の時価総額は世界最大となり、上位の顔ぶれは日本の銀行が占めた。PERは60倍超。世界の常識から、はるかに浮いていた。</p><p>誰も宴の終わりを想像しない。だが1989年5月、日銀総裁に三重野康が就き、引き締めへ転じる。公定歩合は1989年から翌年にかけて2.5%から6.0%へ一気に駆け上がった。宴に浴びせられた冷水。この大納会の高値は、以後34年、「日本株が二度と届かぬ頂」となる。</p></div>
+</section>
+</div>
+
+<!-- ══ HERO: THE PEAK ══ -->
+<div class="section-hero full-bleed reveal">
+  <div class="sh-num">38,915.87</div>
+  <div class="sh-label">1989 · December 29</div>
+  <div class="sh-text">頂に触れた、最後の日</div>
+  <div class="sh-rule"></div>
+  <div class="sh-sub">この終値を上回るまで、日本株は34年2カ月を要した</div>
+</div>
+
+<!-- ══ 02 ══ -->
+<div class="content">
+<section class="section" id="s02">
+  <div class="section-header reveal"><div class="section-number">02</div><div class="section-title">崩壊 — 失われた時代の始まり</div><div class="section-era">1990 – 1998</div></div>
+  <div class="reveal"><p>年が明けて1990年、下げが始まる。当初は誰もが「一時の調整」と高をくくった。だが金融引き締めと、同年に大蔵省が放った不動産融資の総量規制が、バブルの生命線だった信用膨張を断ち切る。株価は1990年だけで約4割の下落。地価も遅れて崩れ出す。担保価値の下落が返済不能を呼び、それがまた投げ売りを誘う——上げ相場の自己増殖が、そっくり逆回転を始めた。</p></div>
+  <div class="reveal"><div class="section-subtitle">不良債権という時限爆弾</div><p>厄介だったのは、損失が銀行のバランスシートに「不良債権」として静かに積み上がったこと。金融機関は担保割れ融資の処理を先送りした。傷を直視せず、痛みを未来へ繰り延べる。この先送りこそ、「失われた10年」を「失われた30年」へ延ばした遠因だ。</p><p>爆弾はやがて破裂する。1997〜98年、日本は戦後最大級の金融危機に呑まれた。1997年11月、四大証券の一角・山一證券が自主廃業。同月、北海道拓殖銀行が破綻。翌1998年には日本長期信用銀行と日本債券信用銀行が相次いで破綻・国有化された。「銀行は潰れない」——戦後日本のもう一つの神話が、ここで砕けた。</p></div>
+  <div class="reveal"><div class="hl-box"><div class="hl-label">Turning Point</div><p>バブル崩壊は「株価が下がった事件」ではない。日本経済が、信用収縮・不良債権・デフレという三重苦の入口に立った瞬間だ。株価はただの症状。病は、もっと深いところで進んでいた。</p></div></div>
+</section>
+</div>
+
+<!-- ══ 03 ══ -->
+<div class="content">
+<section class="section" id="s03">
+  <div class="section-header reveal"><div class="section-number">03</div><div class="section-title">デフレ均衡 — 停滞が「普通」になった国</div><div class="section-era">1998 – 2008</div></div>
+  <div class="reveal"><p>1990年代末、日本は先進国で初めて、持続的なデフレ（物価の継続的な下落）に沈む。デフレは、ただ物価が下がる現象ではない。経済の血流を静かに凍らせる病だ。</p><p>物価が下がると読めば、消費者は「もっと安くなる」と財布の紐を締める。売上が伸びない企業は賃金を上げられず、投資も絞る。賃金が上がらねば、消費はさらに冷える。おまけに物価下落は実質の借金を重くし、企業も家計も返済（デレバレッジ）を急ぐ。経済全体が、縮小均衡へと吸い込まれていく。「物価も賃金も金利も上がらない」——この低体温の状態こそ、本編第1部で反転を論じる<strong>デフレ均衡</strong>だ。</p></div>
+  <div class="reveal"><div class="section-subtitle">ゼロ金利という異常の常態化</div><p>日銀は、世界に先駆けた非伝統的政策で応戦する。1999年にゼロ金利、2001年には量的緩和（QE）を世界で初めて導入。だがデフレ心理は根深く、効き目は限られた。株もこれを映す。日経平均は2003年4月、ITバブル崩壊の余波と金融不安に叩かれ<strong>約7,600円</strong>まで沈んだ。バブル頂点の5分の1だ。</p><p>2000年代半ば、不良債権処理が進み、輸出主導の回復も手伝って、株価は一時16,000円台を回復する。だが、それは体質改善ではない。外需という追い風に乗っただけ。土台のデフレ均衡は温存されたまま。だからこそ、次に外から強い衝撃が来たとき、日本株は世界で最も脆く崩れる。</p></div>
+  <div class="reveal">
+    <div class="table-wrap"><table>
+      <thead><tr><th>局面</th><th>時期</th><th>日経平均の目安</th><th>背景</th></tr></thead>
+      <tbody>
+        <tr><td>バブル頂点</td><td>1989/12</td><td>約38,900円</td><td>資産インフレの極大</td></tr>
+        <tr><td>金融危機</td><td>1997–98</td><td>約13,000–14,000円</td><td>山一・拓銀・長銀の破綻</td></tr>
+        <tr><td>ITバブル後の底</td><td>2003/4</td><td>約7,600円</td><td>デフレ・金融不安</td></tr>
+        <tr><td>輸出主導の回復</td><td>2007</td><td>約15,000–18,000円</td><td>世界景気の拡大</td></tr>
+        <tr><td>リーマン後の底</td><td>2009/3</td><td>約7,055円</td><td>世界金融危機</td></tr>
+      </tbody>
+    </table></div>
+    <div class="table-note">出所：日本経済新聞社（日経平均プロフィル）等の公開資料をもとに作成。水準は各局面の代表的な目安であり、正確な高値・安値とは一致しない場合がある。</div>
+  </div>
+</section>
+</div>
+
+<!-- ══ 04 ══ -->
+<div class="content">
+<section class="section" id="s04">
+  <div class="section-header reveal"><div class="section-number">04</div><div class="section-title">乖離 — 伸びない売上、膨らむ利益</div><div class="section-era">1990 – 2020</div></div>
+  <div class="reveal"><p class="lead">「失われた30年」は、ただ立ち尽くしていた時代ではない。企業はデフレという逆風に、恐ろしく合理的に適応してみせた。皮肉なのは、その合理性こそが停滞を再生産したこと。逆説の核心を、一枚のグラフがあぶり出す。</p></div>
+  <div class="reveal"><p>財務省の法人企業統計を開くと、奇妙な絵が浮かぶ。売上は伸びない。なのに利益だけが膨らむ。全産業の売上高は1990年度の約1,428兆円に対し、2015年度は約1,432兆円。四半世紀かけて、ほぼゼロ成長だ。ところが経常利益は水準を切り上げ続け、2023年度についに初の100兆円超、過去最高の106.8兆円をつけた。売上は横ばい、利益は約3倍。この一点に、30年の秘密が凝縮している。</p></div>
+  <div class="reveal">
+    <div class="chart-block">
+      <div class="chart-legend">
+        <span><span class="dot" style="background:#1A2744"></span>売上高（1990年度=100）</span>
+        <span><span class="dot" style="background:#C5A572"></span>経常利益（1990年度=100）</span>
+      </div>
+      <div style="position:relative;width:100%;height:280px"><canvas id="chart-divergence"></canvas></div>
+      <div class="chart-caption">法人企業統計（金融業・保険業を除く全産業）をもとに、1990年度を100として指数化。売上はほぼ横ばいを続けたのに対し、利益は約3倍に。直近は売上も再び上向き、乖離が縮み始めている。出所：財務省 法人企業統計、第一生命経済研究所ほか。中間年度は概算。</div>
+      <div class="chart-guard">
+        <div class="chart-guard-title">この一枚が語ること</div>
+        <ul>
+          <li><strong>25年間ゼロ成長：</strong>売上高は1990年度1,428兆円 → 2015年度1,432兆円とほぼ横ばい（財務省確報値）。</li>
+          <li><strong>利益は約3倍：</strong>経常利益は2023年度に初の100兆円超・過去最高の106.8兆円。売上が伸びずに利益が伸びた主因はコストカットである、と政府統計の分析も指摘している。</li>
+          <li><strong>足元の再接近：</strong>2021年度以降、値上げ（プライシングパワー）の復活で売上が再び上向き始めた。乖離の縮小こそ、反転の兆候。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="reveal"><div class="section-subtitle">利益を動かした二つのエンジン</div><p>売上が伸びないのに、利益はどこから湧いたのか。エンジンは二つある。</p><p>第一は、<strong>国内の徹底したコスト圧縮</strong>。狙われたのは人件費だ。値上げができないなら、残る道は削ること。企業は最大の費用項目に手を伸ばした。ベアを抑え、正社員を絞り、より安い非正規へ置き換える。非正規比率は1990年の約20%から、足元で約37%へ。生み出した付加価値のうち人件費に回る割合——労働分配率は静かに下がり、削った分がそっくり利益に化けた。経済産業省すら、大企業の30年をこう総括する。売上は微増、人件費は微増、なのに経常利益は過去最高、配当は拡大、と。</p><p>第二のエンジンは、<strong>海外シフトと円安</strong>。デフレと超円高（2012年まで）から逃げるように、企業は生産を海外へ移した。対外直接投資の残高は300兆円超。海外子会社が稼いだ利益は配当や利息となって本社へ還流し、2013年以降の円安が、それを円換算でさらに膨らませた。国内中心の売上が横ばいでも、海外発の利益が経常利益を押し上げる。営業利益率より経常利益率が高いという近年の逆転は、この構図の裏返しだ。</p><p>利益成長の正体は、「国内で削り、海外で稼ぎ、円安で嵩上げする」の三点セット。どれも「デフレと円高への適応」という一本の糸で結ばれている。</p></div>
+  <div class="reveal">
+    <div class="chart-block">
+      <div class="chart-legend"><span><span class="dot" style="background:#9E2B25"></span>デフレ均衡 — 自己強化のループ</span></div>
+      <div style="max-width:560px;margin:4px auto 0">
+        <svg viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" role="img" aria-label="デフレ均衡の自己強化ループ図">
+          <defs>
+            <marker id="ahead" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#C5A572"/></marker>
+          </defs>
+          <!-- inner circulating arrows (clockwise) -->
+          <g fill="none" stroke="#C5A572" stroke-width="2.6" marker-end="url(#ahead)">
+            <path d="M436.3,174.5 A150,150 0 0,1 507.9,215.8"/>
+            <path d="M544.2,278.6 A150,150 0 0,1 544.2,361.4"/>
+            <path d="M507.9,424.2 A150,150 0 0,1 436.3,465.5"/>
+            <path d="M363.7,465.5 A150,150 0 0,1 292.1,424.2"/>
+            <path d="M255.8,361.4 A150,150 0 0,1 255.8,278.6"/>
+            <path d="M292.1,215.8 A150,150 0 0,1 363.7,174.5"/>
+          </g>
+          <!-- center medallion -->
+          <circle cx="400" cy="320" r="78" fill="#9E2B25" stroke="#C5A572" stroke-width="1.5"/>
+          <text x="400" y="313" text-anchor="middle" style="font-family:'Noto Serif JP',serif" font-size="20" font-weight="700" fill="#FAFAF6">デフレ均衡</text>
+          <text x="400" y="340" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="12" fill="#E8D9BF">合成の誤謬</text>
+          <!-- state boxes -->
+          <g>
+            <rect x="318" y="78" width="164" height="64" rx="7" fill="#1A2744" stroke="rgba(197,165,114,0.35)"/>
+            <text x="400" y="105" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="15.5" font-weight="500" fill="#FAFAF6">値上げできない</text>
+            <text x="400" y="126" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="11" fill="#C5A572">── デフレ ──</text>
+
+            <rect x="500" y="190" width="164" height="50" rx="7" fill="#1A2744" stroke="rgba(197,165,114,0.35)"/>
+            <text x="582" y="220" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="15.5" font-weight="500" fill="#FAFAF6">売上が伸びない</text>
+
+            <rect x="500" y="393" width="164" height="64" rx="7" fill="#1A2744" stroke="rgba(197,165,114,0.35)"/>
+            <text x="582" y="420" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="15.5" font-weight="500" fill="#FAFAF6">人件費を抑制</text>
+            <text x="582" y="440" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="10.5" fill="#C5A572">賃金・非正規・海外移転</text>
+
+            <rect x="318" y="505" width="164" height="50" rx="7" fill="#1A2744" stroke="rgba(197,165,114,0.35)"/>
+            <text x="400" y="535" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="15.5" font-weight="500" fill="#FAFAF6">家計所得が伸びない</text>
+
+            <rect x="136" y="400" width="164" height="50" rx="7" fill="#1A2744" stroke="rgba(197,165,114,0.35)"/>
+            <text x="218" y="430" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="15.5" font-weight="500" fill="#FAFAF6">消費が弱い</text>
+
+            <rect x="136" y="190" width="164" height="50" rx="7" fill="#1A2744" stroke="rgba(197,165,114,0.35)"/>
+            <text x="218" y="220" text-anchor="middle" style="font-family:'Noto Sans JP',sans-serif" font-size="15.5" font-weight="500" fill="#FAFAF6">国内需要が弱い</text>
+          </g>
+        </svg>
+      </div>
+      <div class="chart-caption">デフレ下で個々の企業が打つ合理的な一手が、一周まわって自らの首を絞める。時計回りに読む。※現実には為替・技術・人口動態・グローバル競争など多くの変数が絡む。本図は主要な因果の環を単純化して示したもの。</div>
+    </div>
+  </div>
+  <div class="reveal"><div class="hl-box"><div class="hl-label">The Microfoundation of Deflation</div><p>ここに、序章でいう「デフレ均衡」のミクロの正体がある。一社にとって、人件費を削り、非正規に替え、工場を海外へ出すのは、完璧に正しい生存術だ。だが全社が同じ手を打てば、家計の懐は温まらず、消費は冷え、国内需要はしぼむ。需要が弱いから値上げできず、値上げできないからまた削る。個々の合理が、全体の不合理を生む。合成の誤謬——日本が30年抜け出せなかった罠の、これが本体だ。</p></div></div>
+  <div class="reveal"><p>そして最大の伏線が、ここに眠る。過去の利益が「人件費を削って捻り出した利益」だったのなら、賃金が上がり始めた今、利益は削られるのではないか。事実、いま進むのは、この30年の生存術の巻き戻しだ。賃金は反転し、人手不足が非正規の待遇改善を迫り、円安と地政学がむしろ国内回帰を呼ぶ。デフレ期の利益エンジンが逆回転を始めたとき、企業は増益を守れるか。答えは、利益の質が「コスト削減」から「値上げ力と数量」へ移れるかにかかる。この問いが、本編第1部（マクロ）と第2部（ミクロ）を貫く背骨になる。</p></div>
+</section>
+</div>
+
+<!-- ══ 05 ══ -->
+<div class="content">
+<section class="section" id="s05">
+  <div class="section-header reveal"><div class="section-number">05</div><div class="section-title">どん底 — リーマン・ショックと最安値</div><div class="section-era">2008 – 2012</div></div>
+  <div class="reveal"><p>2008年9月、米投資銀行リーマン・ブラザーズが破綻。世界金融危機が火を噴いた。震源は米国の住宅ローン市場。だが皮肉にも、最も深く打たれた株式市場のひとつが日本だ。円が安全資産として急騰し、輸出企業の採算を直撃した。</p><p>2009年3月10日、日経平均は終値<strong>7,054円98銭</strong>。バブル最盛期の38,915円の、実に<strong>5分の1以下</strong>。約20年かけて、日本株は頂点の8割を失った。この安値が、バブル崩壊後の最安値として歴史に刻まれる。</p></div>
+  <div class="reveal"><div class="section-subtitle">追い打ちの震災と超円高</div><p>底を打ったかに見えた日本を、さらに試練が襲う。2011年3月の東日本大震災と原発事故は、サプライチェーンとエネルギー供給を寸断した。欧州債務危機を背景に安全資産への逃避が進み、2011年10月には1ドル=75円台の戦後最高値（超円高）。輸出立国には、真綿で首を絞められる日々だった。</p><p>この頃、日本株は「万年割安・万年低迷」の代名詞。海外勢からは構造的に敬遠される市場だった。デフレ、超円高、政治の混迷、企業の低収益——反転の材料は、どこにも見当たらない。だが、物語が最も暗いこの瞬間こそ、次の反転の直前だった。</p></div>
+</section>
+</div>
+
+<!-- ══ HERO: THE BOTTOM ══ -->
+<div class="section-hero crimson full-bleed reveal">
+  <div class="sh-num">7,054.98</div>
+  <div class="sh-label">2009 · March 10</div>
+  <div class="sh-text">頂点の、5分の1になった国</div>
+  <div class="sh-rule"></div>
+  <div class="sh-sub">約20年をかけて、日本株はその価値の8割を失った</div>
+</div>
+
+<!-- ══ 06 ══ -->
+<div class="content">
+<section class="section" id="s06">
+  <div class="section-header reveal"><div class="section-number">06</div><div class="section-title">三本の矢 — アベノミクスと異次元緩和</div><div class="section-era">2012 – 2020</div></div>
+  <div class="reveal"><p class="lead">2012年12月、第2次安倍晋三内閣が発足。掲げたのは「三本の矢」——大胆な金融政策、機動的な財政政策、成長戦略。日本株の物語で最大の反転が、ここから始まる。</p></div>
+  <div class="reveal"><p>決定打は金融政策だ。2013年3月に日銀総裁へ就いた黒田東彦は、翌4月4日、のちに「異次元緩和」と呼ばれる量的・質的金融緩和（QQE）を放つ。2年で2%の物価上昇を目指し、マネタリーベースを2年で2倍に。規模でも、意思表明でも、従来とは次元が違った。日銀は国債にとどまらず、ETF（上場投資信託）を通じて株そのものを大量に買い込む。</p><p>効果は劇的だった。円は1ドル=80円前後から120円台へ急落し、輸出企業の採算が一気に好転。業績回復の期待を映し、日経平均は2012年末の約10,400円から、2015年には一時20,000円台へ、およそ2倍に駆け上がる。「日本株は死んだ」——10年来の常識が、覆った瞬間だ。</p></div>
+  <div class="reveal"><div class="section-subtitle">見過ごされた「第三の矢」の遺産</div><p>アベノミクスの株高は、その多くを金融緩和と円安が牽引した。「実力か、緩和マネーの押し上げか」。論争は長く尾を引く。2016年、日銀はマイナス金利とYCC（長短金利操作）を導入し、緩和はさらに深化。株価は緩和依存の色を強めた。</p><p>だが振り返れば、この時期に静かに撒かれた「第三の矢＝成長戦略」の種が効いてくる。2014年のスチュワードシップ・コード、2015年のコーポレートガバナンス・コード。「企業は株主のために資本を効率よく使え」という、日本になかった規範が持ち込まれた。同じ2014年、公的年金（GPIF）が国内株の比率を大きく引き上げ、安定した買い手に回る。当時は地味な制度改正。だが10年後に開花する<strong>企業改革（本編第2部）の土壌</strong>となった。</p></div>
+  <div class="reveal"><p>2020年、新型コロナの世界的流行で相場は一時急落。だが各国の大規模緩和を追い風に急回復した。2021年2月、日経平均は約30年ぶりに30,000円台を奪還。頂への最後の登坂が、視界に入り始めた。</p></div>
+</section>
+</div>
+
+<!-- ══ 07 ══ -->
+<div class="content">
+<section class="section" id="s07">
+  <div class="section-header reveal"><div class="section-number">07</div><div class="section-title">静かな革命 — 東証改革とガバナンス</div><div class="section-era">2022 – 2023</div></div>
+  <div class="reveal"><p>最高値奪回の直接の引き金は、緩和マネーではない。「企業そのものが変わり始めた」——その本質的な変化への、海外投資家による再評価だ。象徴は、2022〜23年に東京証券取引所が放った一連の改革である。</p></div>
+  <div class="reveal"><div class="section-subtitle">PBR1倍割れへの「宿題」</div><p>2022年4月、東証は市場区分を再編し、「プライム・スタンダード・グロース」の3市場体制へ。そして2023年3月、上場企業に「資本コストや株価を意識した経営」を要請する。とりわけPBR（株価純資産倍率）が1倍を継続的に割る企業——市場が「解散価値すら生んでいない」と値付けした企業——に、改善策の開示と実行を強く迫った。</p><p>日本の資本市場史における画期だった。長年、多くの企業は潤沢な現預金を抱え込み、株主資本を遊ばせても許された。持ち合いが株主の圧力を跳ね返していたからだ。東証の要請は、その「ぬるま湯」に外から光を差し込み、経営者に株価と資本効率の説明責任を課す。企業は自社株買い、増配、政策保有株の売却へ動き出す。</p></div>
+  <div class="reveal"><div class="pull">「安いから割安」ではなく、「変わるから見直される」。<br>海外投資家が日本株に向ける視線が、静かに変わった。</div></div>
+  <div class="reveal"><p>機運を象徴したのが、2023年4月、著名投資家ウォーレン・バフェット氏の来日だ。同氏率いるバークシャー・ハザウェイは、日本の5大商社株への投資拡大を明かし、強気姿勢を鮮明にした。世界一のバリュー投資家が日本株を買う——長らく日本を敬遠してきた海外機関投資家に、再考を促す強いシグナルとなった。</p></div>
+</section>
+</div>
+
+<!-- ══ 08 ══ -->
+<div class="content">
+<section class="section" id="s08">
+  <div class="section-header reveal"><div class="section-number">08</div><div class="section-title">奪回 — 34年ぶりの最高値と令和のブラックマンデー</div><div class="section-era">2024</div></div>
+  <div class="reveal"><p>そして2024年、伏線が一気に回収される。年明けに始まった新NISA（少額投資非課税制度）が国内個人マネーを呼び込み、生成AIブームを追い風にした世界的な半導体株高が、東京市場の値がさ株を押し上げた。円安、企業改革、資金流入——複数の追い風が、同時に吹いた。</p></div>
+  <div class="reveal"><div class="section-subtitle">2024年2月22日 — 頂の奪回</div><p>2024年2月22日、日経平均は前日比836円高の<strong>39,098円68銭</strong>で引け、1989年12月29日の史上最高値（38,915円87銭）を<strong>34年2カ月ぶり</strong>に塗り替えた。直接の引き金は、前日に出た米エヌビディアの好決算がもたらした半導体株高。だが背景には、企業の稼ぐ力の向上、ガバナンス改革、インフレ型経済への移行期待があった。続く3月4日には、史上初の<strong>40,000円</strong>の大台へ。</p><p>同じ3月、日銀も歴史を動かす。2024年3月19日、マイナス金利を解除し、YCC（長短金利操作）を撤廃、ETFの新規買入れも終了。17年ぶりの利上げにして、「異次元緩和」時代の終幕だった。7月11日、日経平均は終値<strong>42,224円02銭</strong>と2024年の高値をつける。</p></div>
+  <div class="reveal"><div class="section-subtitle">2024年8月5日 — 令和のブラックマンデー</div><p>だが、頂の空気は薄い。2024年8月5日、日経平均は前日比<strong>4,451円28銭安（▲12.40%）</strong>で引けた。下落幅は日経平均史上最大、下落率は1987年ブラックマンデー翌日に次ぐ過去2番目。前週の日銀利上げと米国の弱い指標が重なり、積み上がっていた「円を借りて他資産を買う」円キャリー取引が一斉に巻き戻る。週明けに最初に開く主要市場という宿命が、週末のリスクを一身に浴びせた。</p><p>だが、この暴落は数日で急回復する。崩れたのは需給であって、業績やガバナンス改革の土台ではない。この「急落と急回復」は、新しい日本株が、旧来のデフレ相場とは違う回復力を宿し始めたことを物語る。</p></div>
+</section>
+</div>
+
+<!-- ══ HERO: 34 YEARS ══ -->
+<div class="section-hero full-bleed reveal">
+  <div class="sh-num">34</div>
+  <div class="sh-label">Years to reclaim the peak</div>
+  <div class="sh-text">頂を取り戻すのに、34年2カ月を要した</div>
+  <div class="sh-rule"></div>
+  <div class="sh-sub">一世代がまるごと過ぎた。だが、奪回はゴールではなく入口だった</div>
+</div>
+
+<!-- ══ 09 ══ -->
+<div class="content">
+<section class="section" id="s09">
+  <div class="section-header reveal"><div class="section-number">09</div><div class="section-title">金利のある世界へ — 正常化と現在地</div><div class="section-era">2024 – 2026</div></div>
+  <div class="reveal"><p>最高値奪回は、物語の結末ではない。むしろ、日本経済が「金利のある世界」へ本格的に帰る、新しい章の幕開けだ。2024年3月のマイナス金利解除を起点に、日銀は慎重に、しかし着実に利上げを重ねていく。</p></div>
+  <div class="reveal">
+    <div class="chart-block">
+      <div class="chart-legend">
+        <span><span class="dot" style="background:#C5A572"></span>日銀 政策金利（無担保コール翌日物・誘導目標の上限目安）</span>
+      </div>
+      <div style="position:relative;width:100%;height:240px"><canvas id="chart-rate"></canvas></div>
+      <div class="chart-caption">日銀の政策金利正常化の推移。各会合の誘導目標水準の目安。出所：日本銀行、野村證券、各種公開資料をもとに作成（2026年8月時点）。</div>
+      <div class="chart-guard">
+        <div class="chart-guard-title">正常化のタイムライン</div>
+        <ul>
+          <li><strong>2024/3：</strong>マイナス金利解除・YCC撤廃・ETF買入れ終了（17年ぶり利上げ）</li>
+          <li><strong>2024/7：</strong>0.25%程度へ ／ <strong>2025/1：</strong>0.5%程度へ</li>
+          <li><strong>2025/12：</strong>0.75%程度へ（1995年以来 約30年ぶりの水準）</li>
+          <li><strong>2026/6：</strong>1.0%程度へ（1995年以来 約31年ぶり）。以降は据え置き局面</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="reveal"><p>2026年6月、日銀は政策金利を1.0%程度へ引き上げた。1995年以来、約31年ぶりの水準だ。長期金利（10年国債利回り）も2026年に入って一時2.8%まで駆け上がり、日本は文字どおり「金利のある世界」へ戻った。政治も動く。2026年2月の総選挙を経て新政権が発足し、財政・金融政策の枠組みをめぐる綱引きが続く。</p><p>そして本稿執筆時の2026年8月、日経平均は約<strong>68,000〜69,000円</strong>、TOPIXは連日の史上最高値。AI・半導体が牽引し、これまで見向きされなかった銘柄にも資金が波及、業績相場としての厚みが増す。市場の視線は、心理的節目の<strong>70,000円</strong>突破へ移った。</p></div>
+  <div class="reveal"><div class="insight"><div class="insight-label">現在地の要約</div><p>1989年の頂（38,916円）を起点に置けば、日経平均はいまその<strong>約1.75倍</strong>。かつて「頂は二度と来ない」と諦められた市場は、奪回にとどまらず、はるか上へ抜けた。問いは一つ。この上昇は緩和マネーの幻影か、構造変化に裏打ちされた実力か——。本編が、三つの角度から答える。</p></div></div>
+</section>
+</div>
+
+<!-- ══ 序章の結び ══ -->
+<div class="content">
+<section class="section" id="outro">
+  <div class="section-header reveal"><div class="section-title">序章の結び — 本編への橋渡し</div></div>
+  <div class="reveal"><p>35年の弧を、一本の線として辿ってきた。頂点の熱狂（1989）、崩壊（1990）、デフレ均衡への沈下（1990年代）、リーマン・ショックの底（2009）、アベノミクスの反転（2013）、静かな企業改革（2023）、そして頂の奪回（2024）と金利正常化（2024〜2026）。</p><p>肝は、最後の反転が単一の要因では説明できないこと。金融緩和だけなら、2013年からの10年で頂に届かなかった説明がつかない。企業改革だけなら、2024年に一気に火がついた説明がつかない。答えは、複数の構造変化が<strong>同時に</strong>反転したことにある。</p></div>
+  <div class="reveal"><div class="hl-box"><div class="hl-label">Bridge to Part I–III</div><p>本編は、この「同時反転」を三つの層に切り分ける。<br><br><strong>第1部・マクロ</strong>——デフレ均衡はなぜ、どう崩れたか。賃金と物価の循環、金利のある世界への移行を追う。<br><strong>第2部・ミクロ</strong>——東証改革、PBR、政策保有株の解消、ROE改善。企業側の変化を掘る。<br><strong>第3部・需給</strong>——海外投資家の回帰、新NISA、持ち合い解消。カネの流れの転換を検証する。</p></div></div>
+  <div class="reveal"><p>序章が描いたのは「何が起きたか（What）」。本編が問うのは「なぜ起きたか、そして続くのか（Why & Whether）」だ。停滞の30年を正しく知ったいま、その裏返しとしての再生を読み解く支度が整った。</p></div>
+</section>
+</div>
+
+</div><!-- /main -->
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-brand">JAPAN EQUITIES — PROLOGUE</div>
+  <div class="footer-year">序章 · 35年の弧 &nbsp;|&nbsp; 2026</div>
+  <div class="footer-disc">本資料は歴史的経緯の整理を目的とした調査ノートであり、特定の金融商品の取得・売却その他いかなる取引の勧誘を目的とするものではありません。数値は作成時点で入手可能な公開情報に基づく概算を含み、正確性・完全性を保証するものではありません。出所：日本経済新聞社（日経平均プロフィル）、日本銀行、金融庁、野村證券、World Bank、各種公開資料。</div>
+</footer>
+
+<script>
+// ══ PROGRESS BAR ══
+(function(){
+  var prog=document.getElementById('prog');
+  function upd(){var h=document.documentElement.scrollHeight-window.innerHeight;var s=window.scrollY/(h||1);prog.style.width=(s*100)+'%';}
+  window.addEventListener('scroll',upd,{passive:true});upd();
+})();
+
+// ══ REVEAL ON SCROLL ══
+(function(){
+  document.documentElement.classList.add('reveal-ready');
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('vis');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+
+// ══ SIDE NAV ACTIVE STATE + SMOOTH ══
+(function(){
+  var links=document.querySelectorAll('.sidenav-link[data-nav]');
+  var map={};links.forEach(function(l){var id=l.getAttribute('href');if(id&&id[0]==='#'){map[id.slice(1)]=l;}
+    l.addEventListener('click',function(e){e.preventDefault();var t=document.getElementById(id.slice(1));if(t)t.scrollIntoView({behavior:'smooth'});});});
+  var secs=document.querySelectorAll('section[id]');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){
+      Object.values(map).forEach(function(l){l.classList.remove('active');});
+      var l=map[en.target.id];if(l)l.classList.add('active');
+    }});
+  },{threshold:.3,rootMargin:'-20% 0px -60% 0px'});
+  secs.forEach(function(s){io.observe(s);});
+})();
+
+// ══ MOBILE NAV ══
+(function(){
+  var t=document.getElementById('mnToggle'),o=document.getElementById('mnOverlay'),c=document.getElementById('mnClose');
+  if(!t)return;
+  t.addEventListener('click',function(){o.classList.add('open');});
+  c.addEventListener('click',function(){o.classList.remove('open');});
+  o.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){o.classList.remove('open');});});
+})();
+
+// ══ CHART 1 — 35-Year Journey ══
+(function(){
+  var ctx=document.getElementById('chart-journey');if(!ctx)return;
+  var pts=[
+    {x:1985,y:13113},{x:1989,y:38916},{x:1992,y:16925},{x:1995,y:19868},
+    {x:1998,y:13842},{x:2003,y:7608},{x:2007,y:15308},{x:2009,y:7055},
+    {x:2012,y:10395},{x:2015,y:19034},{x:2018,y:20015},{x:2020,y:27444},
+    {x:2023,y:33464},{x:2024,y:42224},{x:2026,y:68714}
+  ];
+  new Chart(ctx,{
+    type:'line',
+    data:{datasets:[{
+      label:'日経平均',
+      data:pts,
+      borderColor:'#C5A572',
+      backgroundColor:'rgba(197,165,114,0.10)',
+      borderWidth:2.5,
+      pointBackgroundColor:function(c){var y=c.raw&&c.raw.y;return (y===7055||y===7608)?'#9E2B25':'#C5A572';},
+      pointBorderColor:function(c){var y=c.raw&&c.raw.y;return (y===7055||y===7608)?'#9E2B25':'#C5A572';},
+      pointRadius:function(c){var y=c.raw&&c.raw.y;return (y===38916||y===7055||y===42224||y===68714)?5:3.5;},
+      tension:0.35,fill:true
+    }]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{
+        title:function(items){return items[0].raw.x+'年';},
+        label:function(c){return '約 '+c.parsed.y.toLocaleString()+' 円';}
+      }}},
+      scales:{
+        x:{type:'linear',min:1984,max:2027,
+          grid:{color:'rgba(138,148,166,0.10)'},
+          ticks:{stepSize:5,callback:function(v){return v+'年';},font:{size:11,family:"'Noto Sans JP',sans-serif"},color:'#8A94A6'}},
+        y:{min:0,max:75000,
+          grid:{color:'rgba(138,148,166,0.10)'},
+          ticks:{callback:function(v){return (v/10000).toFixed(0)+'万';},font:{size:11,family:"'Noto Sans JP',sans-serif"},color:'#8A94A6'}}
+      }
+    }
+  });
+})();
+
+// ══ CHART — Sales vs Profit Divergence ══
+(function(){
+  var ctx=document.getElementById('chart-divergence');if(!ctx)return;
+  var labels=['1990','1998','2007','2009','2015','2020','2023'];
+  new Chart(ctx,{
+    type:'line',
+    data:{labels:labels,datasets:[
+      {label:'売上高（1990=100）',data:[100,100,111,95,100,97,114],
+       borderColor:'#1A2744',backgroundColor:'rgba(26,39,68,0.05)',borderWidth:2.5,
+       pointBackgroundColor:'#1A2744',pointRadius:3.5,tension:0.3,fill:false},
+      {label:'経常利益（1990=100）',data:[100,74,139,84,179,165,281],
+       borderColor:'#C5A572',backgroundColor:'rgba(197,165,114,0.12)',borderWidth:2.5,
+       pointBackgroundColor:'#C5A572',pointRadius:3.5,tension:0.3,fill:true}
+    ]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{
+        title:function(items){return items[0].label+'年度';},
+        label:function(c){return c.dataset.label.split('（')[0]+'：指数 '+c.parsed.y;}
+      }}},
+      scales:{
+        x:{grid:{color:'rgba(138,148,166,0.10)'},ticks:{callback:function(v){return this.getLabelForValue(v)+'年度';},font:{size:10.5,family:"'Noto Sans JP',sans-serif"},color:'#8A94A6'}},
+        y:{min:0,max:300,grid:{color:'rgba(138,148,166,0.10)'},
+          ticks:{callback:function(v){return v;},font:{size:11,family:"'Noto Sans JP',sans-serif"},color:'#8A94A6'}}
+      }
+    }
+  });
+})();
+
+// ══ CHART 2 — BOJ Policy Rate ══
+(function(){
+  var ctx=document.getElementById('chart-rate');if(!ctx)return;
+  new Chart(ctx,{
+    type:'line',
+    data:{
+      labels:['〜2024/2','2024/3','2024/7','2025/1','2025/12','2026/6','2026/8'],
+      datasets:[{
+        label:'政策金利',
+        data:[-0.1,0.1,0.25,0.5,0.75,1.0,1.0],
+        borderColor:'#C5A572',
+        backgroundColor:'rgba(197,165,114,0.12)',
+        borderWidth:2.5,
+        pointBackgroundColor:'#C5A572',
+        pointRadius:4,
+        stepped:true,
+        fill:true
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.y.toFixed(2)+' %';}}}},
+      scales:{
+        x:{grid:{display:false},ticks:{font:{size:11,family:"'Noto Sans JP',sans-serif"},color:'#8A94A6'}},
+        y:{min:-0.3,max:1.3,
+          grid:{color:'rgba(138,148,166,0.10)'},
+          ticks:{callback:function(v){return v.toFixed(2)+'%';},font:{size:11,family:"'Noto Sans JP',sans-serif"},color:'#8A94A6'}}
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>
