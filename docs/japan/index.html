@@ -445,16 +445,16 @@ tbody tr:nth-child(even){background:var(--gold-glow)}
       <div style="max-width:560px;margin:4px auto 0">
         <svg viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" role="img" aria-label="デフレ均衡の自己強化ループ図">
           <defs>
-            <marker id="ahead" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#C5A572"/></marker>
+            <marker id="ahead" markerWidth="11" markerHeight="11" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#C5A572"/></marker>
           </defs>
-          <!-- inner circulating arrows (clockwise) -->
-          <g fill="none" stroke="#C5A572" stroke-width="2.6" marker-end="url(#ahead)">
-            <path d="M436.3,174.5 A150,150 0 0,1 507.9,215.8"/>
-            <path d="M544.2,278.6 A150,150 0 0,1 544.2,361.4"/>
-            <path d="M507.9,424.2 A150,150 0 0,1 436.3,465.5"/>
-            <path d="M363.7,465.5 A150,150 0 0,1 292.1,424.2"/>
-            <path d="M255.8,361.4 A150,150 0 0,1 255.8,278.6"/>
-            <path d="M292.1,215.8 A150,150 0 0,1 363.7,174.5"/>
+          <!-- circulating arrows (clockwise) — threaded through the gaps between adjacent boxes (r=178) -->
+          <g fill="none" stroke="#C5A572" stroke-width="2.8" marker-end="url(#ahead)">
+            <path d="M466.7,155.0 A178,178 0 0,1 509.6,179.7"/>
+            <path d="M563.8,250.5 A178,178 0 0,1 563.8,389.5"/>
+            <path d="M509.6,460.3 A178,178 0 0,1 466.7,485.0"/>
+            <path d="M333.3,485.0 A178,178 0 0,1 290.4,460.3"/>
+            <path d="M236.2,389.5 A178,178 0 0,1 236.2,250.5"/>
+            <path d="M290.4,179.7 A178,178 0 0,1 333.3,155.0"/>
           </g>
           <!-- center medallion -->
           <circle cx="400" cy="320" r="78" fill="#9E2B25" stroke="#C5A572" stroke-width="1.5"/>
